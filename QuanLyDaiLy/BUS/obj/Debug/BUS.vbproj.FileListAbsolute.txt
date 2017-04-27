@@ -1,0 +1,9 @@
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\bin\Debug\BUS.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\bin\Debug\BUS.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\bin\Debug\BUS.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\obj\Debug\BUS.vbprojResolveAssemblyReference.cache
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\obj\Debug\BUS.Resources.resources
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\obj\Debug\BUS.vbproj.GenerateResource.Cache
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\obj\Debug\BUS.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\obj\Debug\BUS.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\obj\Debug\BUS.pdb
