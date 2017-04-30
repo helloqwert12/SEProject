@@ -1,5 +1,6 @@
 ﻿Namespace QuanLyDaiLyDTO
     Public Class DaiLyDTO
+#Region "DECLARE"
         Private strMadaily As String
         Private strTendaily As String
         Private strMaloaidaily As String
@@ -9,6 +10,9 @@
         Private dateNgaytiepnhan As Date
         Private strEmail As String
         Private longNodaily As Long
+#End Region
+
+#Region "METHOD"
         Property MaDaiLy() As String
             Get
                 Return strMadaily
@@ -42,7 +46,7 @@
             End Set
         End Property
 
-        Property DaiChi() As String
+        Property DiaChi() As String
             Get
                 Return strDiachi
             End Get
@@ -82,6 +86,8 @@
                 longNodaily = value
             End Set
         End Property
+#End Region
+
     End Class
 End Namespace
 

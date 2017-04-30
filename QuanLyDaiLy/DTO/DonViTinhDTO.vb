@@ -1,7 +1,11 @@
 ﻿Namespace QuanLyDaiLyDTO
     Public Class DonViTinhDTO
+#Region "DECLARE"
         Private strMadonvitinh As String
         Private strTendonvitinh As String
+#End Region
+
+#Region "METHOD"
         Property MaDonViTinh() As String
             Get
                 Return strMadonvitinh
@@ -18,6 +22,8 @@
                 strTendonvitinh = value
             End Set
         End Property
+#End Region
+
     End Class
 End Namespace
 

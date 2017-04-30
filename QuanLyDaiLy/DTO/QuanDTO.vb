@@ -1,7 +1,11 @@
 ﻿Namespace QuanLyDaiLyDTO
     Public Class QuanDTO
+#Region "DECLARE"
         Private strMaquan As String
         Private strTenquan As String
+#End Region
+
+#Region "METHOD"
         Property MaQuan() As String
             Get
                 Return strMaquan
@@ -18,6 +22,8 @@
                 strTenquan = value
             End Set
         End Property
+#End Region
+
     End Class
 End Namespace
 

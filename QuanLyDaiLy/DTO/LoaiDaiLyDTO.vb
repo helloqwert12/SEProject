@@ -1,8 +1,12 @@
 ﻿Namespace QuanLyDaiLyDTO
     Public Class LoaiDaiLyDTO
+#Region "DECLARE"
         Private strMaloaidaily As String
         Private strTenloaidaily As String
         Private longNotoida As Long
+#End Region
+
+#Region "METHOD"
         Property MaLoaiDaiLy() As String
             Get
                 Return strMaloaidaily
@@ -27,6 +31,8 @@
                 longNotoida = value
             End Set
         End Property
+#End Region
+
     End Class
 End Namespace
 

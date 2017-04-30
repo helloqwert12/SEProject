@@ -1,8 +1,12 @@
 ﻿Namespace QuanLyDaiLyDTO
     Public Class MatHangDTO
+#Region "DECLARE"
         Private strMamathang As String
         Private strTenmathang As String
         Private intSoluongton As Integer
+#End Region
+
+#Region "METHOD"
         Property MaMatHang() As String
             Get
                 Return strMamathang
@@ -27,6 +31,8 @@
                 intSoluongton = value
             End Set
         End Property
+#End Region
+
     End Class
 End Namespace
 

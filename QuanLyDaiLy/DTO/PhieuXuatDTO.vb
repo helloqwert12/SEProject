@@ -1,9 +1,13 @@
 ﻿Namespace QuanLyDaiLyDTO
     Public Class PhieuXuatHangDTO
+#Region "DECLARE"
         Private strMaphieuxuat As String
         Private strMadaily As String
         Private dateNgaylapphieu As Date
         Private longTongtrigia As Long
+#End Region
+
+#Region "METHOD"
         Property MaPhieuXuat() As String
             Get
                 Return strMaphieuxuat
@@ -36,6 +40,8 @@
                 longTongtrigia = value
             End Set
         End Property
+#End Region
+
     End Class
 End Namespace
 

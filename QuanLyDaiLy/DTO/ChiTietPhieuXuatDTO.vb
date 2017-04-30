@@ -1,5 +1,6 @@
 ﻿Namespace QuanLyDaiLyDTO
     Public Class ChiTietPhieuXuatDTO
+#Region "DECLARE"
         Private strMactphieuxuat As String
         Private strMaphieuxuat As String
         Private strMamathang As String
@@ -7,6 +8,9 @@
         Private intSoluongxuat As Integer
         Private longDongia As Long
         Private longThanhtien As Long
+#End Region
+
+#Region "METHOD"
         Property MaCTPhieuXuat() As String
             Get
                 Return strMactphieuxuat
@@ -63,6 +67,8 @@
                 longThanhtien = value
             End Set
         End Property
+#End Region
+
     End Class
 End Namespace
 
