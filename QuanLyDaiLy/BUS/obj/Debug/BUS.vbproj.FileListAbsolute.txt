@@ -7,3 +7,15 @@ E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\obj\Debug\B
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\obj\Debug\BUS.dll
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\obj\Debug\BUS.xml
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\obj\Debug\BUS.pdb
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\BUS.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\BUS.pdb
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\BUS.xml
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\DTO.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\DTO.pdb
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\DTO.xml
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\obj\Debug\BUS.vbprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\obj\Debug\BUS.Resources.resources
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\obj\Debug\BUS.vbproj.GenerateResource.Cache
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\obj\Debug\BUS.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\obj\Debug\BUS.xml
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\obj\Debug\BUS.pdb

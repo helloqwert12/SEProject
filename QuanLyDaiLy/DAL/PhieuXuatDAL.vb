@@ -5,13 +5,14 @@ Imports System.Data
 
 Namespace QuanLyDaiLyDAL
     Public Class PhieuXuatDAL
-        Public Function Insert(PhieuXuat As PhieuXuatHangDTO, CTPhieuXuat As ChiTietPhieuXuatDTO)
+        Public Function Insert(PhieuXuat As PhieuXuatDTO, CTPhieuXuat As ChiTietPhieuXuatDTO) As Integer
             'Luu xuong bang PHIEUXUAT
             Dim query As String = String.Empty
             query &= "INSERT INTO PHIEUXUAT(MaPhieuXuat, MaDaiLy, NgayLapPhieu, TongTriGia)"
             query &= "VALUES (@MaPhieuXuat, @MaDaiLy, @NgayLapPhieu, @TongTriGia)"
 
-            Using conn As New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'Using conn As New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            Using conn As New SqlConnection("Data Source=LUCIAYUL;Initial Catalog=QL_DAILY;Integrated Security=True")
                 Using comm As New SqlCommand()
                     With comm
                         .Connection = conn
@@ -39,7 +40,8 @@ Namespace QuanLyDaiLyDAL
             query &= "INSERT INTO CHITIETPHIEUXUAT(MaChiTietPhieuXuat, MaPhieuXuat, MaMatHang, MaDonViTinh, SoLuongXuat, DonGia, ThanhTien)"
             query &= "VALUES (@MaChiTietPhieuXuat, @MaPhieuXuat, @MaMatHang, @MaDonViTinh, @SoLuongXuat, @DonGia, @ThanhTien)"
 
-            Using conn As New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'Using conn As New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            Using conn As New SqlConnection("Data Source = (local);Initial Catalog=QL_DAILY;Integrated Security=True")
                 Using comm As New SqlCommand()
                     With comm
                         .Connection = conn

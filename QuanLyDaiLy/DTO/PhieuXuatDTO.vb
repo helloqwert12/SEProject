@@ -1,5 +1,5 @@
 ﻿Namespace QuanLyDaiLyDTO
-    Public Class PhieuXuatHangDTO
+    Public Class PhieuXuatDTO
 #Region "DECLARE"
         Private strMaphieuxuat As String
         Private strMadaily As String

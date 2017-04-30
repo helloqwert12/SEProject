@@ -9,7 +9,8 @@ Namespace QuanLyDaiLyDAL
             query &= "INSERT INTO DAILY(MaDaiLy, TenDaiLy, MaLoaiDaiLy, DienThoai, DiaChi, MaQuan, NgayTiepNhan, Email, NoDaiLy)"
             query &= "VALUES (@MaDaiLy, @TenDaiLy, @MaLoaiDaiLy, @DienThoai, @DiaChi, @MaQuan, @NgayTiepNhan, @Email, @NoDaiLy)"
 
-            Using conn As New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'Using conn As New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            Using conn As New SqlConnection("Data Source=(local);Initial Catalog=QL_DAILY;Integrated Security=True")
                 Using comm As New SqlCommand()
                     Dim sa As SqlDataAdapter
                     sa = New SqlDataAdapter()

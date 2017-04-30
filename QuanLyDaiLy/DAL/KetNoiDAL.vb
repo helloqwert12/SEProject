@@ -8,7 +8,8 @@ Namespace QuanLyDaiLyDAL
         Private connet As SqlConnection
         'Ham khoi tao ket noi, truyen vao chuoi ket noi den CSDL
         Public Sub KetNoiDAL()
-            connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            connet = New SqlConnection("Data Source=LUCIAYUL;Initial Catalog=QL_DAILY;Integrated Security=True")
         End Sub
         'Mo ket noi den CSDL
         Public Function MoKetNoi() As Boolean
