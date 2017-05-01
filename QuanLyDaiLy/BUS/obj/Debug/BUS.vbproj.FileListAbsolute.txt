@@ -19,3 +19,6 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\obj\Debug\BUS.vbproj.Gene
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\obj\Debug\BUS.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\obj\Debug\BUS.xml
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\obj\Debug\BUS.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\bin\Debug\DTO.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\bin\Debug\DTO.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\bin\Debug\DTO.xml

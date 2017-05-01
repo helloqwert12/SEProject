@@ -28,3 +28,13 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DAL.pdb
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DAL.xml
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DTO.pdb
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DTO.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\BUS.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DAL.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DTO.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\BUS.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\BUS.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DAL.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DAL.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DTO.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DTO.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.Test.resources

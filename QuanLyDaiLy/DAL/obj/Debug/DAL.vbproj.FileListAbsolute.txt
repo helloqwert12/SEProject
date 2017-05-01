@@ -19,3 +19,6 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.vbproj.Gene
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.xml
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DAL\bin\Debug\DTO.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DAL\bin\Debug\DTO.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DAL\bin\Debug\DTO.xml

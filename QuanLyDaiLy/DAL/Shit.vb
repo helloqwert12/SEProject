@@ -1,17 +1,17 @@
-﻿
+﻿Imports DTO.QuanLyDaiLyDTO
 Imports System
 Imports System.Data.SqlClient
 Imports System.Data
 Imports System.Windows.Forms
 Namespace QuanLyDaiLyDAL
-    Public Class KetNoiDAL
-        Public Shared connet As SqlConnection
+    Public Class Shit
+        Public connet As SqlConnection
         'Khoi tao ket noi
-        Public Shared Sub TaoKetNoi()
+        Public Sub TaoKetNoi()
             connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
         End Sub
         'Mo ket noi den CSDL
-        Public Shared Function MoKetNoi() As Boolean
+        Public Function MoKetNoi() As Boolean
             Try
                 connet.Open()
                 Return True
@@ -21,7 +21,7 @@ Namespace QuanLyDaiLyDAL
             End Try
         End Function
         'Ngat ket noi voi CSDL
-        Public Shared Function NgatKetNoi() As Boolean
+        Public Function NgatKetNoi() As Boolean
             Try
                 If (connet.State = ConnectionState.Open) Then
                     connet.Close()
@@ -32,14 +32,14 @@ Namespace QuanLyDaiLyDAL
             End Try
         End Function
         'Kiem tra xem ket noi co dang mo khong
-        Public Shared Function DangMo() As Boolean
+        Public Function DangMo() As Boolean
             If (connet.State = ConnectionState.Open) Then
                 Return True
             End If
             Return False
         End Function
         'Lay du lieu tu mot bang
-        Public Shared Function LayDuLieu(ByVal tenbang As String) As DataTable
+        Public Function LayDuLieu(ByVal tenbang As String) As DataTable
             Dim dtTable As DataTable
             Dim adapter As SqlDataAdapter
             Dim dtSet As DataSet
@@ -55,8 +55,7 @@ Namespace QuanLyDaiLyDAL
             Return dtTable
         End Function
         'Lay du lieu tu bang voi dieu kien cho truoc
-        Public Shared Function LayDuLieu(ByVal tenbang As String,
-                                         ByVal dieukien As String) As DataTable
+        Public Function LayDuLieu(ByVal tenbang As String, ByVal dieukien As String) As DataTable
             Dim dtTable As DataTable
             Dim adapter As SqlDataAdapter
             Dim dtSet As DataSet
@@ -72,9 +71,7 @@ Namespace QuanLyDaiLyDAL
             Return dtTable
         End Function
         'Lay du lieu tu mot thuoc tinh voi dieu kien cho truoc (neu co)
-        Public Shared Function LayDuLieu(ByVal tenbang As String,
-                                         ByVal thuoctinh As String,
-                                         Optional ByVal dieukien As String = "") As DataTable
+        Public Function LayDuLieu(ByVal tenbang As String, ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
             Dim dtTable As DataTable
             Dim adapter As SqlDataAdapter
             Dim dtSet As DataSet
@@ -95,69 +92,29 @@ Namespace QuanLyDaiLyDAL
         End Function
 
         'Them du lieu vao bang
-        Public Shared Function ThemDuLieu(ByVal tenbang As String,
-                                          ByVal ParamArray gtthuoctinh As String()) As Boolean
-            Dim str As String = ("INSERT INTO " + tenbang + " VALUES('")
-
+        Public Sub ThemDuLieu(ByVal tenbang As String, ByVal ParamArray gtthuoctinh As String())
+            Dim str As String = ("INSERT INTO " + tenbang + "VALUES('")
+            'For Each i As String In gtthuoctinh
+            '    str &= i & ","
+            'Next
+            'str = str.Remove(str.Length - 1, 1)
+            'str &= " ) VALUES('"
             For Each i As String In gtthuoctinh
                 str &= (i + "','")
             Next
-            str = str.Remove(str.Length - 2, 2)
+            str = str.Remove(str.Length - 1, 2)
             str &= " )"
 
             Dim sqlCmd As SqlCommand
             sqlCmd = New SqlCommand(str, connet)
             Try
                 sqlCmd.ExecuteNonQuery()
-                Return True
             Catch ex As Exception
-                Return False
+                MessageBox.Show("LỖI KHI NHẬP THÔNG TIN VÀO CSDL", "THÔNG BÁO")
             End Try
-        End Function
-        'Xoa du lieu tu bang voi dieu kien cho truoc
-        Public Shared Function XoaDuLieu(ByVal tenbang As String,
-                                         ByVal tendieukien As String,
-                                         ByVal giatridieukien As String) As Boolean
-            Dim str As String = ("DELETE FROM " + tenbang + " WHERE " + tendieukien + " = " + " '" + giatridieukien + "'")
+        End Sub
 
-            Dim sqlCmd As SqlCommand
-            sqlCmd = New SqlCommand(str, connet)
-            Try
-                sqlCmd.ExecuteNonQuery()
-                Return True
-            Catch ex As Exception
-                Return False
-            End Try
-        End Function
-
-        'Cap nhat du lieu moi voi dieu kien cho truoc
-        'Chua test
-        Public Shared Function CapNhatDuLieu(ByVal tenbang As String,
-                                             ByVal tendieukien As String,
-                                             ByVal giatridieukien As String,
-                                             ByVal ParamArray thuoctinhvagt As String()) As Boolean
-            Dim str As String = ("UPDATE " + tenbang + " SET ")
-            For i = 0 To thuoctinhvagt.Length
-                If i Mod 2 = 0 Then
-                    str &= (thuoctinhvagt(i) + "=")
-                Else
-                    str &= ("'" + thuoctinhvagt(i) + "',")
-                End If
-            Next
-            str = str.Remove(str.Length - 1, 1)
-            str &= ("WHERE " + tendieukien + " ='" + giatridieukien + "'")
-            Dim sqlCmd As SqlCommand
-            sqlCmd = New SqlCommand(str, connet)
-            Try
-                sqlCmd.ExecuteNonQuery()
-                Return True
-            Catch ex As Exception
-                Return False
-            End Try
-        End Function
-
-        'TO DO
-        'Ham capnhat
+        'Ham them, xoa, sua, capnhat
     End Class
 End Namespace
 

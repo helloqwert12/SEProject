@@ -4,13 +4,15 @@ Imports BUS.QuanLyDaiLyBUS
 
 Public Class Test
     'Khai bao bien de truy xuat DB tu Database QLDL
-    Private _DBAcess As New KetNoiDAL
-    Private _DBAcess1 As New PhieuXuatDAL
+    Private _DBAcess As KetNoiDAL
 
     'Dinh nghia thu tuc load du lieu tu bang Test theot tung lop vao Gridview
     Private Sub LoadDataOnGridView()
+        _DBAcess = New KetNoiDAL()
+        '_DBAcess.connet = New SqlClient.SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+        _DBAcess.TaoKetNoi()
         _DBAcess.MoKetNoi()
-        Dim dTable As DataTable = _DBAcess.LayDuLieu("dbo.PHIEUXUAT")
+        Dim dTable As DataTable = _DBAcess.LayDuLieu("PHIEUXUAT")
         Me.dgvTest.DataSource = dTable
         With Me.dgvTest
             .Columns(0).HeaderText = "MaPhieuXuat"
@@ -18,7 +20,7 @@ Public Class Test
             .Columns(2).HeaderText = "NgayLapPhieu"
             .Columns(3).HeaderText = "TongTriGia"
         End With
-        _DBAcess.NgatKetNoi()
+        '_DBAcess.NgatKetNoi()
     End Sub
 
     Private Sub Test_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -39,14 +41,30 @@ Public Class Test
 
 
         '3 Insert to DB
-        'Dim phieuxuatdal As PhieuXuatDAL
-        'phieuxuatdal = New PhieuXuatDAL()
-        'Dim result As Integer
-        'result = phieuxuatdal.Insert(phieuxuat)
-        'If (result = 0) Then
-        '    MessageBox.Show("Them phieu xuat thanh cong.")
-        'Else
-        '    MessageBox.Show("Them phieu xuat that bai. Vui long kiem tra lai DB!!!")
-        'End If
+        Dim phieuxuatdal As PhieuXuatDAL
+        phieuxuatdal = New PhieuXuatDAL()
+        Dim success As Boolean
+        success = phieuxuatdal.ThemDuLieu(phieuxuat)
+        If success Then
+            MessageBox.Show("THÀNH CMN CÔNG", "THÔNG CMN BÁO")
+        Else
+            MessageBox.Show("THẤT CMN BẠI", "THÔNG CMN BÁO")
+        End If
+        LoadDataOnGridView()
+
+
+    End Sub
+
+    Private Sub btnDel_Click(sender As Object, e As EventArgs) Handles btnDel.Click
+        Dim phieuxuatdal As PhieuXuatDAL
+        phieuxuatdal = New PhieuXuatDAL()
+        Dim success As Boolean
+        success = phieuxuatdal.XoaDuLieu("MaDaiLy", "DL04")
+        If success Then
+            MessageBox.Show("THÀNH CMN CÔNG", "THÔNG CMN BÁO")
+        Else
+            MessageBox.Show("THẤT CMN BẠI", "THÔNG CMN BÁO")
+        End If
+        LoadDataOnGridView()
     End Sub
 End Class

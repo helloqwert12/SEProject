@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="DaiLyDAL.vb" />
     <Compile Include="KetNoiDAL.vb" />
+    <Compile Include="Shit.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
