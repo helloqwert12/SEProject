@@ -34,6 +34,7 @@ Partial Class Test
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnDel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.btnExport = New System.Windows.Forms.Button()
         CType(Me.dgvTest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,21 +43,19 @@ Partial Class Test
         Me.dgvTest.AllowUserToAddRows = False
         Me.dgvTest.AllowUserToDeleteRows = False
         Me.dgvTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvTest.Location = New System.Drawing.Point(16, 114)
-        Me.dgvTest.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgvTest.Location = New System.Drawing.Point(12, 93)
         Me.dgvTest.MultiSelect = False
         Me.dgvTest.Name = "dgvTest"
         Me.dgvTest.ReadOnly = True
         Me.dgvTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvTest.Size = New System.Drawing.Size(671, 369)
+        Me.dgvTest.Size = New System.Drawing.Size(503, 300)
         Me.dgvTest.TabIndex = 0
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(740, 114)
-        Me.btnAdd.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnAdd.Location = New System.Drawing.Point(555, 93)
         Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(100, 28)
+        Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 1
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = True
@@ -65,103 +64,103 @@ Partial Class Test
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(32, 15)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(24, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(113, 20)
+        Me.Label1.Size = New System.Drawing.Size(90, 16)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Mã phiếu xuất"
         '
         'txbMaPhieuXuat
         '
-        Me.txbMaPhieuXuat.Location = New System.Drawing.Point(160, 11)
-        Me.txbMaPhieuXuat.Margin = New System.Windows.Forms.Padding(4)
+        Me.txbMaPhieuXuat.Location = New System.Drawing.Point(120, 9)
         Me.txbMaPhieuXuat.Name = "txbMaPhieuXuat"
-        Me.txbMaPhieuXuat.Size = New System.Drawing.Size(132, 22)
+        Me.txbMaPhieuXuat.Size = New System.Drawing.Size(100, 20)
         Me.txbMaPhieuXuat.TabIndex = 6
         '
         'txbMaDaiLy
         '
-        Me.txbMaDaiLy.Location = New System.Drawing.Point(160, 65)
-        Me.txbMaDaiLy.Margin = New System.Windows.Forms.Padding(4)
+        Me.txbMaDaiLy.Location = New System.Drawing.Point(120, 53)
         Me.txbMaDaiLy.Name = "txbMaDaiLy"
-        Me.txbMaDaiLy.Size = New System.Drawing.Size(132, 22)
+        Me.txbMaDaiLy.Size = New System.Drawing.Size(100, 20)
         Me.txbMaDaiLy.TabIndex = 8
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(32, 66)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(24, 54)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 20)
+        Me.Label2.Size = New System.Drawing.Size(62, 16)
         Me.Label2.TabIndex = 7
         Me.Label2.Text = "Mã đại lý"
         '
         'txbTongTriGia
         '
-        Me.txbTongTriGia.Location = New System.Drawing.Point(456, 65)
-        Me.txbTongTriGia.Margin = New System.Windows.Forms.Padding(4)
+        Me.txbTongTriGia.Location = New System.Drawing.Point(342, 53)
         Me.txbTongTriGia.Name = "txbTongTriGia"
-        Me.txbTongTriGia.Size = New System.Drawing.Size(132, 22)
+        Me.txbTongTriGia.Size = New System.Drawing.Size(100, 20)
         Me.txbTongTriGia.TabIndex = 10
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(316, 66)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(237, 54)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(93, 20)
+        Me.Label3.Size = New System.Drawing.Size(75, 16)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Tổng trị giá"
         '
         'txbNgapLapPhieu
         '
-        Me.txbNgapLapPhieu.Location = New System.Drawing.Point(456, 10)
-        Me.txbNgapLapPhieu.Margin = New System.Windows.Forms.Padding(4)
+        Me.txbNgapLapPhieu.Location = New System.Drawing.Point(342, 8)
         Me.txbNgapLapPhieu.Name = "txbNgapLapPhieu"
-        Me.txbNgapLapPhieu.Size = New System.Drawing.Size(132, 22)
+        Me.txbNgapLapPhieu.Size = New System.Drawing.Size(100, 20)
         Me.txbNgapLapPhieu.TabIndex = 12
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(316, 15)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(237, 12)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(119, 20)
+        Me.Label4.Size = New System.Drawing.Size(99, 16)
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Ngày lập phiếu"
         '
         'btnDel
         '
-        Me.btnDel.Location = New System.Drawing.Point(740, 175)
-        Me.btnDel.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnDel.Location = New System.Drawing.Point(555, 142)
         Me.btnDel.Name = "btnDel"
-        Me.btnDel.Size = New System.Drawing.Size(100, 28)
+        Me.btnDel.Size = New System.Drawing.Size(75, 23)
         Me.btnDel.TabIndex = 13
         Me.btnDel.Text = "Delete"
         Me.btnDel.UseVisualStyleBackColor = True
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(740, 241)
-        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnUpdate.Location = New System.Drawing.Point(555, 196)
         Me.btnUpdate.Name = "btnUpdate"
-        Me.btnUpdate.Size = New System.Drawing.Size(100, 28)
+        Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
         Me.btnUpdate.TabIndex = 14
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
+        'btnExport
+        '
+        Me.btnExport.Location = New System.Drawing.Point(555, 253)
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.Size = New System.Drawing.Size(75, 23)
+        Me.btnExport.TabIndex = 16
+        Me.btnExport.Text = "Export"
+        Me.btnExport.UseVisualStyleBackColor = True
+        '
         'Test
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(879, 498)
+        Me.ClientSize = New System.Drawing.Size(659, 405)
+        Me.Controls.Add(Me.btnExport)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnDel)
         Me.Controls.Add(Me.txbNgapLapPhieu)
@@ -174,7 +173,6 @@ Partial Class Test
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.dgvTest)
-        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "Test"
         Me.Text = "Form2"
         CType(Me.dgvTest, System.ComponentModel.ISupportInitialize).EndInit()
@@ -195,4 +193,5 @@ Partial Class Test
     Friend WithEvents Label4 As Label
     Friend WithEvents btnDel As Button
     Friend WithEvents btnUpdate As Button
+    Friend WithEvents btnExport As Button
 End Class

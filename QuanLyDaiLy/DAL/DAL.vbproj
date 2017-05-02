@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="ChiTietPhieuXuatDAL.vb" />
     <Compile Include="DaiLyDAL.vb" />
+    <Compile Include="ExportExcel.vb" />
     <Compile Include="KetNoiDAL.vb" />
     <Compile Include="LoaiDaiLyDAL.vb" />
     <Compile Include="Shit.vb" />

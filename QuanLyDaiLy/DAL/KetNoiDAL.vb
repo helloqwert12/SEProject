@@ -13,6 +13,8 @@ Namespace QuanLyDaiLyDAL
         'Khoi tao ket noi
         Public Shared Sub TaoKetNoi()
             connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+
         End Sub
         'Mo ket noi den CSDL
         Public Shared Function MoKetNoi() As Boolean
