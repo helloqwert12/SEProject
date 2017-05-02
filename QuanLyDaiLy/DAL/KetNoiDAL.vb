@@ -5,7 +5,11 @@ Imports System.Data
 Imports System.Windows.Forms
 Namespace QuanLyDaiLyDAL
     Public Class KetNoiDAL
+#Region "Khai bao Connection"
         Public Shared connet As SqlConnection
+#End Region
+
+#Region "Cac ham ket noi"
         'Khoi tao ket noi
         Public Shared Sub TaoKetNoi()
             connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
@@ -93,7 +97,6 @@ Namespace QuanLyDaiLyDAL
             End Try
             Return dtTable
         End Function
-
         'Them du lieu vao bang
         Public Shared Function ThemDuLieu(ByVal tenbang As String,
                                           ByVal ParamArray gtthuoctinh As String()) As Boolean
@@ -123,7 +126,9 @@ Namespace QuanLyDaiLyDAL
             Dim sqlCmd As SqlCommand
             sqlCmd = New SqlCommand(str, connet)
             Try
-                sqlCmd.ExecuteNonQuery()
+                If sqlCmd.ExecuteNonQuery() = 0 Then
+                    MessageBox.Show("Không tìm thấy dữ liệu cần xóa. Vui lòng kiểm tra lại", "THÔNG BÁO")
+                End If
                 Return True
             Catch ex As Exception
                 Return False
@@ -137,7 +142,7 @@ Namespace QuanLyDaiLyDAL
                                              ByVal giatridieukien As String,
                                              ByVal ParamArray thuoctinhvagt As String()) As Boolean
             Dim str As String = ("UPDATE " + tenbang + " SET ")
-            For i = 0 To thuoctinhvagt.Length
+            For i = 0 To thuoctinhvagt.Length - 1
                 If i Mod 2 = 0 Then
                     str &= (thuoctinhvagt(i) + "=")
                 Else
@@ -155,9 +160,8 @@ Namespace QuanLyDaiLyDAL
                 Return False
             End Try
         End Function
+#End Region
 
-        'TO DO
-        'Ham capnhat
     End Class
 End Namespace
 

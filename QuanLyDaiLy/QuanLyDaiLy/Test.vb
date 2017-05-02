@@ -59,7 +59,20 @@ Public Class Test
         Dim phieuxuatdal As PhieuXuatDAL
         phieuxuatdal = New PhieuXuatDAL()
         Dim success As Boolean
-        success = phieuxuatdal.XoaDuLieu("MaDaiLy", "DL04")
+        success = phieuxuatdal.XoaDuLieu("MaDaiLy", "DL09")
+        If success Then
+            MessageBox.Show("THÀNH CMN CÔNG", "THÔNG CMN BÁO")
+        Else
+            MessageBox.Show("THẤT CMN BẠI", "THÔNG CMN BÁO")
+        End If
+        LoadDataOnGridView()
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+        Dim phieuxuatdal As PhieuXuatDAL
+        phieuxuatdal = New PhieuXuatDAL()
+        Dim success As Boolean
+        success = phieuxuatdal.CapNhatDuLieu("MaDaiLy", "DL06", "TongTriGia", "111111")
         If success Then
             MessageBox.Show("THÀNH CMN CÔNG", "THÔNG CMN BÁO")
         Else

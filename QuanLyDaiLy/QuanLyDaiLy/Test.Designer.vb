@@ -33,6 +33,7 @@ Partial Class Test
         Me.txbNgapLapPhieu = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnDel = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         CType(Me.dgvTest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -146,11 +147,22 @@ Partial Class Test
         Me.btnDel.Text = "Delete"
         Me.btnDel.UseVisualStyleBackColor = True
         '
+        'btnUpdate
+        '
+        Me.btnUpdate.Location = New System.Drawing.Point(740, 241)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(100, 28)
+        Me.btnUpdate.TabIndex = 14
+        Me.btnUpdate.Text = "Update"
+        Me.btnUpdate.UseVisualStyleBackColor = True
+        '
         'Test
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(879, 498)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnDel)
         Me.Controls.Add(Me.txbNgapLapPhieu)
         Me.Controls.Add(Me.Label4)
@@ -182,4 +194,5 @@ Partial Class Test
     Friend WithEvents txbNgapLapPhieu As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents btnDel As Button
+    Friend WithEvents btnUpdate As Button
 End Class

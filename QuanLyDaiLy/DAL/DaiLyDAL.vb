@@ -1,48 +1,43 @@
 ﻿Imports DTO.QuanLyDaiLyDTO
-Imports System
-Imports System.Data.SqlClient
-Imports System.Data
 Namespace QuanLyDaiLyDAL
     Public Class DaiLyDAL
-        Public Function Insert(DaiLy As DaiLyDTO) As Integer
-            Dim query As String = String.Empty
-            query &= "INSERT INTO DAILY(MaDaiLy, TenDaiLy, MaLoaiDaiLy, DienThoai, DiaChi, MaQuan, NgayTiepNhan, Email, NoDaiLy)"
-            query &= "VALUES (@MaDaiLy, @TenDaiLy, @MaLoaiDaiLy, @DienThoai, @DiaChi, @MaQuan, @NgayTiepNhan, @Email, @NoDaiLy)"
-
-            'Using conn As New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-            Using conn As New SqlConnection("Data Source=(local);Initial Catalog=QL_DAILY;Integrated Security=True")
-                Using comm As New SqlCommand()
-                    Dim sa As SqlDataAdapter
-                    sa = New SqlDataAdapter()
-
-                    With comm
-                        .Connection = conn
-                        .CommandType = CommandType.Text
-                        .CommandText = query
-                        .Parameters.AddWithValue("@MaDaiLy", DaiLy.MaDaiLy)
-                        .Parameters.AddWithValue("@TenDaiLy", DaiLy.TenDaiLy)
-                        .Parameters.AddWithValue("@MaLoaiDaiLy", DaiLy.MaLoaiDaiLy)
-                        .Parameters.AddWithValue("@DienThoai", DaiLy.DienThoai)
-                        .Parameters.AddWithValue("@DiaChi", DaiLy.DiaChi)
-                        .Parameters.AddWithValue("@MaQuan", DaiLy.MaQuan)
-                        .Parameters.AddWithValue("@NgayTiepNhan", DaiLy.NgayTiepNhan)
-                        .Parameters.AddWithValue("@Email", DaiLy.Email)
-                        .Parameters.AddWithValue("@NoDaiLy", DaiLy.NoDaiLy)
-
-                    End With
-                    Try
-                        conn.Open()
-                        comm.ExecuteNonQuery()
-                    Catch
-                        conn.Close()
-                        Return 1 'that bai
-                    End Try
-                End Using
-            End Using
-            Return 0 'thanh cong
+        'Lay du lieu trong bang
+        Public Function LayDuLieu(DaiLy As DaiLyDTO) As DataTable
+            Return KetNoiDAL.LayDuLieu("DAILY")
         End Function
-
-
+        Public Function LayDuLieu(DaiLy As DaiLyDTO, ByVal dieukien As String) As DataTable
+            Return KetNoiDAL.LayDuLieu("DAILY", dieukien)
+        End Function
+        Public Function LayDuLieu(DaiLy As DaiLyDTO, ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
+            Return KetNoiDAL.LayDuLieu("DAILY", thuoctinh, dieukien)
+        End Function
+        'Them du lieu vao bang
+        Public Function ThemDuLieu(DaiLy As DaiLyDTO) As Boolean
+            Dim success = KetNoiDAL.ThemDuLieu("DAILY", DaiLy.MaDaiLy, DaiLy.MaLoaiDaiLy,
+                                 DaiLy.TenDaiLy, DaiLy.DienThoai, DaiLy.DiaChi,
+                                 DaiLy.MaQuan, DaiLy.NgayTiepNhan, DaiLy.Email,
+                                 DaiLy.NoDaiLy)
+            If success Then
+                Return True
+            End If
+            Return False
+        End Function
+        'Xoa du lieu
+        Public Function XoaDuLieu(DaiLy As DaiLyDTO, ByVal tendieukien As String, ByVal giatridieukien As String) As Boolean
+            If KetNoiDAL.XoaDuLieu("DAILY", tendieukien, giatridieukien) Then
+                Return True
+            End If
+            Return False
+        End Function
+        'Cap nhat du lieu
+        Public Function CapNhatDuLieu(ByVal tendieukien As String,
+                                             ByVal giatridieukien As String,
+                                             ByVal ParamArray thuoctinhvagt As String()) As Boolean
+            If KetNoiDAL.CapNhatDuLieu("DAILY", tendieukien, giatridieukien, thuoctinhvagt) Then
+                Return True
+            End If
+            Return False
+        End Function
     End Class
 
 End Namespace
