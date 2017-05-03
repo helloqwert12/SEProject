@@ -22,3 +22,16 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.pdb
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DAL\bin\Debug\DTO.dll
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DAL\bin\Debug\DTO.pdb
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DAL\bin\Debug\DTO.xml
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\bin\Debug\DAL.dll
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\bin\Debug\DAL.pdb
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\bin\Debug\DAL.xml
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\bin\Debug\DTO.dll
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\bin\Debug\DTO.pdb
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\bin\Debug\DTO.xml
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.vbprojResolveAssemblyReference.cache
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.vbproj.ResolveComReference.cache
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.Resources.resources
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.vbproj.GenerateResource.Cache
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.dll
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.xml
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DAL\obj\Debug\DAL.pdb

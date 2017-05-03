@@ -1,5 +1,4 @@
-﻿
-Imports System
+﻿Imports System
 Imports System.Data.SqlClient
 Imports System.Data
 Imports System.Windows.Forms
@@ -13,6 +12,7 @@ Namespace QuanLyDaiLyDAL
         'Khoi tao ket noi
         Public Shared Sub TaoKetNoi()
             connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
             'connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
 
         End Sub

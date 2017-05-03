@@ -4,7 +4,7 @@ Imports System.Windows.Forms
 
 Namespace QuanLyDaiLyDAL
     Public Class ExportExcel
-        Public Shared Sub Export(ByVal _table As DataTable, ByVal dgv As DataGridView)
+        Public Shared Sub Export(ByVal dgv As DataGridView)
             'Hiện bảng Excel sau khi nhấn Export (chưa save)
 
             Dim ExcelApp As Object
@@ -14,7 +14,6 @@ Namespace QuanLyDaiLyDAL
             ExcelApp.workbooks.add()
 
             ExcelApp.Visible = True
-
             Try
                 'Change Properties of the Workbook
                 ExcelApp.Columns.ColumnWidth = 20
