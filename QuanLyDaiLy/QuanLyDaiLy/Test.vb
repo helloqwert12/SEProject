@@ -9,9 +9,9 @@ Public Class Test
     'Dinh nghia thu tuc load du lieu tu bang Test theot tung lop vao Gridview
     Private Sub LoadDataOnGridView()
         _DBAcess = New KetNoiDAL()
-        _DBAcess.connet = New SqlClient.SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+        '_DBAcess.connet = New SqlClient.SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
         '_DBAcess.connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-        '_DBAcess.connet = New SqlClient.SqlConnection("Data Source=(local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+        _DBAcess.connet = New SqlClient.SqlConnection("Data Source=(local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
 
         _DBAcess.TaoKetNoi()
         _DBAcess.MoKetNoi()
@@ -84,9 +84,10 @@ Public Class Test
         LoadDataOnGridView()
     End Sub
 
-    Private Sub btnExport_Click(sender As Object, e As EventArgs) Handles btnExport.Click
-        Dim _export As ExportExcel = New ExportExcel()
-        _export.Export(dgvTest)
+    Private Sub btnExportExcel_Click(sender As Object, e As EventArgs) Handles btnExportExcel.Click
+        Dim _export As Export = New Export()
+
+        _export.ExportExcel(dgvTest)
 
         'Nhấn export => Save trước rồi mở file Excel thủ công
         'SaveFileDialog1.Title = "Save as Excel File"

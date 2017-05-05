@@ -43,6 +43,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -68,7 +71,7 @@
     <Compile Include="ChiTietPhieuXuatDAL.vb" />
     <Compile Include="DaiLyDAL.vb" />
     <Compile Include="DonViTinhDAL.vb" />
-    <Compile Include="ExportExcel.vb" />
+    <Compile Include="Export.vb" />
     <Compile Include="KetNoiDAL.vb" />
     <Compile Include="LoaiDaiLyDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

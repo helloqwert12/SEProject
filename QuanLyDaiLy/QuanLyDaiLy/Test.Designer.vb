@@ -34,7 +34,7 @@ Partial Class Test
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnDel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
-        Me.btnExport = New System.Windows.Forms.Button()
+        Me.btnExportExcel = New System.Windows.Forms.Button()
         CType(Me.dgvTest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -146,21 +146,21 @@ Partial Class Test
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
-        'btnExport
+        'btnExportExcel
         '
-        Me.btnExport.Location = New System.Drawing.Point(555, 253)
-        Me.btnExport.Name = "btnExport"
-        Me.btnExport.Size = New System.Drawing.Size(75, 23)
-        Me.btnExport.TabIndex = 16
-        Me.btnExport.Text = "Export"
-        Me.btnExport.UseVisualStyleBackColor = True
+        Me.btnExportExcel.Location = New System.Drawing.Point(555, 253)
+        Me.btnExportExcel.Name = "btnExportExcel"
+        Me.btnExportExcel.Size = New System.Drawing.Size(75, 23)
+        Me.btnExportExcel.TabIndex = 16
+        Me.btnExportExcel.Text = "Export Excel"
+        Me.btnExportExcel.UseVisualStyleBackColor = True
         '
         'Test
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(659, 405)
-        Me.Controls.Add(Me.btnExport)
+        Me.Controls.Add(Me.btnExportExcel)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnDel)
         Me.Controls.Add(Me.txbNgapLapPhieu)
@@ -193,5 +193,5 @@ Partial Class Test
     Friend WithEvents Label4 As Label
     Friend WithEvents btnDel As Button
     Friend WithEvents btnUpdate As Button
-    Friend WithEvents btnExport As Button
+    Friend WithEvents btnExportExcel As Button
 End Class
