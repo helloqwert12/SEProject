@@ -35,6 +35,7 @@ Partial Class Test
         Me.btnDel = New System.Windows.Forms.Button()
         Me.btnUpdate = New System.Windows.Forms.Button()
         Me.btnExportExcel = New System.Windows.Forms.Button()
+        Me.btnExportPDF = New System.Windows.Forms.Button()
         CType(Me.dgvTest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -155,11 +156,21 @@ Partial Class Test
         Me.btnExportExcel.Text = "Export Excel"
         Me.btnExportExcel.UseVisualStyleBackColor = True
         '
+        'btnExportPDF
+        '
+        Me.btnExportPDF.Location = New System.Drawing.Point(555, 311)
+        Me.btnExportPDF.Name = "btnExportPDF"
+        Me.btnExportPDF.Size = New System.Drawing.Size(75, 23)
+        Me.btnExportPDF.TabIndex = 17
+        Me.btnExportPDF.Text = "Export PDF"
+        Me.btnExportPDF.UseVisualStyleBackColor = True
+        '
         'Test
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(659, 405)
+        Me.Controls.Add(Me.btnExportPDF)
         Me.Controls.Add(Me.btnExportExcel)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.btnDel)
@@ -194,4 +205,5 @@ Partial Class Test
     Friend WithEvents btnDel As Button
     Friend WithEvents btnUpdate As Button
     Friend WithEvents btnExportExcel As Button
+    Friend WithEvents btnExportPDF As Button
 End Class

@@ -250,3 +250,4 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\es\DevE
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ja\DevExpress.XtraCharts.v15.1.Wizard.resources.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ru\DevExpress.XtraCharts.v15.1.Wizard.resources.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.TiepNhanDaiLy2.resources
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\itextsharp.dll
