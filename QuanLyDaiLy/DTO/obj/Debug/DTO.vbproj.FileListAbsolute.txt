@@ -1,12 +1,3 @@
-E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\bin\Debug\DTO.dll
-E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\bin\Debug\DTO.pdb
-E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\bin\Debug\DTO.xml
-E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.vbprojResolveAssemblyReference.cache
-E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.Resources.resources
-E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.vbproj.GenerateResource.Cache
-E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.dll
-E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.xml
-E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.pdb
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\bin\Debug\DTO.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\bin\Debug\DTO.pdb
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\bin\Debug\DTO.xml
@@ -16,3 +7,11 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.vbproj.Gene
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.xml
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\bin\Debug\DTO.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\bin\Debug\DTO.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\bin\Debug\DTO.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.Resources.resources
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.vbproj.GenerateResource.Cache
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.pdb

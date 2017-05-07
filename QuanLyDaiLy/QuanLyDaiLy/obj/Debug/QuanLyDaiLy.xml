@@ -22,5 +22,25 @@ QuanLyDaiLy
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:QuanLyDaiLy.My.Resources.Resources.Button_Add_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QuanLyDaiLy.My.Resources.Resources.closeIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QuanLyDaiLy.My.Resources.Resources.deleteIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QuanLyDaiLy.My.Resources.Resources.updateIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>
