@@ -433,3 +433,17 @@ E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\es\DevExpress.XtraScheduler.v15.1.Core.resources.dll
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ja\DevExpress.XtraScheduler.v15.1.Core.resources.dll
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ru\DevExpress.XtraScheduler.v15.1.Core.resources.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\Quanlybanhang.mdf
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\Quanlybanhang_log.ldf
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DevExpress.XtraScheduler.v15.1.Core.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DevExpress.XtraScheduler.v15.1.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DevExpress.XtraScheduler.v15.1.xml
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DevExpress.XtraScheduler.v15.1.Core.xml
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\de\DevExpress.XtraScheduler.v15.1.resources.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\es\DevExpress.XtraScheduler.v15.1.resources.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ja\DevExpress.XtraScheduler.v15.1.resources.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ru\DevExpress.XtraScheduler.v15.1.resources.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\de\DevExpress.XtraScheduler.v15.1.Core.resources.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\es\DevExpress.XtraScheduler.v15.1.Core.resources.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ja\DevExpress.XtraScheduler.v15.1.Core.resources.dll
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ru\DevExpress.XtraScheduler.v15.1.Core.resources.dll
