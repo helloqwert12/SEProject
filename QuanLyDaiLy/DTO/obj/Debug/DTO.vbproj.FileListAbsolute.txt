@@ -15,3 +15,4 @@ E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\D
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.dll
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.xml
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\DTO\obj\Debug\DTO.vbprojResolveAssemblyReference.cache

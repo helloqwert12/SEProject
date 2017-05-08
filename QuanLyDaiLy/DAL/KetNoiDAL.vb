@@ -11,9 +11,9 @@ Namespace QuanLyDaiLyDAL
 #Region "Cac ham ket noi"
         'Khoi tao ket noi
         Public Shared Sub TaoKetNoi()
-            'connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
             'connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-            connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
 
         End Sub
         'Mo ket noi den CSDL
@@ -60,23 +60,7 @@ Namespace QuanLyDaiLyDAL
             End Try
             Return dtTable
         End Function
-        'Lay du lieu tu bang voi dieu kien cho truoc
-        Public Shared Function LayDuLieu(ByVal tenbang As String,
-                                         ByVal dieukien As String) As DataTable
-            Dim dtTable As DataTable
-            Dim adapter As SqlDataAdapter
-            Dim dtSet As DataSet
-            dtTable = New DataTable()
-            dtSet = New DataSet()
-            Try
-                adapter = New SqlDataAdapter("SELECT * FROM " + tenbang + " WHERE " + dieukien, connet)
-                adapter.Fill(dtSet)
-                dtTable = dtSet.Tables(0)
-            Catch ex As Exception
-                MessageBox.Show("Không tải được dữ liệu", "THÔNG BÁO")
-            End Try
-            Return dtTable
-        End Function
+
         'Lay du lieu tu mot thuoc tinh voi dieu kien cho truoc (neu co)
         Public Shared Function LayDuLieu(ByVal tenbang As String,
                                          ByVal thuoctinh As String,
@@ -88,10 +72,27 @@ Namespace QuanLyDaiLyDAL
             dtSet = New DataSet()
             Try
                 If (dieukien = "") Then
-                    adapter = New SqlDataAdapter("SELECT" + thuoctinh + " FROM " + tenbang, connet)
+                    adapter = New SqlDataAdapter("SELECT " + thuoctinh + " FROM " + tenbang, connet)
                 Else
-                    adapter = New SqlDataAdapter("SELECT" + thuoctinh + " FROM " + tenbang + " WHERE " + dieukien, connet)
+                    adapter = New SqlDataAdapter("SELECT " + thuoctinh + " FROM " + tenbang + " WHERE " + dieukien, connet)
                 End If
+                adapter.Fill(dtSet)
+                dtTable = dtSet.Tables(0)
+            Catch ex As Exception
+                MessageBox.Show("Không tải được dữ liệu", "THÔNG BÁO")
+            End Try
+            Return dtTable
+        End Function
+        'Lay du lieu tu bang voi dieu kien cho truoc
+        Public Shared Function LayDuLieu(ByVal tenbang As String,
+                                         ByVal dieukien As String) As DataTable
+            Dim dtTable As DataTable
+            Dim adapter As SqlDataAdapter
+            Dim dtSet As DataSet
+            dtTable = New DataTable()
+            dtSet = New DataSet()
+            Try
+                adapter = New SqlDataAdapter("SELECT * FROM " + tenbang + " WHERE " + dieukien, connet)
                 adapter.Fill(dtSet)
                 dtTable = dtSet.Tables(0)
             Catch ex As Exception
