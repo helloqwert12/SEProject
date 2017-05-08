@@ -103,6 +103,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.vbproj">
+      <Project>{3c69327c-a07f-47ab-bfd9-3f43a6f9aa83}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.vbproj">
       <Project>{f09dbdc4-a52f-47e3-99b9-78bcf361d713}</Project>
       <Name>DTO</Name>

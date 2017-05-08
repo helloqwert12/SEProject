@@ -6,14 +6,9 @@ Public Class TiepNhanDaiLy
 
     'Dinh nghia thu tuc load du lieu tu bang Test theot tung lop vao Gridview
     Private Sub LoadDataOnGridView()
-        _DBAcess = New KetNoiDAL()
-        '_DBAcess.connet = New SqlClient.SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-        '_DBAcess.connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-        _DBAcess.connet = New SqlClient.SqlConnection("Data Source=(local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-
-        _DBAcess.TaoKetNoi()
-        _DBAcess.MoKetNoi()
-        Dim dTable As DataTable = _DBAcess.LayDuLieu("DAILY")
+        KetNoiDAL.TaoKetNoi()
+        KetNoiDAL.MoKetNoi()
+        Dim dTable As DataTable = KetNoiDAL.LayDuLieu("DAILY")
         Me.dgvTiepNhanDaiLy.DataSource = dTable
         With Me.dgvTiepNhanDaiLy
             .Columns(0).HeaderText = "Mã đại lý"
@@ -26,7 +21,7 @@ Public Class TiepNhanDaiLy
             .Columns(7).HeaderText = "E-mail"
             .Columns(8).HeaderText = "Nợ đại lý"
         End With
-        '_DBAcess.NgatKetNoi()
+        'KetNoiDAL.NgatKetNoi()
     End Sub
 
     Private Sub Test_Load(sender As Object, e As EventArgs) Handles MyBase.Load
