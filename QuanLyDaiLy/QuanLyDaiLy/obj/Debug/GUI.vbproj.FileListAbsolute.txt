@@ -229,7 +229,6 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\de\DevE
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\es\DevExpress.XtraCharts.v15.1.Wizard.resources.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ja\DevExpress.XtraCharts.v15.1.Wizard.resources.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ru\DevExpress.XtraCharts.v15.1.Wizard.resources.dll
-C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.TiepNhanDaiLy2.resources
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\itextsharp.dll
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\QuanLyDaiLy.exe.config
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\QuanLyDaiLy.exe
@@ -449,3 +448,4 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ja\DevE
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ru\DevExpress.XtraScheduler.v15.1.Core.resources.dll
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\Quanlybanhang.mdf
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\Quanlybanhang_log.ldf
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.LapPhieuXuatHang.resources

@@ -111,6 +111,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LapPhieuXuatHang.Designer.vb">
+      <DependentUpon>LapPhieuXuatHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LapPhieuXuatHang.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="QuanLyDaiLyDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,14 +149,11 @@
     <Compile Include="TiepNhanDaiLy.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TiepNhanDaiLy2.Designer.vb">
-      <DependentUpon>TiepNhanDaiLy2.vb</DependentUpon>
-    </Compile>
-    <Compile Include="TiepNhanDaiLy2.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="LapPhieuXuatHang.resx">
+      <DependentUpon>LapPhieuXuatHang.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -163,9 +166,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TiepNhanDaiLy.resx">
       <DependentUpon>TiepNhanDaiLy.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TiepNhanDaiLy2.resx">
-      <DependentUpon>TiepNhanDaiLy2.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
