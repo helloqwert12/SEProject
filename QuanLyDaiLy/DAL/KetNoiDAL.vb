@@ -11,16 +11,18 @@ Namespace QuanLyDaiLyDAL
 #Region "Cac ham ket noi"
         'Khoi tao ket noi
         Public Shared Sub TaoKetNoi()
-            'connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
             'connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-            connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
 
         End Sub
         'Mo ket noi den CSDL
         Public Shared Function MoKetNoi() As Boolean
             Try
-                connet.Open()
-                Return True
+                If Not DangMo() Then
+                    connet.Open()
+                    Return True
+                End If
             Catch ex As Exception
                 MessageBox.Show("Kết nối đến CSDL không thành công, vui lòng thử lại", "THÔNG BÁO")
                 Return False
@@ -162,6 +164,62 @@ Namespace QuanLyDaiLyDAL
             Catch ex As Exception
                 Return False
             End Try
+        End Function
+
+        'Generate key
+        Public Shared Function TaoKhoaChinh(ByVal tenbang As String, ByVal tenthuoctinhkhoa As String, ByVal prefix As String) As String
+            'Load du lieu khoa tu bang
+            KetNoiDAL.MoKetNoi()
+            Dim data As DataTable = KetNoiDAL.LayDuLieu(tenbang, tenthuoctinhkhoa, "")
+            Dim khoa As String = String.Empty
+            'Tao khoa
+            '  Neu chua co du lieu
+            If data.Rows.Count = 0 Then
+                If prefix.Length = 1 Then
+                    khoa = prefix + "000"
+                End If
+                If prefix.Length = 2 Then
+                    khoa = prefix + "00"
+                End If
+                If prefix.Length = 3 Then
+                    khoa = prefix + "0"
+                End If
+            Else
+                '  Neu da co du lieu
+                Dim sokhoa(data.Rows.Count) As Integer
+
+                For i = 0 To data.Rows.Count - 1
+                    Dim str As String
+                    str = data.Rows(i)(0)
+                    str = str.Remove(0, prefix.Length) 'Loai bo prefix
+                    sokhoa(i) = Integer.Parse(str)
+                Next
+                ' Tim so lon nhat trong khoa
+                Dim max As Integer = sokhoa(0)
+                For Each i As Integer In sokhoa
+                    If max < i Then
+                        max = i
+                    End If
+                Next
+                khoa = (prefix + (max + 1).ToString())
+            End If
+            Return khoa
+        End Function
+
+        'Ham chuyen ma thanh ten
+        Public Shared Function ChuyenMaThanhTen(ByVal tenbang As String, ByVal thuoctinhma As String, ByVal giatri As String, ByVal thuoctinhten As String) As String
+            KetNoiDAL.MoKetNoi()
+            Dim data As DataTable = KetNoiDAL.LayDuLieu(tenbang, thuoctinhten, thuoctinhma + "='" + giatri + "'")
+            Dim str As String = data.Rows(0)(0)
+            Return str
+        End Function
+
+        'Ham chuyen ten thanh ma
+        Public Shared Function ChuyenTenThanhMa(ByVal tenbang As String, ByVal thuoctinhten As String, ByVal giatri As String, ByVal thuoctinhma As String) As String
+            KetNoiDAL.MoKetNoi()
+            Dim data As DataTable = KetNoiDAL.LayDuLieu(tenbang, thuoctinhma, thuoctinhten + "='" + giatri + "'")
+            Dim str As String = data.Rows(0)(0)
+            Return str
         End Function
 #End Region
 

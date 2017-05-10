@@ -413,7 +413,6 @@ E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\GUI.vbprojResolveAssemblyReference.cache
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.Resources.resources
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.Test.resources
-E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.TiepNhanDaiLy2.resources
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\GUI.vbproj.GenerateResource.Cache
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.exe.licenses
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.exe
@@ -449,3 +448,4 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ru\DevE
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\Quanlybanhang.mdf
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\Quanlybanhang_log.ldf
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.LapPhieuXuatHang.resources
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.LapPhieuXuatHang.resources

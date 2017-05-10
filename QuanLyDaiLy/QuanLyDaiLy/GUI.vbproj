@@ -114,9 +114,7 @@
     <Compile Include="LapPhieuXuatHang.Designer.vb">
       <DependentUpon>LapPhieuXuatHang.vb</DependentUpon>
     </Compile>
-    <Compile Include="LapPhieuXuatHang.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="LapPhieuXuatHang.vb" />
     <Compile Include="QuanLyDaiLyDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -225,6 +223,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Quanlybanhang.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Ok-icon.png" />
     <None Include="Resources\note-edit-icon.png" />
     <None Include="Resources\Actions-view-calendar-list-icon.png" />
     <None Include="Resources\infoIcon.png" />

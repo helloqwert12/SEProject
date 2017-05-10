@@ -39,10 +39,10 @@
         End Property
         Property DienThoai() As String
             Get
-                Return strDiachi
+                Return strDienthoai
             End Get
             Set(value As String)
-                strDiachi = value
+                strDienthoai = value
             End Set
         End Property
 
