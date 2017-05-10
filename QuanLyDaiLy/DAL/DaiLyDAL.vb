@@ -2,13 +2,13 @@
 Namespace QuanLyDaiLyDAL
     Public Class DaiLyDAL
         'Lay du lieu trong bang
-        Public Function LayDuLieu(DaiLy As DaiLyDTO) As DataTable
+        Public Function LayDuLieu() As DataTable
             Return KetNoiDAL.LayDuLieu("DAILY")
         End Function
-        Public Function LayDuLieu(DaiLy As DaiLyDTO, ByVal dieukien As String) As DataTable
+        Public Function LayDuLieu(ByVal dieukien As String) As DataTable
             Return KetNoiDAL.LayDuLieu("DAILY", dieukien)
         End Function
-        Public Function LayDuLieu(DaiLy As DaiLyDTO, ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
+        Public Function LayDuLieu(ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
             Return KetNoiDAL.LayDuLieu("DAILY", thuoctinh, dieukien)
         End Function
         'Them du lieu vao bang

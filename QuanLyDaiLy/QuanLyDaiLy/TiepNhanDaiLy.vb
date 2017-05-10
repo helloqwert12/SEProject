@@ -58,8 +58,8 @@ Public Class TiepNhanDaiLy
 
     Private Sub btnThemDaiLy_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemDaiLy.ItemClick
         btnXacNhan.Enabled = True
-        btnXoaDaiLy.Enabled = True
-        btnCapNhatDaiLy.Enabled = True
+        btnXoaDaiLy.Enabled = False
+        btnCapNhatDaiLy.Enabled = False
         txbMaDaiLy.Text = KetNoiDAL.TaoKhoaChinh("DAILY", "MaDaiLy", "DL")
         txbNgayTiepNhan.Text = Date.Now.ToShortDateString
         cbQuan.SelectedIndex = 0
@@ -174,6 +174,17 @@ Public Class TiepNhanDaiLy
         txbDiaChi.DataBindings.Add("Text", dgvTiepNhanDaiLy.DataSource, "DiaChi")
         txbNgayTiepNhan.DataBindings.Clear()
         txbNgayTiepNhan.DataBindings.Add("Text", dgvTiepNhanDaiLy.DataSource, "NgayTiepNhan")
+
+        CapNhatThongTin()
+
+        btnCapNhatDaiLy.Enabled = True
+        btnXoaDaiLy.Enabled = True
     End Sub
 
+    Private Sub CapNhatThongTin()
+        dgSoDaiLyToiDa.Text = KetNoiDAL.LayDuLieu("THAMSO").Rows(0)(0)
+        lblQuan.Text = cbQuan.SelectedItem
+        dgSoDaiLyCuaQuan.Text = dailyBUS.SoDaiLyCuaQuan(KetNoiDAL.ChuyenTenThanhMa("QUAN", "TenQuan", cbQuan.SelectedItem, "MaQuan"))
+        dgTongDaiLy.Text = dailyDAL.LayDuLieu("MaDaiLy", "").Rows.Count
+    End Sub
 End Class
