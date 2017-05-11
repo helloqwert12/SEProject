@@ -43,6 +43,18 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FormatChecking">
+      <HintPath>..\..\..\..\..\Downloads\DemoCheckValid\DemoCheckValid\lib\FormatChecking.dll</HintPath>
+    </Reference>
+    <Reference Include="Geocoding">
+      <HintPath>..\..\..\..\..\Downloads\DemoCheckValid\DemoCheckValid\lib\Geocoding.dll</HintPath>
+    </Reference>
+    <Reference Include="libphonenumber">
+      <HintPath>..\..\..\..\..\Downloads\DemoCheckValid\DemoCheckValid\lib\libphonenumber.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\Downloads\DemoCheckValid\DemoCheckValid\lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />

@@ -11,9 +11,9 @@ Namespace QuanLyDaiLyDAL
 #Region "Cac ham ket noi"
         'Khoi tao ket noi
         Public Shared Sub TaoKetNoi()
-            connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
             'connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-            'connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
 
         End Sub
         'Mo ket noi den CSDL
@@ -214,7 +214,7 @@ Namespace QuanLyDaiLyDAL
             Return str
         End Function
 
-        'Ham chuyen ten thanh ma
+        'Hàm chuyển tên thành mã
         Public Shared Function ChuyenTenThanhMa(ByVal tenbang As String, ByVal thuoctinhten As String, ByVal giatri As String, ByVal thuoctinhma As String) As String
             KetNoiDAL.MoKetNoi()
             Dim data As DataTable = KetNoiDAL.LayDuLieu(tenbang, thuoctinhma, thuoctinhten + "='" + giatri + "'")
