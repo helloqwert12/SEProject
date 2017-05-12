@@ -105,12 +105,12 @@ Namespace QuanLyDaiLyDAL
         'Them du lieu vao bang
         Public Shared Function ThemDuLieu(ByVal tenbang As String,
                                           ByVal ParamArray gtthuoctinh As String()) As Boolean
-            Dim str As String = ("INSERT INTO " + tenbang + " VALUES('")
+            Dim str As String = ("INSERT INTO " + tenbang + " VALUES(N'")
 
             For Each i As String In gtthuoctinh
-                str &= (i + "','")
+                str &= (i + "',N'")
             Next
-            str = str.Remove(str.Length - 2, 2)
+            str = str.Remove(str.Length - 3, 3)
             str &= " )"
 
             Dim sqlCmd As SqlCommand
