@@ -79,8 +79,8 @@ Public Class TiepNhanDaiLy
     End Sub
     'Kiem tra xem trong Quan nay da du so luong dai ly toi da hay chua
     Private Sub cbQuan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbQuan.SelectedIndexChanged
-        Dim data As DataTable = KetNoiDAL.LayDuLieu("QUAN", "MaQuan", "TenQuan = " + "'" + cbQuan.SelectedItem + "'")
-        Dim maquan As String = data.Rows(0)(0)
+        'Dim data As DataTable = KetNoiDAL.LayDuLieu("QUAN", "MaQuan", "TenQuan = " + "'" + cbQuan.SelectedItem + "'")
+        Dim maquan As String = KetNoiDAL.ChuyenTenThanhMa("QUAN", "TenQuan", cbQuan.SelectedItem, "MaQuan") 'data.Rows(0)(0)
         If Not dailyBUS.ThoaManDaiLyToiDa(maquan) Then
             HienThiThongBao("Quận đã đủ số lượng đại lý tối đa")
             KiemTraQD = False
@@ -159,22 +159,7 @@ Public Class TiepNhanDaiLy
         '            End If
         '        End If
         '    End If
-        'End If
-        If (txbEmail.Text <> String.Empty) Then
-            If Not (dailyBUS.CheckEmailValidExample(dailyDTO, txbEmail.Text) And txbEmail.Text <> String.Empty) Then
-                CoLoi = True
-                'HienThiThongBao("Email không hợp lệ. Vui lòng kiểm tra lại")
-                MessageBox.Show("Email không hợp lệ. Vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
-            End If
-        End If
-
-        If txbDienThoai.Text <> String.Empty Then
-            If Not dailyBUS.CheckPhoneNumberValidExample(dailyDTO, txbDienThoai.Text) Then
-                CoLoi = True
-                MessageBox.Show("Số điện thoại không hợp lệ. Vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
-                'HienThiThongBao("Số điện thoại không hợp lệ. Vui lòng kiểm tra lại")
-            End If
-        End If
+        'End If        
 
         If Not KiemTraQD Then
             HienThiThongBao("Vi phạm quy định về số đại lý tối đa trong quận. Vui lòng kiểm tra lại")
@@ -189,22 +174,48 @@ Public Class TiepNhanDaiLy
                 dailyDTO.DienThoai = txbDienThoai.Text
                 dailyDTO.NgayTiepNhan = txbNgayTiepNhan.Text
                 dailyDTO.Email = txbEmail.Text
-                dailyDTO.DiaChi = dailyBUS.GeoCodingExample(dailyDTO, txbDiaChi.Text)
+                dailyDTO.DiaChi = txbDiaChi.Text
+
                 dailyDTO.NoDaiLy = 0
                 '  Xu ly ten quan va ten loai dai ly
-                Dim maquan As String = KetNoiDAL.LayDuLieu("QUAN", "MaQuan", "TenQuan = '" + cbQuan.SelectedItem + "'").Rows(0)(0)
+                Dim maquan As String = KetNoiDAL.LayDuLieu("QUAN", "MaQuan", "TenQuan = N'" + cbQuan.SelectedItem + "'").Rows(0)(0)
                 dailyDTO.MaQuan = maquan
 
-                Dim maloaidaily As String = KetNoiDAL.LayDuLieu("LOAIDAILY", "MaLoaiDaiLy", "TenLoaiDaiLy = '" + cbTenLoaiDaiLy.SelectedItem + "'").Rows(0)(0)
+                Dim maloaidaily As String = KetNoiDAL.LayDuLieu("LOAIDAILY", "MaLoaiDaiLy", "TenLoaiDaiLy = N'" + cbTenLoaiDaiLy.SelectedItem + "'").Rows(0)(0)
                 dailyDTO.MaLoaiDaiLy = maloaidaily
 
-                'Ghi xuong CSDL            
-                Dim success As Boolean = dailyDAL.ThemDuLieu(dailyDTO)
-                If success Then
-                    HienThiThongBao("Thêm đại lý thành công")
-                    LoadDataOnGridView()
+                'Kiem tra thong tin da duoc nhap day du
+                If dailyBUS.IsEmpty(dailyDTO) Then
+                    HienThiThongBao("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại")
                 Else
-                    HienThiThongBao("Thêm đại lý thất bại, vui lòng kiểm tra lại")
+                    txbDiaChi.Text = dailyBUS.GeoCodingExample(dailyDTO, txbDiaChi.Text)
+                    dailyDTO.DiaChi = txbDiaChi.Text
+                    'Kiem tra Email hop le
+                    If (txbEmail.Text <> String.Empty) Then
+                        If Not (dailyBUS.CheckEmailValidExample(dailyDTO, txbEmail.Text) And txbEmail.Text <> String.Empty) Then
+                            CoLoi = True
+                            'HienThiThongBao("Email không hợp lệ. Vui lòng kiểm tra lại")
+                            MessageBox.Show("Email không hợp lệ. Vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
+                        End If
+                    End If
+
+                    'Kiem tra so dien thoai hop le
+                    If txbDienThoai.Text <> String.Empty Then
+                        If Not dailyBUS.CheckPhoneNumberValidExample(dailyDTO, txbDienThoai.Text) Then
+                            CoLoi = True
+                            MessageBox.Show("Số điện thoại không hợp lệ. Vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
+                            'HienThiThongBao("Số điện thoại không hợp lệ. Vui lòng kiểm tra lại")
+                        End If
+                    End If
+
+                    'Ghi xuong CSDL            
+                    Dim success As Boolean = dailyDAL.ThemDuLieu(dailyDTO)
+                    If success Then
+                        HienThiThongBao("Thêm đại lý thành công")
+                        LoadDataOnGridView()
+                    Else
+                        HienThiThongBao("Thêm đại lý thất bại, vui lòng kiểm tra lại")
+                    End If
                 End If
             End If
         End If

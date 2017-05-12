@@ -456,3 +456,6 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\Geocodi
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\FormatChecking.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\libphonenumber.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DevExpress.XtraGauges.v15.1.Win.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\Geocoding.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\FormatChecking.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\libphonenumber.dll
