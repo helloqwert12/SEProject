@@ -11,7 +11,9 @@ Namespace QuanLyDaiLyBUS
                 DaiLy.MaLoaiDaiLy = String.Empty Or
                 DaiLy.MaQuan = String.Empty Or
                 DaiLy.NgayTiepNhan.ToString() = String.Empty Or
-                DaiLy.TenDaiLy = String.Empty) Then
+                DaiLy.TenDaiLy = String.Empty Or
+                DaiLy.DienThoai = String.Empty Or
+                DaiLy.DiaChi = String.Empty) Then
                 Return True
             Else
                 Return False
