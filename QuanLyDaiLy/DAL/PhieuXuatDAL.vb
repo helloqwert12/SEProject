@@ -2,13 +2,13 @@
 Namespace QuanLyDaiLyDAL
     Public Class PhieuXuatDAL
         'Lay du lieu
-        Public Function LayDuLieu(PhieuXuat As PhieuXuatDTO) As DataTable
+        Public Function LayDuLieu() As DataTable
             Return KetNoiDAL.LayDuLieu("PHIEUXUAT")
         End Function
-        Public Function LayDuLieu(PhieuXuat As PhieuXuatDTO, ByVal dieukien As String) As DataTable
+        Public Function LayDuLieu(ByVal dieukien As String) As DataTable
             Return KetNoiDAL.LayDuLieu("PHIEUXUAT", dieukien)
         End Function
-        Public Function LayDuLieu(PhieuXuat As PhieuXuatDTO, ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
+        Public Function LayDuLieu(ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
             Return KetNoiDAL.LayDuLieu("PHIEUXUAT", thuoctinh, dieukien)
         End Function
         'Them du lieu vao bang

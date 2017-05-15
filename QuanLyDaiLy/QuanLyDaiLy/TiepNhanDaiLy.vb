@@ -2,6 +2,14 @@
 Imports DAL.QuanLyDaiLyDAL
 Imports BUS.QuanLyDaiLyBUS
 Public Class TiepNhanDaiLy
+    Enum STATUS
+        THEM
+        XOA
+        SUA
+        HIENTHI
+    End Enum
+
+    Dim trangthai As STATUS
     Private _DBAcess As KetNoiDAL
     Private KiemTraQD As Boolean
     Private CoLoi As Boolean = False
@@ -58,6 +66,7 @@ Public Class TiepNhanDaiLy
     'End Sub
 
     Private Sub btnThemDaiLy_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemDaiLy.ItemClick
+        trangthai = STATUS.THEM
         btnXacNhan.Enabled = True
         btnXoaDaiLy.Enabled = False
         btnCapNhatDaiLy.Enabled = False
@@ -167,21 +176,36 @@ Public Class TiepNhanDaiLy
                     'MessageBox.Show("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
                     HienThiThongBao("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại")
                 Else
-                    'Ghi xuong CSDL            
-                    Dim success As Boolean = dailyDAL.ThemDuLieu(dailyDTO)
-                    If success Then
-                        HienThiThongBao("Thêm đại lý thành công")
-                        LoadDataOnGridView()
-                    Else
-                        HienThiThongBao("Thêm đại lý thất bại, vui lòng kiểm tra lại")
-                        CoLoi = False
+                    If trangthai = STATUS.THEM Then
+                        'Ghi xuong CSDL            
+                        Dim success As Boolean = dailyDAL.ThemDuLieu(dailyDTO)
+                        If success Then
+                            HienThiThongBao("Thêm đại lý thành công")
+                            LoadDataOnGridView()
+                        Else
+                            HienThiThongBao("Thêm đại lý thất bại, vui lòng kiểm tra lại")
+                            CoLoi = False
+                        End If
+                    ElseIf trangthai = STATUS.SUA Then
+                        dailyDAL.XoaDuLieu("MaDaiLy", dailyDTO.MaDaiLy)
+                        Dim success As Boolean = dailyDAL.ThemDuLieu(dailyDTO)
+                        If success Then
+                            HienThiThongBao("Cập nhật đại lý thành công")
+                            LoadDataOnGridView()
+                        Else
+                            HienThiThongBao("Cập nhật đại lý thất bại, vui lòng kiểm tra lại")
+                            CoLoi = False
+                        End If
                     End If
+
                 End If
             End If
         End If
+
     End Sub
 
     Private Sub btnXoaDaiLy_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnXoaDaiLy.ItemClick
+        trangthai = STATUS.XOA
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận xóa đại lý", "XÁC NHẬN", MessageBoxButtons.YesNo)
         If rslt = DialogResult.Yes Then
             Dim madaily As String = dgvTiepNhanDaiLy.SelectedCells(0).OwningRow.Cells("MaDaiLy").Value
@@ -194,6 +218,15 @@ Public Class TiepNhanDaiLy
         End If
     End Sub
     Private Sub dgvTiepNhanDaiLy_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTiepNhanDaiLy.RowEnter
+        'Trang thai hien thi
+        trangthai = STATUS.HIENTHI
+        'Bat read-only cho textbox
+        txbTenDaiLy.ReadOnly = True
+        txbDienThoai.ReadOnly = True
+        txbEmail.ReadOnly = True
+        txbDiaChi.ReadOnly = True
+
+        'Binding du lieu len textbox
         txbMaDaiLy.DataBindings.Clear()
         txbMaDaiLy.DataBindings.Add("Text", dgvTiepNhanDaiLy.DataSource, "MaDaiLy")
         txbTenDaiLy.DataBindings.Clear()
@@ -211,10 +244,13 @@ Public Class TiepNhanDaiLy
         txbNgayTiepNhan.DataBindings.Clear()
         txbNgayTiepNhan.DataBindings.Add("Text", dgvTiepNhanDaiLy.DataSource, "NgayTiepNhan")
 
+        'Cap nhat cho khung Thong tin
         CapNhatThongTin()
 
         btnCapNhatDaiLy.Enabled = True
         btnXoaDaiLy.Enabled = True
+
+
     End Sub
 
     Private Sub CapNhatThongTin()
@@ -222,5 +258,18 @@ Public Class TiepNhanDaiLy
         lblQuan.Text = cbQuan.SelectedItem
         dgSoDaiLyCuaQuan.Text = dailyBUS.SoDaiLyCuaQuan(KetNoiDAL.ChuyenTenThanhMa("QUAN", "TenQuan", cbQuan.SelectedItem, "MaQuan"))
         dgTongDaiLy.Text = dailyDAL.LayDuLieu("MaDaiLy", "").Rows.Count
+    End Sub
+
+    Private Sub btnCapNhatDaiLy_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCapNhatDaiLy.ItemClick
+        trangthai = STATUS.SUA
+
+        btnXacNhan.Enabled = True
+        'Tat read-only de chinh sua
+        txbTenDaiLy.ReadOnly = False
+        txbDienThoai.ReadOnly = False
+        txbEmail.ReadOnly = False
+        txbDiaChi.ReadOnly = False
+
+
     End Sub
 End Class

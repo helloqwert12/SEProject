@@ -1,13 +1,13 @@
 ﻿Imports DTO.QuanLyDaiLyDTO
 Namespace QuanLyDaiLyDAL
     Public Class DonViTinhDAL
-        Public Function LayDuLieu(DonViTinh As DonViTinhDTO) As DataTable
+        Public Function LayDuLieu() As DataTable
             Return KetNoiDAL.LayDuLieu("DONVITINH")
         End Function
-        Public Function LayDuLieu(DonViTinh As DonViTinhDTO, ByVal dieukien As String) As DataTable
+        Public Function LayDuLieu(ByVal dieukien As String) As DataTable
             Return KetNoiDAL.LayDuLieu("DONVITINH", dieukien)
         End Function
-        Public Function LayDuLieu(DonViTinh As DonViTinhDTO, ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
+        Public Function LayDuLieu(ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
             Return KetNoiDAL.LayDuLieu("DONVITINH", thuoctinh, dieukien)
         End Function
         'Them du lieu vao bang

@@ -2,13 +2,13 @@
 Namespace QuanLyDaiLyDAL
     Public Class QuanDAL
         'Lay du lieu
-        Public Function LayDuLieu(Quan As QuanDTO) As DataTable
+        Public Function LayDuLieu() As DataTable
             Return KetNoiDAL.LayDuLieu("QUAN")
         End Function
-        Public Function LayDuLieu(Quan As QuanDTO, ByVal dieukien As String) As DataTable
+        Public Function LayDuLieu(ByVal dieukien As String) As DataTable
             Return KetNoiDAL.LayDuLieu("QUAN", dieukien)
         End Function
-        Public Function LayDuLieu(Quan As QuanDTO, ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
+        Public Function LayDuLieu(ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
             Return KetNoiDAL.LayDuLieu("QUAN", thuoctinh, dieukien)
         End Function
         'Them du lieu

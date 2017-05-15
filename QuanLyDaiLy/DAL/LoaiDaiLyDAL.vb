@@ -1,13 +1,13 @@
 ﻿Imports DTO.QuanLyDaiLyDTO
 Namespace QuanLyDaiLyDAL
     Public Class LoaiDaiLyDAL
-        Public Function LayDuLieu(LoaiDaiLy As LoaiDaiLyDTO) As DataTable
+        Public Function LayDuLieu() As DataTable
             Return KetNoiDAL.LayDuLieu("LOAIDAILY")
         End Function
-        Public Function LayDuLieu(LoaiDaiLy As LoaiDaiLyDTO, ByVal dieukien As String) As DataTable
+        Public Function LayDuLieu(ByVal dieukien As String) As DataTable
             Return KetNoiDAL.LayDuLieu("LOAIDAILY", dieukien)
         End Function
-        Public Function LayDuLieu(LoaiDaiLy As LoaiDaiLyDTO, ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
+        Public Function LayDuLieu(ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
             Return KetNoiDAL.LayDuLieu("LOAIDAILY", thuoctinh, dieukien)
         End Function
 
