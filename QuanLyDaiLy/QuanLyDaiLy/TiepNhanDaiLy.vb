@@ -60,11 +60,6 @@ Public Class TiepNhanDaiLy
         End With
         'KetNoiDAL.NgatKetNoi()
     End Sub
-
-    'Private Sub Test_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    '    LoadDataOnGridView()
-    'End Sub
-
     Private Sub btnThemDaiLy_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemDaiLy.ItemClick
         trangthai = STATUS.THEM
         btnXacNhan.Enabled = True
@@ -153,7 +148,7 @@ Public Class TiepNhanDaiLy
         End If
 
         If KiemTraQD And Not CoLoi Then
-            Dim rslt As DialogResult = MessageBox.Show("Xác nhận thêm đại lý?", "XÁC NHẬN", MessageBoxButtons.YesNo)
+            Dim rslt As DialogResult = MessageBox.Show("Xác nhận?", "XÁC NHẬN", MessageBoxButtons.YesNo)
             If (rslt = DialogResult.Yes) Then
                 'Ket noi du lieu giua text box va DTO
                 dailyDTO.MaDaiLy = txbMaDaiLy.Text
@@ -269,7 +264,5 @@ Public Class TiepNhanDaiLy
         txbDienThoai.ReadOnly = False
         txbEmail.ReadOnly = False
         txbDiaChi.ReadOnly = False
-
-
     End Sub
 End Class

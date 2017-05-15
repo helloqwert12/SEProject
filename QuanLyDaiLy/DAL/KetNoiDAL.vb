@@ -11,9 +11,9 @@ Namespace QuanLyDaiLyDAL
 #Region "Cac ham ket noi"
         'Khoi tao ket noi
         Public Shared Sub TaoKetNoi()
-            connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
             'connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-            'connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
 
         End Sub
         'Mo ket noi den CSDL
@@ -176,13 +176,13 @@ Namespace QuanLyDaiLyDAL
             '  Neu chua co du lieu
             If data.Rows.Count = 0 Then
                 If prefix.Length = 1 Then
-                    khoa = prefix + "000"
+                    khoa = prefix + "001"
                 End If
                 If prefix.Length = 2 Then
-                    khoa = prefix + "00"
+                    khoa = prefix + "01"
                 End If
                 If prefix.Length = 3 Then
-                    khoa = prefix + "0"
+                    khoa = prefix + "1"
                 End If
             Else
                 '  Neu da co du lieu

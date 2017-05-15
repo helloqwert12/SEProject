@@ -1,120 +1,206 @@
-﻿'Imports DTO.QuanLyDaiLyDTO
-'Imports DAL.QuanLyDaiLyDAL
-'Imports BUS.QuanLyDaiLyBUS
-'Public Class LapPhieuXuatHang
-'    Private _DBAcess As KetNoiDAL
-'    Dim dailyDTO As DaiLyDTO
-'    Dim dailyBUS As DaiLyBUS
-'    Dim dailyDAL As DaiLyDAL
-'    Public Sub New()
-'        InitializeComponent()
+﻿Imports DTO.QuanLyDaiLyDTO
+Imports DAL.QuanLyDaiLyDAL
+Imports BUS.QuanLyDaiLyBUS
+Public Class LapPhieuXuatHang
+    Enum STATUS
+        THEM
+        XOA
+        SUA
+        HIENTHI
+    End Enum
 
-'        KetNoiDAL.TaoKetNoi()
-'        KetNoiDAL.MoKetNoi()
-'        'Khoi tao DTO BUS DAL
-'        dailyDTO = New DaiLyDTO()
-'        dailyBUS = New DaiLyBUS()
-'        dailyDAL = New DaiLyDAL()
+    Dim trangthai As STATUS
+    Private _DBAcess As KetNoiDAL
+    Private KiemTraQD As Boolean
+    Dim chitietphieuxuatDTO As ChiTietPhieuXuatDTO
+    Dim chitietphieuxuatBUS As ChiTietPhieuXuatBUS
+    Dim chitietphieuxuatDAL As ChiTietPhieuXuatDAL
+    Public Sub New()
+        InitializeComponent()
 
-'        'Load du lieu tu bang DAILY
-'        Dim data As DataTable = KetNoiDAL.LayDuLieu("DAILY", "MaDaiLy", "")
-'        For i = 0 To data.Rows.Count - 1
-'            Dim str As String = data.Rows(i)(0)
-'            cbMaDaiLy.Items.Add(str)
-'        Next
-'        cbMaDaiLy.SelectedIndex = 0
+        KetNoiDAL.TaoKetNoi()
+        KetNoiDAL.MoKetNoi()
+        'Khoi tao DTO BUS DAL
+        chitietphieuxuatDTO = New ChiTietPhieuXuatDTO()
+        chitietphieuxuatBUS = New ChiTietPhieuXuatBUS()
+        chitietphieuxuatDAL = New ChiTietPhieuXuatDAL()
 
-'        'Load du lieu tu bang DAILY
-'        data = KetNoiDAL.LayDuLieu("DAILY", "TenDaiLy", "")
-'        For i = 0 To data.Rows.Count - 1
-'            Dim str As String = data.Rows(i)(0)
-'            'txbTenDaiLy.
-'            'txbTenDaiLy.Items.Add(str)
-'        Next
-'        cbDonViTinh.SelectedIndex = 0
+        'Load du lieu tu bang DAILY
+        Dim data As DataTable = KetNoiDAL.LayDuLieu("DAILY", "MaDaiLy", "")
 
-'        'Load du lieu tu bang DONVITINH
-'        data = KetNoiDAL.LayDuLieu("DONVITINH", "TenDonViTinh", "")
-'        For i = 0 To data.Rows.Count - 1
-'            Dim str As String = data.Rows(i)(0)
-'            cbDonViTinh.Items.Add(str)
-'        Next
-'        cbDonViTinh.SelectedIndex = 0
-'    End Sub
-'    'Dinh nghia thu tuc load du lieu tu bang theo tung lop vao Gridview
-'    Private Sub LoadDataOnGridView()
-'        Dim dTable As DataTable = KetNoiDAL.LayDuLieu("DAILY")
-'        Me.dgvTiepNhanDaiLy.DataSource = dTable
-'        With Me.dgvTiepNhanDaiLy
-'            .Columns(0).HeaderText = "Mã đại lý"
-'            .Columns(1).HeaderText = "Mã loại đại lý"
-'            .Columns(2).HeaderText = "Tên đại lý"
-'            .Columns(3).HeaderText = "Điện thoại"
-'            .Columns(4).HeaderText = "Địa chỉ"
-'            .Columns(5).HeaderText = "Mã quận"
-'            .Columns(6).HeaderText = "Ngày tiếp nhận"
-'            .Columns(7).HeaderText = "E-mail"
-'            .Columns(8).HeaderText = "Nợ đại lý"
-'        End With
-'        'KetNoiDAL.NgatKetNoi()
-'    End Sub
+        For i = 0 To data.Rows.Count - 1
+            Dim str As String = data.Rows(i)(0)
+            cbMaDaiLy.Items.Add(str)
+        Next
+        cbMaDaiLy.SelectedIndex = 0
 
-'    Private Sub Test_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-'        LoadDataOnGridView()
-'    End Sub
+        ''Load du lieu tu bang DAILY
+        'Dim tendaily As String = KetNoiDAL.LayDuLieu("DAILY", "TenDaiLy", "MaDaiLy = N'" + cbMaDaiLy.SelectedItem + "'").Rows(0)(0)
+        'dailyDTO.TenDaiLy = tendaily
 
-'    Private Sub btnThemDaiLy_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemPhieuXuat.ItemClick
-'        Dim rslt As DialogResult = MessageBox.Show("Xác nhận thêm đại lý?", "XÁC NHẬN", MessageBoxButtons.YesNo)
-'        If (rslt = DialogResult.Yes) Then
-'            'Ket noi du lieu giua text box va DTO
-'            'daily.MaDaiLy = 'GenerateKey cho ma dai ly
-'            'dailyDTO.NgayTiepNhan = 'Cap nhat ngay hien hanh he thong
-'            dailyDTO.TenDaiLy = txbTenDaiLy.Text
-'            dailyDTO.DienThoai = txbTenMatHang.Text
-'            dailyDTO.Email = txbSoLuong.Text
-'            dailyDTO.DiaChi = txbDonGia.Text
+        'Load du lieu tu bang DONVITINH
+        data = KetNoiDAL.LayDuLieu("DONVITINH", "TenDonViTinh", "")
+        For i = 0 To data.Rows.Count - 1
+            Dim str As String = data.Rows(i)(0)
+            cbDonViTinh.Items.Add(str)
+        Next
+        cbDonViTinh.SelectedIndex = 0
+    End Sub
+    'Dinh nghia thu tuc load du lieu tu bang theo tung lop vao Gridview
+    Private Sub LoadDataOnGridView()
+        Dim dTable As DataTable = KetNoiDAL.LayDuLieu("DAILY")
+        Me.dgvLapPhieuXuatHang.DataSource = dTable
+        With Me.dgvLapPhieuXuatHang
+            .Columns(0).HeaderText = "Mã đại lý"
+            .Columns(1).HeaderText = "Mã loại đại lý"
+            .Columns(2).HeaderText = "Tên đại lý"
+            .Columns(3).HeaderText = "Điện thoại"
+            .Columns(4).HeaderText = "Địa chỉ"
+            .Columns(5).HeaderText = "Mã quận"
+            .Columns(6).HeaderText = "Ngày tiếp nhận"
+            .Columns(7).HeaderText = "E-mail"
+            .Columns(8).HeaderText = "Nợ đại lý"
+        End With
+        'KetNoiDAL.NgatKetNoi()
+    End Sub
+    Private Sub btnThemPhieuXuat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemPhieuXuat.ItemClick
+        trangthai = STATUS.THEM
+        btnXacNhan.Enabled = True
+        btnXoaPhieuXuat.Enabled = False
+        btnCapNhatPhieuXuat.Enabled = False
+        txbMaMatHang.Text = KetNoiDAL.TaoKhoaChinh("MATHANG", "MaMatHang", "MH")
+        txbMaPhieuXuat.Text = KetNoiDAL.TaoKhoaChinh("PHIEUXUAT", "MaPhieuXuat", "PX")
+        txbNgayLapPhieu.Text = Date.Now.ToShortDateString
+        cbMaDaiLy.SelectedIndex = 0
+        cbDonViTinh.SelectedIndex = 0
 
-'            'Kiem tra tinh hop le cua du lieu
-'            If dailyBUS.IsEmpty(dailyDTO) Then
-'                HienThiThongBao("Dữ liệu chưa được nhập đầy đủ. Vui lòng kiểm tra lại")
-'            End If
+        txbTenMatHang.ReadOnly = False
+        txbSoLuongXuat.ReadOnly = False
+        txbDonGia.ReadOnly = False
 
-'            'Ghi xuong CSDL            
-'            Dim success As Boolean = dailyDAL.ThemDuLieu(dailyDTO)
-'            If success Then
-'                HienThiThongBao("Thêm phiếu xuất thành công")
-'                LoadDataOnGridView()
-'            Else
-'                HienThiThongBao("Thêm phiếu xuất thất bại, vui lòng kiểm tra lại")
-'            End If
-'        End If
-'    End Sub
-'    'Kiem tra xem trong Quan nay da du so luong dai ly toi da hay chua
-'    'Private Sub cbQuan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbQuan.SelectedIndexChanged
-'    '    Dim data As DataTable = KetNoiDAL.LayDuLieu("QUAN", "MaQuan", "TenQuan = " + "'" + cbQuan.SelectedItem + "'")
-'    '    Dim maquan As String = data.Rows(0)(0)
-'    '    If Not dailyBUS.ThoaManDaiLyToiDa(maquan) Then
-'    '        HienThiThongBao("Quận đã đủ số lượng đại lý tối đa")
-'    '    End If
-'    'End Sub
+        txbTenMatHang.Clear()
+        txbSoLuongXuat.Text = ""
+        txbDonGia.Text = ""
+    End Sub
+    Private Sub btnXacNhan_Click(sender As Object, e As EventArgs) Handles btnXacNhan.Click
+        '    If Not KiemTraQD Then
+        '        HienThiThongBao("Vi phạm quy định về số đại lý tối đa trong quận. Vui lòng kiểm tra lại")
+        '    End If
 
-'    Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
-'        Dim rslt As DialogResult = MessageBox.Show("Xác nhận thoát Lập phiếu xuất hàng?", "XÁC NHẬN", MessageBoxButtons.YesNo)
-'        If rslt = DialogResult.Yes Then
-'            Application.Exit()
-'        End If
-'    End Sub
+        '    If KiemTraQD Then
+        '        Dim rslt As DialogResult = MessageBox.Show("Xác nhận thêm phiếu xuất?", "XÁC NHẬN", MessageBoxButtons.YesNo)
+        '        If (rslt = DialogResult.Yes) Then
+        '            'Ket noi du lieu giua text box va DTO
+        '            DaiLyDTO.MaDaiLy = txbMaDaiLy.Text
+        '            DaiLyDTO.TenDaiLy = txbTenDaiLy.Text
+        '            DaiLyDTO.DienThoai = txbDienThoai.Text
+        '            DaiLyDTO.NgayTiepNhan = txbNgayTiepNhan.Text
+        '            DaiLyDTO.Email = txbEmail.Text
+        '            DaiLyDTO.DiaChi = txbDiaChi.Text
+        '            DaiLyDTO.NoDaiLy = 0
 
-'    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-'        fpnlNote.HidePopup()
-'        Timer1.Enabled = False
-'    End Sub
+        '            '  Xu ly ten quan va ten loai dai ly
+        '            Dim maquan As String = KetNoiDAL.LayDuLieu("QUAN", "MaQuan", "TenQuan = '" + cbQuan.SelectedItem + "'").Rows(0)(0)
+        '            DaiLyDTO.MaQuan = maquan
 
-'    'Hien thi thong bao tu flyout
-'    Private Sub HienThiThongBao(ByVal thongbao As String)
-'        label.Text = thongbao
-'        fpnlNote.ShowPopup()
-'        Timer1.Enabled = True
-'        Timer1.Start()
-'    End Sub
-'End Class
+        '            Dim maloaidaily As String = KetNoiDAL.LayDuLieu("LOAIDAILY", "MaLoaiDaiLy", "TenLoaiDaiLy = '" + cbTenLoaiDaiLy.SelectedItem + "'").Rows(0)(0)
+        '            DaiLyDTO.MaLoaiDaiLy = maloaidaily
+        '            ChiTiet
+        '            'Kiem tra thong tin da duoc nhap day du 
+        '            If PhieuXuatBUS.IsEmpty(chitietphieuxuatDTO, MatHangDTO, PhieuXuatDTO) Then
+        '                'MessageBox.Show("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
+        '                HienThiThongBao("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại")
+        '            Else
+        '                'Ghi xuong CSDL            
+        '                Dim success As Boolean = DaiLyDAL.ThemDuLieu(DaiLyDTO)
+        '                If success Then
+        '                    HienThiThongBao("Thêm đại lý thành công")
+        '                    LoadDataOnGridView()
+        '                Else
+        '                    HienThiThongBao("Thêm đại lý thất bại, vui lòng kiểm tra lại")
+        '                End If
+        '            End If
+        '        End If
+        '    End If
+    End Sub
+    Private Sub btnXoaPhieuXuat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnXoaPhieuXuat.ItemClick
+        trangthai = STATUS.XOA
+        Dim rslt As DialogResult = MessageBox.Show("Xác nhận xóa phiếu xuất", "XÁC NHẬN", MessageBoxButtons.YesNo)
+        If rslt = DialogResult.Yes Then
+            Dim maphieuxuat As String = dgvLapPhieuXuatHang.SelectedCells(0).OwningRow.Cells("MaPhieuXuat").Value 'Con nhieu nghi van...........................
+            If chitietphieuxuatDAL.XoaDuLieu("MaPhieuXuat", maphieuxuat.ToString()) Then
+                HienThiThongBao("Xóa phiếu xuất thành công")
+                LoadDataOnGridView()
+            Else
+                HienThiThongBao("Không thể xóa phiếu xuất, vui lòng kiểm tra lại")
+            End If
+        End If
+    End Sub
+    Private Sub dgvLapPhieuXuatHang_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvLapPhieuXuatHang.RowEnter
+        'Trang thai hien thi
+        trangthai = STATUS.HIENTHI
+
+        'Bat read-only cho textbox
+        txbDonGia.ReadOnly = True
+        txbSoLuongXuat.ReadOnly = True
+        txbTenMatHang.ReadOnly = True
+
+        'Binding du lieu len textbox
+        txbMaMatHang.DataBindings.Clear()
+        txbMaMatHang.DataBindings.Add("Text", dgvLapPhieuXuatHang.DataSource, "MaMatHang")
+        txbTenDaiLy.DataBindings.Clear()
+        txbTenDaiLy.DataBindings.Add("Text", dgvLapPhieuXuatHang.DataSource, "TenDaiLy")
+        Dim madaily As String = dgvLapPhieuXuatHang.Rows(e.RowIndex).Cells("MaDaiLy").Value
+        cbMaDaiLy.SelectedItem = KetNoiDAL.ChuyenMaThanhTen("DAILY", "MaDaiLy", madaily, "TenDaiLy")
+        Dim madonvitinh As String = dgvLapPhieuXuatHang.Rows(e.RowIndex).Cells("MaDonViTinh").Value
+        cbDonViTinh.SelectedItem = KetNoiDAL.ChuyenMaThanhTen("DONVITINH", "MaDonViTinh", madonvitinh, "TenDonViTinh")
+        txbSoLuongXuat.DataBindings.Clear()
+        txbSoLuongXuat.DataBindings.Add("Text", dgvLapPhieuXuatHang.DataSource, "SoLuong")
+        txbDonGia.DataBindings.Clear()
+        txbDonGia.DataBindings.Add("Text", dgvLapPhieuXuatHang.DataSource, "DonGia")
+        txbNgayLapPhieu.DataBindings.Clear()
+        txbNgayLapPhieu.DataBindings.Add("Text", dgvLapPhieuXuatHang.DataSource, "NgayLapPhieu")
+
+        'Cap nhat cho khung Thong tin
+        CapNhatThongTin()
+
+        btnCapNhatPhieuXuat.Enabled = True
+        btnXoaPhieuXuat.Enabled = True
+    End Sub
+
+    Private Sub CapNhatThongTin()
+        '    dgSoDaiLyToiDa.Text = KetNoiDAL.LayDuLieu("THAMSO").Rows(0)(0)
+        '    lblQuan.Text = cbQuan.SelectedItem
+        '    dgSoDaiLyCuaQuan.Text = dailyBUS.SoDaiLyCuaQuan(KetNoiDAL.ChuyenTenThanhMa("QUAN", "TenQuan", cbQuan.SelectedItem, "MaQuan"))
+        '    dgTongDaiLy.Text = dailyDAL.LayDuLieu("MaDaiLy", "").Rows.Count
+    End Sub
+    Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
+        Dim rslt As DialogResult = MessageBox.Show("Xác nhận thoát Lập phiếu xuất hàng?", "XÁC NHẬN", MessageBoxButtons.YesNo)
+        If rslt = DialogResult.Yes Then
+            Application.Exit()
+        End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        fpnlNote.HidePopup()
+        Timer1.Enabled = False
+    End Sub
+
+    'Hien thi thong bao tu flyout
+    Private Sub HienThiThongBao(ByVal thongbao As String)
+        label.Text = thongbao
+        fpnlNote.ShowPopup()
+        Timer1.Enabled = True
+        Timer1.Start()
+    End Sub
+
+    Private Sub btnCapNhatPhieuXuat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCapNhatPhieuXuat.ItemClick
+        trangthai = STATUS.SUA
+
+        btnXacNhan.Enabled = True
+        'Tat read-only de chinh sua
+        txbDonGia.ReadOnly = False
+        txbSoLuongXuat.ReadOnly = False
+        txbTenMatHang.ReadOnly = False
+    End Sub
+End Class

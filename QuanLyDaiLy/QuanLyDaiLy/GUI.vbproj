@@ -116,7 +116,9 @@
     <Compile Include="LapPhieuXuatHang.Designer.vb">
       <DependentUpon>LapPhieuXuatHang.vb</DependentUpon>
     </Compile>
-    <Compile Include="LapPhieuXuatHang.vb" />
+    <Compile Include="LapPhieuXuatHang.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="QuanLyDaiLyDataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
