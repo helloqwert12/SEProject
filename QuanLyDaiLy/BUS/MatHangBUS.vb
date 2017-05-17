@@ -1,4 +1,5 @@
 ﻿Imports DTO.QuanLyDaiLyDTO
+Imports DAL.QuanLyDaiLyDAL
 Namespace QuanLyDaiLyBUS
     Public Class MatHangBUS
         Public Function IsValid_SoLuongTon(MatHang As MatHangDTO) As Boolean

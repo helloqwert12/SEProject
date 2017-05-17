@@ -54,7 +54,7 @@ E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\bin\Debug\D
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\bin\Debug\itextsharp.dll
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\bin\Debug\DAL.pdb
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\BUS\bin\Debug\DAL.xml
-C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\FormatChecking.dll
-C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\Geocoding.dll
-C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\libphonenumber.dll
-C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\DAL.dll
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\itextsharp.dll
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\DAL.pdb
+C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\BUS\bin\Debug\DAL.xml

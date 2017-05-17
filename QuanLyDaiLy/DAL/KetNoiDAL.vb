@@ -12,8 +12,8 @@ Namespace QuanLyDaiLyDAL
         'Khoi tao ket noi
         Public Shared Sub TaoKetNoi()
             'connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-            'connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-            connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
 
         End Sub
         'Mo ket noi den CSDL
@@ -101,6 +101,29 @@ Namespace QuanLyDaiLyDAL
                 MessageBox.Show("Không tải được dữ liệu", "THÔNG BÁO")
             End Try
             Return dtTable
+        End Function
+
+        Public Shared Function LayDuLieu(ByVal tenbang As String, ByVal ParamArray thuoctinh As String()) As DataTable
+            Dim dtTable As DataTable
+            Dim adapter As SqlDataAdapter
+            Dim dtSet As DataSet
+            dtTable = New DataTable()
+            dtSet = New DataSet()
+            Try
+                Dim conStr As String = "SELECT "
+                For Each i As String In thuoctinh
+                    conStr += i + ","
+                Next
+                conStr = conStr.Remove(conStr.Length - 1, 1)
+                conStr += " FROM " + tenbang
+                adapter = New SqlDataAdapter(conStr, connet)
+                adapter.Fill(dtSet)
+                dtTable = dtSet.Tables(0)
+            Catch ex As Exception
+                MessageBox.Show("Không tải được dữ liệu", "THÔNG BÁO")
+            End Try
+            Return dtTable
+
         End Function
         'Them du lieu vao bang
         Public Shared Function ThemDuLieu(ByVal tenbang As String,
