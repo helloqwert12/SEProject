@@ -1,18 +1,18 @@
 ﻿Imports DTO.QuanLyDaiLyDTO
 Imports DAL.QuanLyDaiLyDAL
 Namespace QuanLyDaiLyBUS
-    Public Class MatHangBUS
-        Public Function IsValid_SoLuongTon(MatHang As MatHangDTO) As Boolean
-            If MatHang.SoLuongTon < 0 Then
+    Public Class LoaiDaiLyBUS
+        Public Function IsValid_NoToiDa(LoaiDaiLy As LoaiDaiLyDTO) As Boolean
+            If LoaiDaiLy.NoToiDa < 0 Then
                 Return False
             Else
                 Return True
             End If
         End Function
         'Kiem tra rong
-        Public Function IsEmpty(ByVal MatHang As MatHangDTO) As Boolean
-            If (MatHang.MaMatHang = String.Empty Or
-                MatHang.TenMatHang = String.Empty) Then
+        Public Function IsEmpty(ByVal LoaiDaiLy As LoaiDaiLyDTO) As Boolean
+            If (LoaiDaiLy.MaLoaiDaiLy = String.Empty Or
+                LoaiDaiLy.TenLoaiDaiLy = String.Empty) Then
                 Return True
             Else
                 Return False

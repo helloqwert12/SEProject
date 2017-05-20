@@ -113,16 +113,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DonViTinh.Designer.vb">
+      <DependentUpon>DonViTinh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DonViTinh.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LapPhieuXuatHang.Designer.vb">
       <DependentUpon>LapPhieuXuatHang.vb</DependentUpon>
     </Compile>
     <Compile Include="LapPhieuXuatHang.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoaiDaiLy.Designer.vb">
+      <DependentUpon>LoaiDaiLy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoaiDaiLy.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MatHang.Designer.vb">
       <DependentUpon>MatHang.vb</DependentUpon>
     </Compile>
     <Compile Include="MatHang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Quan.Designer.vb">
+      <DependentUpon>Quan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Quan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuanLyDaiLyDataSet.Designer.vb">
@@ -165,8 +183,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="DonViTinh.resx">
+      <DependentUpon>DonViTinh.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LapPhieuXuatHang.resx">
       <DependentUpon>LapPhieuXuatHang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoaiDaiLy.resx">
+      <DependentUpon>LoaiDaiLy.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MatHang.resx">
       <DependentUpon>MatHang.vb</DependentUpon>
@@ -177,6 +201,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Quan.resx">
+      <DependentUpon>Quan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test.resx">
       <DependentUpon>Test.vb</DependentUpon>
@@ -189,6 +216,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

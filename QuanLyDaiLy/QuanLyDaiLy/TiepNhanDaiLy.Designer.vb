@@ -316,6 +316,7 @@ Partial Class TiepNhanDaiLy
         'cbTenLoaiDaiLy
         '
         Me.cbTenLoaiDaiLy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbTenLoaiDaiLy.Enabled = False
         Me.cbTenLoaiDaiLy.FormattingEnabled = True
         Me.cbTenLoaiDaiLy.Location = New System.Drawing.Point(243, 114)
         Me.cbTenLoaiDaiLy.Name = "cbTenLoaiDaiLy"
@@ -325,6 +326,7 @@ Partial Class TiepNhanDaiLy
         'cbQuan
         '
         Me.cbQuan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbQuan.Enabled = False
         Me.cbQuan.FormattingEnabled = True
         Me.cbQuan.Location = New System.Drawing.Point(77, 115)
         Me.cbQuan.Name = "cbQuan"
@@ -333,14 +335,15 @@ Partial Class TiepNhanDaiLy
         '
         'txbDienThoai
         '
+        Me.txbDienThoai.Enabled = False
         Me.txbDienThoai.Location = New System.Drawing.Point(77, 149)
         Me.txbDienThoai.Name = "txbDienThoai"
-        Me.txbDienThoai.ReadOnly = True
         Me.txbDienThoai.Size = New System.Drawing.Size(258, 21)
         Me.txbDienThoai.TabIndex = 29
         '
         'txbMaDaiLy
         '
+        Me.txbMaDaiLy.Enabled = False
         Me.txbMaDaiLy.Location = New System.Drawing.Point(77, 41)
         Me.txbMaDaiLy.Name = "txbMaDaiLy"
         Me.txbMaDaiLy.ReadOnly = True
@@ -349,32 +352,32 @@ Partial Class TiepNhanDaiLy
         '
         'txbTenDaiLy
         '
-        Me.txbTenDaiLy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txbTenDaiLy.Enabled = False
         Me.txbTenDaiLy.Location = New System.Drawing.Point(77, 77)
         Me.txbTenDaiLy.Name = "txbTenDaiLy"
-        Me.txbTenDaiLy.ReadOnly = True
         Me.txbTenDaiLy.Size = New System.Drawing.Size(257, 21)
         Me.txbTenDaiLy.TabIndex = 28
         '
         'txbDiaChi
         '
+        Me.txbDiaChi.Enabled = False
         Me.txbDiaChi.Location = New System.Drawing.Point(446, 115)
         Me.txbDiaChi.Multiline = True
         Me.txbDiaChi.Name = "txbDiaChi"
-        Me.txbDiaChi.ReadOnly = True
         Me.txbDiaChi.Size = New System.Drawing.Size(201, 56)
         Me.txbDiaChi.TabIndex = 26
         '
         'txbEmail
         '
+        Me.txbEmail.Enabled = False
         Me.txbEmail.Location = New System.Drawing.Point(446, 76)
         Me.txbEmail.Name = "txbEmail"
-        Me.txbEmail.ReadOnly = True
         Me.txbEmail.Size = New System.Drawing.Size(201, 21)
         Me.txbEmail.TabIndex = 25
         '
         'txbNgayTiepNhan
         '
+        Me.txbNgayTiepNhan.Enabled = False
         Me.txbNgayTiepNhan.Location = New System.Drawing.Point(446, 41)
         Me.txbNgayTiepNhan.Name = "txbNgayTiepNhan"
         Me.txbNgayTiepNhan.ReadOnly = True

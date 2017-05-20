@@ -460,7 +460,6 @@ E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\FormatChecking.dll
 E:\Courses\4th-Semester\Software-Engineering\Project\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\libphonenumber.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.MatHang.resources
-C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.ThayDoiThamSo.resources
 C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\Quanlybanhang.mdf
 C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\Quanlybanhang_log.ldf
 C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\DevExpress.Data.v15.1.dll
@@ -655,3 +654,7 @@ C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDa
 C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.ThayDoiThamSo.resources
 C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.TiepNhanDaiLy.resources
 C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.exe.licenses
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.ThayDoiQuyDinh.resources
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.LoaiDaiLy.resources
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.DonViTinh.resources
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.Quan.resources

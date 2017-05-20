@@ -12,18 +12,24 @@ Public Class LapPhieuXuatHang
     Dim trangthai As STATUS
     Private _DBAcess As KetNoiDAL
     Private KiemTraQD As Boolean
-    Dim chitietphieuxuatDTO As ChiTietPhieuXuatDTO
-    Dim chitietphieuxuatBUS As ChiTietPhieuXuatBUS
-    Dim chitietphieuxuatDAL As ChiTietPhieuXuatDAL
+    Dim phieuxuatDTO As PhieuXuatDTO
+    Dim phieuxuatBUS As PhieuXuatBUS
+    Dim phieuxuatDAL As PhieuXuatDAL
+    'Dim chitietphieuxuatDTO As ChiTietPhieuXuatDTO
+    'Dim chitietphieuxuatBUS As ChiTietPhieuXuatBUS
+    'Dim chitietphieuxuatDAL As ChiTietPhieuXuatDAL
     Public Sub New()
         InitializeComponent()
 
         KetNoiDAL.TaoKetNoi()
         KetNoiDAL.MoKetNoi()
         'Khoi tao DTO BUS DAL
-        chitietphieuxuatDTO = New ChiTietPhieuXuatDTO()
-        chitietphieuxuatBUS = New ChiTietPhieuXuatBUS()
-        chitietphieuxuatDAL = New ChiTietPhieuXuatDAL()
+        phieuxuatDTO = New PhieuXuatDTO()
+        phieuxuatBUS = New PhieuXuatBUS()
+        phieuxuatDAL = New PhieuXuatDAL()
+        'chitietphieuxuatDTO = New ChiTietPhieuXuatDTO()
+        'chitietphieuxuatBUS = New ChiTietPhieuXuatBUS()
+        'chitietphieuxuatDAL = New ChiTietPhieuXuatDAL()
 
         'Load du lieu tu bang DAILY
         Dim data As DataTable = KetNoiDAL.LayDuLieu("DAILY", "TenDaiLy", "")
@@ -41,22 +47,24 @@ Public Class LapPhieuXuatHang
             cbTenMatHang.Items.Add(str)
         Next
         cbTenMatHang.SelectedIndex = 0
+
+        LoadDataOnGridView()
     End Sub
     'Dinh nghia thu tuc load du lieu tu bang theo tung lop vao Gridview
     Private Sub LoadDataOnGridView()
-        Dim dTable As DataTable = KetNoiDAL.LayDuLieu("PHIEUXUAT")
+        Dim dTable As DataTable = KetNoiDAL.LayDuLieu("PHIEUXUAT join CHITIETPHIEUXUAT on PHIEUXUAT.MaPhieuXuat = CHITIETPHIEUXUAT.MaPhieuXuat",
+                                                      "PHIEUXUAT.MaPhieuXuat", "MaDaiLy", "MaMatHang", "DonGia", "MaDonViTinh", "SoLuongXuat", "ThanhThien", "NgayLapPhieu")
         Me.dgvLapPhieuXuatHang.DataSource = dTable
-        'With Me.dgvLapPhieuXuatHang
-        '.Columns(0).HeaderText = "Mã đại lý"
-        '.Columns(1).HeaderText = "Mã loại đại lý"
-        '.Columns(2).HeaderText = "Tên đại lý"
-        '.Columns(3).HeaderText = "Điện thoại"
-        '.Columns(4).HeaderText = "Địa chỉ"
-        '.Columns(5).HeaderText = "Mã quận"
-        '.Columns(6).HeaderText = "Ngày tiếp nhận"
-        '.Columns(7).HeaderText = "E-mail"
-        '.Columns(8).HeaderText = "Nợ đại lý"
-        'End With
+        With Me.dgvLapPhieuXuatHang
+            .Columns(0).HeaderText = "Mã phiếu xuất"
+            .Columns(1).HeaderText = "Mã đại lý"
+            .Columns(2).HeaderText = "Mã mặt hàng"
+            .Columns(3).HeaderText = "Đơn giá"
+            .Columns(4).HeaderText = "Mã Đơn vị tính"
+            .Columns(5).HeaderText = "Số lượng xuất"
+            .Columns(6).HeaderText = "Thành tiền"
+            .Columns(7).HeaderText = "Ngày lập phiếu"
+        End With
         'KetNoiDAL.NgatKetNoi()
     End Sub
     Private Sub btnThemPhieuXuat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemPhieuXuat.ItemClick
@@ -69,10 +77,11 @@ Public Class LapPhieuXuatHang
         cbTenDaiLy.SelectedIndex = 0
         cbTenMatHang.SelectedIndex = 0
 
-        txbSoLuongXuat.ReadOnly = False
-
-        txbSoLuongXuat.Text = ""
-        'txbDonGia.Text = ""
+        'txbDonGia.Enabled = True
+        txbSoLuongXuat.Enabled = True
+        cbTenDaiLy.Enabled = True
+        cbTenMatHang.Enabled = True
+        txbSoLuongXuat.Text = "0"
     End Sub
     Private Sub btnXacNhan_Click(sender As Object, e As EventArgs) Handles btnXacNhan.Click
         '    If Not KiemTraQD Then
@@ -120,7 +129,7 @@ Public Class LapPhieuXuatHang
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận xóa phiếu xuất", "XÁC NHẬN", MessageBoxButtons.YesNo)
         If rslt = DialogResult.Yes Then
             Dim maphieuxuat As String = dgvLapPhieuXuatHang.SelectedCells(0).OwningRow.Cells("MaPhieuXuat").Value 'Con nhieu nghi van...........................
-            If chitietphieuxuatDAL.XoaDuLieu("MaPhieuXuat", maphieuxuat.ToString()) Then
+            If phieuxuatDAL.XoaDuLieu("MaPhieuXuat", maphieuxuat.ToString()) Then
                 HienThiThongBao("Xóa phiếu xuất thành công")
                 LoadDataOnGridView()
             Else
@@ -132,18 +141,15 @@ Public Class LapPhieuXuatHang
         'Trang thai hien thi
         trangthai = STATUS.HIENTHI
 
-        'Bat read-only cho textbox
-        txbDonGia.ReadOnly = True
-        txbSoLuongXuat.ReadOnly = True
-        txbSoLuongXuat.ReadOnly = True
-
         'Binding du lieu len textbox
         txbDonViTinh.DataBindings.Clear()
         txbDonViTinh.DataBindings.Add("Text", dgvLapPhieuXuatHang.DataSource, "TenDonViTinh")
-        Dim tendaily As String = dgvLapPhieuXuatHang.Rows(e.RowIndex).Cells("TenDaiLy").Value
-        cbTenDaiLy.SelectedItem = KetNoiDAL.ChuyenMaThanhTen("DAILY", "MaDaiLy", tendaily, "TenDaiLy")
-        Dim tenmathang As String = dgvLapPhieuXuatHang.Rows(e.RowIndex).Cells("MaDonViTinh").Value
-        cbTenMatHang.SelectedItem = KetNoiDAL.ChuyenMaThanhTen("MATHANG", "MaMatHang", tenmathang, "TenMatHang")
+        Dim madaily As String = dgvLapPhieuXuatHang.Rows(e.RowIndex).Cells("MaDaiLy").Value
+        cbTenDaiLy.SelectedItem = KetNoiDAL.ChuyenMaThanhTen("DAILY", "MaDaiLy", madaily, "TenDaiLy")
+        Dim mamathang As String = dgvLapPhieuXuatHang.Rows(e.RowIndex).Cells("MaMatHang").Value
+        cbTenMatHang.SelectedItem = KetNoiDAL.ChuyenMaThanhTen("MATHANG", "MaMatHang", mamathang, "TenMatHang")
+        Dim madonvitinh As String = dgvLapPhieuXuatHang.Rows(e.RowIndex).Cells("MaDonViTinh").Value
+        txbDonViTinh.Text = KetNoiDAL.ChuyenMaThanhTen("DONVITINH", "MaDonViTinh", madonvitinh, "TenDonViTinh")
         txbSoLuongXuat.DataBindings.Clear()
         txbSoLuongXuat.DataBindings.Add("Text", dgvLapPhieuXuatHang.DataSource, "SoLuongXuat")
         txbDonGia.DataBindings.Clear()
@@ -159,10 +165,10 @@ Public Class LapPhieuXuatHang
     End Sub
 
     Private Sub CapNhatThongTin()
-        'dgSoLuongTonCuaMatHang.Text = KetNoiDAL.LayDuLieu("MATHANG", "SoLuongTon", "") ---------------------------------
-        'lblMatHang.Text = cbMatHang.SelectedItem
-        dgSoLuongTonCuaMatHang.Text = chitietphieuxuatDAL.LayDuLieu("MaMatHang", "").Rows.Count
-        dgTongPhieuXuat.Text = chitietphieuxuatDAL.LayDuLieu("MaPhieuXuat", "").Rows.Count
+        dgSoLuongTonCuaMatHang.Text = KetNoiDAL.LayDuLieu("MATHANG", "SoLuongTon", "TenMatHang = " + cbTenMatHang.SelectedItem).ToString()
+        lblMatHang.Text = cbTenMatHang.SelectedItem
+        dgSoLuongTonCuaMatHang.Text = phieuxuatDAL.LayDuLieu("MaMatHang", "").Rows.Count
+        dgTongPhieuXuat.Text = phieuxuatDAL.LayDuLieu("MaPhieuXuat", "").Rows.Count
     End Sub
     Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận thoát Lập phiếu xuất hàng?", "XÁC NHẬN", MessageBoxButtons.YesNo)
@@ -188,9 +194,10 @@ Public Class LapPhieuXuatHang
         trangthai = STATUS.SUA
 
         btnXacNhan.Enabled = True
-        'Tat read-only de chinh sua
-        txbDonGia.ReadOnly = False
-        txbSoLuongXuat.ReadOnly = False
-        txbSoLuongXuat.ReadOnly = False
+        'Mo Enabled de chinh sua
+        'txbDonGia.Enabled = True
+        txbSoLuongXuat.Enabled = True
+        cbTenDaiLy.Enabled = True
+        cbTenMatHang.Enabled = True
     End Sub
 End Class

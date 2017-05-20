@@ -70,10 +70,12 @@ Public Class TiepNhanDaiLy
         cbQuan.SelectedIndex = 0
         cbTenLoaiDaiLy.SelectedIndex = 0
 
-        txbTenDaiLy.ReadOnly = False
-        txbDienThoai.ReadOnly = False
-        txbEmail.ReadOnly = False
-        txbDiaChi.ReadOnly = False
+        txbTenDaiLy.Enabled = True
+        txbDienThoai.Enabled = True
+        txbEmail.Enabled = True
+        txbDiaChi.Enabled = True
+        cbQuan.Enabled = True
+        cbTenLoaiDaiLy.Enabled = True
 
         txbTenDaiLy.Clear()
         txbEmail.Clear()
@@ -216,10 +218,12 @@ Public Class TiepNhanDaiLy
         'Trang thai hien thi
         trangthai = STATUS.HIENTHI
         'Bat read-only cho textbox
-        txbTenDaiLy.ReadOnly = True
-        txbDienThoai.ReadOnly = True
-        txbEmail.ReadOnly = True
-        txbDiaChi.ReadOnly = True
+        txbTenDaiLy.Enabled = False
+        txbDienThoai.Enabled = False
+        txbEmail.Enabled = False
+        txbDiaChi.Enabled = False
+        cbQuan.Enabled = False
+        cbTenLoaiDaiLy.Enabled = False
 
         'Binding du lieu len textbox
         txbMaDaiLy.DataBindings.Clear()
@@ -244,8 +248,6 @@ Public Class TiepNhanDaiLy
 
         btnCapNhatDaiLy.Enabled = True
         btnXoaDaiLy.Enabled = True
-
-
     End Sub
 
     Private Sub CapNhatThongTin()
@@ -260,9 +262,11 @@ Public Class TiepNhanDaiLy
 
         btnXacNhan.Enabled = True
         'Tat read-only de chinh sua
-        txbTenDaiLy.ReadOnly = False
-        txbDienThoai.ReadOnly = False
-        txbEmail.ReadOnly = False
-        txbDiaChi.ReadOnly = False
+        txbTenDaiLy.Enabled = True
+        txbDienThoai.Enabled = True
+        txbEmail.Enabled = True
+        txbDiaChi.Enabled = True
+        cbQuan.Enabled = True
+        cbTenLoaiDaiLy.Enabled = True
     End Sub
 End Class

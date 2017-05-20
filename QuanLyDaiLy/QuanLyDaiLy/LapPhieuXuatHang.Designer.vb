@@ -32,9 +32,9 @@ Partial Class LapPhieuXuatHang
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.txbDonGia = New System.Windows.Forms.TextBox()
         Me.txbMaPhieuXuat = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.txbDonGia = New DevExpress.XtraEditors.TextEdit()
         Me.txbSoLuongXuat = New System.Windows.Forms.TextBox()
         Me.btnXacNhan = New System.Windows.Forms.Button()
         Me.txbDonViTinh = New System.Windows.Forms.TextBox()
@@ -59,7 +59,7 @@ Partial Class LapPhieuXuatHang
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lblQuan = New System.Windows.Forms.Label()
+        Me.lblMatHang = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -73,9 +73,9 @@ Partial Class LapPhieuXuatHang
         Me.dgTongPhieuXuat = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
         Me.DigitalBackgroundLayerComponent1 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.txbDonGia.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvLapPhieuXuatHang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.fpnlNote, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -167,9 +167,9 @@ Partial Class LapPhieuXuatHang
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.txbDonGia)
         Me.Panel1.Controls.Add(Me.txbMaPhieuXuat)
         Me.Panel1.Controls.Add(Me.Label14)
-        Me.Panel1.Controls.Add(Me.txbDonGia)
         Me.Panel1.Controls.Add(Me.txbSoLuongXuat)
         Me.Panel1.Controls.Add(Me.btnXacNhan)
         Me.Panel1.Controls.Add(Me.txbDonViTinh)
@@ -190,8 +190,17 @@ Partial Class LapPhieuXuatHang
         Me.Panel1.Size = New System.Drawing.Size(663, 211)
         Me.Panel1.TabIndex = 4
         '
+        'txbDonGia
+        '
+        Me.txbDonGia.Enabled = False
+        Me.txbDonGia.Location = New System.Drawing.Point(446, 135)
+        Me.txbDonGia.Name = "txbDonGia"
+        Me.txbDonGia.Size = New System.Drawing.Size(206, 21)
+        Me.txbDonGia.TabIndex = 43
+        '
         'txbMaPhieuXuat
         '
+        Me.txbMaPhieuXuat.Enabled = False
         Me.txbMaPhieuXuat.Location = New System.Drawing.Point(90, 56)
         Me.txbMaPhieuXuat.Name = "txbMaPhieuXuat"
         Me.txbMaPhieuXuat.ReadOnly = True
@@ -207,20 +216,9 @@ Partial Class LapPhieuXuatHang
         Me.Label14.TabIndex = 41
         Me.Label14.Text = "Mã phiếu xuất:"
         '
-        'txbDonGia
-        '
-        Me.txbDonGia.Location = New System.Drawing.Point(446, 136)
-        Me.txbDonGia.MenuManager = Me.RibbonControl
-        Me.txbDonGia.Name = "txbDonGia"
-        Me.txbDonGia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
-        Me.txbDonGia.Properties.Mask.EditMask = "f"
-        Me.txbDonGia.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.txbDonGia.Properties.ReadOnly = True
-        Me.txbDonGia.Size = New System.Drawing.Size(206, 20)
-        Me.txbDonGia.TabIndex = 40
-        '
         'txbSoLuongXuat
         '
+        Me.txbSoLuongXuat.Enabled = False
         Me.txbSoLuongXuat.Location = New System.Drawing.Point(90, 135)
         Me.txbSoLuongXuat.Name = "txbSoLuongXuat"
         Me.txbSoLuongXuat.Size = New System.Drawing.Size(80, 21)
@@ -242,7 +240,7 @@ Partial Class LapPhieuXuatHang
         '
         'txbDonViTinh
         '
-        Me.txbDonViTinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txbDonViTinh.Enabled = False
         Me.txbDonViTinh.Location = New System.Drawing.Point(249, 136)
         Me.txbDonViTinh.Name = "txbDonViTinh"
         Me.txbDonViTinh.ReadOnly = True
@@ -252,6 +250,7 @@ Partial Class LapPhieuXuatHang
         'cbTenDaiLy
         '
         Me.cbTenDaiLy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbTenDaiLy.Enabled = False
         Me.cbTenDaiLy.FormattingEnabled = True
         Me.cbTenDaiLy.Location = New System.Drawing.Point(90, 95)
         Me.cbTenDaiLy.Name = "cbTenDaiLy"
@@ -281,6 +280,7 @@ Partial Class LapPhieuXuatHang
         'cbTenMatHang
         '
         Me.cbTenMatHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbTenMatHang.Enabled = False
         Me.cbTenMatHang.FormattingEnabled = True
         Me.cbTenMatHang.Location = New System.Drawing.Point(446, 95)
         Me.cbTenMatHang.Name = "cbTenMatHang"
@@ -289,6 +289,7 @@ Partial Class LapPhieuXuatHang
         '
         'txbNgayLapPhieu
         '
+        Me.txbNgayLapPhieu.Enabled = False
         Me.txbNgayLapPhieu.Location = New System.Drawing.Point(446, 56)
         Me.txbNgayLapPhieu.Name = "txbNgayLapPhieu"
         Me.txbNgayLapPhieu.ReadOnly = True
@@ -354,7 +355,7 @@ Partial Class LapPhieuXuatHang
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.dgvLapPhieuXuatHang)
-        Me.Panel2.Location = New System.Drawing.Point(9, 365)
+        Me.Panel2.Location = New System.Drawing.Point(9, 367)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1010, 256)
@@ -445,7 +446,7 @@ Partial Class LapPhieuXuatHang
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel3.Controls.Add(Me.lblQuan)
+        Me.Panel3.Controls.Add(Me.lblMatHang)
         Me.Panel3.Controls.Add(Me.Label15)
         Me.Panel3.Controls.Add(Me.Label13)
         Me.Panel3.Controls.Add(Me.Label12)
@@ -460,14 +461,14 @@ Partial Class LapPhieuXuatHang
         Me.Panel3.Size = New System.Drawing.Size(326, 208)
         Me.Panel3.TabIndex = 34
         '
-        'lblQuan
+        'lblMatHang
         '
-        Me.lblQuan.AutoSize = True
-        Me.lblQuan.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.lblQuan.Location = New System.Drawing.Point(87, 93)
-        Me.lblQuan.Name = "lblQuan"
-        Me.lblQuan.Size = New System.Drawing.Size(0, 17)
-        Me.lblQuan.TabIndex = 19
+        Me.lblMatHang.AutoSize = True
+        Me.lblMatHang.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.lblMatHang.Location = New System.Drawing.Point(129, 98)
+        Me.lblMatHang.Name = "lblMatHang"
+        Me.lblMatHang.Size = New System.Drawing.Size(0, 17)
+        Me.lblMatHang.TabIndex = 19
         '
         'Label15
         '
@@ -597,11 +598,25 @@ Partial Class LapPhieuXuatHang
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "THÔNG TIN"
         '
+        'Button2
+        '
+        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(456, 55)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(575, 8)
+        Me.Button2.TabIndex = 37
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'LapPhieuXuatHang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1030, 665)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.fpnlNote)
         Me.Controls.Add(Me.Panel2)
@@ -610,12 +625,12 @@ Partial Class LapPhieuXuatHang
         Me.Controls.Add(Me.RibbonControl)
         Me.Name = "LapPhieuXuatHang"
         Me.Ribbon = Me.RibbonControl
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.StatusBar = Me.RibbonStatusBar
         Me.Text = "LẬP PHIẾU XUẤT HÀNG"
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.txbDonGia.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.dgvLapPhieuXuatHang, System.ComponentModel.ISupportInitialize).EndInit()
@@ -668,7 +683,7 @@ Partial Class LapPhieuXuatHang
     Friend WithEvents cbTenDaiLy As ComboBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents lblQuan As Label
+    Friend WithEvents lblMatHang As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
@@ -685,7 +700,8 @@ Partial Class LapPhieuXuatHang
     Friend WithEvents Button1 As Button
     Friend WithEvents btnXacNhan As Button
     Friend WithEvents txbSoLuongXuat As TextBox
-    Friend WithEvents txbDonGia As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txbMaPhieuXuat As TextBox
     Friend WithEvents Label14 As Label
+    Friend WithEvents txbDonGia As TextBox
+    Friend WithEvents Button2 As Button
 End Class

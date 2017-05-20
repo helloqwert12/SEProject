@@ -19,7 +19,7 @@ Namespace QuanLyDaiLyDAL
             Return False
         End Function
         'Xoa du lieu
-        Public Function XoaDuLieu(DonViTinh As DonViTinhDTO, ByVal tendieukien As String, ByVal giatridieukien As String) As Boolean
+        Public Function XoaDuLieu(ByVal tendieukien As String, ByVal giatridieukien As String) As Boolean
             If KetNoiDAL.XoaDuLieu("DONVITINH", tendieukien, giatridieukien) Then
                 Return True
             End If

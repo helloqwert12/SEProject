@@ -12,8 +12,8 @@ Namespace QuanLyDaiLyDAL
         'Khoi tao ket noi
         Public Shared Sub TaoKetNoi()
             'connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-            connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-            'connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            'connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
 
         End Sub
         'Mo ket noi den CSDL
@@ -150,6 +150,21 @@ Namespace QuanLyDaiLyDAL
                                          ByVal tendieukien As String,
                                          ByVal giatridieukien As String) As Boolean
             Dim str As String = ("DELETE FROM " + tenbang + " WHERE " + tendieukien + " = " + " '" + giatridieukien + "'")
+
+            Dim sqlCmd As SqlCommand
+            sqlCmd = New SqlCommand(str, connet)
+            Try
+                If sqlCmd.ExecuteNonQuery() = 0 Then
+                    MessageBox.Show("Không tìm thấy dữ liệu cần xóa. Vui lòng kiểm tra lại", "THÔNG BÁO")
+                End If
+                Return True
+            Catch ex As Exception
+                Return False
+            End Try
+        End Function
+        'Xoa toan bo du lieu tu bang
+        Public Shared Function XoaDuLieu(ByVal tenbang As String) As Boolean
+            Dim str As String = ("DELETE FROM " + tenbang)
 
             Dim sqlCmd As SqlCommand
             sqlCmd = New SqlCommand(str, connet)

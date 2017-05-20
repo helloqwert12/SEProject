@@ -77,6 +77,8 @@
   <ItemGroup>
     <Compile Include="ChiTietPhieuXuatBUS.vb" />
     <Compile Include="DaiLyBUS.vb" />
+    <Compile Include="DonViTinhBUS.vb" />
+    <Compile Include="LoaiDaiLyBUS.vb" />
     <Compile Include="MatHangBUS.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -94,6 +96,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="PhieuXuatBUS.vb" />
+    <Compile Include="QuanBUS.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
