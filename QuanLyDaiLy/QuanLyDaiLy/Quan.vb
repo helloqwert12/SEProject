@@ -10,7 +10,7 @@ Public Class Quan
     End Enum
 
     Dim trangthai As STATUS
-    Private _DBAcess As KetNoiDAL
+
     Dim quanDTO As QuanDTO
     Dim quanBUS As QuanBUS
     Dim quanDAL As QuanDAL

@@ -10,14 +10,11 @@ Public Class MatHang
     End Enum
 
     Dim trangthai As STATUS
-    Private _DBAcess As KetNoiDAL
 
     Dim mathangDTO As MatHangDTO
     Dim mathangBUS As MatHangBUS
     Dim mathangDAL As MatHangDAL
-    Dim donvitinhDTO As DonViTinhDTO
-    'Dim donvitinhBUS As DonViTinhBUS
-    Dim donvitinhDAL As DonViTinhDAL
+
     Public Sub New()
         InitializeComponent()
 
@@ -27,29 +24,19 @@ Public Class MatHang
         mathangDAL = New MatHangDAL()
         mathangBUS = New MatHangBUS()
         mathangDTO = New MatHangDTO()
-        donvitinhDAL = New DonViTinhDAL()
-        donvitinhDTO = New DonViTinhDTO()
-
-        'Load du lieu tu bang QUAN
-        Dim data As DataTable = KetNoiDAL.LayDuLieu("DONVITINH", "TenDonViTinh", "")
-        For i = 0 To data.Rows.Count - 1
-            Dim str As String = data.Rows(i)(0)
-            cbDonViTinh.Items.Add(str)
-        Next
 
         LoadDataOnGridView()
 
     End Sub
     'Dinh nghia thu tuc load du lieu tu bang theo tung lop vao Gridview
     Private Sub LoadDataOnGridView()
-        Dim dTable1 As DataTable = KetNoiDAL.LayDuLieu("MATHANG join CHITIETPHIEUXUAT on MATHANG.MaMatHang = CHITIETPHIEUXUAT.MaMatHang join DONVITINH on DONVITINH.MaDonViTinh = CHITIETPHIEUXUAT.MaDonViTinh", "MATHANG.MaMatHang", "TenMatHang", "SoLuongTon", "DONVITINH.TenDonViTinh")
+        Dim dTable As DataTable = KetNoiDAL.LayDuLieu("MATHANG", "MaMatHang", "TenMatHang", "SoLuongTon")
 
-        Me.dgvDanhSachMatHang.DataSource = dTable1
+        Me.dgvDanhSachMatHang.DataSource = dTable
         With Me.dgvDanhSachMatHang
             .Columns(0).HeaderText = "Mã mặt hàng"
             .Columns(1).HeaderText = "Tên mặt hàng"
             .Columns(2).HeaderText = "Số lượng tồn"
-            .Columns(3).HeaderText = "Đơn vị tính"
         End With
         'KetNoiDAL.NgatKetNoi()
     End Sub
@@ -59,11 +46,9 @@ Public Class MatHang
         btnXoaMatHang.Enabled = False
         btnCapNhatMatHang.Enabled = False
         txbMaMatHang.Text = KetNoiDAL.TaoKhoaChinh("MATHANG", "MaMatHang", "MH")
-        cbDonViTinh.SelectedIndex = 0
 
         txbTenMatHang.Enabled = True
         txbSoLuongTon.Enabled = True
-        cbDonViTinh.Enabled = True
 
         txbTenMatHang.Clear()
         txbSoLuongTon.Text = "0"
@@ -96,16 +81,13 @@ Public Class MatHang
             mathangDTO.MaMatHang = txbMaMatHang.Text
             mathangDTO.TenMatHang = txbTenMatHang.Text
             mathangDTO.SoLuongTon = txbSoLuongTon.Text
-            donvitinhDTO.TenDonViTinh = cbDonViTinh.SelectedItem
-
-            ''  Xu ly ten quan va ten loai dai ly
-            'Dim maquan As String = KetNoiDAL.LayDuLieu("QUAN", "MaQuan", "TenQuan = N'" + cbQuan.SelectedItem + "'").Rows(0)(0)
-            'DaiLyDTO.MaQuan = maquan
 
             'Kiem tra thong tin da duoc nhap day du
             If mathangBUS.IsEmpty(mathangDTO) Then
                 'MessageBox.Show("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
                 HienThiThongBao("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại")
+            ElseIf Not mathangBUS.IsValid_SoLuongTon(mathangDTO) Then
+                HienThiThongBao("Số lượng nhập vào không hợp lệ, vui lòng kiểm tra lại")
             Else
                 If trangthai = STATUS.THEM Then
                     'Ghi xuong CSDL            
@@ -114,13 +96,11 @@ Public Class MatHang
                         HienThiThongBao("Thêm mặt hàng thành công")
                         txbTenMatHang.Enabled = False
                         txbSoLuongTon.Enabled = False
-                        cbDonViTinh.Enabled = False
                         LoadDataOnGridView()
                     Else
                         HienThiThongBao("Thêm mặt hàng thất bại, vui lòng kiểm tra lại")
                         txbTenMatHang.Enabled = False
                         txbSoLuongTon.Enabled = False
-                        cbDonViTinh.Enabled = False
                     End If
                 ElseIf trangthai = STATUS.SUA Then
                     mathangDAL.XoaDuLieu("MaMatHang", mathangDTO.MaMatHang)
@@ -129,13 +109,11 @@ Public Class MatHang
                         HienThiThongBao("Cập nhật mặt hàng thành công")
                         txbTenMatHang.Enabled = False
                         txbSoLuongTon.Enabled = False
-                        cbDonViTinh.Enabled = False
                         LoadDataOnGridView()
                     Else
                         HienThiThongBao("Cập nhật mặt hàng thất bại, vui lòng kiểm tra lại")
                         txbTenMatHang.Enabled = False
                         txbSoLuongTon.Enabled = False
-                        cbDonViTinh.Enabled = False
                     End If
                 End If
 
@@ -165,8 +143,6 @@ Public Class MatHang
         txbMaMatHang.DataBindings.Add("Text", dgvDanhSachMatHang.DataSource, "MaMatHang")
         txbTenMatHang.DataBindings.Clear()
         txbTenMatHang.DataBindings.Add("Text", dgvDanhSachMatHang.DataSource, "TenMatHang")
-        'Dim madonvitinh As String = dgvDanhSachMatHang.Rows(e.RowIndex).Cells("MaDonViTinh").Value
-        cbDonViTinh.SelectedItem = KetNoiDAL.LayDuLieu("DONVITINH", "TenDonViTinh", "")
         txbSoLuongTon.DataBindings.Clear()
         txbSoLuongTon.DataBindings.Add("Text", dgvDanhSachMatHang.DataSource, "SoLuongTon")
 
@@ -189,6 +165,5 @@ Public Class MatHang
         'Bat Enabled de chinh sua
         txbTenMatHang.Enabled = True
         txbSoLuongTon.Enabled = True
-        cbDonViTinh.Enabled = True
     End Sub
 End Class

@@ -184,10 +184,11 @@ Partial Class DonViTinh
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label11.ForeColor = System.Drawing.Color.Blue
         Me.Label11.Location = New System.Drawing.Point(50, 13)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(161, 17)
+        Me.Label11.Size = New System.Drawing.Size(192, 17)
         Me.Label11.TabIndex = 33
         Me.Label11.Text = "THÔNG TIN ĐƠN VỊ TÍNH"
         '
@@ -242,10 +243,11 @@ Partial Class DonViTinh
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label10.ForeColor = System.Drawing.Color.Blue
         Me.Label10.Location = New System.Drawing.Point(47, 8)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(165, 17)
+        Me.Label10.Size = New System.Drawing.Size(195, 17)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "DANH SÁCH ĐƠN VỊ TÍNH"
         '

@@ -10,7 +10,6 @@ Public Class TiepNhanDaiLy
     End Enum
 
     Dim trangthai As STATUS
-    Private _DBAcess As KetNoiDAL
     Private KiemTraQD As Boolean
     Private CoLoi As Boolean = False
     Dim dailyDTO As DaiLyDTO

@@ -30,6 +30,7 @@ Partial Class LoaiDaiLy
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.txbNoToiDa = New DevExpress.XtraEditors.TextEdit()
         Me.btnXacNhan = New System.Windows.Forms.Button()
@@ -56,7 +57,6 @@ Partial Class LoaiDaiLy
         Me.fpnlNote = New DevExpress.Utils.FlyoutPanel()
         Me.lblThongbao = New System.Windows.Forms.Label()
         Me.label = New System.Windows.Forms.Label()
-        Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.txbNoToiDa.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -138,6 +138,13 @@ Partial Class LoaiDaiLy
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
         Me.RibbonPageGroup4.Text = "RibbonPageGroup4"
         '
+        'RibbonStatusBar
+        '
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 368)
+        Me.RibbonStatusBar.Name = "RibbonStatusBar"
+        Me.RibbonStatusBar.Ribbon = Me.RibbonControl
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(1011, 31)
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.txbNoToiDa)
@@ -194,10 +201,11 @@ Partial Class LoaiDaiLy
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label11.ForeColor = System.Drawing.Color.Blue
         Me.Label11.Location = New System.Drawing.Point(50, 13)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(156, 17)
+        Me.Label11.Size = New System.Drawing.Size(184, 17)
         Me.Label11.TabIndex = 33
         Me.Label11.Text = "THÔNG TIN LOẠI ĐẠI LÝ"
         '
@@ -261,10 +269,11 @@ Partial Class LoaiDaiLy
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label10.ForeColor = System.Drawing.Color.Blue
         Me.Label10.Location = New System.Drawing.Point(47, 8)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(160, 17)
+        Me.Label10.Size = New System.Drawing.Size(187, 17)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "DANH SÁCH LOẠI ĐẠI LÝ"
         '
@@ -415,13 +424,6 @@ Partial Class LoaiDaiLy
         Me.label.Size = New System.Drawing.Size(104, 17)
         Me.label.TabIndex = 0
         Me.label.Text = "THÔNG BÁO: "
-        '
-        'RibbonStatusBar
-        '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 368)
-        Me.RibbonStatusBar.Name = "RibbonStatusBar"
-        Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(1011, 31)
         '
         'LoaiDaiLy
         '

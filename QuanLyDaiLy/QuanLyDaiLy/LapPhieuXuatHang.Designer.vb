@@ -32,12 +32,12 @@ Partial Class LapPhieuXuatHang
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.cbDonViTinh = New System.Windows.Forms.ComboBox()
         Me.txbDonGia = New System.Windows.Forms.TextBox()
         Me.txbMaPhieuXuat = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txbSoLuongXuat = New System.Windows.Forms.TextBox()
         Me.btnXacNhan = New System.Windows.Forms.Button()
-        Me.txbDonViTinh = New System.Windows.Forms.TextBox()
         Me.cbTenDaiLy = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
@@ -50,33 +50,36 @@ Partial Class LapPhieuXuatHang
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.dgvTongTriGia = New System.Windows.Forms.DataGridView()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.dgvLapPhieuXuatHang = New System.Windows.Forms.DataGridView()
         Me.fpnlNote = New DevExpress.Utils.FlyoutPanel()
         Me.lblThongbao = New System.Windows.Forms.Label()
         Me.label = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lblMatHang = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.GaugeControl3 = New DevExpress.XtraGauges.Win.GaugeControl()
         Me.dgSoMatHang = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
         Me.digitalBackgroundLayerComponent7 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
         Me.GaugeControl2 = New DevExpress.XtraGauges.Win.GaugeControl()
         Me.dgSoLuongTonCuaMatHang = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
-        Me.DigitalBackgroundLayerComponent2 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
+        Me.DigitalBackgroundLayerComponent3 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
+        Me.lblMatHang = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.GaugeControl1 = New DevExpress.XtraGauges.Win.GaugeControl()
         Me.dgTongPhieuXuat = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
         Me.DigitalBackgroundLayerComponent1 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.DigitalBackgroundLayerComponent2 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.dgvTongTriGia, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvLapPhieuXuatHang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.fpnlNote, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.fpnlNote.SuspendLayout()
@@ -84,9 +87,10 @@ Partial Class LapPhieuXuatHang
         CType(Me.dgSoMatHang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.digitalBackgroundLayerComponent7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgSoLuongTonCuaMatHang, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DigitalBackgroundLayerComponent2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DigitalBackgroundLayerComponent3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgTongPhieuXuat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DigitalBackgroundLayerComponent1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DigitalBackgroundLayerComponent2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl
@@ -167,12 +171,12 @@ Partial Class LapPhieuXuatHang
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.cbDonViTinh)
         Me.Panel1.Controls.Add(Me.txbDonGia)
         Me.Panel1.Controls.Add(Me.txbMaPhieuXuat)
         Me.Panel1.Controls.Add(Me.Label14)
         Me.Panel1.Controls.Add(Me.txbSoLuongXuat)
         Me.Panel1.Controls.Add(Me.btnXacNhan)
-        Me.Panel1.Controls.Add(Me.txbDonViTinh)
         Me.Panel1.Controls.Add(Me.cbTenDaiLy)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Panel5)
@@ -189,6 +193,16 @@ Partial Class LapPhieuXuatHang
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(663, 211)
         Me.Panel1.TabIndex = 4
+        '
+        'cbDonViTinh
+        '
+        Me.cbDonViTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbDonViTinh.Enabled = False
+        Me.cbDonViTinh.FormattingEnabled = True
+        Me.cbDonViTinh.Location = New System.Drawing.Point(248, 137)
+        Me.cbDonViTinh.Name = "cbDonViTinh"
+        Me.cbDonViTinh.Size = New System.Drawing.Size(90, 21)
+        Me.cbDonViTinh.TabIndex = 44
         '
         'txbDonGia
         '
@@ -238,15 +252,6 @@ Partial Class LapPhieuXuatHang
         Me.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnXacNhan.UseVisualStyleBackColor = True
         '
-        'txbDonViTinh
-        '
-        Me.txbDonViTinh.Enabled = False
-        Me.txbDonViTinh.Location = New System.Drawing.Point(249, 136)
-        Me.txbDonViTinh.Name = "txbDonViTinh"
-        Me.txbDonViTinh.ReadOnly = True
-        Me.txbDonViTinh.Size = New System.Drawing.Size(90, 21)
-        Me.txbDonViTinh.TabIndex = 36
-        '
         'cbTenDaiLy
         '
         Me.cbTenDaiLy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -260,10 +265,11 @@ Partial Class LapPhieuXuatHang
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.Label11.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label11.ForeColor = System.Drawing.Color.Blue
         Me.Label11.Location = New System.Drawing.Point(50, 13)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(196, 17)
+        Me.Label11.Size = New System.Drawing.Size(230, 17)
         Me.Label11.TabIndex = 33
         Me.Label11.Text = "THÔNG TIN PHIẾU XUẤT HÀNG"
         '
@@ -352,6 +358,7 @@ Partial Class LapPhieuXuatHang
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.dgvTongTriGia)
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.dgvLapPhieuXuatHang)
@@ -361,13 +368,22 @@ Partial Class LapPhieuXuatHang
         Me.Panel2.Size = New System.Drawing.Size(1010, 256)
         Me.Panel2.TabIndex = 5
         '
+        'dgvTongTriGia
+        '
+        Me.dgvTongTriGia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvTongTriGia.Location = New System.Drawing.Point(746, 33)
+        Me.dgvTongTriGia.Name = "dgvTongTriGia"
+        Me.dgvTongTriGia.Size = New System.Drawing.Size(264, 223)
+        Me.dgvTongTriGia.TabIndex = 19
+        '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.Label10.ForeColor = System.Drawing.Color.Blue
         Me.Label10.Location = New System.Drawing.Point(47, 8)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(200, 17)
+        Me.Label10.Size = New System.Drawing.Size(233, 17)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "DANH SÁCH PHIẾU XUẤT HÀNG"
         '
@@ -386,10 +402,10 @@ Partial Class LapPhieuXuatHang
         Me.dgvLapPhieuXuatHang.AllowUserToAddRows = False
         Me.dgvLapPhieuXuatHang.AllowUserToDeleteRows = False
         Me.dgvLapPhieuXuatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLapPhieuXuatHang.Location = New System.Drawing.Point(0, 33)
+        Me.dgvLapPhieuXuatHang.Location = New System.Drawing.Point(-41, 32)
         Me.dgvLapPhieuXuatHang.Name = "dgvLapPhieuXuatHang"
         Me.dgvLapPhieuXuatHang.ReadOnly = True
-        Me.dgvLapPhieuXuatHang.Size = New System.Drawing.Size(1010, 224)
+        Me.dgvLapPhieuXuatHang.Size = New System.Drawing.Size(781, 224)
         Me.dgvLapPhieuXuatHang.TabIndex = 0
         '
         'fpnlNote
@@ -400,7 +416,7 @@ Partial Class LapPhieuXuatHang
         Me.fpnlNote.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.fpnlNote.Name = "fpnlNote"
         Me.fpnlNote.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Top
-        Me.fpnlNote.OwnerControl = Me.Button1
+        Me.fpnlNote.OwnerControl = Me.Button2
         Me.fpnlNote.Size = New System.Drawing.Size(549, 72)
         Me.fpnlNote.TabIndex = 31
         '
@@ -425,6 +441,19 @@ Partial Class LapPhieuXuatHang
         Me.label.TabIndex = 0
         Me.label.Text = "THÔNG BÁO: "
         '
+        'Button2
+        '
+        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(456, 55)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(575, 8)
+        Me.Button2.TabIndex = 37
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Button1
         '
         Me.Button1.BackgroundImage = Global.QuanLyDaiLy.My.Resources.Resources.infoIcon
@@ -446,12 +475,12 @@ Partial Class LapPhieuXuatHang
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.GaugeControl3)
+        Me.Panel3.Controls.Add(Me.GaugeControl2)
         Me.Panel3.Controls.Add(Me.lblMatHang)
         Me.Panel3.Controls.Add(Me.Label15)
         Me.Panel3.Controls.Add(Me.Label13)
         Me.Panel3.Controls.Add(Me.Label12)
-        Me.Panel3.Controls.Add(Me.GaugeControl3)
-        Me.Panel3.Controls.Add(Me.GaugeControl2)
         Me.Panel3.Controls.Add(Me.GaugeControl1)
         Me.Panel3.Controls.Add(Me.Label9)
         Me.Panel3.Controls.Add(Me.Button1)
@@ -460,45 +489,6 @@ Partial Class LapPhieuXuatHang
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(326, 208)
         Me.Panel3.TabIndex = 34
-        '
-        'lblMatHang
-        '
-        Me.lblMatHang.AutoSize = True
-        Me.lblMatHang.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.lblMatHang.Location = New System.Drawing.Point(129, 98)
-        Me.lblMatHang.Name = "lblMatHang"
-        Me.lblMatHang.Size = New System.Drawing.Size(0, 17)
-        Me.lblMatHang.TabIndex = 19
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label15.Location = New System.Drawing.Point(3, 139)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(131, 17)
-        Me.Label15.TabIndex = 19
-        Me.Label15.Text = "Số lượng mặt hàng:"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label13.Location = New System.Drawing.Point(3, 98)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(119, 17)
-        Me.Label13.TabIndex = 19
-        Me.Label13.Text = "Số lượng tồn của:"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label12.Location = New System.Drawing.Point(3, 58)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(162, 17)
-        Me.Label12.TabIndex = 19
-        Me.Label12.Text = "Tổng phiếu xuất hiện có:"
         '
         'GaugeControl3
         '
@@ -509,7 +499,7 @@ Partial Class LapPhieuXuatHang
         Me.GaugeControl3.Location = New System.Drawing.Point(195, 123)
         Me.GaugeControl3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl3.Name = "GaugeControl3"
-        Me.GaugeControl3.Size = New System.Drawing.Size(98, 50)
+        Me.GaugeControl3.Size = New System.Drawing.Size(102, 50)
         Me.GaugeControl3.TabIndex = 18
         '
         'dgSoMatHang
@@ -535,28 +525,67 @@ Partial Class LapPhieuXuatHang
         Me.GaugeControl2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.GaugeControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl2.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgSoLuongTonCuaMatHang})
-        Me.GaugeControl2.Location = New System.Drawing.Point(195, 81)
+        Me.GaugeControl2.Location = New System.Drawing.Point(198, 79)
         Me.GaugeControl2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl2.Name = "GaugeControl2"
-        Me.GaugeControl2.Size = New System.Drawing.Size(98, 46)
-        Me.GaugeControl2.TabIndex = 18
+        Me.GaugeControl2.Size = New System.Drawing.Size(99, 48)
+        Me.GaugeControl2.TabIndex = 20
         '
         'dgSoLuongTonCuaMatHang
         '
         Me.dgSoLuongTonCuaMatHang.AppearanceOff.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#00FFFFFF")
         Me.dgSoLuongTonCuaMatHang.AppearanceOn.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:WhiteSmoke")
-        Me.dgSoLuongTonCuaMatHang.BackgroundLayers.AddRange(New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent() {Me.DigitalBackgroundLayerComponent2})
-        Me.dgSoLuongTonCuaMatHang.Bounds = New System.Drawing.Rectangle(6, 6, 93, 43)
+        Me.dgSoLuongTonCuaMatHang.BackgroundLayers.AddRange(New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent() {Me.DigitalBackgroundLayerComponent3})
+        Me.dgSoLuongTonCuaMatHang.Bounds = New System.Drawing.Rectangle(6, 1, 95, 48)
         Me.dgSoLuongTonCuaMatHang.DigitCount = 5
         Me.dgSoLuongTonCuaMatHang.Name = "dgSoLuongTonCuaMatHang"
         '
-        'DigitalBackgroundLayerComponent2
+        'DigitalBackgroundLayerComponent3
         '
-        Me.DigitalBackgroundLayerComponent2.BottomRight = New DevExpress.XtraGauges.Core.Base.PointF2D(259.8125!, 99.9625!)
-        Me.DigitalBackgroundLayerComponent2.Name = "digitalBackgroundLayerComponent7"
-        Me.DigitalBackgroundLayerComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style8
-        Me.DigitalBackgroundLayerComponent2.TopLeft = New DevExpress.XtraGauges.Core.Base.PointF2D(20.0!, 0!)
-        Me.DigitalBackgroundLayerComponent2.ZOrder = 1000
+        Me.DigitalBackgroundLayerComponent3.BottomRight = New DevExpress.XtraGauges.Core.Base.PointF2D(259.8125!, 99.9625!)
+        Me.DigitalBackgroundLayerComponent3.Name = "digitalBackgroundLayerComponent7"
+        Me.DigitalBackgroundLayerComponent3.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style8
+        Me.DigitalBackgroundLayerComponent3.TopLeft = New DevExpress.XtraGauges.Core.Base.PointF2D(20.0!, 0!)
+        Me.DigitalBackgroundLayerComponent3.ZOrder = 1000
+        '
+        'lblMatHang
+        '
+        Me.lblMatHang.AutoSize = True
+        Me.lblMatHang.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.lblMatHang.Location = New System.Drawing.Point(117, 94)
+        Me.lblMatHang.Name = "lblMatHang"
+        Me.lblMatHang.Size = New System.Drawing.Size(0, 17)
+        Me.lblMatHang.TabIndex = 19
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label15.Location = New System.Drawing.Point(3, 139)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(131, 17)
+        Me.Label15.TabIndex = 19
+        Me.Label15.Text = "Số lượng mặt hàng:"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label13.Location = New System.Drawing.Point(3, 93)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(114, 17)
+        Me.Label13.TabIndex = 19
+        Me.Label13.Text = "Số lượng tồn của"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label12.Location = New System.Drawing.Point(3, 54)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(162, 17)
+        Me.Label12.TabIndex = 19
+        Me.Label12.Text = "Tổng phiếu xuất hiện có:"
         '
         'GaugeControl1
         '
@@ -564,7 +593,7 @@ Partial Class LapPhieuXuatHang
         Me.GaugeControl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.GaugeControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl1.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgTongPhieuXuat})
-        Me.GaugeControl1.Location = New System.Drawing.Point(195, 32)
+        Me.GaugeControl1.Location = New System.Drawing.Point(198, 28)
         Me.GaugeControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl1.Name = "GaugeControl1"
         Me.GaugeControl1.Size = New System.Drawing.Size(99, 48)
@@ -598,18 +627,13 @@ Partial Class LapPhieuXuatHang
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "THÔNG TIN"
         '
-        'Button2
+        'DigitalBackgroundLayerComponent2
         '
-        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(456, 55)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(575, 8)
-        Me.Button2.TabIndex = 37
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.DigitalBackgroundLayerComponent2.BottomRight = New DevExpress.XtraGauges.Core.Base.PointF2D(259.8125!, 99.9625!)
+        Me.DigitalBackgroundLayerComponent2.Name = "digitalBackgroundLayerComponent7"
+        Me.DigitalBackgroundLayerComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style8
+        Me.DigitalBackgroundLayerComponent2.TopLeft = New DevExpress.XtraGauges.Core.Base.PointF2D(20.0!, 0!)
+        Me.DigitalBackgroundLayerComponent2.ZOrder = 1000
         '
         'LapPhieuXuatHang
         '
@@ -633,6 +657,7 @@ Partial Class LapPhieuXuatHang
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.dgvTongTriGia, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvLapPhieuXuatHang, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.fpnlNote, System.ComponentModel.ISupportInitialize).EndInit()
         Me.fpnlNote.ResumeLayout(False)
@@ -642,9 +667,10 @@ Partial Class LapPhieuXuatHang
         CType(Me.dgSoMatHang, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.digitalBackgroundLayerComponent7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgSoLuongTonCuaMatHang, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DigitalBackgroundLayerComponent2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DigitalBackgroundLayerComponent3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgTongPhieuXuat, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DigitalBackgroundLayerComponent1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DigitalBackgroundLayerComponent2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -679,7 +705,6 @@ Partial Class LapPhieuXuatHang
     Friend WithEvents btnXoaPhieuXuat As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnCapNhatPhieuXuat As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnThoat As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents txbDonViTinh As TextBox
     Friend WithEvents cbTenDaiLy As ComboBox
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Panel3 As Panel
@@ -690,8 +715,6 @@ Partial Class LapPhieuXuatHang
     Friend WithEvents GaugeControl3 As DevExpress.XtraGauges.Win.GaugeControl
     Friend WithEvents dgSoMatHang As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge
     Private WithEvents digitalBackgroundLayerComponent7 As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent
-    Friend WithEvents GaugeControl2 As DevExpress.XtraGauges.Win.GaugeControl
-    Friend WithEvents dgSoLuongTonCuaMatHang As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge
     Private WithEvents DigitalBackgroundLayerComponent2 As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent
     Friend WithEvents GaugeControl1 As DevExpress.XtraGauges.Win.GaugeControl
     Friend WithEvents dgTongPhieuXuat As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge
@@ -704,4 +727,9 @@ Partial Class LapPhieuXuatHang
     Friend WithEvents Label14 As Label
     Friend WithEvents txbDonGia As TextBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents GaugeControl2 As DevExpress.XtraGauges.Win.GaugeControl
+    Friend WithEvents dgSoLuongTonCuaMatHang As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge
+    Private WithEvents DigitalBackgroundLayerComponent3 As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent
+    Friend WithEvents dgvTongTriGia As DataGridView
+    Friend WithEvents cbDonViTinh As ComboBox
 End Class

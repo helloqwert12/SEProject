@@ -10,7 +10,7 @@ Public Class LoaiDaiLy
     End Enum
 
     Dim trangthai As STATUS
-    Private _DBAcess As KetNoiDAL
+
     Dim loaidailyDTO As LoaiDaiLyDTO
     Dim loaidailyBUS As LoaiDaiLyBUS
     Dim loaidailyDAL As LoaiDaiLyDAL

@@ -95,6 +95,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PhieuThuTienBUS.vb" />
     <Compile Include="PhieuXuatBUS.vb" />
     <Compile Include="QuanBUS.vb" />
   </ItemGroup>

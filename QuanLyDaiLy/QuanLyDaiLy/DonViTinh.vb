@@ -10,7 +10,7 @@ Public Class DonViTinh
     End Enum
 
     Dim trangthai As STATUS
-    Private _DBAcess As KetNoiDAL
+
     Dim donvitinhDTO As DonViTinhDTO
     Dim donvitinhBUS As donvitinhBUS
     Dim donvitinhDAL As DonViTinhDAL
