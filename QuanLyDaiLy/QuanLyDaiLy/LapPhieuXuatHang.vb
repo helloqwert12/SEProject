@@ -81,13 +81,6 @@ Public Class LapPhieuXuatHang
             .Columns(6).HeaderText = "Thành tiền"
             .Columns(7).HeaderText = "Ngày lập phiếu"
         End With
-
-        Dim dTable1 As DataTable = KetNoiDAL.LayDuLieu("PHIEUXUAT", "MaDaiLy", "TongTriGia", "NgayLapPhieu")
-        Me.dgvTongTriGia.DataSource = dTable1
-        With Me.dgvTongTriGia
-            .Columns(0).HeaderText = "Mã đại lý"
-            .Columns(1).HeaderText = "Tổng trị giá"
-        End With
         'KetNoiDAL.NgatKetNoi()
     End Sub
     Private Sub btnThemPhieuXuat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThemPhieuXuat.ItemClick
@@ -199,9 +192,13 @@ Public Class LapPhieuXuatHang
     Private Sub CapNhatThongTin()
         'dgSoLuongTonCuaMatHang.Text = mathangDAL.LayDuLieu("SoLuongTon", "TenMatHang = " + cbTenMatHang.SelectedItem)
         'dgSoLuongTonCuaMatHang.Text = KetNoiDAL.LayDuLieu("MATHANG", "SoLuongTon", "MaMatHang = " + cbTenMatHang.SelectedItem).ToString()
+        dgSoLuongTonCuaMatHang.Text = "91" 'Tam Thoi
+        lblDaiLy.Text = cbTenDaiLy.SelectedItem + ": "
         lblMatHang.Text = cbTenMatHang.SelectedItem + ": "
         dgSoMatHang.Text = chitietphieuxuatDAL.LayDuLieu("MaMatHang", "").Rows.Count
         dgTongPhieuXuat.Text = phieuxuatDAL.LayDuLieu("MaPhieuXuat", "").Rows.Count
+        dgTongTriGia.Text = "22000" 'Tam Thoi
+        'dgTongTriGia.Text = phieuxuatDAL.LayDuLieu("TongTriGia", "MaDaiLy = " + KetNoiDAL.ChuyenTenThanhMa("DAILY", "TenDaiLy", cbTenDaiLy.SelectedItem, "MaDaiLy").ToString())
     End Sub
     Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận thoát Lập phiếu xuất hàng?", "XÁC NHẬN", MessageBoxButtons.YesNo)
