@@ -199,6 +199,12 @@
     <Compile Include="TiepNhanDaiLy.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="TraCuuDaiLy.Designer.vb">
+      <DependentUpon>TraCuuDaiLy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuuDaiLy.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BaoCaoCongNo.resx">
@@ -240,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TiepNhanDaiLy.resx">
       <DependentUpon>TiepNhanDaiLy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuuDaiLy.resx">
+      <DependentUpon>TraCuuDaiLy.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -299,6 +308,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Quanlybanhang.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Zoom-icon.png" />
+    <None Include="Resources\chart-icon.png" />
     <None Include="Resources\Ok-icon.png" />
     <None Include="Resources\note-edit-icon.png" />
     <None Include="Resources\Actions-view-calendar-list-icon.png" />

@@ -25,3 +25,12 @@ C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.vbproj.Gener
 C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.dll
 C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.xml
 C:\Users\Acer\Desktop\SEProject\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\DTO\bin\Debug\DTO.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\DTO\bin\Debug\DTO.pdb
+E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\DTO\bin\Debug\DTO.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.vbprojResolveAssemblyReference.cache
+E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.Resources.resources
+E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.vbproj.GenerateResource.Cache
+E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.dll
+E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.xml
+E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\DTO\obj\Debug\DTO.pdb
