@@ -161,10 +161,10 @@
     <Compile Include="Menu.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PhieuThuTien.Designer.vb">
-      <DependentUpon>PhieuThuTien.vb</DependentUpon>
+    <Compile Include="LapPhieuThuTien.Designer.vb">
+      <DependentUpon>LapPhieuThuTien.vb</DependentUpon>
     </Compile>
-    <Compile Include="PhieuThuTien.vb">
+    <Compile Include="LapPhieuThuTien.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Quan.Designer.vb">
@@ -247,8 +247,8 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="PhieuThuTien.resx">
-      <DependentUpon>PhieuThuTien.vb</DependentUpon>
+    <EmbeddedResource Include="LapPhieuThuTien.resx">
+      <DependentUpon>LapPhieuThuTien.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Quan.resx">
       <DependentUpon>Quan.vb</DependentUpon>

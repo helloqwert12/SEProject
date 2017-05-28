@@ -2,7 +2,7 @@
 Imports DAL.QuanLyDaiLyDAL
 Imports BUS.QuanLyDaiLyBUS
 'CON BUG ..........................................................................
-Public Class PhieuThuTien
+Public Class LapPhieuThuTien
     Enum STATUS
         THEM
         XOA
