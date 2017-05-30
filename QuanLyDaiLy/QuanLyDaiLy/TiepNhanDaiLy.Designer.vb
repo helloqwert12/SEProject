@@ -405,7 +405,7 @@ Partial Class TiepNhanDaiLy
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(179, 114)
+        Me.Label6.Location = New System.Drawing.Point(179, 118)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(58, 13)
         Me.Label6.TabIndex = 13
@@ -432,7 +432,7 @@ Partial Class TiepNhanDaiLy
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 117)
+        Me.Label3.Location = New System.Drawing.Point(11, 119)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(37, 13)
         Me.Label3.TabIndex = 10

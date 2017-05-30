@@ -59,9 +59,9 @@ Partial Class ThayDoiQuyDinh
         Me.cbApDung.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbApDung.Location = New System.Drawing.Point(15, 126)
         Me.cbApDung.Name = "cbApDung"
-        Me.cbApDung.Size = New System.Drawing.Size(375, 20)
+        Me.cbApDung.Size = New System.Drawing.Size(408, 20)
         Me.cbApDung.TabIndex = 4
-        Me.cbApDung.Text = "Áp dụng quy định số tiền thu vượt quá số tiền đại lý đang nợ"
+        Me.cbApDung.Text = "Áp dụng quy định số tiền thu được vượt quá số tiền đại lý đang nợ"
         Me.cbApDung.UseVisualStyleBackColor = True
         '
         'Label2

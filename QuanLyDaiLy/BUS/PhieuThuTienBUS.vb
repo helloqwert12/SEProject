@@ -19,11 +19,31 @@ Namespace QuanLyDaiLyBUS
             data = KetNoiDAL.LayDuLieu("PHIEUTHUTIEN", "MaPhieuThu", "MaDaiLy= " + "'" + MaDaiLy + "'")
             Return data.Rows.Count
         End Function
+        'Lay so tien no cua daily
+        Public Function SoTienNoCuaDaiLy(ByVal MaDaiLy As String) As Integer
+            Dim data As DataTable
+            data = KetNoiDAL.LayDuLieu("PHIEUTHUTIEN", "MaPhieuThu", "MaDaiLy= " + "'" + MaDaiLy + "'")
+            Return data.Rows.Count
+        End Function
         'Kiem tra QD4: Ap dung so tien thu vuot qua so tien no
-        Public Function ApDungQuyDinh(ByVal MaDaiLy As String) As Integer
+        Public Function LayGiaTriQuyDinh() As Integer
             Dim data As DataTable
             data = KetNoiDAL.LayDuLieu("THAMSO", "ApDung", "")
             Return data.Rows.ToString()
+        End Function
+        Public Function XuLiQuyDinh(ByVal PhieuThuTien As PhieuThuTienDTO, ByVal DaiLy As DaiLyDTO) As Boolean
+            If LayGiaTriQuyDinh() = 0 Then
+                Dim temp As Long = DaiLy.NoDaiLy
+                DaiLy.NoDaiLy = DaiLy.NoDaiLy - PhieuThuTien.SoTienThu
+                If (DaiLy.NoDaiLy < 0) Then
+                    DaiLy.NoDaiLy = temp
+                    Return False
+                End If
+                Return True
+            Else
+                DaiLy.NoDaiLy = DaiLy.NoDaiLy - PhieuThuTien.SoTienThu
+                Return True
+            End If
         End Function
     End Class
 End Namespace

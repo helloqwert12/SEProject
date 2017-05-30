@@ -193,11 +193,11 @@ Public Class LapPhieuXuatHang
         'dgSoLuongTonCuaMatHang.Text = mathangDAL.LayDuLieu("SoLuongTon", "TenMatHang = " + cbTenMatHang.SelectedItem)
         'dgSoLuongTonCuaMatHang.Text = KetNoiDAL.LayDuLieu("MATHANG", "SoLuongTon", "MaMatHang = " + cbTenMatHang.SelectedItem).ToString()
         dgSoLuongTonCuaMatHang.Text = "91" 'Tam Thoi
-        lblDaiLy.Text = cbTenDaiLy.SelectedItem + ": "
+        'lblDaiLy.Text = cbTenDaiLy.SelectedItem + ": "
         lblMatHang.Text = cbTenMatHang.SelectedItem + ": "
         dgSoMatHang.Text = chitietphieuxuatDAL.LayDuLieu("MaMatHang", "").Rows.Count
         dgTongPhieuXuat.Text = phieuxuatDAL.LayDuLieu("MaPhieuXuat", "").Rows.Count
-        dgTongTriGia.Text = "22000" 'Tam Thoi
+        'dgTongTriGia.Text = "22000" 'Tam Thoi
         'dgTongTriGia.Text = phieuxuatDAL.LayDuLieu("TongTriGia", "MaDaiLy = " + KetNoiDAL.ChuyenTenThanhMa("DAILY", "TenDaiLy", cbTenDaiLy.SelectedItem, "MaDaiLy").ToString())
     End Sub
     Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
@@ -229,5 +229,14 @@ Public Class LapPhieuXuatHang
         txbSoLuongXuat.Enabled = True
         cbTenDaiLy.Enabled = True
         cbTenMatHang.Enabled = True
+    End Sub
+
+    Private Sub cbTenDaiLy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbTenDaiLy.SelectedIndexChanged
+        Dim madaily As String = KetNoiDAL.ChuyenTenThanhMa("DAILY", "TenDaiLy", cbTenDaiLy.SelectedItem, "MaDaiLy")
+        Dim str As String
+
+        Dim tongtrigia As DataTable = KetNoiDAL.LayDuLieu("PHIEUXUAT", "TongTriGia", "MaDaiLy = " + "'" + madaily + "'")
+        str = tongtrigia.Rows(0)(0)
+        txbTongTriGia.Text = str
     End Sub
 End Class

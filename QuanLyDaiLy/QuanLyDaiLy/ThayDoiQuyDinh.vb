@@ -3,35 +3,45 @@ Imports DAL.QuanLyDaiLyDAL
 Imports BUS.QuanLyDaiLyBUS
 
 Public Class ThayDoiQuyDinh
-    Dim ThamSoDTO As ThamSoDTO
-    Dim ThamSoDAL As ThamSoDAL
+    Dim thamsoDTO As ThamSoDTO
+    Dim thamsoDAL As ThamSoDAL
+    Dim thamsoBUS As ThamSoBUS
     Public Sub New()
         InitializeComponent()
 
         KetNoiDAL.TaoKetNoi()
         KetNoiDAL.MoKetNoi()
 
-        ThamSoDTO = New ThamSoDTO()
-        ThamSoDAL = New ThamSoDAL()
+        thamsoDTO = New ThamSoDTO()
+        thamsoDAL = New ThamSoDAL()
+        thamsoBUS = New ThamSoBUS()
         'Load du lieu tu bang THAMSO
         txbHienTai.Text = KetNoiDAL.LayDuLieu("THAMSO").Rows(0)(0)
 
 
     End Sub
     Private Sub btnCapNhat_Click(sender As Object, e As EventArgs) Handles btnCapNhat.Click
-        KetNoiDAL.XoaDuLieu("THAMSO")
-        If (cbApDung.Checked = True) Then
-            ThamSoDTO.ApDung = 1
+        If Not (thamsoBUS.IsValid_SoLuongDLToiDa(thamsoDTO)) Then
+            MessageBox.Show("Số đại lý của mỗi quận hiện tại không thể nhỏ hơn 1", "Xác Nhận", MessageBoxButtons.OK)
         Else
-            ThamSoDTO.ApDung = 0
-        End If
-        ThamSoDTO.SoLuongDLToiDa = txbMoi.Text
-        Dim success As Boolean = ThamSoDAL.ThemDuLieu(ThamSoDTO)
-        If success Then
-            MessageBox.Show("Cập nhật quy định thành công")
-            txbHienTai.Text = KetNoiDAL.LayDuLieu("THAMSO").Rows(0)(0)
-        Else
-            MessageBox.Show("Cập nhật quy định thất bại, vui lòng kiểm tra lại")
+            If (txbMoi.Text > thamsoBUS.KiemTraSoDaiLyToiDa()) Then
+                KetNoiDAL.XoaDuLieu("THAMSO")
+                If (cbApDung.Checked = True) Then
+                    thamsoDTO.ApDung = 1
+                Else
+                    thamsoDTO.ApDung = 0
+                End If
+                thamsoDTO.SoLuongDLToiDa = txbMoi.Text
+                Dim success As Boolean = thamsoDAL.ThemDuLieu(thamsoDTO)
+                If success Then
+                    MessageBox.Show("Cập nhật quy định thành công")
+                    txbHienTai.Text = KetNoiDAL.LayDuLieu("THAMSO").Rows(0)(0)
+                Else
+                    MessageBox.Show("Cập nhật quy định thất bại, vui lòng kiểm tra lại")
+                End If
+            Else
+                MessageBox.Show("Số đại lý của mỗi quận hiện tại không thể nhỏ hơn " + thamsoBUS.KiemTraSoDaiLyToiDa().ToString() + "", "Xác Nhận", MessageBoxButtons.OK)
+            End If
         End If
     End Sub
 End Class
