@@ -848,7 +848,6 @@ E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\QuanL
 E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.LoaiDaiLy.resources
 E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.MatHang.resources
 E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.Resources.resources
-E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.PhieuThuTien.resources
 E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.Quan.resources
 E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.Test.resources
 E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.ThayDoiQuyDinh.resources
@@ -919,3 +918,4 @@ C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ja\DevE
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\bin\Debug\ru\DevExpress.XtraGauges.v15.1.Presets.resources.dll
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.Menu.resources
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.LapPhieuThuTien.resources
+E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.LapPhieuThuTien.resources
