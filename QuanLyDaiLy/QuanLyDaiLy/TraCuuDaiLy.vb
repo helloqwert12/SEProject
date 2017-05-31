@@ -51,6 +51,7 @@ Public Class TraCuuDaiLy
     End Sub
 
     Private Sub btnTraCuu_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnTraCuu.ItemClick
+
         'Kiem tra Dia chi hop le
         If txbDiaChi.Text <> String.Empty Then
             Try
@@ -80,11 +81,18 @@ Public Class TraCuuDaiLy
 
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận?", "XÁC NHẬN", MessageBoxButtons.YesNo)
         If (rslt = DialogResult.Yes) Then
+            dgvTiepNhanDaiLy.DataSource = Nothing
+
             'Ket noi du lieu giua text box va DTO
             DaiLyDTO.MaDaiLy = txbMaDaiLy.Text
             DaiLyDTO.TenDaiLy = txbTenDaiLy.Text
             DaiLyDTO.DienThoai = txbDienThoai.Text
-            'DaiLyDTO.NgayTiepNhan = txbNgayTiepNhan.Text
+            If Not txbNgayTiepNhan.Text = "" Then
+                DaiLyDTO.NgayTiepNhan = txbNgayTiepNhan.Text
+            Else
+                DaiLyDTO.NgayTiepNhan = Nothing
+            End If
+
             DaiLyDTO.Email = txbEmail.Text
             DaiLyDTO.DiaChi = txbDiaChi.Text
             DaiLyDTO.NoDaiLy = txbTienNo.Text
@@ -115,9 +123,9 @@ Public Class TraCuuDaiLy
                 chuoiDk += ("DienThoai = " + "'" + DaiLyDTO.DienThoai.ToString() + "'" + " and ")
             End If
 
-            'If Not DaiLyDTO.NgayTiepNhan Is Nothing Then
-            '    chuoiDk += ("NgayTiepNhan = " + "'" + DaiLyDTO.NgayTiepNhan.ToString() + "'" + " and ")
-            'End If
+            If Not DaiLyDTO.NgayTiepNhan = Date.MinValue Then
+                chuoiDk += ("NgayTiepNhan = " + "'" + DaiLyDTO.NgayTiepNhan.ToShortDateString() + "'" + " and ")
+            End If
 
             If Not DaiLyDTO.Email = String.Empty Then
                 chuoiDk += ("Email = " + "'" + DaiLyDTO.Email.ToString() + "'" + " and ")
@@ -146,22 +154,54 @@ Public Class TraCuuDaiLy
                 End If
             End If
 
-
-            chuoiDk = chuoiDk.Remove(chuoiDk.Length - 4, 4)
-
-            Dim data As DataTable = DaiLyDAL.LayDuLieu(chuoiDk)
-            If (data Is Nothing) Then
-                HienThiThongBao("Không tìm thấy kết quả nào")
+            If DaiLyBUS.AllIsEmpty(DaiLyDTO) Then
+                HienThiThongBao("Chưa nhập bất kỳ thông tin nào. Vui lòng kiểm tra lại")
             Else
-                LoadDataOnGridView(data)
+                chuoiDk = chuoiDk.Remove(chuoiDk.Length - 4, 4)
+                Dim data As DataTable = DaiLyDAL.LayDuLieu(chuoiDk)
+                If (data.Rows.Count <= 0) Then
+                    HienThiThongBao("Không tìm thấy kết quả nào")
+                Else
+                    LoadDataOnGridView(data)
+                    HienThiThongBao("Có " + data.Rows.Count.ToString() + " kết quả được tìm thấy")
+                End If
             End If
+
         End If
     End Sub
 
     Private Sub HienThiThongBao(ByVal thongbao As String)
-        label.Text = thongbao
+        lblThongbao.Text = thongbao
         fpnlNote.ShowPopup()
         Timer1.Enabled = True
         Timer1.Start()
     End Sub
+
+    Private Sub btsHienThiDayDu_CheckedChanged(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btsHienThiDayDu.CheckedChanged
+        If btsHienThiDayDu.Checked Then
+            Dim data As DataTable = DaiLyDAL.LayDuLieu()
+            HienThiThongBao("Có " + data.Rows.Count.ToString() + " kết quả được tìm thấy")
+            LoadDataOnGridView(data)
+        Else
+            dgvTiepNhanDaiLy.DataSource = Nothing
+        End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        fpnlNote.HidePopup()
+        Timer1.Enabled = False
+    End Sub
+
+    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+        txbMaDaiLy.Clear()
+        txbTenDaiLy.Clear()
+        txbDiaChi.Clear()
+        txbDienThoai.Clear()
+        txbEmail.Clear()
+        txbNgayTiepNhan.Clear()
+        txbTienNo.Text = 0
+        cbQuan.SelectedIndex = -1
+        cbTenLoaiDaiLy.SelectedIndex = -1
+    End Sub
+
 End Class

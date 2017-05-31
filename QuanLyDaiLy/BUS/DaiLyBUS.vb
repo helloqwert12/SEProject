@@ -20,6 +20,20 @@ Namespace QuanLyDaiLyBUS
             End If
         End Function
 
+        Public Function AllIsEmpty(ByVal DaiLy As DaiLyDTO) As Boolean
+            If (DaiLy.MaDaiLy = "" And
+                DaiLy.MaLoaiDaiLy = "" And
+                DaiLy.MaQuan = "" And
+                DaiLy.NgayTiepNhan = Date.MinValue And
+                DaiLy.TenDaiLy = "" And
+                DaiLy.DienThoai = "" And
+                DaiLy.DiaChi = "") Then
+                Return True
+            Else
+                Return False
+            End If
+        End Function
+
         'Lay so luong dai ly da dang ky cua quan
         Public Function SoDaiLyCuaQuan(ByVal MaQuan As String) As Integer
             Dim data As DataTable

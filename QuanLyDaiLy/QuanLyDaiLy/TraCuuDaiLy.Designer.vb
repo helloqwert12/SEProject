@@ -23,8 +23,12 @@ Partial Class TraCuuDaiLy
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btnTraCuu = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
+        Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
+        Me.btsHienThiDayDu = New DevExpress.XtraBars.BarToggleSwitchItem()
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup5 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
+        Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -76,10 +80,10 @@ Partial Class TraCuuDaiLy
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
-        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnTraCuu, Me.BarButtonItem3})
+        Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnTraCuu, Me.BarButtonItem3, Me.BarButtonItem2, Me.btsHienThiDayDu})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.RibbonControl.MaxItemId = 3
+        Me.RibbonControl.MaxItemId = 9
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
         Me.RibbonControl.Size = New System.Drawing.Size(1273, 168)
@@ -100,9 +104,22 @@ Partial Class TraCuuDaiLy
         Me.BarButtonItem3.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.closeIcon
         Me.BarButtonItem3.Name = "BarButtonItem3"
         '
+        'BarButtonItem2
+        '
+        Me.BarButtonItem2.Caption = "Xóa thông tin"
+        Me.BarButtonItem2.Id = 7
+        Me.BarButtonItem2.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.deleteIcon
+        Me.BarButtonItem2.Name = "BarButtonItem2"
+        '
+        'btsHienThiDayDu
+        '
+        Me.btsHienThiDayDu.Caption = "Hiển Thị Toàn Bộ"
+        Me.btsHienThiDayDu.Id = 8
+        Me.btsHienThiDayDu.Name = "btsHienThiDayDu"
+        '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup3})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup5, Me.RibbonPageGroup4, Me.RibbonPageGroup3})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "RibbonPage1"
         '
@@ -111,6 +128,18 @@ Partial Class TraCuuDaiLy
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnTraCuu)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
         Me.RibbonPageGroup1.Text = "RibbonPageGroup1"
+        '
+        'RibbonPageGroup5
+        '
+        Me.RibbonPageGroup5.ItemLinks.Add(Me.BarButtonItem2)
+        Me.RibbonPageGroup5.Name = "RibbonPageGroup5"
+        Me.RibbonPageGroup5.Text = "RibbonPageGroup5"
+        '
+        'RibbonPageGroup4
+        '
+        Me.RibbonPageGroup4.ItemLinks.Add(Me.btsHienThiDayDu)
+        Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
+        Me.RibbonPageGroup4.Text = "RibbonPageGroup4"
         '
         'RibbonPageGroup3
         '
@@ -446,7 +475,7 @@ Partial Class TraCuuDaiLy
         '
         Me.fpnlNote.Controls.Add(Me.lblThongbao)
         Me.fpnlNote.Controls.Add(Me.label)
-        Me.fpnlNote.Location = New System.Drawing.Point(570, 61)
+        Me.fpnlNote.Location = New System.Drawing.Point(609, 61)
         Me.fpnlNote.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.fpnlNote.Name = "fpnlNote"
         Me.fpnlNote.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Top
@@ -481,7 +510,7 @@ Partial Class TraCuuDaiLy
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(554, 61)
+        Me.Button2.Location = New System.Drawing.Point(593, 61)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(671, 10)
@@ -490,7 +519,7 @@ Partial Class TraCuuDaiLy
         '
         'Timer1
         '
-        Me.Timer1.Interval = 5000
+        Me.Timer1.Interval = 3000
         '
         'TraCuuDaiLy
         '
@@ -569,4 +598,8 @@ Partial Class TraCuuDaiLy
     Friend WithEvents label As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents BarButtonItem2 As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents RibbonPageGroup5 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
+    Friend WithEvents btsHienThiDayDu As DevExpress.XtraBars.BarToggleSwitchItem
 End Class
