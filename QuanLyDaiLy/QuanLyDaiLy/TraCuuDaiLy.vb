@@ -16,15 +16,68 @@ Public Class TraCuuDaiLy
         DaiLyBUS = New DaiLyBUS()
         DaiLyDAL = New DaiLyDAL()
 
-        'Load du lieu tu bang QUAN
-        Dim data As DataTable = KetNoiDAL.LayDuLieu("QUAN", "TenQuan", "")
-        For i = 0 To data.Rows.Count - 1
-            Dim str As String = data.Rows(i)(0)
-            cbQuan.Items.Add(str)
-        Next
+        'Autocomplete cho Madaily
+        Dim madaily As New AutoCompleteStringCollection()
+        KetNoiDAL.LayDuLieu(madaily, "DAILY", "MaDaiLy")
+
+        With txbMaDaiLy
+            .AutoCompleteCustomSource = madaily
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+        End With
+
+        'Autocomplete cho Tendaily
+        Dim tendaily As New AutoCompleteStringCollection()
+        KetNoiDAL.LayDuLieu(tendaily, "DAILY", "TenDaiLy")
+
+        With txbTenDaiLy
+            .AutoCompleteCustomSource = tendaily
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+        End With
+
+        'Autocomplete cho Dienthoai
+        Dim dienthoai As New AutoCompleteStringCollection()
+        KetNoiDAL.LayDuLieu(dienthoai, "DAILY", "DienThoai")
+
+        With txbDienThoai
+            .AutoCompleteCustomSource = dienthoai
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+        End With
+
+        'Autocomplete cho Ngaytiepnhan
+        Dim ngaytiepnhan As New AutoCompleteStringCollection()
+        KetNoiDAL.LayDuLieu(ngaytiepnhan, "DAILY", "NgayTiepNhan")
+
+        With txbNgayTiepNhan
+            .AutoCompleteCustomSource = ngaytiepnhan
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+        End With
+
+        'Autocomplete cho Email
+        Dim email As New AutoCompleteStringCollection()
+        KetNoiDAL.LayDuLieu(email, "DAILY", "Email")
+
+        With txbEmail
+            .AutoCompleteCustomSource = email
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+        End With
+
+        'Autocomplete cho Diachi
+        Dim diachi As New AutoCompleteStringCollection()
+        KetNoiDAL.LayDuLieu(diachi, "DAILY", "DiaChi")
+
+        With txbDiaChi
+            .AutoCompleteCustomSource = diachi
+            .AutoCompleteMode = AutoCompleteMode.SuggestAppend
+            .AutoCompleteSource = AutoCompleteSource.CustomSource
+        End With
 
         'Load du lieu tu bang LOAIDAILY
-        data = KetNoiDAL.LayDuLieu("LOAIDAILY", "TenLoaiDaiLy", "")
+        Dim data As DataTable = KetNoiDAL.LayDuLieu("LOAIDAILY", "TenLoaiDaiLy", "")
         For i = 0 To data.Rows.Count - 1
             Dim str As String = data.Rows(i)(0)
             cbTenLoaiDaiLy.Items.Add(str)

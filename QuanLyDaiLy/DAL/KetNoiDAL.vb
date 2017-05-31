@@ -259,6 +259,20 @@ Namespace QuanLyDaiLyDAL
             Dim str As String = data.Rows(0)(0)
             Return str
         End Function
+        'Ham lay du lieu cho viec Auto Complete
+        Public Shared Sub LayDuLieu(ByVal dataCollection As AutoCompleteStringCollection, ByVal tenbang As String,
+                                         ByVal thuoctinh As String)
+            Dim adapter As New SqlDataAdapter("SELECT DISTINCT " + thuoctinh + " FROM " + tenbang, connet)
+            Dim ds As New DataSet()
+            Try
+                adapter.Fill(ds)
+                For Each row As DataRow In ds.Tables(0).Rows
+                    dataCollection.Add(row(0).ToString())
+                Next
+            Catch ex As Exception
+                MessageBox.Show("Không tải được dữ liệu", "THÔNG BÁO")
+            End Try
+        End Sub
 #End Region
 
     End Class

@@ -102,30 +102,33 @@ Public Class LapPhieuThuTien
                 'MessageBox.Show("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
                 HienThiThongBao("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại")
             Else
+                'If (phieuthutienBUS.XuLiQuyDinh(phieuthutienDTO, dailyDTO)) Then
                 If trangthai = STATUS.THEM Then
-                    'Ghi xuong CSDL    
-                    Dim success1 As Boolean = phieuthutienBUS.XuLiQuyDinh(phieuthutienDTO, dailyDTO)
-                    Dim success2 As Boolean = phieuthutienDAL.ThemDuLieu(phieuthutienDTO)
-                    If success1 And success2 Then
-                        HienThiThongBao("Thêm phiếu thu tiền thành công")
-                        LoadDataOnGridView()
-                    Else
-                        HienThiThongBao("Thêm phiếu thu tiền thất bại, vui lòng kiểm tra lại")
+                        'Ghi xuong CSDL    
+                        Dim success1 As Boolean = phieuthutienBUS.XuLiQuyDinh(phieuthutienDTO, dailyDTO)
+                        Dim success2 As Boolean = phieuthutienDAL.ThemDuLieu(phieuthutienDTO)
+                        If success1 And success2 Then
+                            HienThiThongBao("Thêm phiếu thu tiền thành công")
+                            LoadDataOnGridView()
+                        Else
+                            HienThiThongBao("Thêm phiếu thu tiền thất bại, vui lòng kiểm tra lại")
+                        End If
+                    ElseIf trangthai = STATUS.SUA Then
+                        phieuthutienDAL.XoaDuLieu("MaPhieuThu", phieuthutienDTO.MaPhieuThu)
+                        Dim success1 As Boolean = phieuthutienBUS.XuLiQuyDinh(phieuthutienDTO, dailyDTO)
+                        Dim success2 As Boolean = phieuthutienDAL.ThemDuLieu(phieuthutienDTO)
+                        If success1 And success2 Then
+                            HienThiThongBao("Cập nhật phiếu thu tiền thành công")
+                            LoadDataOnGridView()
+                        Else
+                            HienThiThongBao("Cập nhật phiếu thu tiền thất bại, vui lòng kiểm tra lại")
+                        End If
                     End If
-                ElseIf trangthai = STATUS.SUA Then
-                    phieuthutienDAL.XoaDuLieu("MaPhieuThu", phieuthutienDTO.MaPhieuThu)
-                    Dim success1 As Boolean = phieuthutienBUS.XuLiQuyDinh(phieuthutienDTO, dailyDTO)
-                    Dim success2 As Boolean = phieuthutienDAL.ThemDuLieu(phieuthutienDTO)
-                    If success1 And success2 Then
-                        HienThiThongBao("Cập nhật phiếu thu tiền thành công")
-                        LoadDataOnGridView()
-                    Else
-                        HienThiThongBao("Cập nhật phiếu thu tiền thất bại, vui lòng kiểm tra lại")
-                    End If
-                End If
-
+                'Else
+                'HienThiThongBao("Vi phạm qui định, vui lòng kiểm tra lại")
             End If
-        End If
+            End If
+        'End If
     End Sub
 
     Private Sub btnXoaPhieuThuTien_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnXoaPhieuThuTien.ItemClick

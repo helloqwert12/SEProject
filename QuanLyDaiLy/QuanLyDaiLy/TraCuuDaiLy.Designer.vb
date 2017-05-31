@@ -181,7 +181,7 @@ Partial Class TraCuuDaiLy
         Me.Panel1.Location = New System.Drawing.Point(10, 152)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(663, 216)
+        Me.Panel1.Size = New System.Drawing.Size(663, 199)
         Me.Panel1.TabIndex = 4
         '
         'Label11
@@ -209,7 +209,7 @@ Partial Class TraCuuDaiLy
         '
         Me.cbTenLoaiDaiLy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbTenLoaiDaiLy.FormattingEnabled = True
-        Me.cbTenLoaiDaiLy.Location = New System.Drawing.Point(243, 114)
+        Me.cbTenLoaiDaiLy.Location = New System.Drawing.Point(243, 115)
         Me.cbTenLoaiDaiLy.Name = "cbTenLoaiDaiLy"
         Me.cbTenLoaiDaiLy.Size = New System.Drawing.Size(91, 21)
         Me.cbTenLoaiDaiLy.TabIndex = 31
@@ -219,7 +219,7 @@ Partial Class TraCuuDaiLy
         Me.cbSoSanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbSoSanh.FormattingEnabled = True
         Me.cbSoSanh.Items.AddRange(New Object() {"Bằng", "Lớn hơn", "Nhỏ hơn"})
-        Me.cbSoSanh.Location = New System.Drawing.Point(77, 183)
+        Me.cbSoSanh.Location = New System.Drawing.Point(77, 159)
         Me.cbSoSanh.Name = "cbSoSanh"
         Me.cbSoSanh.Size = New System.Drawing.Size(85, 21)
         Me.cbSoSanh.TabIndex = 30
@@ -235,16 +235,16 @@ Partial Class TraCuuDaiLy
         '
         'txbTienNo
         '
-        Me.txbTienNo.Location = New System.Drawing.Point(175, 184)
+        Me.txbTienNo.Location = New System.Drawing.Point(175, 159)
         Me.txbTienNo.Name = "txbTienNo"
         Me.txbTienNo.Size = New System.Drawing.Size(160, 21)
         Me.txbTienNo.TabIndex = 29
         '
         'txbDienThoai
         '
-        Me.txbDienThoai.Location = New System.Drawing.Point(77, 149)
+        Me.txbDienThoai.Location = New System.Drawing.Point(446, 159)
         Me.txbDienThoai.Name = "txbDienThoai"
-        Me.txbDienThoai.Size = New System.Drawing.Size(258, 21)
+        Me.txbDienThoai.Size = New System.Drawing.Size(201, 21)
         Me.txbDienThoai.TabIndex = 29
         '
         'txbMaDaiLy
@@ -264,9 +264,8 @@ Partial Class TraCuuDaiLy
         'txbDiaChi
         '
         Me.txbDiaChi.Location = New System.Drawing.Point(446, 115)
-        Me.txbDiaChi.Multiline = True
         Me.txbDiaChi.Name = "txbDiaChi"
-        Me.txbDiaChi.Size = New System.Drawing.Size(201, 88)
+        Me.txbDiaChi.Size = New System.Drawing.Size(201, 21)
         Me.txbDiaChi.TabIndex = 26
         '
         'txbEmail
@@ -295,7 +294,7 @@ Partial Class TraCuuDaiLy
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(356, 76)
+        Me.Label7.Location = New System.Drawing.Point(356, 80)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(39, 13)
         Me.Label7.TabIndex = 14
@@ -304,7 +303,7 @@ Partial Class TraCuuDaiLy
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(179, 114)
+        Me.Label6.Location = New System.Drawing.Point(179, 118)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(58, 13)
         Me.Label6.TabIndex = 13
@@ -322,7 +321,7 @@ Partial Class TraCuuDaiLy
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(11, 184)
+        Me.Label9.Location = New System.Drawing.Point(11, 160)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(46, 13)
         Me.Label9.TabIndex = 10
@@ -331,7 +330,7 @@ Partial Class TraCuuDaiLy
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(11, 154)
+        Me.Label4.Location = New System.Drawing.Point(356, 162)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(60, 13)
         Me.Label4.TabIndex = 11
@@ -340,7 +339,7 @@ Partial Class TraCuuDaiLy
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 117)
+        Me.Label3.Location = New System.Drawing.Point(11, 118)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(37, 13)
         Me.Label3.TabIndex = 10
@@ -369,10 +368,10 @@ Partial Class TraCuuDaiLy
         Me.Panel2.Controls.Add(Me.Label14)
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.dgvTiepNhanDaiLy)
-        Me.Panel2.Location = New System.Drawing.Point(10, 379)
+        Me.Panel2.Location = New System.Drawing.Point(10, 355)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(663, 171)
+        Me.Panel2.Size = New System.Drawing.Size(663, 195)
         Me.Panel2.TabIndex = 17
         '
         'Label14
@@ -404,7 +403,7 @@ Partial Class TraCuuDaiLy
         Me.dgvTiepNhanDaiLy.Location = New System.Drawing.Point(0, 33)
         Me.dgvTiepNhanDaiLy.Name = "dgvTiepNhanDaiLy"
         Me.dgvTiepNhanDaiLy.ReadOnly = True
-        Me.dgvTiepNhanDaiLy.Size = New System.Drawing.Size(663, 135)
+        Me.dgvTiepNhanDaiLy.Size = New System.Drawing.Size(663, 159)
         Me.dgvTiepNhanDaiLy.TabIndex = 0
         '
         'Panel3

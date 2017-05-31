@@ -29,7 +29,7 @@ Namespace QuanLyDaiLyBUS
         Public Function LayGiaTriQuyDinh() As Integer
             Dim data As DataTable
             data = KetNoiDAL.LayDuLieu("THAMSO", "ApDung", "")
-            Return data.Rows.ToString()
+            Return data.Rows(0)(0)
         End Function
         Public Function XuLiQuyDinh(ByVal PhieuThuTien As PhieuThuTienDTO, ByVal DaiLy As DaiLyDTO) As Boolean
             If LayGiaTriQuyDinh() = 0 Then
