@@ -36,4 +36,8 @@ Public Class BaoCaoCongNo
             Application.Exit()
         End If
     End Sub
+
+    Private Sub btnThucHien_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThucHien.ItemClick
+
+    End Sub
 End Class

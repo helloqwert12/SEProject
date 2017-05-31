@@ -79,7 +79,6 @@ Public Class TiepNhanDaiLy
         txbEmail.Clear()
         txbDienThoai.Clear()
         txbDiaChi.Clear()
-
     End Sub
     'Kiem tra xem trong Quan nay da du so luong dai ly toi da hay chua
     Private Sub cbQuan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbQuan.SelectedIndexChanged

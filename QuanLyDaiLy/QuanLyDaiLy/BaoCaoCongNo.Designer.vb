@@ -30,11 +30,14 @@ Partial Class BaoCaoCongNo
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
-        Me.dateThoiGian = New System.Windows.Forms.DateTimePicker()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvBaoCaoCongNo = New System.Windows.Forms.DataGridView()
+        Me.TextEdit1 = New DevExpress.XtraEditors.TextEdit()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvBaoCaoCongNo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl
@@ -52,6 +55,7 @@ Partial Class BaoCaoCongNo
         '
         Me.btnThucHien.Caption = "Thực hiện"
         Me.btnThucHien.Id = 1
+        Me.btnThucHien.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.Ok_icon
         Me.btnThucHien.Name = "btnThucHien"
         '
         'btnExcel
@@ -110,38 +114,63 @@ Partial Class BaoCaoCongNo
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
         Me.RibbonStatusBar.Size = New System.Drawing.Size(576, 31)
         '
-        'dateThoiGian
-        '
-        Me.dateThoiGian.Location = New System.Drawing.Point(205, 150)
-        Me.dateThoiGian.Name = "dateThoiGian"
-        Me.dateThoiGian.Size = New System.Drawing.Size(200, 21)
-        Me.dateThoiGian.TabIndex = 7
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(147, 154)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 16)
-        Me.Label1.TabIndex = 6
-        Me.Label1.Text = "Tháng:"
-        '
         'dgvBaoCaoCongNo
         '
         Me.dgvBaoCaoCongNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvBaoCaoCongNo.Location = New System.Drawing.Point(11, 185)
+        Me.dgvBaoCaoCongNo.Location = New System.Drawing.Point(11, 193)
         Me.dgvBaoCaoCongNo.Name = "dgvBaoCaoCongNo"
-        Me.dgvBaoCaoCongNo.Size = New System.Drawing.Size(553, 213)
+        Me.dgvBaoCaoCongNo.Size = New System.Drawing.Size(553, 205)
         Me.dgvBaoCaoCongNo.TabIndex = 5
+        '
+        'TextEdit1
+        '
+        Me.TextEdit1.Location = New System.Drawing.Point(340, 156)
+        Me.TextEdit1.MenuManager = Me.RibbonControl
+        Me.TextEdit1.Name = "TextEdit1"
+        Me.TextEdit1.Properties.Mask.EditMask = "d"
+        Me.TextEdit1.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.TextEdit1.Size = New System.Drawing.Size(100, 20)
+        Me.TextEdit1.TabIndex = 14
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(294, 157)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(40, 16)
+        Me.Label2.TabIndex = 13
+        Me.Label2.Text = "Năm:"
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
+        Me.ComboBox2.Location = New System.Drawing.Point(201, 156)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(64, 21)
+        Me.ComboBox2.TabIndex = 12
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(143, 157)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(52, 16)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "Tháng:"
         '
         'BaoCaoCongNo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(576, 446)
-        Me.Controls.Add(Me.dateThoiGian)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.TextEdit1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.ComboBox2)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dgvBaoCaoCongNo)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
@@ -151,6 +180,7 @@ Partial Class BaoCaoCongNo
         Me.Text = "BÁO CÁO CÔNG NỢ"
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvBaoCaoCongNo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TextEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -167,7 +197,9 @@ Partial Class BaoCaoCongNo
     Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents dateThoiGian As DateTimePicker
-    Friend WithEvents Label1 As Label
     Friend WithEvents dgvBaoCaoCongNo As DataGridView
+    Friend WithEvents TextEdit1 As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents Label2 As Label
+    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents Label3 As Label
 End Class

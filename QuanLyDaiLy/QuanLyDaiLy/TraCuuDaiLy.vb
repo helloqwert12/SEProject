@@ -192,7 +192,7 @@ Public Class TraCuuDaiLy
         Timer1.Enabled = False
     End Sub
 
-    Private Sub BarButtonItem2_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles BarButtonItem2.ItemClick
+    Private Sub btnXoaThongTin_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnXoaThongTin.ItemClick
         txbMaDaiLy.Clear()
         txbTenDaiLy.Clear()
         txbDiaChi.Clear()
@@ -202,6 +202,16 @@ Public Class TraCuuDaiLy
         txbTienNo.Text = 0
         cbQuan.SelectedIndex = -1
         cbTenLoaiDaiLy.SelectedIndex = -1
+        cbSoSanh.SelectedIndex = -1
     End Sub
 
+    Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
+        Dim rslt As DialogResult = MessageBox.Show("Xác nhận thoát Tra cứu đại lý?", "XÁC NHẬN", MessageBoxButtons.YesNo)
+        If rslt = DialogResult.Yes Then
+            'Dim menu As Menu = New Menu()
+            'Me.Dispose()
+            'menu.btnMenu.Show()
+            Application.Exit()
+        End If
+    End Sub
 End Class

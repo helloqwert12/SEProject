@@ -12,11 +12,9 @@ Namespace QuanLyDaiLyDAL
             Return KetNoiDAL.LayDuLieu("BAOCAODOANHSO", thuoctinh, dieukien)
         End Function
         'Them du lieu vao bang
-        Public Function ThemDuLieu(DaiLy As DaiLyDTO) As Boolean
-            Dim success = KetNoiDAL.ThemDuLieu("PHIEUTHUTIEN", DaiLy.MaDaiLy, DaiLy.MaLoaiDaiLy,
-                                 DaiLy.TenDaiLy, DaiLy.DienThoai, DaiLy.DiaChi,
-                                 DaiLy.MaQuan, DaiLy.NgayTiepNhan, DaiLy.Email,
-                                 DaiLy.NoDaiLy)
+        Public Function ThemDuLieu(Baocaodoanhso As BaoCaoDoanhSoDTO) As Boolean
+            Dim success = KetNoiDAL.ThemDuLieu("BAOCAODOANHSO", Baocaodoanhso.MaBaoCaoDoanhSo, Baocaodoanhso.MaDaiLy, Baocaodoanhso.SoPhieuXuat,
+                                               Baocaodoanhso.Thang, Baocaodoanhso.TongTriGia, Baocaodoanhso.TyLe)
             If success Then
                 Return True
             End If

@@ -1,13 +1,23 @@
 ﻿Namespace QuanLyDaiLyDTO
     Public Class BaoCaoDoanhSoDTO
 #Region "DECLARE"
+        Private strMabaocaodoanhso As String
         Private strMadaily As String
+        Private intThang As Integer
         Private floatTyle As Double
-        Private dateThoigian As Date
+        Private intSophieuxuat As Integer
         Private longTongtrigia As Long
 #End Region
 
 #Region "METHOD"
+        Property MaBaoCaoDoanhSo() As String
+            Get
+                Return strMabaocaodoanhso
+            End Get
+            Set(value As String)
+                strMabaocaodoanhso = value
+            End Set
+        End Property
         Property MaDaiLy() As String
             Get
                 Return strMadaily
@@ -16,12 +26,20 @@
                 strMadaily = value
             End Set
         End Property
-        Property ThoiGian() As Date
+        Property Thang() As Integer
             Get
-                Return dateThoigian
+                Return intThang
             End Get
-            Set(value As Date)
-                dateThoigian = value
+            Set(value As Integer)
+                intThang = value
+            End Set
+        End Property
+        Property SoPhieuXuat() As Integer
+            Get
+                Return intSophieuxuat
+            End Get
+            Set(value As Integer)
+                intSophieuxuat = value
             End Set
         End Property
         Property TongTriGia() As Long
