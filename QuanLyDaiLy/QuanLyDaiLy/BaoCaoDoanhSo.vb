@@ -37,14 +37,16 @@ Public Class BaoCaoDoanhSo
 
         'Ghi du lieu vao Bang
         baocaodoanhsoDTO.MaBaoCaoDoanhSo = KetNoiDAL.TaoKhoaChinh("BAOCAODOANHSO", "MaBaoCaoDoanhSo", "D")
-        baocaodoanhsoDTO.Thang = KetNoiDAL.LayDuLieu("PHIEUXUAT", "Month(NgayLapPhieu)", "Month(NgayLapPhieu) = '" + cbThang.SelectedItem + "'").Rows(0)(0)
+        baocaodoanhsoDTO.Thang = KetNoiDAL.LayDuLieu("PHIEUXUAT", "Month(NgayLapPhieu)", "Month(NgayLapPhieu) = " + cbThang.SelectedItem).Rows(0)(0)
         Dim madaily As DataTable = KetNoiDAL.LayDuLieu("PHIEUXUAT", "DISTINCT MaDaiLy", "")
 
         For i = 0 To madaily.Rows.Count - 1
             'Kiem tra ma daily va thoi gian muon bao cao
             Dim str As String = "MaDaiLy = '" + madaily.Rows(i)(0) + "' And Month(NgayLapPhieu) = " + cbThang.SelectedItem + " and Year(NgayLapPhieu) = " + txbNam.Text
+            baocaodoanhsoDTO.MaDaiLy = KetNoiDAL.LayDuLieu("PHIEUXUAT", "MaDaiLy", "Month(NgayLapPhieu) = " + cbThang.SelectedItem + " and Year(NgayLapPhieu) = " + txbNam.Text).Rows(0)(0)
             baocaodoanhsoDTO.SoPhieuXuat = KetNoiDAL.LayDuLieu("PHIEUXUAT", "MaPhieuXuat", str).Rows.Count
-            baocaodoanhsoDTO.TongTriGia = KetNoiDAL.LayDuLieu("PHIEUXUAT", "DISTINCT TongTriGia", str).Rows(0)(0)
+            baocaodoanhsoDTO.TongTriGia = 50000 'Tam thoi
+            'baocaodoanhsoDTO.TongTriGia = KetNoiDAL.LayDuLieu("PHIEUXUAT", "DISTINCT TongTriGia", str).Rows(0)(0) Nay bi loi, khong hieu
         Next
         baocaodoanhsoDTO.TyLe = baocaodoanhsoDTO.TongTriGia / baocaodoanhsoDTO.SoPhieuXuat
 

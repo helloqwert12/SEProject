@@ -260,7 +260,7 @@ Namespace QuanLyDaiLyDAL
             Return str
         End Function
         'Ham lay du lieu cho viec Auto Complete
-        Public Shared Sub LayDuLieu(ByVal dataCollection As AutoCompleteStringCollection, ByVal tenbang As String,
+        Public Shared Sub LayDuLieuAutoComplete(ByVal dataCollection As AutoCompleteStringCollection, ByVal tenbang As String,
                                          ByVal thuoctinh As String)
             Dim adapter As New SqlDataAdapter("SELECT DISTINCT " + thuoctinh + " FROM " + tenbang, connet)
             Dim ds As New DataSet()

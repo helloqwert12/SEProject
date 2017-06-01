@@ -18,7 +18,7 @@ Public Class TraCuuDaiLy
 
         'Autocomplete cho Madaily
         Dim madaily As New AutoCompleteStringCollection()
-        KetNoiDAL.LayDuLieu(madaily, "DAILY", "MaDaiLy")
+        KetNoiDAL.LayDuLieuAutoComplete(madaily, "DAILY", "MaDaiLy")
 
         With txbMaDaiLy
             .AutoCompleteCustomSource = madaily
@@ -28,7 +28,7 @@ Public Class TraCuuDaiLy
 
         'Autocomplete cho Tendaily
         Dim tendaily As New AutoCompleteStringCollection()
-        KetNoiDAL.LayDuLieu(tendaily, "DAILY", "TenDaiLy")
+        KetNoiDAL.LayDuLieuAutoComplete(tendaily, "DAILY", "TenDaiLy")
 
         With txbTenDaiLy
             .AutoCompleteCustomSource = tendaily
@@ -38,7 +38,7 @@ Public Class TraCuuDaiLy
 
         'Autocomplete cho Dienthoai
         Dim dienthoai As New AutoCompleteStringCollection()
-        KetNoiDAL.LayDuLieu(dienthoai, "DAILY", "DienThoai")
+        KetNoiDAL.LayDuLieuAutoComplete(dienthoai, "DAILY", "DienThoai")
 
         With txbDienThoai
             .AutoCompleteCustomSource = dienthoai
@@ -48,7 +48,7 @@ Public Class TraCuuDaiLy
 
         'Autocomplete cho Ngaytiepnhan
         Dim ngaytiepnhan As New AutoCompleteStringCollection()
-        KetNoiDAL.LayDuLieu(ngaytiepnhan, "DAILY", "NgayTiepNhan")
+        KetNoiDAL.LayDuLieuAutoComplete(ngaytiepnhan, "DAILY", "NgayTiepNhan")
 
         With txbNgayTiepNhan
             .AutoCompleteCustomSource = ngaytiepnhan
@@ -58,7 +58,7 @@ Public Class TraCuuDaiLy
 
         'Autocomplete cho Email
         Dim email As New AutoCompleteStringCollection()
-        KetNoiDAL.LayDuLieu(email, "DAILY", "Email")
+        KetNoiDAL.LayDuLieuAutoComplete(email, "DAILY", "Email")
 
         With txbEmail
             .AutoCompleteCustomSource = email
@@ -68,7 +68,7 @@ Public Class TraCuuDaiLy
 
         'Autocomplete cho Diachi
         Dim diachi As New AutoCompleteStringCollection()
-        KetNoiDAL.LayDuLieu(diachi, "DAILY", "DiaChi")
+        KetNoiDAL.LayDuLieuAutoComplete(diachi, "DAILY", "DiaChi")
 
         With txbDiaChi
             .AutoCompleteCustomSource = diachi
