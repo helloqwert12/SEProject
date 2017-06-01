@@ -146,6 +146,7 @@ Partial Class ThayDoiQuyDinh
         Me.Name = "ThayDoiQuyDinh"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "THAY ĐỔI QUY ĐỊNH"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.txbMoi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txbHienTai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

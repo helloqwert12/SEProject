@@ -183,6 +183,7 @@ Partial Class BaoCaoDoanhSo
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.StatusBar = Me.RibbonStatusBar
         Me.Text = "BÁO CÁO DOANH SỐ"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvBaoCaoDoanhSo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txbNam.Properties, System.ComponentModel.ISupportInitialize).EndInit()
