@@ -174,8 +174,11 @@ Partial Class BaoCaoCongNo
         Me.Controls.Add(Me.dgvBaoCaoCongNo)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "BaoCaoCongNo"
         Me.Ribbon = Me.RibbonControl
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.StatusBar = Me.RibbonStatusBar
         Me.Text = "BÁO CÁO CÔNG NỢ"
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()

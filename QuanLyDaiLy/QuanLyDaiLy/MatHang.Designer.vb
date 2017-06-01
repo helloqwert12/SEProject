@@ -492,6 +492,8 @@ Partial Class MatHang
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "MatHang"
         Me.Ribbon = Me.RibbonControl
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

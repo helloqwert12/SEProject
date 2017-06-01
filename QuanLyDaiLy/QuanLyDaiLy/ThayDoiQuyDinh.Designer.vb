@@ -30,6 +30,7 @@ Partial Class ThayDoiQuyDinh
         Me.txbMoi = New DevExpress.XtraEditors.TextEdit()
         Me.txbHienTai = New DevExpress.XtraEditors.TextEdit()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnThoat = New System.Windows.Forms.Button()
         CType(Me.txbMoi.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txbHienTai.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -46,7 +47,7 @@ Partial Class ThayDoiQuyDinh
         '
         'btnCapNhat
         '
-        Me.btnCapNhat.Location = New System.Drawing.Point(180, 173)
+        Me.btnCapNhat.Location = New System.Drawing.Point(106, 171)
         Me.btnCapNhat.Name = "btnCapNhat"
         Me.btnCapNhat.Size = New System.Drawing.Size(112, 23)
         Me.btnCapNhat.TabIndex = 3
@@ -117,11 +118,21 @@ Partial Class ThayDoiQuyDinh
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "THAY ĐỔI QUY ĐỊNH"
         '
+        'btnThoat
+        '
+        Me.btnThoat.Location = New System.Drawing.Point(278, 171)
+        Me.btnThoat.Name = "btnThoat"
+        Me.btnThoat.Size = New System.Drawing.Size(112, 23)
+        Me.btnThoat.TabIndex = 10
+        Me.btnThoat.Text = "Thoát"
+        Me.btnThoat.UseVisualStyleBackColor = True
+        '
         'ThayDoiQuyDinh
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(489, 215)
+        Me.Controls.Add(Me.btnThoat)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txbHienTai)
         Me.Controls.Add(Me.txbMoi)
@@ -130,7 +141,10 @@ Partial Class ThayDoiQuyDinh
         Me.Controls.Add(Me.cbApDung)
         Me.Controls.Add(Me.btnCapNhat)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "ThayDoiQuyDinh"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "THAY ĐỔI QUY ĐỊNH"
         CType(Me.txbMoi.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txbHienTai.Properties, System.ComponentModel.ISupportInitialize).EndInit()
@@ -147,4 +161,5 @@ Partial Class ThayDoiQuyDinh
     Friend WithEvents txbMoi As DevExpress.XtraEditors.TextEdit
     Friend WithEvents txbHienTai As DevExpress.XtraEditors.TextEdit
     Friend WithEvents Label4 As Label
+    Friend WithEvents btnThoat As Button
 End Class

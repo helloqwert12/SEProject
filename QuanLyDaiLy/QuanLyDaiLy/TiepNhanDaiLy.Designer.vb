@@ -689,7 +689,9 @@ Partial Class TiepNhanDaiLy
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
         Me.Name = "TiepNhanDaiLy"
         Me.Ribbon = Me.RibbonControl1
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

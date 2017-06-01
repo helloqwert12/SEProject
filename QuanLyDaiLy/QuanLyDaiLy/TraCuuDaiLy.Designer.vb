@@ -511,6 +511,7 @@ Partial Class TraCuuDaiLy
         '
         'TraCuuDaiLy
         '
+        Me.AllowFormGlass = DevExpress.Utils.DefaultBoolean.[True]
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1091, 592)
@@ -521,9 +522,12 @@ Partial Class TraCuuDaiLy
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
         Me.Name = "TraCuuDaiLy"
         Me.Ribbon = Me.RibbonControl
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.StatusBar = Me.RibbonStatusBar
         Me.Text = "TRA CỨU ĐẠI LÝ"
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()

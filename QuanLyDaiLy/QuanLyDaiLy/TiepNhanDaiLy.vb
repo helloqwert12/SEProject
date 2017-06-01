@@ -1,6 +1,7 @@
 ﻿Imports DTO.QuanLyDaiLyDTO
 Imports DAL.QuanLyDaiLyDAL
 Imports BUS.QuanLyDaiLyBUS
+
 Public Class TiepNhanDaiLy
     Enum STATUS
         THEM
@@ -95,10 +96,7 @@ Public Class TiepNhanDaiLy
     Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận thoát Tiếp nhận đại lý?", "XÁC NHẬN", MessageBoxButtons.YesNo)
         If rslt = DialogResult.Yes Then
-            'Dim menu As Menu = New Menu()
-            'Me.Dispose()
-            'menu.btnMenu.Show()
-            Application.Exit()
+            Me.Dispose()
         End If
     End Sub
 

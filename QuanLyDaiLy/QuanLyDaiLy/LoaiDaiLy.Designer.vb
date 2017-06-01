@@ -437,6 +437,8 @@ Partial Class LoaiDaiLy
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.RibbonControl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "LoaiDaiLy"
         Me.Ribbon = Me.RibbonControl
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

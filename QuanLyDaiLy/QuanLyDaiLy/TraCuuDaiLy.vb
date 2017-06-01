@@ -261,10 +261,7 @@ Public Class TraCuuDaiLy
     Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận thoát Tra cứu đại lý?", "XÁC NHẬN", MessageBoxButtons.YesNo)
         If rslt = DialogResult.Yes Then
-            'Dim menu As Menu = New Menu()
-            'Me.Dispose()
-            'menu.btnMenu.Show()
-            Application.Exit()
+            Me.Dispose()
         End If
     End Sub
 End Class

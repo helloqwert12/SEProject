@@ -411,8 +411,11 @@ Partial Class DonViTinh
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "DonViTinh"
         Me.Ribbon = Me.RibbonControl
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.StatusBar = Me.RibbonStatusBar
         Me.Text = "ĐƠN VỊ TÍNH"
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()

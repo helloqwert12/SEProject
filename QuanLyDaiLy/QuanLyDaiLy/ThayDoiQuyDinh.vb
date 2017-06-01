@@ -44,4 +44,15 @@ Public Class ThayDoiQuyDinh
             End If
         End If
     End Sub
+
+    Private Sub btnThoat_Click(sender As Object, e As EventArgs) Handles btnThoat.Click
+        Dim rslt As DialogResult = MessageBox.Show("Xác nhận thoát Thay đổi quy định?", "XÁC NHẬN", MessageBoxButtons.YesNo)
+        If rslt = DialogResult.Yes Then
+            Dim menu As New Menu()
+            Me.Dispose()
+            'menu.rmMenu.ShowPopup(New Point())
+            'menu.btnMenu.Show()
+            'Application.Exit()
+        End If
+    End Sub
 End Class

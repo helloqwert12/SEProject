@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Menu
     Inherits DevExpress.XtraBars.Ribbon.RibbonForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         If disposing AndAlso components IsNot Nothing Then
             components.Dispose()
@@ -17,7 +17,7 @@ Partial Class Menu
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
@@ -40,8 +40,12 @@ Partial Class Menu
         Me.btnBaoCaoCongNo = New DevExpress.XtraBars.BarButtonItem()
         Me.btnMenu = New DevExpress.XtraEditors.SimpleButton()
         Me.rmMenu = New DevExpress.XtraBars.Ribbon.RadialMenu(Me.components)
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ThoátToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rmMenu, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'RibbonStatusBar
@@ -58,7 +62,7 @@ Partial Class Menu
         Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.blLuuTru, Me.blTraCuu, Me.blTinhToan, Me.blBaoBieu, Me.btnDaiLy, Me.btnMatHang, Me.btnQuan, Me.btnLoaiDaiLy, Me.btnDonViTinh, Me.btnQuyDinh, Me.btnTraCuuDaiLy, Me.btnLapPhieuThu, Me.btnLapPhieuXuat, Me.BarButtonItem1, Me.btnBaoCaoDoanhSo, Me.btnBaoCaoCongNo})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
         Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.RibbonControl.MaxItemId = 3
+        Me.RibbonControl.MaxItemId = 1
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Size = New System.Drawing.Size(1590, 49)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
@@ -199,6 +203,27 @@ Partial Class Menu
         Me.rmMenu.Name = "rmMenu"
         Me.rmMenu.Ribbon = Me.RibbonControl
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ThoátToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 49)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1590, 24)
+        Me.MenuStrip1.TabIndex = 9
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'MenuToolStripMenuItem
+        '
+        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
+        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
+        Me.MenuToolStripMenuItem.Text = "Menu"
+        '
+        'ThoátToolStripMenuItem
+        '
+        Me.ThoátToolStripMenuItem.Name = "ThoátToolStripMenuItem"
+        Me.ThoátToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
+        Me.ThoátToolStripMenuItem.Text = "Thoát"
+        '
         'Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -206,7 +231,9 @@ Partial Class Menu
         Me.ClientSize = New System.Drawing.Size(1590, 899)
         Me.Controls.Add(Me.btnMenu)
         Me.Controls.Add(Me.RibbonStatusBar)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.RibbonControl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IsMdiContainer = True
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Menu"
@@ -215,6 +242,8 @@ Partial Class Menu
         Me.Text = "Menu"
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rmMenu, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -239,4 +268,7 @@ Partial Class Menu
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnBaoCaoDoanhSo As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnBaoCaoCongNo As DevExpress.XtraBars.BarButtonItem
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ThoátToolStripMenuItem As ToolStripMenuItem
 End Class

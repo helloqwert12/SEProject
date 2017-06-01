@@ -64,6 +64,11 @@ Partial Class LapPhieuXuatHang
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.GaugeControl2 = New DevExpress.XtraGauges.Win.GaugeControl()
+        Me.dgSoPhieuXuatCuaDaiLy = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
+        Me.DigitalBackgroundLayerComponent3 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
+        Me.lblDaiLy = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.GaugeControl3 = New DevExpress.XtraGauges.Win.GaugeControl()
         Me.dgSoMatHang = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
         Me.digitalBackgroundLayerComponent7 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
@@ -74,11 +79,6 @@ Partial Class LapPhieuXuatHang
         Me.DigitalBackgroundLayerComponent1 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.DigitalBackgroundLayerComponent2 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
-        Me.GaugeControl2 = New DevExpress.XtraGauges.Win.GaugeControl()
-        Me.dgSoPhieuXuatCuaDaiLy = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
-        Me.DigitalBackgroundLayerComponent3 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
-        Me.lblDaiLy = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -86,13 +86,13 @@ Partial Class LapPhieuXuatHang
         CType(Me.fpnlNote, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.fpnlNote.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.dgSoPhieuXuatCuaDaiLy, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DigitalBackgroundLayerComponent3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgSoMatHang, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.digitalBackgroundLayerComponent7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgTongPhieuXuat, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DigitalBackgroundLayerComponent1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DigitalBackgroundLayerComponent2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgSoPhieuXuatCuaDaiLy, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DigitalBackgroundLayerComponent3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl
@@ -523,6 +523,54 @@ Partial Class LapPhieuXuatHang
         Me.Panel3.Size = New System.Drawing.Size(359, 208)
         Me.Panel3.TabIndex = 34
         '
+        'GaugeControl2
+        '
+        Me.GaugeControl2.AutoLayout = False
+        Me.GaugeControl2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.GaugeControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.GaugeControl2.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgSoPhieuXuatCuaDaiLy})
+        Me.GaugeControl2.Location = New System.Drawing.Point(234, 148)
+        Me.GaugeControl2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GaugeControl2.Name = "GaugeControl2"
+        Me.GaugeControl2.Size = New System.Drawing.Size(99, 48)
+        Me.GaugeControl2.TabIndex = 23
+        '
+        'dgSoPhieuXuatCuaDaiLy
+        '
+        Me.dgSoPhieuXuatCuaDaiLy.AppearanceOff.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#00FFFFFF")
+        Me.dgSoPhieuXuatCuaDaiLy.AppearanceOn.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:WhiteSmoke")
+        Me.dgSoPhieuXuatCuaDaiLy.BackgroundLayers.AddRange(New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent() {Me.DigitalBackgroundLayerComponent3})
+        Me.dgSoPhieuXuatCuaDaiLy.Bounds = New System.Drawing.Rectangle(6, 1, 95, 48)
+        Me.dgSoPhieuXuatCuaDaiLy.DigitCount = 5
+        Me.dgSoPhieuXuatCuaDaiLy.Name = "dgSoPhieuXuatCuaDaiLy"
+        '
+        'DigitalBackgroundLayerComponent3
+        '
+        Me.DigitalBackgroundLayerComponent3.BottomRight = New DevExpress.XtraGauges.Core.Base.PointF2D(259.8125!, 99.9625!)
+        Me.DigitalBackgroundLayerComponent3.Name = "digitalBackgroundLayerComponent7"
+        Me.DigitalBackgroundLayerComponent3.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style8
+        Me.DigitalBackgroundLayerComponent3.TopLeft = New DevExpress.XtraGauges.Core.Base.PointF2D(20.0!, 0!)
+        Me.DigitalBackgroundLayerComponent3.ZOrder = 1000
+        '
+        'lblDaiLy
+        '
+        Me.lblDaiLy.AutoSize = True
+        Me.lblDaiLy.Font = New System.Drawing.Font("Tahoma", 10.0!)
+        Me.lblDaiLy.Location = New System.Drawing.Point(117, 156)
+        Me.lblDaiLy.Name = "lblDaiLy"
+        Me.lblDaiLy.Size = New System.Drawing.Size(0, 17)
+        Me.lblDaiLy.TabIndex = 21
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label13.Location = New System.Drawing.Point(3, 157)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(119, 17)
+        Me.Label13.TabIndex = 22
+        Me.Label13.Text = "Số phiếu xuất của"
+        '
         'GaugeControl3
         '
         Me.GaugeControl3.AutoLayout = False
@@ -620,54 +668,6 @@ Partial Class LapPhieuXuatHang
         Me.DigitalBackgroundLayerComponent2.TopLeft = New DevExpress.XtraGauges.Core.Base.PointF2D(20.0!, 0!)
         Me.DigitalBackgroundLayerComponent2.ZOrder = 1000
         '
-        'GaugeControl2
-        '
-        Me.GaugeControl2.AutoLayout = False
-        Me.GaugeControl2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
-        Me.GaugeControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.GaugeControl2.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgSoPhieuXuatCuaDaiLy})
-        Me.GaugeControl2.Location = New System.Drawing.Point(234, 148)
-        Me.GaugeControl2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GaugeControl2.Name = "GaugeControl2"
-        Me.GaugeControl2.Size = New System.Drawing.Size(99, 48)
-        Me.GaugeControl2.TabIndex = 23
-        '
-        'dgSoPhieuXuatCuaDaiLy
-        '
-        Me.dgSoPhieuXuatCuaDaiLy.AppearanceOff.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#00FFFFFF")
-        Me.dgSoPhieuXuatCuaDaiLy.AppearanceOn.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:WhiteSmoke")
-        Me.dgSoPhieuXuatCuaDaiLy.BackgroundLayers.AddRange(New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent() {Me.DigitalBackgroundLayerComponent3})
-        Me.dgSoPhieuXuatCuaDaiLy.Bounds = New System.Drawing.Rectangle(6, 1, 95, 48)
-        Me.dgSoPhieuXuatCuaDaiLy.DigitCount = 5
-        Me.dgSoPhieuXuatCuaDaiLy.Name = "dgSoPhieuXuatCuaDaiLy"
-        '
-        'DigitalBackgroundLayerComponent3
-        '
-        Me.DigitalBackgroundLayerComponent3.BottomRight = New DevExpress.XtraGauges.Core.Base.PointF2D(259.8125!, 99.9625!)
-        Me.DigitalBackgroundLayerComponent3.Name = "digitalBackgroundLayerComponent7"
-        Me.DigitalBackgroundLayerComponent3.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style8
-        Me.DigitalBackgroundLayerComponent3.TopLeft = New DevExpress.XtraGauges.Core.Base.PointF2D(20.0!, 0!)
-        Me.DigitalBackgroundLayerComponent3.ZOrder = 1000
-        '
-        'lblDaiLy
-        '
-        Me.lblDaiLy.AutoSize = True
-        Me.lblDaiLy.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.lblDaiLy.Location = New System.Drawing.Point(117, 156)
-        Me.lblDaiLy.Name = "lblDaiLy"
-        Me.lblDaiLy.Size = New System.Drawing.Size(0, 17)
-        Me.lblDaiLy.TabIndex = 21
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label13.Location = New System.Drawing.Point(3, 157)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(119, 17)
-        Me.Label13.TabIndex = 22
-        Me.Label13.Text = "Số phiếu xuất của"
-        '
         'LapPhieuXuatHang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -680,6 +680,8 @@ Partial Class LapPhieuXuatHang
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "LapPhieuXuatHang"
         Me.Ribbon = Me.RibbonControl
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -696,13 +698,13 @@ Partial Class LapPhieuXuatHang
         Me.fpnlNote.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.dgSoPhieuXuatCuaDaiLy, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DigitalBackgroundLayerComponent3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgSoMatHang, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.digitalBackgroundLayerComponent7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgTongPhieuXuat, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DigitalBackgroundLayerComponent1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DigitalBackgroundLayerComponent2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgSoPhieuXuatCuaDaiLy, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DigitalBackgroundLayerComponent3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

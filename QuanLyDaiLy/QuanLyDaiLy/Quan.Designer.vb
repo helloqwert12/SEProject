@@ -411,8 +411,11 @@ Partial Class Quan
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
         Me.Name = "Quan"
         Me.Ribbon = Me.RibbonControl
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.StatusBar = Me.RibbonStatusBar
         Me.Text = "QUẬN"
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()

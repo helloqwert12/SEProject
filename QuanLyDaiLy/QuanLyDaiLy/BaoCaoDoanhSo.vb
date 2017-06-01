@@ -60,7 +60,7 @@ Public Class BaoCaoDoanhSo
     Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận thoát Báo cáo doanh số?", "XÁC NHẬN", MessageBoxButtons.YesNo)
         If rslt = DialogResult.Yes Then
-            Application.Exit()
+            Me.Dispose()
         End If
     End Sub
 End Class
