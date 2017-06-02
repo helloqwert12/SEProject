@@ -193,7 +193,7 @@ Namespace QuanLyDaiLyDAL
                 End If
             Next
             str = str.Remove(str.Length - 1, 1)
-            str &= ("WHERE " + tendieukien + " ='" + giatridieukien + "'")
+            str &= (" WHERE " + tendieukien + " ='" + giatridieukien + "'")
             Dim sqlCmd As SqlCommand
             sqlCmd = New SqlCommand(str, connet)
             Try
