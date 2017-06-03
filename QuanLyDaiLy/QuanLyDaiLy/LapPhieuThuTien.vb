@@ -114,14 +114,14 @@ Public Class LapPhieuThuTien
                         KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", madaily, "NoDaiLy = " + dailyDTO.NoDaiLy.ToString())
                         Dim success2 As Boolean = phieuthutienDAL.ThemDuLieu(phieuthutienDTO)
                         If success2 Then
-                            'Ket noi toi DTO cua BaoCaoCongNo
-                            baocaocongnoDTO.MaDaiLy = madaily
-                            baocaocongnoDTO.MaBaoCaoCongNo = KetNoiDAL.TaoKhoaChinh("BAOCAOCONGNO", "MaBaoCaoCongNo", "")
-                            baocaocongnoDTO.Thang = KetNoiDAL.LayDuLieu("PHIEUTHUTIEN", "Month(NgayThuTien)", "MaDaiLy = '" + madaily + "'").Rows(0)(0)
-                            baocaocongnoDTO.NoDau = tempNoDaiLy
-                            baocaocongnoDTO.PhatSinh = txbSoTienThu.Text
-                            baocaocongnoDTO.NoCuoi = dailyDTO.NoDaiLy
-                            baocaocongnoDAL.ThemDuLieu(baocaocongnoDTO)
+                            ''Ket noi toi DTO cua BaoCaoCongNo
+                            'baocaocongnoDTO.MaDaiLy = madaily
+                            'baocaocongnoDTO.MaBaoCaoCongNo = KetNoiDAL.TaoKhoaChinh("BAOCAOCONGNO", "MaBaoCaoCongNo", "")
+                            'baocaocongnoDTO.Thang = KetNoiDAL.LayDuLieu("PHIEUTHUTIEN", "Month(NgayThuTien)", "MaDaiLy = '" + madaily + "'").Rows(0)(0)
+                            'baocaocongnoDTO.NoDau = tempNoDaiLy
+                            'baocaocongnoDTO.PhatSinh = txbSoTienThu.Text
+                            'baocaocongnoDTO.NoCuoi = dailyDTO.NoDaiLy
+                            'baocaocongnoDAL.ThemDuLieu(baocaocongnoDTO)
 
                             HienThiThongBao("Thêm phiếu thu tiền thành công")
                             LoadDataOnGridView()
