@@ -52,6 +52,10 @@ Partial Class LapPhieuThuTien
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.GaugeControl4 = New DevExpress.XtraGauges.Win.GaugeControl()
+        Me.dgApDung = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
+        Me.DigitalBackgroundLayerComponent4 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.GaugeControl5 = New DevExpress.XtraGauges.Win.GaugeControl()
         Me.GaugeControl2 = New DevExpress.XtraGauges.Win.GaugeControl()
         Me.DigitalGauge1 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
@@ -63,7 +67,7 @@ Partial Class LapPhieuThuTien
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GaugeControl3 = New DevExpress.XtraGauges.Win.GaugeControl()
-        Me.dgSoDaiLyToiDa = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
+        Me.dgSoDaiLyConNo = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
         Me.DigitalBackgroundLayerComponent3 = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent()
         Me.GaugeControl1 = New DevExpress.XtraGauges.Win.GaugeControl()
         Me.dgTongPhieuThu = New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge()
@@ -76,20 +80,22 @@ Partial Class LapPhieuThuTien
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.dgvPhieuThuTien = New System.Windows.Forms.DataGridView()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.fpnlNote = New DevExpress.Utils.FlyoutPanel()
         Me.lblThongbao = New System.Windows.Forms.Label()
         Me.label = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.txbSoTienThu.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        CType(Me.dgApDung, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DigitalBackgroundLayerComponent4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GaugeControl5.SuspendLayout()
         CType(Me.DigitalGauge1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DigitalBackgroundLayerComponent5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgSoPhieuThuCuaDaiLy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DigitalBackgroundLayerComponent6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgSoDaiLyToiDa, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgSoDaiLyConNo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DigitalBackgroundLayerComponent3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgTongPhieuThu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DigitalBackgroundLayerComponent1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -390,6 +396,8 @@ Partial Class LapPhieuThuTien
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.GaugeControl4)
+        Me.Panel3.Controls.Add(Me.Label14)
         Me.Panel3.Controls.Add(Me.GaugeControl5)
         Me.Panel3.Controls.Add(Me.lblDaiLy)
         Me.Panel3.Controls.Add(Me.Label15)
@@ -405,6 +413,44 @@ Partial Class LapPhieuThuTien
         Me.Panel3.Size = New System.Drawing.Size(337, 208)
         Me.Panel3.TabIndex = 16
         '
+        'GaugeControl4
+        '
+        Me.GaugeControl4.AutoLayout = False
+        Me.GaugeControl4.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
+        Me.GaugeControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
+        Me.GaugeControl4.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgApDung})
+        Me.GaugeControl4.Location = New System.Drawing.Point(226, 157)
+        Me.GaugeControl4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GaugeControl4.Name = "GaugeControl4"
+        Me.GaugeControl4.Size = New System.Drawing.Size(98, 50)
+        Me.GaugeControl4.TabIndex = 25
+        '
+        'dgApDung
+        '
+        Me.dgApDung.AppearanceOff.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#00FFFFFF")
+        Me.dgApDung.AppearanceOn.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:WhiteSmoke")
+        Me.dgApDung.BackgroundLayers.AddRange(New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent() {Me.DigitalBackgroundLayerComponent4})
+        Me.dgApDung.Bounds = New System.Drawing.Rectangle(6, 6, 93, 43)
+        Me.dgApDung.DigitCount = 5
+        Me.dgApDung.Name = "dgApDung"
+        '
+        'DigitalBackgroundLayerComponent4
+        '
+        Me.DigitalBackgroundLayerComponent4.BottomRight = New DevExpress.XtraGauges.Core.Base.PointF2D(259.8125!, 99.9625!)
+        Me.DigitalBackgroundLayerComponent4.Name = "digitalBackgroundLayerComponent7"
+        Me.DigitalBackgroundLayerComponent4.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style8
+        Me.DigitalBackgroundLayerComponent4.TopLeft = New DevExpress.XtraGauges.Core.Base.PointF2D(20.0!, 0!)
+        Me.DigitalBackgroundLayerComponent4.ZOrder = 1000
+        '
+        'Label14
+        '
+        Me.Label14.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
+        Me.Label14.Location = New System.Drawing.Point(3, 163)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(189, 50)
+        Me.Label14.TabIndex = 24
+        Me.Label14.Text = "Áp dụng quy định số tiền thu được lớn hơn số tiền nợ"
+        '
         'GaugeControl5
         '
         Me.GaugeControl5.AutoLayout = False
@@ -412,7 +458,7 @@ Partial Class LapPhieuThuTien
         Me.GaugeControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl5.Controls.Add(Me.GaugeControl2)
         Me.GaugeControl5.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgSoPhieuThuCuaDaiLy})
-        Me.GaugeControl5.Location = New System.Drawing.Point(224, 73)
+        Me.GaugeControl5.Location = New System.Drawing.Point(226, 68)
         Me.GaugeControl5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl5.Name = "GaugeControl5"
         Me.GaugeControl5.Size = New System.Drawing.Size(99, 48)
@@ -468,7 +514,7 @@ Partial Class LapPhieuThuTien
         '
         Me.lblDaiLy.AutoSize = True
         Me.lblDaiLy.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.lblDaiLy.Location = New System.Drawing.Point(115, 82)
+        Me.lblDaiLy.Location = New System.Drawing.Point(115, 79)
         Me.lblDaiLy.Name = "lblDaiLy"
         Me.lblDaiLy.Size = New System.Drawing.Size(0, 17)
         Me.lblDaiLy.TabIndex = 19
@@ -487,7 +533,7 @@ Partial Class LapPhieuThuTien
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label13.Location = New System.Drawing.Point(4, 82)
+        Me.Label13.Location = New System.Drawing.Point(3, 84)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(116, 17)
         Me.Label13.TabIndex = 19
@@ -497,7 +543,7 @@ Partial Class LapPhieuThuTien
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label12.Location = New System.Drawing.Point(4, 48)
+        Me.Label12.Location = New System.Drawing.Point(4, 42)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(125, 17)
         Me.Label12.TabIndex = 19
@@ -508,21 +554,21 @@ Partial Class LapPhieuThuTien
         Me.GaugeControl3.AutoLayout = False
         Me.GaugeControl3.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.GaugeControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
-        Me.GaugeControl3.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgSoDaiLyToiDa})
-        Me.GaugeControl3.Location = New System.Drawing.Point(224, 116)
+        Me.GaugeControl3.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgSoDaiLyConNo})
+        Me.GaugeControl3.Location = New System.Drawing.Point(226, 114)
         Me.GaugeControl3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl3.Name = "GaugeControl3"
         Me.GaugeControl3.Size = New System.Drawing.Size(98, 50)
         Me.GaugeControl3.TabIndex = 18
         '
-        'dgSoDaiLyToiDa
+        'dgSoDaiLyConNo
         '
-        Me.dgSoDaiLyToiDa.AppearanceOff.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#00FFFFFF")
-        Me.dgSoDaiLyToiDa.AppearanceOn.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:WhiteSmoke")
-        Me.dgSoDaiLyToiDa.BackgroundLayers.AddRange(New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent() {Me.DigitalBackgroundLayerComponent3})
-        Me.dgSoDaiLyToiDa.Bounds = New System.Drawing.Rectangle(6, 6, 93, 43)
-        Me.dgSoDaiLyToiDa.DigitCount = 5
-        Me.dgSoDaiLyToiDa.Name = "dgSoDaiLyToiDa"
+        Me.dgSoDaiLyConNo.AppearanceOff.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:#00FFFFFF")
+        Me.dgSoDaiLyConNo.AppearanceOn.ContentBrush = New DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:WhiteSmoke")
+        Me.dgSoDaiLyConNo.BackgroundLayers.AddRange(New DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent() {Me.DigitalBackgroundLayerComponent3})
+        Me.dgSoDaiLyConNo.Bounds = New System.Drawing.Rectangle(6, 6, 93, 43)
+        Me.dgSoDaiLyConNo.DigitCount = 5
+        Me.dgSoDaiLyConNo.Name = "dgSoDaiLyConNo"
         '
         'DigitalBackgroundLayerComponent3
         '
@@ -538,7 +584,7 @@ Partial Class LapPhieuThuTien
         Me.GaugeControl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.GaugeControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl1.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgTongPhieuThu})
-        Me.GaugeControl1.Location = New System.Drawing.Point(224, 21)
+        Me.GaugeControl1.Location = New System.Drawing.Point(226, 16)
         Me.GaugeControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl1.Name = "GaugeControl1"
         Me.GaugeControl1.Size = New System.Drawing.Size(99, 48)
@@ -639,18 +685,32 @@ Partial Class LapPhieuThuTien
         '
         'Timer1
         '
+        Me.Timer1.Interval = 5000
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Location = New System.Drawing.Point(454, 56)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(575, 8)
+        Me.Button2.TabIndex = 42
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'fpnlNote
         '
         Me.fpnlNote.Controls.Add(Me.lblThongbao)
         Me.fpnlNote.Controls.Add(Me.label)
-        Me.fpnlNote.Location = New System.Drawing.Point(469, 55)
+        Me.fpnlNote.Location = New System.Drawing.Point(469, 56)
         Me.fpnlNote.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.fpnlNote.Name = "fpnlNote"
         Me.fpnlNote.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Top
         Me.fpnlNote.OwnerControl = Me.Button2
         Me.fpnlNote.Size = New System.Drawing.Size(549, 72)
-        Me.fpnlNote.TabIndex = 34
+        Me.fpnlNote.TabIndex = 41
         '
         'lblThongbao
         '
@@ -672,19 +732,6 @@ Partial Class LapPhieuThuTien
         Me.label.Size = New System.Drawing.Size(104, 17)
         Me.label.TabIndex = 0
         Me.label.Text = "THÔNG BÁO: "
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(455, 55)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(575, 8)
-        Me.Button2.TabIndex = 38
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'LapPhieuThuTien
         '
@@ -712,12 +759,14 @@ Partial Class LapPhieuThuTien
         CType(Me.txbSoTienThu.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        CType(Me.dgApDung, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DigitalBackgroundLayerComponent4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GaugeControl5.ResumeLayout(False)
         CType(Me.DigitalGauge1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DigitalBackgroundLayerComponent5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgSoPhieuThuCuaDaiLy, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DigitalBackgroundLayerComponent6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgSoDaiLyToiDa, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgSoDaiLyConNo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DigitalBackgroundLayerComponent3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgTongPhieuThu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DigitalBackgroundLayerComponent1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -763,7 +812,7 @@ Partial Class LapPhieuThuTien
     Friend WithEvents Label13 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents GaugeControl3 As DevExpress.XtraGauges.Win.GaugeControl
-    Friend WithEvents dgSoDaiLyToiDa As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge
+    Friend WithEvents dgSoDaiLyConNo As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge
     Private WithEvents DigitalBackgroundLayerComponent3 As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent
     Private WithEvents DigitalBackgroundLayerComponent2 As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent
     Friend WithEvents GaugeControl1 As DevExpress.XtraGauges.Win.GaugeControl
@@ -781,10 +830,6 @@ Partial Class LapPhieuThuTien
     Friend WithEvents txbMaPhieuThu As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents fpnlNote As DevExpress.Utils.FlyoutPanel
-    Friend WithEvents lblThongbao As Label
-    Friend WithEvents label As Label
-    Friend WithEvents Button2 As Button
     Friend WithEvents GaugeControl2 As DevExpress.XtraGauges.Win.GaugeControl
     Friend WithEvents DigitalGauge1 As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge
     Private WithEvents DigitalBackgroundLayerComponent5 As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent
@@ -793,4 +838,12 @@ Partial Class LapPhieuThuTien
     Private WithEvents DigitalBackgroundLayerComponent6 As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent
     Friend WithEvents txbSoTienNo As TextBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents fpnlNote As DevExpress.Utils.FlyoutPanel
+    Friend WithEvents lblThongbao As Label
+    Friend WithEvents label As Label
+    Friend WithEvents GaugeControl4 As DevExpress.XtraGauges.Win.GaugeControl
+    Friend WithEvents dgApDung As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge
+    Private WithEvents DigitalBackgroundLayerComponent4 As DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent
+    Friend WithEvents Label14 As Label
 End Class

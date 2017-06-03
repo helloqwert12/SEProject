@@ -27,21 +27,17 @@ Namespace QuanLyDaiLyBUS
         End Function
         'Kiem tra QD4: Ap dung so tien thu vuot qua so tien no
         Public Function LayGiaTriQuyDinh() As Integer
-            Dim data As DataTable
-            data = KetNoiDAL.LayDuLieu("THAMSO", "ApDung", "")
-            Return data.Rows(0)(0)
+            Dim data As Integer = KetNoiDAL.LayDuLieu("THAMSO", "ApDung", "").Rows(0)(0)
+            Return data
         End Function
-        Public Function XuLiQuyDinh(ByVal PhieuThuTien As PhieuThuTienDTO, ByVal DaiLy As DaiLyDTO) As Boolean
+        Public Function XuLiQuyDinh(ByVal PhieuThuTien As PhieuThuTienDTO, ByVal NoDaiLy As Long) As Boolean
             If LayGiaTriQuyDinh() = 0 Then
-                Dim temp As Long = DaiLy.NoDaiLy
-                DaiLy.NoDaiLy = DaiLy.NoDaiLy - PhieuThuTien.SoTienThu
-                If (DaiLy.NoDaiLy < 0) Then
-                    DaiLy.NoDaiLy = temp
+                Dim temp As Long = NoDaiLy
+                If (NoDaiLy < 0) Then
                     Return False
                 End If
                 Return True
             Else
-                DaiLy.NoDaiLy = DaiLy.NoDaiLy - PhieuThuTien.SoTienThu
                 Return True
             End If
         End Function

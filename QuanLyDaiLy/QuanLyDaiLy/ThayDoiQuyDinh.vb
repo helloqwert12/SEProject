@@ -17,11 +17,12 @@ Public Class ThayDoiQuyDinh
         thamsoBUS = New ThamSoBUS()
         'Load du lieu tu bang THAMSO
         txbHienTai.Text = KetNoiDAL.LayDuLieu("THAMSO").Rows(0)(0)
+        txbMoi.Text = txbHienTai.Text
 
 
     End Sub
     Private Sub btnCapNhat_Click(sender As Object, e As EventArgs) Handles btnCapNhat.Click
-        If Not (thamsoBUS.IsValid_SoLuongDLToiDa(thamsoDTO)) Then
+        If Not (thamsoBUS.IsValid_SoLuongDLToiDa(txbMoi.Text)) Then
             MessageBox.Show("Số đại lý của mỗi quận hiện tại không thể nhỏ hơn 1", "Xác Nhận", MessageBoxButtons.OK)
         Else
             If (txbMoi.Text > thamsoBUS.KiemTraSoDaiLyToiDa()) Then

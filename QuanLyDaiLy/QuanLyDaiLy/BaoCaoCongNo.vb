@@ -40,4 +40,14 @@ Public Class BaoCaoCongNo
     Private Sub btnThucHien_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThucHien.ItemClick
 
     End Sub
+
+    Private Sub btnExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExcel.ItemClick
+        Dim _export As Export = New Export()
+        _export.ExportExcel(dgvBaoCaoCongNo)
+    End Sub
+
+    Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
+        Dim _export As Export = New Export()
+        _export.ExportPDF(dgvBaoCaoCongNo, "BÁO CÁO CÔNG NỢ")
+    End Sub
 End Class

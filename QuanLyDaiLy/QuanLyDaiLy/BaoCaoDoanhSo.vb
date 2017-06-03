@@ -63,4 +63,14 @@ Public Class BaoCaoDoanhSo
             Me.Dispose()
         End If
     End Sub
+
+    Private Sub btnExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExcel.ItemClick
+        Dim _export As Export = New Export()
+        _export.ExportExcel(dgvBaoCaoDoanhSo)
+    End Sub
+
+    Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
+        Dim _export As Export = New Export()
+        _export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SỐ")
+    End Sub
 End Class

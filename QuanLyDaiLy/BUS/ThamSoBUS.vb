@@ -22,8 +22,8 @@ Namespace QuanLyDaiLyBUS
             Return max
         End Function
 
-        Public Function IsValid_SoLuongDLToiDa(ThamSo As ThamSoDTO) As Boolean
-            If ThamSo.SoLuongDLToiDa <= 0 Then
+        Public Function IsValid_SoLuongDLToiDa(SoLuongDLToiDa As Integer) As Boolean
+            If SoLuongDLToiDa < 1 Then
                 Return False
             Else
                 Return True
