@@ -114,6 +114,8 @@ Public Class LoaiDaiLy
                     End If
                 End If
             End If
+            txbNoToiDa.Enabled = False
+            txbTenLoaiDaiLy.Enabled = False
         End If
     End Sub
 

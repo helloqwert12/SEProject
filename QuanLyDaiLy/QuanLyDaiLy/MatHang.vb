@@ -59,9 +59,6 @@ Public Class MatHang
         If rslt = DialogResult.Yes Then
             Dim menu As New Menu()
             Me.Dispose()
-            'menu.rmMenu.ShowPopup(New Point())
-            'menu.btnMenu.Show()
-            'Application.Exit()
         End If
     End Sub
 
@@ -120,8 +117,9 @@ Public Class MatHang
                         txbSoLuongTon.Enabled = False
                     End If
                 End If
-
             End If
+            txbSoLuongTon.Enabled = False
+            txbTenMatHang.Enabled = False
         End If
     End Sub
 

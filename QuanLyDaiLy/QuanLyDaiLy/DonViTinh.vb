@@ -107,6 +107,7 @@ Public Class DonViTinh
                     End If
                 End If
             End If
+            txbTenDonViTinh.Enabled = False
         End If
     End Sub
 

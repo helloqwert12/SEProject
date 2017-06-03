@@ -194,9 +194,14 @@ Public Class TiepNhanDaiLy
                     End If
 
                 End If
+                txbDiaChi.Enabled = False
+                txbDienThoai.Enabled = False
+                txbEmail.Enabled = False
+                txbTenDaiLy.Enabled = False
+                cbQuan.Enabled = False
+                cbTenLoaiDaiLy.Enabled = False
             End If
         End If
-
     End Sub
 
     Private Sub btnXoaDaiLy_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnXoaDaiLy.ItemClick

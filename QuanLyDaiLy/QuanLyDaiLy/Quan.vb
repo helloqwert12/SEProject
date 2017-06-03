@@ -107,6 +107,7 @@ Public Class Quan
                     End If
                 End If
             End If
+            txbTenQuan.Enabled = False
         End If
     End Sub
 
