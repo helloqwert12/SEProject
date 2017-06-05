@@ -23,7 +23,7 @@ Public Class BaoCaoCongNo
         Me.dgvBaoCaoCongNo.DataSource = dTable
         With Me.dgvBaoCaoCongNo
             .Columns(0).HeaderText = "Mã đại lý"
-            .Columns(1).HeaderText = "Tháng"
+            .Columns(1).HeaderText = "Thời gian"
             .Columns(2).HeaderText = "Nợ đầu"
             .Columns(3).HeaderText = "Phát sinh"
             .Columns(4).HeaderText = "Nợ cuối"

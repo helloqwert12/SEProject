@@ -23,7 +23,7 @@ Public Class BaoCaoDoanhSo
         Me.dgvBaoCaoDoanhSo.DataSource = data
         With Me.dgvBaoCaoDoanhSo
             .Columns(0).HeaderText = "Mã đại lý"
-            .Columns(1).HeaderText = "Tháng"
+            .Columns(1).HeaderText = "Thời gian"
             .Columns(2).HeaderText = "Số phiếu xuất"
             .Columns(3).HeaderText = "Tổng trị giá"
             .Columns(4).HeaderText = "Tỷ lệ"
@@ -37,14 +37,15 @@ Public Class BaoCaoDoanhSo
 
         'Ghi du lieu vao Bang
         baocaodoanhsoDTO.MaBaoCaoDoanhSo = KetNoiDAL.TaoKhoaChinh("BAOCAODOANHSO", "MaBaoCaoDoanhSo", "D")
-        baocaodoanhsoDTO.ThoiGian = KetNoiDAL.LayDuLieu("PHIEUXUAT", "Month(NgayLapPhieu)", "Year(NgayLapPhieu)", "Month(NgayLapPhieu) = " + cbThang.SelectedItem, "Year(NgayLapPhieu) = " + txbNam.Text).Rows(0)(0)
         Dim madaily As DataTable = KetNoiDAL.LayDuLieu("PHIEUXUAT", "DISTINCT MaDaiLy", "")
 
         For i = 0 To madaily.Rows.Count - 1
             'Kiem tra ma daily va thoi gian muon bao cao
+
             Dim str As String = "MaDaiLy = '" + madaily.Rows(i)(0) + "' And Month(NgayLapPhieu) = " + cbThang.SelectedItem + " and Year(NgayLapPhieu) = " + txbNam.Text
             baocaodoanhsoDTO.MaDaiLy = KetNoiDAL.LayDuLieu("PHIEUXUAT", "MaDaiLy", "Month(NgayLapPhieu) = " + cbThang.SelectedItem + " and Year(NgayLapPhieu) = " + txbNam.Text).Rows(0)(0)
             baocaodoanhsoDTO.SoPhieuXuat = KetNoiDAL.LayDuLieu("PHIEUXUAT", "MaPhieuXuat", str).Rows.Count
+            baocaodoanhsoDTO.ThoiGian = KetNoiDAL.LayDuLieu("PHIEUXUAT", "NgayLapPhieu", str).Rows(i)(0)
             baocaodoanhsoDTO.TongTriGia = 50000 'Tam thoi
             'baocaodoanhsoDTO.TongTriGia = KetNoiDAL.LayDuLieu("PHIEUXUAT", "DISTINCT TongTriGia", str).Rows(0)(0) Nay bi loi, khong hieu
         Next
