@@ -87,6 +87,7 @@ Partial Class DonViTinh
         'btnXoaDonViTinh
         '
         Me.btnXoaDonViTinh.Caption = "Xóa đơn vị tính"
+        Me.btnXoaDonViTinh.Enabled = False
         Me.btnXoaDonViTinh.Id = 2
         Me.btnXoaDonViTinh.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.deleteIcon
         Me.btnXoaDonViTinh.Name = "btnXoaDonViTinh"
@@ -94,6 +95,7 @@ Partial Class DonViTinh
         'btnCapNhatDonViTinh
         '
         Me.btnCapNhatDonViTinh.Caption = "Cập nhật đơn vị tính"
+        Me.btnCapNhatDonViTinh.Enabled = False
         Me.btnCapNhatDonViTinh.Id = 3
         Me.btnCapNhatDonViTinh.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.updateIcon
         Me.btnCapNhatDonViTinh.Name = "btnCapNhatDonViTinh"

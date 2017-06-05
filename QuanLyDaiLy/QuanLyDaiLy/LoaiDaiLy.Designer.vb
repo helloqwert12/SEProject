@@ -90,6 +90,7 @@ Partial Class LoaiDaiLy
         'btnXoaLoaiDaiLy
         '
         Me.btnXoaLoaiDaiLy.Caption = "Xóa loại đại lý"
+        Me.btnXoaLoaiDaiLy.Enabled = False
         Me.btnXoaLoaiDaiLy.Id = 2
         Me.btnXoaLoaiDaiLy.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.deleteIcon
         Me.btnXoaLoaiDaiLy.Name = "btnXoaLoaiDaiLy"
@@ -97,6 +98,7 @@ Partial Class LoaiDaiLy
         'btnCapNhatLoaiDaiLy
         '
         Me.btnCapNhatLoaiDaiLy.Caption = "Cập nhật loại đại lý"
+        Me.btnCapNhatLoaiDaiLy.Enabled = False
         Me.btnCapNhatLoaiDaiLy.Id = 3
         Me.btnCapNhatLoaiDaiLy.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.updateIcon
         Me.btnCapNhatLoaiDaiLy.Name = "btnCapNhatLoaiDaiLy"

@@ -127,6 +127,7 @@ Partial Class LapPhieuThuTien
         'btnXoaPhieuThuTien
         '
         Me.btnXoaPhieuThuTien.Caption = "Xóa phiếu thu tiền"
+        Me.btnXoaPhieuThuTien.Enabled = False
         Me.btnXoaPhieuThuTien.Id = 2
         Me.btnXoaPhieuThuTien.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.deleteIcon
         Me.btnXoaPhieuThuTien.Name = "btnXoaPhieuThuTien"
@@ -134,6 +135,7 @@ Partial Class LapPhieuThuTien
         'btnCapNhatPhieuThuTien
         '
         Me.btnCapNhatPhieuThuTien.Caption = "Cập nhật phiếu thu tiền"
+        Me.btnCapNhatPhieuThuTien.Enabled = False
         Me.btnCapNhatPhieuThuTien.Id = 3
         Me.btnCapNhatPhieuThuTien.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.updateIcon
         Me.btnCapNhatPhieuThuTien.Name = "btnCapNhatPhieuThuTien"

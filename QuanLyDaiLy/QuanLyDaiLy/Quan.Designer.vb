@@ -87,6 +87,7 @@ Partial Class Quan
         'btnXoaQuan
         '
         Me.btnXoaQuan.Caption = "Xóa quận"
+        Me.btnXoaQuan.Enabled = False
         Me.btnXoaQuan.Id = 2
         Me.btnXoaQuan.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.deleteIcon
         Me.btnXoaQuan.Name = "btnXoaQuan"
@@ -94,6 +95,7 @@ Partial Class Quan
         'btnCapNhatQuan
         '
         Me.btnCapNhatQuan.Caption = "Cập nhật quận"
+        Me.btnCapNhatQuan.Enabled = False
         Me.btnCapNhatQuan.Id = 3
         Me.btnCapNhatQuan.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.updateIcon
         Me.btnCapNhatQuan.Name = "btnCapNhatQuan"

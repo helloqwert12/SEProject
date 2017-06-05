@@ -129,6 +129,7 @@ Partial Class MatHang
         'btnXoaMatHang
         '
         Me.btnXoaMatHang.Caption = "Xóa mặt hàng"
+        Me.btnXoaMatHang.Enabled = False
         Me.btnXoaMatHang.Id = 12
         Me.btnXoaMatHang.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.deleteIcon
         Me.btnXoaMatHang.Name = "btnXoaMatHang"
@@ -136,6 +137,7 @@ Partial Class MatHang
         'btnCapNhatMatHang
         '
         Me.btnCapNhatMatHang.Caption = "Cập nhật mặt hàng"
+        Me.btnCapNhatMatHang.Enabled = False
         Me.btnCapNhatMatHang.Id = 13
         Me.btnCapNhatMatHang.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.updateIcon
         Me.btnCapNhatMatHang.Name = "btnCapNhatMatHang"

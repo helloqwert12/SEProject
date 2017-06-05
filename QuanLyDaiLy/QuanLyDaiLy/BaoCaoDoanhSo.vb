@@ -37,7 +37,7 @@ Public Class BaoCaoDoanhSo
 
         'Ghi du lieu vao Bang
         baocaodoanhsoDTO.MaBaoCaoDoanhSo = KetNoiDAL.TaoKhoaChinh("BAOCAODOANHSO", "MaBaoCaoDoanhSo", "D")
-        baocaodoanhsoDTO.Thang = KetNoiDAL.LayDuLieu("PHIEUXUAT", "Month(NgayLapPhieu)", "Month(NgayLapPhieu) = " + cbThang.SelectedItem).Rows(0)(0)
+        baocaodoanhsoDTO.ThoiGian = KetNoiDAL.LayDuLieu("PHIEUXUAT", "Month(NgayLapPhieu)", "Year(NgayLapPhieu)", "Month(NgayLapPhieu) = " + cbThang.SelectedItem, "Year(NgayLapPhieu) = " + txbNam.Text).Rows(0)(0)
         Dim madaily As DataTable = KetNoiDAL.LayDuLieu("PHIEUXUAT", "DISTINCT MaDaiLy", "")
 
         For i = 0 To madaily.Rows.Count - 1
@@ -64,6 +64,20 @@ Public Class BaoCaoDoanhSo
         End If
     End Sub
 
+    Private Sub dgvBaoCaoDoanhSo_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBaoCaoDoanhSo.RowEnter
+        'Binding du lieu len textbox
+        txbMaDaiLy.DataBindings.Clear()
+        txbMaDaiLy.DataBindings.Add("Text", dgvBaoCaoDoanhSo.DataSource, "MaDaiLy")
+        txbThoiGian.DataBindings.Clear()
+        txbThoiGian.DataBindings.Add("Text", dgvBaoCaoDoanhSo.DataSource, "ThoiGian")
+        txbTongTriGia.DataBindings.Clear()
+        txbTongTriGia.DataBindings.Add("Text", dgvBaoCaoDoanhSo.DataSource, "TongTriGia")
+        txbSoPhieuXuat.DataBindings.Clear()
+        txbSoPhieuXuat.DataBindings.Add("Text", dgvBaoCaoDoanhSo.DataSource, "SoPhieuXuat")
+        txbTyLe.DataBindings.Clear()
+        txbTyLe.DataBindings.Add("Text", dgvBaoCaoDoanhSo.DataSource, "TyLe")
+    End Sub
+
     Private Sub btnExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExcel.ItemClick
         Dim _export As Export = New Export()
         _export.ExportExcel(dgvBaoCaoDoanhSo)
@@ -71,6 +85,6 @@ Public Class BaoCaoDoanhSo
 
     Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
         Dim _export As Export = New Export()
-        _export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SỐ")
+        _export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SỐ " + cbThang.SelectedIndex + "/" + txbNam.Text)
     End Sub
 End Class

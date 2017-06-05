@@ -3,7 +3,7 @@
 #Region "DECLARE"
         Private strMabaocaodoanhso As String
         Private strMadaily As String
-        Private intThang As Integer
+        Private dateThoiGian As Date
         Private floatTyle As Double
         Private intSophieuxuat As Integer
         Private longTongtrigia As Long
@@ -26,12 +26,12 @@
                 strMadaily = value
             End Set
         End Property
-        Property Thang() As Integer
+        Property ThoiGian() As Date
             Get
-                Return intThang
+                Return dateThoiGian
             End Get
-            Set(value As Integer)
-                intThang = value
+            Set(value As Date)
+                dateThoiGian = value
             End Set
         End Property
         Property SoPhieuXuat() As Integer

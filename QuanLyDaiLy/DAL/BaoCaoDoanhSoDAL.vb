@@ -14,7 +14,7 @@ Namespace QuanLyDaiLyDAL
         'Them du lieu vao bang
         Public Function ThemDuLieu(Baocaodoanhso As BaoCaoDoanhSoDTO) As Boolean
             Dim success = KetNoiDAL.ThemDuLieu("BAOCAODOANHSO", Baocaodoanhso.MaBaoCaoDoanhSo, Baocaodoanhso.MaDaiLy, Baocaodoanhso.SoPhieuXuat,
-                                               Baocaodoanhso.Thang, Baocaodoanhso.TongTriGia, Baocaodoanhso.TyLe)
+                                               Baocaodoanhso.ThoiGian, Baocaodoanhso.TongTriGia, Baocaodoanhso.TyLe)
             If success Then
                 Return True
             End If

@@ -41,6 +41,20 @@ Public Class BaoCaoCongNo
 
     End Sub
 
+    Private Sub dgvBaoCaoCongNo_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBaoCaoCongNo.RowEnter
+        'Binding du lieu len textbox
+        txbMaDaiLy.DataBindings.Clear()
+        txbMaDaiLy.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "MaDaiLy")
+        txbThoiGian.DataBindings.Clear()
+        txbThoiGian.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "ThoiGian")
+        txbNoDau.DataBindings.Clear()
+        txbNoDau.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "NoDau")
+        txbPhatSinh.DataBindings.Clear()
+        txbPhatSinh.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "PhatSinh")
+        txbNoCuoi.DataBindings.Clear()
+        txbNoCuoi.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "NoCuoi")
+    End Sub
+
     Private Sub btnExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExcel.ItemClick
         Dim _export As Export = New Export()
         _export.ExportExcel(dgvBaoCaoCongNo)
@@ -48,6 +62,6 @@ Public Class BaoCaoCongNo
 
     Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
         Dim _export As Export = New Export()
-        _export.ExportPDF(dgvBaoCaoCongNo, "BÁO CÁO CÔNG NỢ")
+        _export.ExportPDF(dgvBaoCaoCongNo, "BÁO CÁO CÔNG NỢ " + cbThang.SelectedIndex + "/" + txbNam.Text)
     End Sub
 End Class
