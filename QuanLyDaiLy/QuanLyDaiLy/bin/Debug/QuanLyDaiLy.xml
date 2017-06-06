@@ -27,6 +27,11 @@ QuanLyDaiLy
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:QuanLyDaiLy.My.Resources.Resources.Apps_Pdf_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:QuanLyDaiLy.My.Resources.Resources.Button_Add_icon">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -43,6 +48,16 @@ QuanLyDaiLy
 </summary>
 </member>
 <member name="P:QuanLyDaiLy.My.Resources.Resources.deleteIcon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QuanLyDaiLy.My.Resources.Resources.excel_icon">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:QuanLyDaiLy.My.Resources.Resources.excel_icon1">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

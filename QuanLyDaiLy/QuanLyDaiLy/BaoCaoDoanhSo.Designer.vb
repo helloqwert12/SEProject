@@ -45,10 +45,11 @@ Partial Class BaoCaoDoanhSo
         Me.RibbonControl.ExpandCollapseItem.Id = 0
         Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnThucHien, Me.btnExcel, Me.btnPDF, Me.btnThoat})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl.MaxItemId = 6
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl.Size = New System.Drawing.Size(576, 143)
+        Me.RibbonControl.Size = New System.Drawing.Size(672, 168)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'btnThucHien
@@ -63,6 +64,7 @@ Partial Class BaoCaoDoanhSo
         Me.btnExcel.Caption = "Xuất file Excel"
         Me.btnExcel.Enabled = False
         Me.btnExcel.Id = 2
+        Me.btnExcel.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.excel_icon
         Me.btnExcel.Name = "btnExcel"
         '
         'btnPDF
@@ -70,6 +72,7 @@ Partial Class BaoCaoDoanhSo
         Me.btnPDF.Caption = "Xuất file PDF"
         Me.btnPDF.Enabled = False
         Me.btnPDF.Id = 3
+        Me.btnPDF.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.Apps_Pdf_icon
         Me.btnPDF.Name = "btnPDF"
         '
         'btnThoat
@@ -111,26 +114,28 @@ Partial Class BaoCaoDoanhSo
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 401)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 496)
+        Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(576, 31)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(672, 36)
         '
         'dgvBaoCaoDoanhSo
         '
         Me.dgvBaoCaoDoanhSo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvBaoCaoDoanhSo.Location = New System.Drawing.Point(15, 186)
+        Me.dgvBaoCaoDoanhSo.Location = New System.Drawing.Point(17, 229)
+        Me.dgvBaoCaoDoanhSo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dgvBaoCaoDoanhSo.Name = "dgvBaoCaoDoanhSo"
-        Me.dgvBaoCaoDoanhSo.Size = New System.Drawing.Size(549, 208)
+        Me.dgvBaoCaoDoanhSo.Size = New System.Drawing.Size(640, 256)
         Me.dgvBaoCaoDoanhSo.TabIndex = 2
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(161, 160)
+        Me.Label1.Location = New System.Drawing.Point(188, 197)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 16)
+        Me.Label1.Size = New System.Drawing.Size(69, 21)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Tháng:"
         '
@@ -139,36 +144,38 @@ Partial Class BaoCaoDoanhSo
         Me.cbThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbThang.FormattingEnabled = True
         Me.cbThang.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
-        Me.cbThang.Location = New System.Drawing.Point(219, 159)
+        Me.cbThang.Location = New System.Drawing.Point(255, 196)
+        Me.cbThang.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cbThang.Name = "cbThang"
-        Me.cbThang.Size = New System.Drawing.Size(64, 21)
+        Me.cbThang.Size = New System.Drawing.Size(74, 24)
         Me.cbThang.TabIndex = 8
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(307, 160)
+        Me.Label2.Location = New System.Drawing.Point(358, 197)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(40, 16)
+        Me.Label2.Size = New System.Drawing.Size(55, 21)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Năm:"
         '
         'txbNam
         '
-        Me.txbNam.Location = New System.Drawing.Point(353, 159)
+        Me.txbNam.Location = New System.Drawing.Point(412, 196)
+        Me.txbNam.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbNam.MenuManager = Me.RibbonControl
         Me.txbNam.Name = "txbNam"
         Me.txbNam.Properties.Mask.EditMask = "d"
         Me.txbNam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.txbNam.Size = New System.Drawing.Size(100, 20)
+        Me.txbNam.Size = New System.Drawing.Size(117, 22)
         Me.txbNam.TabIndex = 10
         '
         'BaoCaoDoanhSo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(576, 432)
+        Me.ClientSize = New System.Drawing.Size(672, 532)
         Me.Controls.Add(Me.txbNam)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cbThang)
@@ -177,6 +184,7 @@ Partial Class BaoCaoDoanhSo
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.Name = "BaoCaoDoanhSo"
         Me.Ribbon = Me.RibbonControl

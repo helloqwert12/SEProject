@@ -36,26 +36,37 @@ Public Class BaoCaoDoanhSo
         btnPDF.Enabled = True
         btnExcel.Enabled = True
 
-        'Ghi du lieu vao Bang
-        baocaodoanhsoDTO.MaBaoCaoDoanhSo = KetNoiDAL.TaoKhoaChinh("BAOCAODOANHSO", "MaBaoCaoDoanhSo", "D")
-        Dim madaily As DataTable = KetNoiDAL.LayDuLieu("PHIEUXUAT", "DISTINCT MaDaiLy", "")
+        ''Ghi du lieu vao Bang
+        'baocaodoanhsoDTO.MaBaoCaoDoanhSo = KetNoiDAL.TaoKhoaChinh("BAOCAODOANHSO", "MaBaoCaoDoanhSo", "D")
+        'Dim madaily As DataTable = KetNoiDAL.LayDuLieu("PHIEUXUAT", "DISTINCT MaDaiLy", "")
 
-        For i = 0 To madaily.Rows.Count - 1
-            'Kiem tra ma daily va thoi gian muon bao cao
+        'For i = 0 To madaily.Rows.Count - 1
+        '    'Kiem tra ma daily va thoi gian muon bao cao
 
-            Dim str As String = "MaDaiLy = '" + madaily.Rows(i)(0) + "' And Month(NgayLapPhieu) = " + cbThang.SelectedItem + " and Year(NgayLapPhieu) = " + txbNam.Text
-            baocaodoanhsoDTO.MaDaiLy = KetNoiDAL.LayDuLieu("PHIEUXUAT", "MaDaiLy", "Month(NgayLapPhieu) = " + cbThang.SelectedItem + " and Year(NgayLapPhieu) = " + txbNam.Text).Rows(0)(0)
-            baocaodoanhsoDTO.SoPhieuXuat = KetNoiDAL.LayDuLieu("PHIEUXUAT", "MaPhieuXuat", str).Rows.Count
-            baocaodoanhsoDTO.ThoiGian = KetNoiDAL.LayDuLieu("PHIEUXUAT", "NgayLapPhieu", str).Rows(i)(0)
-            baocaodoanhsoDTO.TongTriGia = 50000 'Tam thoi
-            'baocaodoanhsoDTO.TongTriGia = KetNoiDAL.LayDuLieu("PHIEUXUAT", "DISTINCT TongTriGia", str).Rows(0)(0) Nay bi loi, khong hieu
-        Next
-        baocaodoanhsoDTO.TyLe = baocaodoanhsoDTO.TongTriGia / baocaodoanhsoDTO.SoPhieuXuat
+        '    Dim str As String = "MaDaiLy = '" + madaily.Rows(i)(0) + "' And Month(NgayLapPhieu) = " + cbThang.SelectedItem + " and Year(NgayLapPhieu) = " + txbNam.Text
+        '    baocaodoanhsoDTO.MaDaiLy = KetNoiDAL.LayDuLieu("PHIEUXUAT", "MaDaiLy", "Month(NgayLapPhieu) = " + cbThang.SelectedItem + " and Year(NgayLapPhieu) = " + txbNam.Text).Rows(0)(0)
+        '    baocaodoanhsoDTO.SoPhieuXuat = KetNoiDAL.LayDuLieu("PHIEUXUAT", "MaPhieuXuat", str).Rows.Count
+        '    baocaodoanhsoDTO.ThoiGian = KetNoiDAL.LayDuLieu("PHIEUXUAT", "NgayLapPhieu", str).Rows(i)(0)
+        '    baocaodoanhsoDTO.TongTriGia = 50000 'Tam thoi
+        '    'baocaodoanhsoDTO.TongTriGia = KetNoiDAL.LayDuLieu("PHIEUXUAT", "DISTINCT TongTriGia", str).Rows(0)(0) Nay bi loi, khong hieu
+        'Next
+        'baocaodoanhsoDTO.TyLe = baocaodoanhsoDTO.TongTriGia / baocaodoanhsoDTO.SoPhieuXuat
 
-        Dim success As Boolean = baocaodoanhsoDAL.ThemDuLieu(baocaodoanhsoDTO)
-        If success Then
-            Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO join DAILY on BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy join PHIEUXUAT on DAILY.MaDaiLy = PHIEUXUAT.MaDaily", "BAOCAODOANHSO.MaDaiLy", "ThoiGian", "SoPhieuXuat", "PHIEUXUAT.TongTriGia", "TyLe")
-            LoadDataOnGridView(data)
+        'Dim success As Boolean = baocaodoanhsoDAL.ThemDuLieu(baocaodoanhsoDTO)
+        'If success Then
+        '    Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO join DAILY on BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy join PHIEUXUAT on DAILY.MaDaiLy = PHIEUXUAT.MaDaily", "BAOCAODOANHSO.MaDaiLy", "ThoiGian", "SoPhieuXuat", "PHIEUXUAT.TongTriGia", "TyLe")
+        '    LoadDataOnGridView(data)
+        'End If
+        If txbNam.Text > Date.Now.Year Then
+            MessageBox.Show("Năm lập báo cáo lớn hơn năm hiện tại. Vui lòng kiểm tra lại", "THÔNG BÁO")
+        Else
+            'Dim data As DataTable = baocaodoanhsoDAL.LayDuLieu("MaDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe", "Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + cbThang = txbNam.Text)
+            Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO, DAILY", "BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy" + " and " + "Month(ThoiGian) = " + cbThang.SelectedItem + " and " + "Year(ThoiGian) = " + cbThang = txbNam.Text, "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe")
+            If data.Rows.Count = 0 Then
+                MessageBox.Show("Không có dữ liệu thõa thời gian trên", "THÔNG BÁO")
+            Else
+                LoadDataOnGridView(data)
+            End If
         End If
     End Sub
 
@@ -81,12 +92,10 @@ Public Class BaoCaoDoanhSo
     'End Sub
 
     Private Sub btnExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExcel.ItemClick
-        Dim _export As Export = New Export()
-        _export.ExportExcel(dgvBaoCaoDoanhSo)
+        Export.ExportExcel(dgvBaoCaoDoanhSo)
     End Sub
 
     Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
-        Dim _export As Export = New Export()
-        _export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SỐ " + cbThang.SelectedIndex + "/" + txbNam.Text)
+        Export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SỐ " + cbThang.SelectedIndex + "/" + txbNam.Text)
     End Sub
 End Class
