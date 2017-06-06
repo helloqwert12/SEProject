@@ -24,7 +24,7 @@ Public Class LapPhieuXuatHang
     Dim loaidailyBUS As LoaiDaiLyBUS
     Dim baocaodoanhsoDTO As BaoCaoDoanhSoDTO
     Dim baocaodoanhsoDAL As BaoCaoDoanhSoDAL
-    Dim temp As String = String.Empty
+    Dim khoa As String = String.Empty
     Public Sub New()
         InitializeComponent()
 
@@ -100,7 +100,7 @@ Public Class LapPhieuXuatHang
         btnXoaPhieuXuat.Enabled = False
         btnCapNhatPhieuXuat.Enabled = False
         txbMaPhieuXuat.Text = KetNoiDAL.TaoKhoaChinh("PHIEUXUAT", "MaPhieuXuat", "PX")
-        temp = KetNoiDAL.TaoKhoaChinh("CHITIETPHIEUXUAT", "MaCTPhieuXuat", "CT")
+        khoa = KetNoiDAL.TaoKhoaChinh("CHITIETPHIEUXUAT", "MaCTPhieuXuat", "CT")
         txbNgayLapPhieu.Text = Date.Now.ToShortDateString
         cbTenDaiLy.SelectedIndex = 0
         cbTenMatHang.SelectedIndex = 0
@@ -118,7 +118,7 @@ Public Class LapPhieuXuatHang
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận?", "XÁC NHẬN", MessageBoxButtons.YesNo)
         If (rslt = DialogResult.Yes) Then
             'Ket noi du lieu giua text box va DTO
-            chitietphieuxuatDTO.MaCTPhieuXuat = temp
+            chitietphieuxuatDTO.MaCTPhieuXuat = khoa
             chitietphieuxuatDTO.MaPhieuXuat = txbMaPhieuXuat.Text
             chitietphieuxuatDTO.MaMatHang = KetNoiDAL.ChuyenTenThanhMa("MATHANG", "TenMatHang", cbTenMatHang.Text, "MaMatHang")
             chitietphieuxuatDTO.MaDonViTinh = KetNoiDAL.ChuyenTenThanhMa("DONVITINH", "TenDonViTinh", cbDonViTinh.Text, "MaDonViTinh")
@@ -134,7 +134,7 @@ Public Class LapPhieuXuatHang
             If (txbTongTriGia.Text = 0) Then
                 phieuxuatDTO.TongTriGia = txbDonGia.Text * txbSoLuongXuat.Text
             Else
-                phieuxuatDTO.TongTriGia += txbDonGia.Text * txbSoLuongXuat.Text
+                phieuxuatDTO.TongTriGia += (txbDonGia.Text * txbSoLuongXuat.Text)
                 tempTongTriGia2 = phieuxuatDTO.TongTriGia
             End If
 
