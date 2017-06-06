@@ -23,10 +23,11 @@ Public Class BaoCaoCongNo
         Me.dgvBaoCaoCongNo.DataSource = dTable
         With Me.dgvBaoCaoCongNo
             .Columns(0).HeaderText = "Mã đại lý"
-            .Columns(1).HeaderText = "Thời gian"
-            .Columns(2).HeaderText = "Nợ đầu"
-            .Columns(3).HeaderText = "Phát sinh"
-            .Columns(4).HeaderText = "Nợ cuối"
+            .Columns(1).HeaderText = "Tên đại lý"
+            .Columns(2).HeaderText = "Thời gian"
+            .Columns(3).HeaderText = "Nợ đầu"
+            .Columns(4).HeaderText = "Phát sinh"
+            .Columns(5).HeaderText = "Nợ cuối"
         End With
         'KetNoiDAL.NgatKetNoi()
     End Sub
@@ -41,19 +42,19 @@ Public Class BaoCaoCongNo
 
     End Sub
 
-    Private Sub dgvBaoCaoCongNo_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBaoCaoCongNo.RowEnter
-        'Binding du lieu len textbox
-        txbMaDaiLy.DataBindings.Clear()
-        txbMaDaiLy.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "MaDaiLy")
-        txbThoiGian.DataBindings.Clear()
-        txbThoiGian.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "ThoiGian")
-        txbNoDau.DataBindings.Clear()
-        txbNoDau.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "NoDau")
-        txbPhatSinh.DataBindings.Clear()
-        txbPhatSinh.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "PhatSinh")
-        txbNoCuoi.DataBindings.Clear()
-        txbNoCuoi.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "NoCuoi")
-    End Sub
+    'Private Sub dgvBaoCaoCongNo_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBaoCaoCongNo.RowEnter
+    '    'Binding du lieu len textbox
+    '    txbMaDaiLy.DataBindings.Clear()
+    '    txbMaDaiLy.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "MaDaiLy")
+    '    txbThoiGian.DataBindings.Clear()
+    '    txbThoiGian.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "ThoiGian")
+    '    txbNoDau.DataBindings.Clear()
+    '    txbNoDau.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "NoDau")
+    '    txbPhatSinh.DataBindings.Clear()
+    '    txbPhatSinh.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "PhatSinh")
+    '    txbNoCuoi.DataBindings.Clear()
+    '    txbNoCuoi.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "NoCuoi")
+    'End Sub
 
     Private Sub btnExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExcel.ItemClick
         Dim _export As Export = New Export()
