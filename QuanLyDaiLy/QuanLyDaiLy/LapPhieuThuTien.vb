@@ -17,6 +17,7 @@ Public Class LapPhieuThuTien
     Dim baocaocongnoDAL As BaoCaoCongNoDAL
     Dim baocaocongnoDTO As BaoCaoCongNoDTO
     Dim dailyDTO As DaiLyDTO
+    Dim tempSoTienThu As Long ' Dùng cho nhu cầu cập nhật
     Public Sub New()
         InitializeComponent()
 
@@ -136,30 +137,11 @@ Public Class LapPhieuThuTien
                 txbSoTienThu.Enabled = False
                 cbDaiLy.Enabled = False
             ElseIf trangthai = STATUS.SUA Then
-                '    Dim sotienthu As Long = dgvPhieuThuTien.SelectedCells(0).OwningRow.Cells("SoTienThu").Value
-                '    Dim madaily1 As String = dgvPhieuThuTien.SelectedCells(0).OwningRow.Cells("MaDaiLy").Value
-                '    phieuthutienDAL.CapNhatDuLieu("MaDaiLy", madaily1, "SoTienThu = " + txbSoTienThu.Text)
-                '    dailyDTO.NoDaiLy = txbSoTienNo.Text - txbSoTienThu.Text + sotienthu
-                '    Dim success1 As Boolean = phieuthutienBUS.XuLiQuyDinh(phieuthutienDTO, dailyDTO.NoDaiLy)
-                '    If success1 Then
-                '        Dim success2 As Boolean = KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", madaily1, "NoDaiLy = " + dailyDTO.NoDaiLy.ToString())
-                '        If success2 Then
-                '            HienThiThongBao("Cập nhật phiếu thu tiền thành công")
-                '            LoadDataOnGridView()
-                '        Else
-                '            HienThiThongBao("Cập nhật phiếu thu tiền thất bại, vui lòng kiểm tra lại")
-                '        End If
-                '    Else
-                '        HienThiThongBao("Vị phạm quy định số tiền nợ, vui lòng kiểm tra lại")
-                '    End If
-                'End If
                 'Số tiền nợ được phục hồi khi xóa phiếu thu
                 Dim madaily As String = KetNoiDAL.ChuyenTenThanhMa("DAILY", "TenDaiLy", cbDaiLy.SelectedItem, "MaDaiLy")
-                Dim sotienthu As Long = dgvPhieuThuTien.SelectedCells(0).OwningRow.Cells("SoTienThu").Value
-                Dim str As Long = txbSoTienNo.Text + sotienthu
+                Dim str As Long = txbSoTienNo.Text + tempSoTienThu
                 KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", madaily, "NoDaiLy = " + str.ToString())
-                Dim maphieuthu As String = dgvPhieuThuTien.SelectedCells(0).OwningRow.Cells("MaPhieuThu").Value
-                phieuthutienDAL.XoaDuLieu("MaPhieuThu", maphieuthu.ToString())
+
                 dailyDTO.NoDaiLy = str - txbSoTienThu.Text
                 Dim success1 As Boolean = phieuthutienBUS.XuLiQuyDinh(phieuthutienDTO, dailyDTO.NoDaiLy)
                 If success1 Then
@@ -169,6 +151,9 @@ Public Class LapPhieuThuTien
                     phieuthutienDTO.NgayThuTien = txbNgayThuTien.Text
                     phieuthutienDTO.SoTienThu = txbSoTienThu.Text
                     phieuthutienDTO.MaDaiLy = madaily
+
+                    Dim maphieuthu As String = dgvPhieuThuTien.SelectedCells(0).OwningRow.Cells("MaPhieuThu").Value
+                    phieuthutienDAL.XoaDuLieu("MaPhieuThu", maphieuthu.ToString())
 
                     KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", madaily, "NoDaiLy = " + dailyDTO.NoDaiLy.ToString())
                     Dim success2 As Boolean = phieuthutienDAL.ThemDuLieu(phieuthutienDTO)
@@ -258,6 +243,7 @@ Public Class LapPhieuThuTien
         trangthai = STATUS.SUA
 
         btnXacNhan.Enabled = True
+        tempSoTienThu = txbSoTienThu.Text
         'Tat read-only de chinh sua
         cbDaiLy.Enabled = True
         txbSoTienThu.Enabled = True

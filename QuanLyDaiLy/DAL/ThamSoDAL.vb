@@ -4,6 +4,12 @@ Namespace QuanLyDaiLyDAL
         Public Function LayDuLieu() As DataTable
             Return KetNoiDAL.LayDuLieu("THAMSO")
         End Function
+        Public Function LayDuLieu(ByVal dieukien As String) As DataTable
+            Return KetNoiDAL.LayDuLieu("THAMSO", dieukien)
+        End Function
+        Public Function LayDuLieu(ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
+            Return KetNoiDAL.LayDuLieu("THAMSO", thuoctinh, dieukien)
+        End Function
         Public Function ThemDuLieu(ThamSo As ThamSoDTO) As Boolean
             Dim success = KetNoiDAL.ThemDuLieu("THAMSO", ThamSo.SoLuongDLToiDa, ThamSo.ApDung)
             If success Then

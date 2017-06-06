@@ -19,7 +19,12 @@ Public Class ThayDoiQuyDinh
         txbHienTai.Text = KetNoiDAL.LayDuLieu("THAMSO").Rows(0)(0)
         txbMoi.Text = txbHienTai.Text
 
-
+        Dim data As Boolean = thamsoDAL.LayDuLieu("ApDung", "").Rows(0)(0)
+        If (data = True) Then
+            cbApDung.Checked = True
+        Else
+            cbApDung.Checked = False
+        End If
     End Sub
     Private Sub btnCapNhat_Click(sender As Object, e As EventArgs) Handles btnCapNhat.Click
         If Not (thamsoBUS.IsValid_SoLuongDLToiDa(txbMoi.Text)) Then

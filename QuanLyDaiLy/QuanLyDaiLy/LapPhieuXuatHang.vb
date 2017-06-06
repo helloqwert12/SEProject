@@ -25,6 +25,14 @@ Public Class LapPhieuXuatHang
     Dim baocaodoanhsoDTO As BaoCaoDoanhSoDTO
     Dim baocaodoanhsoDAL As BaoCaoDoanhSoDAL
     Dim khoa As String = String.Empty
+
+    'Biến tạm lưu giá trị cũ trước khi xác nhận cập nhật
+    Dim tamSoLuongXuat As Integer
+    Dim tamSoLuongTon As Integer
+    Dim tamDonGia As Long
+    Dim tamTongTriGia As Long
+    Dim tamThanhTien As Long
+    Dim tamNoDaiLy As Long
     Public Sub New()
         InitializeComponent()
 
@@ -117,54 +125,55 @@ Public Class LapPhieuXuatHang
     Private Sub btnXacNhan_Click(sender As Object, e As EventArgs) Handles btnXacNhan.Click
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận?", "XÁC NHẬN", MessageBoxButtons.YesNo)
         If (rslt = DialogResult.Yes) Then
-            'Ket noi du lieu giua text box va DTO
-            chitietphieuxuatDTO.MaCTPhieuXuat = khoa
-            chitietphieuxuatDTO.MaPhieuXuat = txbMaPhieuXuat.Text
-            chitietphieuxuatDTO.MaMatHang = KetNoiDAL.ChuyenTenThanhMa("MATHANG", "TenMatHang", cbTenMatHang.Text, "MaMatHang")
-            chitietphieuxuatDTO.MaDonViTinh = KetNoiDAL.ChuyenTenThanhMa("DONVITINH", "TenDonViTinh", cbDonViTinh.Text, "MaDonViTinh")
-            chitietphieuxuatDTO.SoLuongXuat = txbSoLuongXuat.Text
-            chitietphieuxuatDTO.DonGia = txbDonGia.Text
-            chitietphieuxuatDTO.ThanhTien = txbDonGia.Text * txbSoLuongXuat.Text
-            phieuxuatDTO.MaPhieuXuat = txbMaPhieuXuat.Text
-            phieuxuatDTO.MaDaiLy = KetNoiDAL.ChuyenTenThanhMa("DAILY", "TenDaiLy", cbTenDaiLy.Text, "MaDaiLy")
-            phieuxuatDTO.NgayLapPhieu = txbNgayLapPhieu.Text
+            If trangthai = STATUS.THEM Then
+                'Ket noi du lieu giua text box va DTO
+                chitietphieuxuatDTO.MaCTPhieuXuat = khoa
+                chitietphieuxuatDTO.MaPhieuXuat = txbMaPhieuXuat.Text
+                chitietphieuxuatDTO.MaMatHang = KetNoiDAL.ChuyenTenThanhMa("MATHANG", "TenMatHang", cbTenMatHang.Text, "MaMatHang")
+                chitietphieuxuatDTO.MaDonViTinh = KetNoiDAL.ChuyenTenThanhMa("DONVITINH", "TenDonViTinh", cbDonViTinh.Text, "MaDonViTinh")
+                chitietphieuxuatDTO.SoLuongXuat = txbSoLuongXuat.Text
+                chitietphieuxuatDTO.DonGia = txbDonGia.Text
+                chitietphieuxuatDTO.ThanhTien = txbDonGia.Text * txbSoLuongXuat.Text
+                phieuxuatDTO.MaPhieuXuat = txbMaPhieuXuat.Text
+                phieuxuatDTO.MaDaiLy = KetNoiDAL.ChuyenTenThanhMa("DAILY", "TenDaiLy", cbTenDaiLy.Text, "MaDaiLy")
+                phieuxuatDTO.NgayLapPhieu = txbNgayLapPhieu.Text
 
-            Dim tempTongTriGia As Long = txbTongTriGia.Text
-            Dim tempTongTriGia2 As Long
-            If (txbTongTriGia.Text = 0) Then
-                phieuxuatDTO.TongTriGia = txbDonGia.Text * txbSoLuongXuat.Text
-            Else
-                phieuxuatDTO.TongTriGia += (txbDonGia.Text * txbSoLuongXuat.Text)
-                tempTongTriGia2 = phieuxuatDTO.TongTriGia
-            End If
+                Dim tempTongTriGia As Long = txbTongTriGia.Text 'Biến tạm lưu giá trị cũ dùng để khôi phục dữ liệu nếu việc thêm bị thất bại
+                Dim tempTongTriGia2 As Long 'Dùng thêm biến tạm lưu giá trị nhầm tránh TH lỗi 
+                If (txbTongTriGia.Text = 0) Then
+                    phieuxuatDTO.TongTriGia = txbDonGia.Text * txbSoLuongXuat.Text
+                Else
+                    phieuxuatDTO.TongTriGia += (txbDonGia.Text * txbSoLuongXuat.Text)
+                    tempTongTriGia2 = phieuxuatDTO.TongTriGia
+                End If
 
-            Dim data As DataTable = phieuxuatDAL.LayDuLieu("MaPhieuXuat", "MaDaiLy = '" + phieuxuatDTO.MaDaiLy + "'")
-            For i = 0 To data.Rows.Count - 1
-                Dim str As String = data.Rows(i)(0)
-                KetNoiDAL.CapNhatDuLieu("PHIEUXUAT", "MaPhieuXuat", str, "TongTriGia = " + tempTongTriGia2.ToString())
-            Next
-            'KetNoiDAL.CapNhatDuLieu("PHIEUXUAT", "MaDaiLy", phieuxuatDTO.MaDaiLy, phieuxuatDTO.TongTriGia = tempTongTriGia2)
+                'Cập nhật lại TongTriGia cho tất cả các Đại lí có cùng MaDaiLy dc thêm phiếu xuất
+                Dim data As DataTable = phieuxuatDAL.LayDuLieu("MaPhieuXuat", "MaDaiLy = '" + phieuxuatDTO.MaDaiLy + "'")
+                For i = 0 To data.Rows.Count - 1
+                    Dim str As String = data.Rows(i)(0)
+                    KetNoiDAL.CapNhatDuLieu("PHIEUXUAT", "MaPhieuXuat", str, "TongTriGia = " + tempTongTriGia2.ToString())
+                Next
 
-            Dim tempSoLuongTon As Integer = txbSoLuongTon.Text
-            KetNoiDAL.CapNhatDuLieu("MATHANG", "MaMatHang", chitietphieuxuatDTO.MaMatHang, "SoLuongTon = " + (txbSoLuongTon.Text - txbSoLuongXuat.Text).ToString())
+                'Cập nhật lại SoLuongTon cho mặt hàng dc thêm phiếu xuất
+                Dim tempSoLuongTon As Integer = txbSoLuongTon.Text 'Biến tạm lưu giá trị cũ dùng để khôi phục dữ liệu nếu việc thêm bị thất bại
+                KetNoiDAL.CapNhatDuLieu("MATHANG", "MaMatHang", chitietphieuxuatDTO.MaMatHang, "SoLuongTon = " + (txbSoLuongTon.Text - txbSoLuongXuat.Text).ToString())
 
-            Dim tempNoDaiLy As Integer = txbNoDaiLy.Text
-            Dim tam As Long = txbNoDaiLy.Text + chitietphieuxuatDTO.ThanhTien
-            KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", phieuxuatDTO.MaDaiLy, "NoDaiLy = " + tam.ToString())
+                'Cập nhật lại NoDaiLy cho đại lý sau khi thêm phiếu xuất
+                Dim tempNoDaiLy As Integer = txbNoDaiLy.Text 'Biến tạm lưu giá trị cũ dùng để khôi phục dữ liệu nếu việc thêm bị thất bại
+                Dim tam As Long = txbNoDaiLy.Text + chitietphieuxuatDTO.ThanhTien
+                KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", phieuxuatDTO.MaDaiLy, "NoDaiLy = " + tam.ToString())
 
-            'Kiem tra so luong ton co nho hon so luong xuat hay khong
-            If mathangBUS.IsValid_SoLuongTon(mathangDTO) Then
-                Dim maloaidaily As String = KetNoiDAL.LayDuLieu("DAILY", "MaLoaiDaiLy", "MaDaiLy = '" + phieuxuatDTO.MaDaiLy + "'").Rows(0)(0)
-                'Kiem tra no dai ly co vuot qua no toi da cho phep hay khong
-                If loaidailyBUS.KiemTraNoToiDa(maloaidaily, phieuxuatDTO.MaDaiLy) Then
-                    'Kiem tra thong tin da duoc nhap day du
-                    If chitietphieuxuatBUS.IsEmpty(chitietphieuxuatDTO, phieuxuatDTO) Then
-                        'MessageBox.Show("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
-                        HienThiThongBao("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại")
-                    Else
-                        If trangthai = STATUS.THEM Then
+                'Kiem tra so luong ton co nho hon so luong xuat hay khong
+                If mathangBUS.IsValid_SoLuongTon(mathangDTO) Then
+                    Dim maloaidaily As String = KetNoiDAL.LayDuLieu("DAILY", "MaLoaiDaiLy", "MaDaiLy = '" + phieuxuatDTO.MaDaiLy + "'").Rows(0)(0)
+                    'Kiem tra no dai ly co vuot qua no toi da cho phep hay khong
+                    If loaidailyBUS.KiemTraNoToiDa(maloaidaily, phieuxuatDTO.MaDaiLy) Then
+                        'Kiem tra thong tin da duoc nhap day du
+                        If chitietphieuxuatBUS.IsEmpty(chitietphieuxuatDTO, phieuxuatDTO) Then
+                            'MessageBox.Show("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
+                            HienThiThongBao("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại")
+                        Else
                             'Ghi xuong CSDL     
-
                             Dim success1 As Boolean = phieuxuatDAL.ThemDuLieu(phieuxuatDTO)
                             Dim success2 As Boolean = chitietphieuxuatDAL.ThemDuLieu(chitietphieuxuatDTO)
                             If success1 And success2 Then
@@ -182,21 +191,18 @@ Public Class LapPhieuXuatHang
                             Else
                                 HienThiThongBao("Thêm phiếu xuất thất bại, vui lòng kiểm tra lại")
                             End If
-                        ElseIf trangthai = STATUS.SUA Then
-                            chitietphieuxuatDAL.XoaDuLieu("MaPhieuXuat", chitietphieuxuatDTO.MaPhieuXuat)
-                            phieuxuatDAL.XoaDuLieu("MaPhieuXuat", phieuxuatDTO.MaPhieuXuat)
-                            Dim success1 As Boolean = phieuxuatDAL.ThemDuLieu(phieuxuatDTO)
-                            Dim success2 As Boolean = chitietphieuxuatDAL.ThemDuLieu(chitietphieuxuatDTO)
-                            If success1 And success2 Then
-                                HienThiThongBao("Cập nhật phiếu xuất thành công")
-                                LoadDataOnGridView()
-                            Else
-                                HienThiThongBao("Cập nhật phiếu xuất thất bại, vui lòng kiểm tra lại")
-                            End If
                         End If
+                    Else
+                        HienThiThongBao("Nợ hiện tại không thể lớn hơn Nợ tối đa cho phép")
+                        For i = 0 To data.Rows.Count - 1
+                            Dim str As String = data.Rows(i)(0)
+                            KetNoiDAL.CapNhatDuLieu("PHIEUXUAT", "MaPhieuXuat", str, "TongTriGia = " + tempTongTriGia.ToString())
+                        Next
+                        KetNoiDAL.CapNhatDuLieu("MATHANG", "MaMatHang", chitietphieuxuatDTO.MaMatHang, "SoLuongTon = " + tempSoLuongTon.ToString())
+                        KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", phieuxuatDTO.MaDaiLy, "NoDaiLy = " + tempNoDaiLy.ToString())
                     End If
                 Else
-                    HienThiThongBao("Nợ hiện tại không thể lớn hơn Nợ tối đa cho phép")
+                    HienThiThongBao("Số lượng xuất không thể lớn hơn số lượng tồn của mặt hàng")
                     For i = 0 To data.Rows.Count - 1
                         Dim str As String = data.Rows(i)(0)
                         KetNoiDAL.CapNhatDuLieu("PHIEUXUAT", "MaPhieuXuat", str, "TongTriGia = " + tempTongTriGia.ToString())
@@ -204,14 +210,6 @@ Public Class LapPhieuXuatHang
                     KetNoiDAL.CapNhatDuLieu("MATHANG", "MaMatHang", chitietphieuxuatDTO.MaMatHang, "SoLuongTon = " + tempSoLuongTon.ToString())
                     KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", phieuxuatDTO.MaDaiLy, "NoDaiLy = " + tempNoDaiLy.ToString())
                 End If
-            Else
-                HienThiThongBao("Số lượng xuất không thể lớn hơn số lượng tồn của mặt hàng")
-                For i = 0 To data.Rows.Count - 1
-                    Dim str As String = data.Rows(i)(0)
-                    KetNoiDAL.CapNhatDuLieu("PHIEUXUAT", "MaPhieuXuat", str, "TongTriGia = " + tempTongTriGia.ToString())
-                Next
-                KetNoiDAL.CapNhatDuLieu("MATHANG", "MaMatHang", chitietphieuxuatDTO.MaMatHang, "SoLuongTon = " + tempSoLuongTon.ToString())
-                KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", phieuxuatDTO.MaDaiLy, "NoDaiLy = " + tempNoDaiLy.ToString())
             End If
             txbDonGia.Enabled = False
             txbSoLuongXuat.Enabled = False
@@ -219,7 +217,108 @@ Public Class LapPhieuXuatHang
             cbTenDaiLy.Enabled = False
             cbTenMatHang.Enabled = False
         End If
+
+        'ElseIf trangthai = STATUS.SUA Then
+        '    Dim madaily As String = dgvLapPhieuXuatHang.SelectedCells(0).OwningRow.Cells("MaDaiLy").Value
+        '    Dim mamathang As String = dgvLapPhieuXuatHang.SelectedCells(0).OwningRow.Cells("MaMatHang").Value
+        '    Dim mactphieuxuat As String = dgvLapPhieuXuatHang.SelectedCells(0).OwningRow.Cells("MaCTPhieuXuat").Value
+        '    Dim maphieuxuat As String = dgvLapPhieuXuatHang.SelectedCells(0).OwningRow.Cells("MaPhieuXuat").Value
+
+        '    'Số lượng tồn dc phục hồi nếu xóa phiếu xuất
+        '    Dim str As String = tamSoLuongTon + tamSoLuongXuat
+        '    KetNoiDAL.CapNhatDuLieu("MATHANG", "MaMatHang", mamathang, "SoLuongTon = " + str)
+
+        '    'Tổng trị giá được phục hồi nếu xóa phiếu xuất
+        '    Dim data As DataTable = phieuxuatDAL.LayDuLieu("MaPhieuXuat", "MaDaiLy = '" + madaily + "'")
+        '    For i = 0 To data.Rows.Count - 1
+        '        Dim str1 As String = data.Rows(i)(0)
+        '        Dim _str As String = tamTongTriGia - tamThanhTien
+        '        KetNoiDAL.CapNhatDuLieu("PHIEUXUAT", "MaPhieuXuat", str1, "TongTriGia = " + _str)
+        '    Next
+
+        '    'Nợ đại lý được phục hồi nếu xóa phiếu xuất
+        '    Dim _str1 As String = tamNoDaiLy - tamThanhTien
+        '    KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", madaily, "NoDaiLy = " + _str1)
+
+        '    chitietphieuxuatDTO.MaCTPhieuXuat = mactphieuxuat
+        '    chitietphieuxuatDTO.MaPhieuXuat = txbMaPhieuXuat.Text
+        '    chitietphieuxuatDTO.MaMatHang = KetNoiDAL.ChuyenTenThanhMa("MATHANG", "TenMatHang", cbTenMatHang.Text, "MaMatHang")
+        '    chitietphieuxuatDTO.MaDonViTinh = KetNoiDAL.ChuyenTenThanhMa("DONVITINH", "TenDonViTinh", cbDonViTinh.Text, "MaDonViTinh")
+        '    chitietphieuxuatDTO.SoLuongXuat = txbSoLuongXuat.Text
+        '    chitietphieuxuatDTO.DonGia = txbDonGia.Text
+        '    chitietphieuxuatDTO.ThanhTien = txbDonGia.Text * txbSoLuongXuat.Text
+        '    phieuxuatDTO.MaPhieuXuat = txbMaPhieuXuat.Text
+        '    phieuxuatDTO.MaDaiLy = KetNoiDAL.ChuyenTenThanhMa("DAILY", "TenDaiLy", cbTenDaiLy.Text, "MaDaiLy")
+        '    phieuxuatDTO.NgayLapPhieu = txbNgayLapPhieu.Text
+
+        '    Dim tempTongTriGia As Long = txbTongTriGia.Text 'Biến tạm lưu giá trị cũ dùng để khôi phục dữ liệu nếu việc thêm bị thất bại
+        '    Dim tempTongTriGia2 As Long 'Dùng thêm biến tạm lưu giá trị nhầm tránh TH lỗi 
+        '    If (txbTongTriGia.Text = 0) Then
+        '        phieuxuatDTO.TongTriGia = txbDonGia.Text * txbSoLuongXuat.Text
+        '    Else
+        '        phieuxuatDTO.TongTriGia += txbDonGia.Text * txbSoLuongXuat.Text
+        '        tempTongTriGia2 = phieuxuatDTO.TongTriGia
+        '    End If
+
+        '    'Cập nhật lại TongTriGia cho tất cả các Đại lí có cùng MaDaiLy dc thêm phiếu xuất
+        '    Dim data1 As DataTable = phieuxuatDAL.LayDuLieu("MaPhieuXuat", "MaDaiLy = '" + phieuxuatDTO.MaDaiLy + "'")
+        '    For i = 0 To data.Rows.Count - 1
+        '        Dim str1 As String = data1.Rows(i)(0)
+        '        KetNoiDAL.CapNhatDuLieu("PHIEUXUAT", "MaPhieuXuat", str1, "TongTriGia = " + tempTongTriGia2.ToString())
+        '    Next
+
+        '    'Cập nhật lại SoLuongTon cho mặt hàng dc thêm phiếu xuất
+        '    Dim tempSoLuongTon As Integer = txbSoLuongTon.Text 'Biến tạm lưu giá trị cũ dùng để khôi phục dữ liệu nếu việc thêm bị thất bại
+        '    KetNoiDAL.CapNhatDuLieu("MATHANG", "MaMatHang", chitietphieuxuatDTO.MaMatHang, "SoLuongTon = " + (txbSoLuongTon.Text - txbSoLuongXuat.Text).ToString())
+
+        '    'Cập nhật lại NoDaiLy cho đại lý sau khi thêm phiếu xuất
+        '    Dim tempNoDaiLy As Integer = txbNoDaiLy.Text 'Biến tạm lưu giá trị cũ dùng để khôi phục dữ liệu nếu việc thêm bị thất bại
+        '    Dim tam As Long = txbNoDaiLy.Text + chitietphieuxuatDTO.ThanhTien
+        '    KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", phieuxuatDTO.MaDaiLy, "NoDaiLy = " + tam.ToString())
+
+        '    'Kiem tra so luong ton co nho hon so luong xuat hay khong
+        '    If mathangBUS.IsValid_SoLuongTon(mathangDTO) Then
+        '        Dim maloaidaily As String = KetNoiDAL.LayDuLieu("DAILY", "MaLoaiDaiLy", "MaDaiLy = '" + phieuxuatDTO.MaDaiLy + "'").Rows(0)(0)
+        '        'Kiem tra no dai ly co vuot qua no toi da cho phep hay khong
+        '        If loaidailyBUS.KiemTraNoToiDa(maloaidaily, phieuxuatDTO.MaDaiLy) Then
+        '            chitietphieuxuatDAL.XoaDuLieu("MaPhieuXuat", chitietphieuxuatDTO.MaPhieuXuat)
+        '            phieuxuatDAL.XoaDuLieu("MaPhieuXuat", phieuxuatDTO.MaPhieuXuat)
+        '            Dim success1 As Boolean = phieuxuatDAL.ThemDuLieu(phieuxuatDTO)
+        '            Dim success2 As Boolean = chitietphieuxuatDAL.ThemDuLieu(chitietphieuxuatDTO)
+        '            If success1 And success2 Then
+        '                HienThiThongBao("Cập nhật phiếu xuất thành công")
+        '                LoadDataOnGridView()
+        '            Else
+        '                HienThiThongBao("Cập nhật phiếu xuất thất bại, vui lòng kiểm tra lại")
+        '            End If
+
+        '        Else
+        '            HienThiThongBao("Nợ hiện tại không thể lớn hơn Nợ tối đa cho phép")
+        '            For i = 0 To data.Rows.Count - 1
+        '                Dim str1 As String = data.Rows(i)(0)
+        '                KetNoiDAL.CapNhatDuLieu("PHIEUXUAT", "MaPhieuXuat", str1, "TongTriGia = " + tempTongTriGia.ToString())
+        '            Next
+        '            KetNoiDAL.CapNhatDuLieu("MATHANG", "MaMatHang", chitietphieuxuatDTO.MaMatHang, "SoLuongTon = " + tempSoLuongTon.ToString())
+        '            KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", phieuxuatDTO.MaDaiLy, "NoDaiLy = " + tempNoDaiLy.ToString())
+        '        End If
+        '    Else
+        '        HienThiThongBao("Số lượng xuất không thể lớn hơn số lượng tồn của mặt hàng")
+        '        For i = 0 To data.Rows.Count - 1
+        '            Dim str1 As String = data.Rows(i)(0)
+        '            KetNoiDAL.CapNhatDuLieu("PHIEUXUAT", "MaPhieuXuat", str1, "TongTriGia = " + tempTongTriGia.ToString())
+        '        Next
+        '        KetNoiDAL.CapNhatDuLieu("MATHANG", "MaMatHang", chitietphieuxuatDTO.MaMatHang, "SoLuongTon = " + tempSoLuongTon.ToString())
+        '        KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", phieuxuatDTO.MaDaiLy, "NoDaiLy = " + tempNoDaiLy.ToString())
+        '    End If
+        'End If
+        'txbDonGia.Enabled = False
+        'txbSoLuongXuat.Enabled = False
+        'cbDonViTinh.Enabled = False
+        'cbTenDaiLy.Enabled = False
+        'cbTenMatHang.Enabled = False
+        'End If
     End Sub
+
     Private Sub btnXoaPhieuXuat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnXoaPhieuXuat.ItemClick
         trangthai = STATUS.XOA
         Dim rslt As DialogResult = MessageBox.Show("Xác nhận xóa phiếu xuất", "XÁC NHẬN", MessageBoxButtons.YesNo)
@@ -307,17 +406,26 @@ Public Class LapPhieuXuatHang
         Timer1.Start()
     End Sub
 
-    Private Sub btnCapNhatPhieuXuat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCapNhatPhieuXuat.ItemClick
-        trangthai = STATUS.SUA
+    'Private Sub btnCapNhatPhieuXuat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnCapNhatPhieuXuat.ItemClick
+    '    trangthai = STATUS.SUA
 
-        btnXacNhan.Enabled = True
-        'Mo Enabled de chinh sua
-        txbDonGia.Enabled = True
-        txbSoLuongXuat.Enabled = True
-        cbTenDaiLy.Enabled = True
-        cbTenMatHang.Enabled = True
-        cbDonViTinh.Enabled = True
-    End Sub
+    '    btnXacNhan.Enabled = True
+    '    'Mo Enabled de chinh sua
+    '    txbDonGia.Enabled = True
+    '    txbSoLuongXuat.Enabled = True
+    '    cbTenDaiLy.Enabled = True
+    '    cbTenMatHang.Enabled = True
+    '    cbDonViTinh.Enabled = True
+
+    '    'Giữ lại giá trị cũ trước khi xác nhận cập nhật
+    '    tamDonGia = txbDonGia.Text
+    '    tamTongTriGia = txbTongTriGia.Text
+    '    tamSoLuongTon = txbSoLuongTon.Text
+    '    tamSoLuongXuat = txbSoLuongXuat.Text
+    '    Dim thanhtien As String = dgvLapPhieuXuatHang.SelectedCells(0).OwningRow.Cells("ThanhTien").Value
+    '    tamThanhTien = thanhtien
+    '    tamNoDaiLy = txbNoDaiLy.Text
+    'End Sub
 
     Private Sub cbTenDaiLy_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbTenDaiLy.SelectedIndexChanged
         Dim madaily As String = KetNoiDAL.ChuyenTenThanhMa("DAILY", "TenDaiLy", cbTenDaiLy.SelectedItem, "MaDaiLy")

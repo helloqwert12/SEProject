@@ -28,7 +28,6 @@ Partial Class LapPhieuXuatHang
         Me.RibbonPage1 = New DevExpress.XtraBars.Ribbon.RibbonPage()
         Me.RibbonPageGroup1 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
-        Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -142,7 +141,7 @@ Partial Class LapPhieuXuatHang
         '
         'RibbonPage1
         '
-        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup3, Me.RibbonPageGroup4})
+        Me.RibbonPage1.Groups.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPageGroup() {Me.RibbonPageGroup1, Me.RibbonPageGroup2, Me.RibbonPageGroup4})
         Me.RibbonPage1.Name = "RibbonPage1"
         Me.RibbonPage1.Text = "Phiếu xuất hàng"
         '
@@ -157,12 +156,6 @@ Partial Class LapPhieuXuatHang
         Me.RibbonPageGroup2.ItemLinks.Add(Me.btnXoaPhieuXuat)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
         Me.RibbonPageGroup2.Text = "RibbonPageGroup2"
-        '
-        'RibbonPageGroup3
-        '
-        Me.RibbonPageGroup3.ItemLinks.Add(Me.btnCapNhatPhieuXuat)
-        Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "RibbonPageGroup3"
         '
         'RibbonPageGroup4
         '
@@ -491,12 +484,12 @@ Partial Class LapPhieuXuatHang
         '
         Me.fpnlNote.Controls.Add(Me.lblThongbao)
         Me.fpnlNote.Controls.Add(Me.label)
-        Me.fpnlNote.Location = New System.Drawing.Point(471, 55)
+        Me.fpnlNote.Location = New System.Drawing.Point(354, 55)
         Me.fpnlNote.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.fpnlNote.Name = "fpnlNote"
         Me.fpnlNote.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Top
         Me.fpnlNote.OwnerControl = Me.Button2
-        Me.fpnlNote.Size = New System.Drawing.Size(549, 72)
+        Me.fpnlNote.Size = New System.Drawing.Size(666, 72)
         Me.fpnlNote.TabIndex = 31
         '
         'lblThongbao
@@ -526,10 +519,10 @@ Partial Class LapPhieuXuatHang
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(456, 55)
+        Me.Button2.Location = New System.Drawing.Point(338, 55)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(575, 8)
+        Me.Button2.Size = New System.Drawing.Size(693, 11)
         Me.Button2.TabIndex = 37
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -781,7 +774,6 @@ Partial Class LapPhieuXuatHang
     Friend WithEvents label As Label
     Friend WithEvents btnThemPhieuXuat As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents btnXoaPhieuXuat As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnCapNhatPhieuXuat As DevExpress.XtraBars.BarButtonItem
