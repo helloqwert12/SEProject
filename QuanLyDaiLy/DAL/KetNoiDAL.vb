@@ -124,28 +124,28 @@ Namespace QuanLyDaiLyDAL
             End Try
             Return dtTable
         End Function
-        Public Shared Function LayDuLieu(ByVal tenbang As String, ByVal dieukien As String, ParamArray tenthuoctinh As String())
-            Dim dtTable As DataTable
-            Dim adapter As SqlDataAdapter
-            Dim dtSet As DataSet
-            dtTable = New DataTable()
-            dtSet = New DataSet()
-            Try
-                Dim conStr As String = "SELECT "
-                For Each i As String In tenthuoctinh
-                    conStr += i + ","
-                Next
-                conStr = conStr.Remove(conStr.Length - 1, 1)
-                conStr += " FROM " + tenbang
-                conStr += " WHERE " + dieukien
-                adapter = New SqlDataAdapter(conStr, connet)
-                adapter.Fill(dtSet)
-                dtTable = dtSet.Tables(0)
-            Catch ex As Exception
-                MessageBox.Show("Không tải được dữ liệu", "THÔNG BÁO")
-            End Try
-            Return dtTable
-        End Function
+        'Public Shared Function LayDuLieu(ByVal tenbang As String, ByVal dieukien As String, ParamArray tenthuoctinh As String())
+        '    Dim dtTable As DataTable
+        '    Dim adapter As SqlDataAdapter
+        '    Dim dtSet As DataSet
+        '    dtTable = New DataTable()
+        '    dtSet = New DataSet()
+        '    Try
+        '        Dim conStr As String = "SELECT "
+        '        For Each i As String In tenthuoctinh
+        '            conStr += i + ","
+        '        Next
+        '        conStr = conStr.Remove(conStr.Length - 1, 1)
+        '        conStr += " FROM " + tenbang
+        '        conStr += " WHERE " + dieukien
+        '        adapter = New SqlDataAdapter(conStr, connet)
+        '        adapter.Fill(dtSet)
+        '        dtTable = dtSet.Tables(0)
+        '    Catch ex As Exception
+        '        MessageBox.Show("Không tải được dữ liệu", "THÔNG BÁO")
+        '    End Try
+        '    Return dtTable
+        'End Function
 
         'Them du lieu vao bang
         Public Shared Function ThemDuLieu(ByVal tenbang As String,
@@ -261,7 +261,17 @@ Namespace QuanLyDaiLyDAL
                         max = i
                     End If
                 Next
-                khoa = (prefix + (max + 1).ToString())
+                Dim soconlai As Integer = 3 - max.ToString().Length
+                If soconlai = 2 Then
+                    khoa = (prefix + "00" + (max + 1).ToString())
+                End If
+                If prefix.Length = 1 Then
+                    khoa = (prefix + "0" + (max + 1).ToString())
+                End If
+                If prefix.Length = 0 Then
+                    khoa = (prefix + (max + 1).ToString())
+                End If
+
             End If
             Return khoa
         End Function

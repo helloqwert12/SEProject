@@ -11,9 +11,9 @@ Namespace QuanLyDaiLyDAL
         Public Function LayDuLieu(ByVal thuoctinh As String, Optional ByVal dieukien As String = "") As DataTable
             Return KetNoiDAL.LayDuLieu("BAOCAODOANHSO", thuoctinh, dieukien)
         End Function
-        Public Function LayDuLieu(ByVal dieukien As String, ParamArray tenthuoctinh As String()) As DataTable
-            Return KetNoiDAL.LayDuLieu("BAOCAODOANHSO", dieukien, tenthuoctinh)
-        End Function
+        'Public Function LayDuLieu(ByVal dieukien As String, ParamArray tenthuoctinh As String()) As DataTable
+        '    Return KetNoiDAL.LayDuLieu("BAOCAODOANHSO", dieukien, tenthuoctinh)
+        'End Function
         'Them du lieu vao bang
         Public Function ThemDuLieu(Baocaodoanhso As BaoCaoDoanhSoDTO) As Boolean
             Dim success = KetNoiDAL.ThemDuLieu("BAOCAODOANHSO", Baocaodoanhso.MaBaoCaoDoanhSo, Baocaodoanhso.MaDaiLy, Baocaodoanhso.SoPhieuXuat,

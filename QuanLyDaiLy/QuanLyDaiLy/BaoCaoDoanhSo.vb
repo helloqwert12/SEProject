@@ -57,17 +57,20 @@ Public Class BaoCaoDoanhSo
         '    Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO join DAILY on BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy join PHIEUXUAT on DAILY.MaDaiLy = PHIEUXUAT.MaDaily", "BAOCAODOANHSO.MaDaiLy", "ThoiGian", "SoPhieuXuat", "PHIEUXUAT.TongTriGia", "TyLe")
         '    LoadDataOnGridView(data)
         'End If
-        If txbNam.Text > Date.Now.Year Then
-            MessageBox.Show("Năm lập báo cáo lớn hơn năm hiện tại. Vui lòng kiểm tra lại", "THÔNG BÁO")
-        Else
-            'Dim data As DataTable = baocaodoanhsoDAL.LayDuLieu("MaDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe", "Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + cbThang = txbNam.Text)
-            Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO, DAILY", "BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy" + " and " + "Month(ThoiGian) = " + cbThang.SelectedItem + " and " + "Year(ThoiGian) = " + cbThang = txbNam.Text, "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe")
-            If data.Rows.Count = 0 Then
-                MessageBox.Show("Không có dữ liệu thõa thời gian trên", "THÔNG BÁO")
-            Else
-                LoadDataOnGridView(data)
-            End If
-        End If
+
+
+
+        'If txbNam.Text > Date.Now.Year Then
+        '    MessageBox.Show("Năm lập báo cáo lớn hơn năm hiện tại. Vui lòng kiểm tra lại", "THÔNG BÁO")
+        'Else
+        '    'Dim data As DataTable = baocaodoanhsoDAL.LayDuLieu("MaDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe", "Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + cbThang = txbNam.Text)
+        '    Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO, DAILY", "BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy" + " and " + "Month(ThoiGian) = " + cbThang.SelectedItem + " and " + "Year(ThoiGian) = " + cbThang = txbNam.Text, "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe")
+        '    If data.Rows.Count = 0 Then
+        '        MessageBox.Show("Không có dữ liệu thõa thời gian trên", "THÔNG BÁO")
+        '    Else
+        '        LoadDataOnGridView(data)
+        '    End If
+        'End If
     End Sub
 
     Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
