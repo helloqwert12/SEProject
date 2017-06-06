@@ -16,10 +16,11 @@ Public Class BaoCaoDoanhSo
 
         cbThang.SelectedIndex = 0
         txbNam.Text = Date.Today.Year
+        LoadDataOnGridView()
     End Sub
     'Dinh nghia thu tuc load du lieu tu bang theo tung lop vao Gridview
-    Private Sub LoadDataOnGridView(ByVal data As DataTable)
-
+    Private Sub LoadDataOnGridView() 'ByVal data As DataTable)
+        Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO join DAILY on BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy join PHIEUXUAT on DAILY.MaDaiLy = PHIEUXUAT.MaDaily", "TenDaiLy", "BAOCAODOANHSO.MaDaiLy", "ThoiGian", "SoPhieuXuat", "PHIEUXUAT.TongTriGia", "TyLe")
         Me.dgvBaoCaoDoanhSo.DataSource = data
         With Me.dgvBaoCaoDoanhSo
             .Columns(0).HeaderText = "Mã đại lý"
@@ -99,6 +100,6 @@ Public Class BaoCaoDoanhSo
     End Sub
 
     Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
-        Export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SỐ " + cbThang.SelectedIndex + "/" + txbNam.Text)
+        Export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SỐ THÁNG   " + cbThang.Text + "/" + txbNam.Text)
     End Sub
 End Class

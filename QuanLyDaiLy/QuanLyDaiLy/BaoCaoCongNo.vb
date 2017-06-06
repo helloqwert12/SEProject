@@ -14,12 +14,14 @@ Public Class BaoCaoCongNo
         baocaocongnoDTO = New BaoCaoCongNoDTO()
         baocaocongnoDAL = New BaoCaoCongNoDAL()
 
+        cbThang.SelectedIndex = 0
+        txbNam.Text = Date.Today.Year
         LoadDataOnGridView()
 
     End Sub
     'Dinh nghia thu tuc load du lieu tu bang theo tung lop vao Gridview
     Private Sub LoadDataOnGridView()
-        Dim dTable As DataTable = KetNoiDAL.LayDuLieu("BAOCAOCONGNO join DAILY on BAOCAOCONGNO.MaDaiLy = DAILY.MaDaiLy", "DAILY.MaDaiLy", "ThoiGian", "NoDau", "PhatSinh", "NoCuoi")
+        Dim dTable As DataTable = KetNoiDAL.LayDuLieu("BAOCAOCONGNO join DAILY on BAOCAOCONGNO.MaDaiLy = DAILY.MaDaiLy", "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "NoDau", "PhatSinh", "NoCuoi")
         Me.dgvBaoCaoCongNo.DataSource = dTable
         With Me.dgvBaoCaoCongNo
             .Columns(0).HeaderText = "Mã đại lý"
@@ -39,7 +41,8 @@ Public Class BaoCaoCongNo
     End Sub
 
     Private Sub btnThucHien_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThucHien.ItemClick
-
+        btnPDF.Enabled = True
+        btnExcel.Enabled = True
     End Sub
 
     'Private Sub dgvBaoCaoCongNo_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBaoCaoCongNo.RowEnter
@@ -63,6 +66,6 @@ Public Class BaoCaoCongNo
 
     Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
         Dim _export As Export = New Export()
-        _export.ExportPDF(dgvBaoCaoCongNo, "BÁO CÁO CÔNG NỢ " + cbThang.SelectedIndex + "/" + txbNam.Text)
+        Export.ExportPDF(dgvBaoCaoCongNo, "BÁO CÁO CÔNG NỢ THÁNG   " + cbThang.Text + "/" + txbNam.Text)
     End Sub
 End Class

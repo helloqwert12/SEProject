@@ -48,7 +48,7 @@ Partial Class BaoCaoCongNo
         Me.RibbonControl.MaxItemId = 5
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl.Size = New System.Drawing.Size(576, 143)
+        Me.RibbonControl.Size = New System.Drawing.Size(679, 143)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'btnThucHien
@@ -63,6 +63,7 @@ Partial Class BaoCaoCongNo
         Me.btnExcel.Caption = "Xuất file Excel"
         Me.btnExcel.Enabled = False
         Me.btnExcel.Id = 2
+        Me.btnExcel.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.excel_icon
         Me.btnExcel.Name = "btnExcel"
         '
         'btnPDF
@@ -70,6 +71,7 @@ Partial Class BaoCaoCongNo
         Me.btnPDF.Caption = "Xuất file PDF"
         Me.btnPDF.Enabled = False
         Me.btnPDF.Id = 3
+        Me.btnPDF.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.Apps_Pdf_icon
         Me.btnPDF.Name = "btnPDF"
         '
         'btnThoat
@@ -111,14 +113,14 @@ Partial Class BaoCaoCongNo
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 398)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 401)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(576, 31)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(679, 31)
         '
         'txbNam
         '
-        Me.txbNam.Location = New System.Drawing.Point(353, 155)
+        Me.txbNam.Location = New System.Drawing.Point(409, 161)
         Me.txbNam.MenuManager = Me.RibbonControl
         Me.txbNam.Name = "txbNam"
         Me.txbNam.Properties.Mask.EditMask = "d"
@@ -130,7 +132,7 @@ Partial Class BaoCaoCongNo
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(307, 156)
+        Me.Label2.Location = New System.Drawing.Point(363, 162)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(40, 16)
         Me.Label2.TabIndex = 20
@@ -141,7 +143,7 @@ Partial Class BaoCaoCongNo
         Me.cbThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbThang.FormattingEnabled = True
         Me.cbThang.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
-        Me.cbThang.Location = New System.Drawing.Point(219, 155)
+        Me.cbThang.Location = New System.Drawing.Point(275, 161)
         Me.cbThang.Name = "cbThang"
         Me.cbThang.Size = New System.Drawing.Size(64, 21)
         Me.cbThang.TabIndex = 19
@@ -150,7 +152,7 @@ Partial Class BaoCaoCongNo
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(161, 156)
+        Me.Label1.Location = New System.Drawing.Point(217, 162)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 16)
         Me.Label1.TabIndex = 18
@@ -159,16 +161,16 @@ Partial Class BaoCaoCongNo
         'dgvBaoCaoCongNo
         '
         Me.dgvBaoCaoCongNo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvBaoCaoCongNo.Location = New System.Drawing.Point(12, 182)
+        Me.dgvBaoCaoCongNo.Location = New System.Drawing.Point(12, 193)
         Me.dgvBaoCaoCongNo.Name = "dgvBaoCaoCongNo"
-        Me.dgvBaoCaoCongNo.Size = New System.Drawing.Size(549, 208)
+        Me.dgvBaoCaoCongNo.Size = New System.Drawing.Size(655, 202)
         Me.dgvBaoCaoCongNo.TabIndex = 17
         '
         'BaoCaoCongNo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(576, 429)
+        Me.ClientSize = New System.Drawing.Size(679, 432)
         Me.Controls.Add(Me.txbNam)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cbThang)

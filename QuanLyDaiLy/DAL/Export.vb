@@ -63,7 +63,7 @@ Namespace QuanLyDaiLyDAL
             ' set and add page with current setting
             PdfFile.Add(Paragraph)
 
-            ' create data into table
+            ' create data into table       
             Dim PdfTable As New PdfPTable(dgv.Columns.Count)
 
             ' setting width of table
@@ -104,7 +104,7 @@ Namespace QuanLyDaiLyDAL
             PdfFile.Add(PdfTable)
             PdfFile.Close()
 
-            MessageBox.Show("Export PDF Success", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Xuất file PDF thành công", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
         End Sub
     End Class
 End Namespace

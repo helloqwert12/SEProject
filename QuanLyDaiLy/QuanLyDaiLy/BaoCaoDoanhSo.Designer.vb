@@ -30,14 +30,14 @@ Partial Class BaoCaoDoanhSo
         Me.RibbonPageGroup3 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
-        Me.dgvBaoCaoDoanhSo = New System.Windows.Forms.DataGridView()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbThang = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.txbNam = New DevExpress.XtraEditors.TextEdit()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cbThang = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.dgvBaoCaoDoanhSo = New System.Windows.Forms.DataGridView()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvBaoCaoDoanhSo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txbNam.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBaoCaoDoanhSo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RibbonControl
@@ -45,11 +45,10 @@ Partial Class BaoCaoDoanhSo
         Me.RibbonControl.ExpandCollapseItem.Id = 0
         Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnThucHien, Me.btnExcel, Me.btnPDF, Me.btnThoat})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
-        Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl.MaxItemId = 6
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl.Size = New System.Drawing.Size(672, 168)
+        Me.RibbonControl.Size = New System.Drawing.Size(679, 143)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'btnThucHien
@@ -114,68 +113,64 @@ Partial Class BaoCaoDoanhSo
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 496)
-        Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 401)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(672, 36)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(679, 31)
         '
-        'dgvBaoCaoDoanhSo
+        'txbNam
         '
-        Me.dgvBaoCaoDoanhSo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvBaoCaoDoanhSo.Location = New System.Drawing.Point(17, 229)
-        Me.dgvBaoCaoDoanhSo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.dgvBaoCaoDoanhSo.Name = "dgvBaoCaoDoanhSo"
-        Me.dgvBaoCaoDoanhSo.Size = New System.Drawing.Size(640, 256)
-        Me.dgvBaoCaoDoanhSo.TabIndex = 2
+        Me.txbNam.Location = New System.Drawing.Point(409, 161)
+        Me.txbNam.MenuManager = Me.RibbonControl
+        Me.txbNam.Name = "txbNam"
+        Me.txbNam.Properties.Mask.EditMask = "d"
+        Me.txbNam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
+        Me.txbNam.Size = New System.Drawing.Size(100, 20)
+        Me.txbNam.TabIndex = 26
         '
-        'Label1
+        'Label2
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(188, 197)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(69, 21)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Tháng:"
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(363, 162)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(40, 16)
+        Me.Label2.TabIndex = 25
+        Me.Label2.Text = "Năm:"
         '
         'cbThang
         '
         Me.cbThang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbThang.FormattingEnabled = True
         Me.cbThang.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
-        Me.cbThang.Location = New System.Drawing.Point(255, 196)
-        Me.cbThang.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.cbThang.Location = New System.Drawing.Point(275, 161)
         Me.cbThang.Name = "cbThang"
-        Me.cbThang.Size = New System.Drawing.Size(74, 24)
-        Me.cbThang.TabIndex = 8
+        Me.cbThang.Size = New System.Drawing.Size(64, 21)
+        Me.cbThang.TabIndex = 24
         '
-        'Label2
+        'Label1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(358, 197)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(55, 21)
-        Me.Label2.TabIndex = 9
-        Me.Label2.Text = "Năm:"
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(217, 162)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(52, 16)
+        Me.Label1.TabIndex = 23
+        Me.Label1.Text = "Tháng:"
         '
-        'txbNam
+        'dgvBaoCaoDoanhSo
         '
-        Me.txbNam.Location = New System.Drawing.Point(412, 196)
-        Me.txbNam.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.txbNam.MenuManager = Me.RibbonControl
-        Me.txbNam.Name = "txbNam"
-        Me.txbNam.Properties.Mask.EditMask = "d"
-        Me.txbNam.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.txbNam.Size = New System.Drawing.Size(117, 22)
-        Me.txbNam.TabIndex = 10
+        Me.dgvBaoCaoDoanhSo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvBaoCaoDoanhSo.Location = New System.Drawing.Point(12, 193)
+        Me.dgvBaoCaoDoanhSo.Name = "dgvBaoCaoDoanhSo"
+        Me.dgvBaoCaoDoanhSo.Size = New System.Drawing.Size(655, 202)
+        Me.dgvBaoCaoDoanhSo.TabIndex = 22
         '
         'BaoCaoDoanhSo
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(672, 532)
+        Me.ClientSize = New System.Drawing.Size(679, 432)
         Me.Controls.Add(Me.txbNam)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cbThang)
@@ -184,7 +179,6 @@ Partial Class BaoCaoDoanhSo
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.Name = "BaoCaoDoanhSo"
         Me.Ribbon = Me.RibbonControl
@@ -193,8 +187,8 @@ Partial Class BaoCaoDoanhSo
         Me.Text = "BÁO CÁO DOANH SỐ"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvBaoCaoDoanhSo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txbNam.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBaoCaoDoanhSo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -211,9 +205,9 @@ Partial Class BaoCaoDoanhSo
     Friend WithEvents RibbonPageGroup2 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonPageGroup3 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
     Friend WithEvents RibbonPageGroup4 As DevExpress.XtraBars.Ribbon.RibbonPageGroup
-    Friend WithEvents dgvBaoCaoDoanhSo As DataGridView
-    Friend WithEvents Label1 As Label
-    Friend WithEvents cbThang As ComboBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents txbNam As DevExpress.XtraEditors.TextEdit
+    Friend WithEvents Label2 As Label
+    Friend WithEvents cbThang As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents dgvBaoCaoDoanhSo As DataGridView
 End Class
