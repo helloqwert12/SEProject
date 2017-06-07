@@ -20,6 +20,7 @@ Partial Class LapPhieuThuTien
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.QuanLyDaiLy.LoadingSplashScreen), True, True)
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btnThemPhieuThuTien = New DevExpress.XtraBars.BarButtonItem()
         Me.btnXoaPhieuThuTien = New DevExpress.XtraBars.BarButtonItem()
@@ -111,10 +112,11 @@ Partial Class LapPhieuThuTien
         Me.RibbonControl.ExpandCollapseItem.Id = 0
         Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnThemPhieuThuTien, Me.btnXoaPhieuThuTien, Me.btnCapNhatPhieuThuTien, Me.btnThoat})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl.MaxItemId = 5
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl.Size = New System.Drawing.Size(1030, 143)
+        Me.RibbonControl.Size = New System.Drawing.Size(1202, 168)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'btnThemPhieuThuTien
@@ -179,10 +181,11 @@ Partial Class LapPhieuThuTien
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 634)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 782)
+        Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(1030, 31)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(1202, 36)
         '
         'Panel1
         '
@@ -205,66 +208,69 @@ Partial Class LapPhieuThuTien
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Location = New System.Drawing.Point(12, 148)
+        Me.Panel1.Location = New System.Drawing.Point(14, 182)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(663, 211)
+        Me.Panel1.Size = New System.Drawing.Size(773, 260)
         Me.Panel1.TabIndex = 4
         '
         'txbSoTienNo
         '
         Me.txbSoTienNo.Enabled = False
-        Me.txbSoTienNo.Location = New System.Drawing.Point(431, 160)
+        Me.txbSoTienNo.Location = New System.Drawing.Point(503, 197)
+        Me.txbSoTienNo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbSoTienNo.Name = "txbSoTienNo"
         Me.txbSoTienNo.ReadOnly = True
-        Me.txbSoTienNo.Size = New System.Drawing.Size(118, 21)
+        Me.txbSoTienNo.Size = New System.Drawing.Size(137, 23)
         Me.txbSoTienNo.TabIndex = 43
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(341, 164)
+        Me.Label6.Location = New System.Drawing.Point(398, 202)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(59, 13)
+        Me.Label6.Size = New System.Drawing.Size(75, 17)
         Me.Label6.TabIndex = 41
         Me.Label6.Text = "Số tiền nợ:"
         '
         'txbMaPhieuThu
         '
         Me.txbMaPhieuThu.Enabled = False
-        Me.txbMaPhieuThu.Location = New System.Drawing.Point(91, 44)
+        Me.txbMaPhieuThu.Location = New System.Drawing.Point(106, 54)
+        Me.txbMaPhieuThu.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbMaPhieuThu.Name = "txbMaPhieuThu"
         Me.txbMaPhieuThu.ReadOnly = True
-        Me.txbMaPhieuThu.Size = New System.Drawing.Size(222, 21)
+        Me.txbMaPhieuThu.Size = New System.Drawing.Size(258, 23)
         Me.txbMaPhieuThu.TabIndex = 40
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 49)
+        Me.Label3.Location = New System.Drawing.Point(13, 60)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(73, 13)
+        Me.Label3.Size = New System.Drawing.Size(92, 17)
         Me.Label3.TabIndex = 39
         Me.Label3.Text = "Mã phiếu thu:"
         '
         'txbSoTienThu
         '
         Me.txbSoTienThu.Enabled = False
-        Me.txbSoTienThu.Location = New System.Drawing.Point(91, 161)
+        Me.txbSoTienThu.Location = New System.Drawing.Point(106, 198)
+        Me.txbSoTienThu.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbSoTienThu.MenuManager = Me.RibbonControl
         Me.txbSoTienThu.Name = "txbSoTienThu"
         Me.txbSoTienThu.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.txbSoTienThu.Properties.Mask.EditMask = "d"
         Me.txbSoTienThu.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.txbSoTienThu.Size = New System.Drawing.Size(222, 20)
+        Me.txbSoTienThu.Size = New System.Drawing.Size(259, 22)
         Me.txbSoTienThu.TabIndex = 38
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(11, 164)
+        Me.Label2.Location = New System.Drawing.Point(13, 202)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 13)
+        Me.Label2.Size = New System.Drawing.Size(80, 17)
         Me.Label2.TabIndex = 37
         Me.Label2.Text = "Số tiền thu:"
         '
@@ -273,9 +279,10 @@ Partial Class LapPhieuThuTien
         Me.cbDaiLy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbDaiLy.Enabled = False
         Me.cbDaiLy.FormattingEnabled = True
-        Me.cbDaiLy.Location = New System.Drawing.Point(91, 81)
+        Me.cbDaiLy.Location = New System.Drawing.Point(106, 100)
+        Me.cbDaiLy.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cbDaiLy.Name = "cbDaiLy"
-        Me.cbDaiLy.Size = New System.Drawing.Size(222, 21)
+        Me.cbDaiLy.Size = New System.Drawing.Size(258, 24)
         Me.cbDaiLy.TabIndex = 36
         '
         'btnXacNhan
@@ -283,10 +290,10 @@ Partial Class LapPhieuThuTien
         Me.btnXacNhan.Enabled = False
         Me.btnXacNhan.Image = Global.QuanLyDaiLy.My.Resources.Resources.Ok_icon
         Me.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnXacNhan.Location = New System.Drawing.Point(555, 174)
+        Me.btnXacNhan.Location = New System.Drawing.Point(647, 214)
         Me.btnXacNhan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnXacNhan.Name = "btnXacNhan"
-        Me.btnXacNhan.Size = New System.Drawing.Size(92, 37)
+        Me.btnXacNhan.Size = New System.Drawing.Size(107, 46)
         Me.btnXacNhan.TabIndex = 35
         Me.btnXacNhan.Text = "Xác nhận"
         Me.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -297,9 +304,9 @@ Partial Class LapPhieuThuTien
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label11.ForeColor = System.Drawing.Color.Blue
-        Me.Label11.Location = New System.Drawing.Point(50, 13)
+        Me.Label11.Location = New System.Drawing.Point(58, 16)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(215, 17)
+        Me.Label11.Size = New System.Drawing.Size(255, 21)
         Me.Label11.TabIndex = 33
         Me.Label11.Text = "THÔNG TIN PHIẾU THU TIỀN"
         '
@@ -310,88 +317,92 @@ Partial Class LapPhieuThuTien
         Me.Panel5.Location = New System.Drawing.Point(3, 2)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(40, 33)
+        Me.Panel5.Size = New System.Drawing.Size(47, 41)
         Me.Panel5.TabIndex = 32
         '
         'txbDienThoai
         '
         Me.txbDienThoai.Enabled = False
-        Me.txbDienThoai.Location = New System.Drawing.Point(91, 121)
+        Me.txbDienThoai.Location = New System.Drawing.Point(106, 149)
+        Me.txbDienThoai.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbDienThoai.Name = "txbDienThoai"
         Me.txbDienThoai.ReadOnly = True
-        Me.txbDienThoai.Size = New System.Drawing.Size(222, 21)
+        Me.txbDienThoai.Size = New System.Drawing.Size(258, 23)
         Me.txbDienThoai.TabIndex = 29
         '
         'txbDiaChi
         '
         Me.txbDiaChi.Enabled = False
-        Me.txbDiaChi.Location = New System.Drawing.Point(431, 111)
+        Me.txbDiaChi.Location = New System.Drawing.Point(503, 137)
+        Me.txbDiaChi.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbDiaChi.Multiline = True
         Me.txbDiaChi.Name = "txbDiaChi"
         Me.txbDiaChi.ReadOnly = True
-        Me.txbDiaChi.Size = New System.Drawing.Size(216, 39)
+        Me.txbDiaChi.Size = New System.Drawing.Size(251, 47)
         Me.txbDiaChi.TabIndex = 26
         '
         'txbEmail
         '
         Me.txbEmail.Enabled = False
-        Me.txbEmail.Location = New System.Drawing.Point(431, 81)
+        Me.txbEmail.Location = New System.Drawing.Point(503, 100)
+        Me.txbEmail.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbEmail.Name = "txbEmail"
         Me.txbEmail.ReadOnly = True
-        Me.txbEmail.Size = New System.Drawing.Size(216, 21)
+        Me.txbEmail.Size = New System.Drawing.Size(251, 23)
         Me.txbEmail.TabIndex = 25
         '
         'txbNgayThuTien
         '
         Me.txbNgayThuTien.Enabled = False
-        Me.txbNgayThuTien.Location = New System.Drawing.Point(431, 43)
+        Me.txbNgayThuTien.Location = New System.Drawing.Point(503, 53)
+        Me.txbNgayThuTien.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbNgayThuTien.Name = "txbNgayThuTien"
         Me.txbNgayThuTien.ReadOnly = True
-        Me.txbNgayThuTien.Size = New System.Drawing.Size(216, 21)
+        Me.txbNgayThuTien.Size = New System.Drawing.Size(251, 23)
         Me.txbNgayThuTien.TabIndex = 24
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(341, 124)
+        Me.Label8.Location = New System.Drawing.Point(398, 153)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(43, 13)
+        Me.Label8.Size = New System.Drawing.Size(53, 17)
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Địa chỉ:"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(341, 84)
+        Me.Label7.Location = New System.Drawing.Point(398, 103)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(39, 13)
+        Me.Label7.Size = New System.Drawing.Size(49, 17)
         Me.Label7.TabIndex = 14
         Me.Label7.Text = "E-mail:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(341, 49)
+        Me.Label5.Location = New System.Drawing.Point(398, 60)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(76, 13)
+        Me.Label5.Size = New System.Drawing.Size(96, 17)
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Ngày thu tiền:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(11, 124)
+        Me.Label4.Location = New System.Drawing.Point(13, 153)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(60, 13)
+        Me.Label4.Size = New System.Drawing.Size(74, 17)
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Điện thoại:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 84)
+        Me.Label1.Location = New System.Drawing.Point(13, 103)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(57, 13)
+        Me.Label1.Size = New System.Drawing.Size(71, 17)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Tên đại lý:"
         '
@@ -409,10 +420,10 @@ Partial Class LapPhieuThuTien
         Me.Panel3.Controls.Add(Me.GaugeControl1)
         Me.Panel3.Controls.Add(Me.Label9)
         Me.Panel3.Controls.Add(Me.Button1)
-        Me.Panel3.Location = New System.Drawing.Point(681, 148)
+        Me.Panel3.Location = New System.Drawing.Point(794, 182)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(337, 208)
+        Me.Panel3.Size = New System.Drawing.Size(393, 256)
         Me.Panel3.TabIndex = 16
         '
         'GaugeControl4
@@ -421,10 +432,10 @@ Partial Class LapPhieuThuTien
         Me.GaugeControl4.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.GaugeControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl4.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgApDung})
-        Me.GaugeControl4.Location = New System.Drawing.Point(226, 157)
+        Me.GaugeControl4.Location = New System.Drawing.Point(264, 193)
         Me.GaugeControl4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl4.Name = "GaugeControl4"
-        Me.GaugeControl4.Size = New System.Drawing.Size(98, 50)
+        Me.GaugeControl4.Size = New System.Drawing.Size(114, 62)
         Me.GaugeControl4.TabIndex = 25
         '
         'dgApDung
@@ -447,9 +458,9 @@ Partial Class LapPhieuThuTien
         'Label14
         '
         Me.Label14.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label14.Location = New System.Drawing.Point(3, 163)
+        Me.Label14.Location = New System.Drawing.Point(3, 201)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(189, 50)
+        Me.Label14.Size = New System.Drawing.Size(220, 62)
         Me.Label14.TabIndex = 24
         Me.Label14.Text = "Áp dụng quy định số tiền thu được lớn hơn số tiền nợ"
         '
@@ -460,10 +471,10 @@ Partial Class LapPhieuThuTien
         Me.GaugeControl5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl5.Controls.Add(Me.GaugeControl2)
         Me.GaugeControl5.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgSoPhieuThuCuaDaiLy})
-        Me.GaugeControl5.Location = New System.Drawing.Point(226, 68)
+        Me.GaugeControl5.Location = New System.Drawing.Point(264, 84)
         Me.GaugeControl5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl5.Name = "GaugeControl5"
-        Me.GaugeControl5.Size = New System.Drawing.Size(99, 48)
+        Me.GaugeControl5.Size = New System.Drawing.Size(115, 59)
         Me.GaugeControl5.TabIndex = 23
         '
         'GaugeControl2
@@ -472,10 +483,10 @@ Partial Class LapPhieuThuTien
         Me.GaugeControl2.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.GaugeControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl2.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.DigitalGauge1})
-        Me.GaugeControl2.Location = New System.Drawing.Point(3, 52)
+        Me.GaugeControl2.Location = New System.Drawing.Point(3, 64)
         Me.GaugeControl2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl2.Name = "GaugeControl2"
-        Me.GaugeControl2.Size = New System.Drawing.Size(98, 50)
+        Me.GaugeControl2.Size = New System.Drawing.Size(114, 62)
         Me.GaugeControl2.TabIndex = 23
         '
         'DigitalGauge1
@@ -516,18 +527,18 @@ Partial Class LapPhieuThuTien
         '
         Me.lblDaiLy.AutoSize = True
         Me.lblDaiLy.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.lblDaiLy.Location = New System.Drawing.Point(119, 84)
+        Me.lblDaiLy.Location = New System.Drawing.Point(139, 103)
         Me.lblDaiLy.Name = "lblDaiLy"
-        Me.lblDaiLy.Size = New System.Drawing.Size(0, 17)
+        Me.lblDaiLy.Size = New System.Drawing.Size(0, 21)
         Me.lblDaiLy.TabIndex = 19
         '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label15.Location = New System.Drawing.Point(4, 124)
+        Me.Label15.Location = New System.Drawing.Point(5, 153)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(111, 17)
+        Me.Label15.Size = New System.Drawing.Size(133, 21)
         Me.Label15.TabIndex = 19
         Me.Label15.Text = "Số đại lý còn nợ:"
         '
@@ -535,9 +546,9 @@ Partial Class LapPhieuThuTien
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label13.Location = New System.Drawing.Point(3, 84)
+        Me.Label13.Location = New System.Drawing.Point(3, 103)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(116, 17)
+        Me.Label13.Size = New System.Drawing.Size(138, 21)
         Me.Label13.TabIndex = 19
         Me.Label13.Text = "Số phiếu thu của "
         '
@@ -545,9 +556,9 @@ Partial Class LapPhieuThuTien
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label12.Location = New System.Drawing.Point(3, 43)
+        Me.Label12.Location = New System.Drawing.Point(3, 53)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(125, 17)
+        Me.Label12.Size = New System.Drawing.Size(149, 21)
         Me.Label12.TabIndex = 19
         Me.Label12.Text = "Tổng số phiếu thu:"
         '
@@ -557,10 +568,10 @@ Partial Class LapPhieuThuTien
         Me.GaugeControl3.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.GaugeControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl3.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgSoDaiLyConNo})
-        Me.GaugeControl3.Location = New System.Drawing.Point(226, 114)
+        Me.GaugeControl3.Location = New System.Drawing.Point(264, 140)
         Me.GaugeControl3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl3.Name = "GaugeControl3"
-        Me.GaugeControl3.Size = New System.Drawing.Size(98, 50)
+        Me.GaugeControl3.Size = New System.Drawing.Size(114, 62)
         Me.GaugeControl3.TabIndex = 18
         '
         'dgSoDaiLyConNo
@@ -586,10 +597,10 @@ Partial Class LapPhieuThuTien
         Me.GaugeControl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.GaugeControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl1.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgTongPhieuThu})
-        Me.GaugeControl1.Location = New System.Drawing.Point(226, 16)
+        Me.GaugeControl1.Location = New System.Drawing.Point(264, 20)
         Me.GaugeControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl1.Name = "GaugeControl1"
-        Me.GaugeControl1.Size = New System.Drawing.Size(99, 48)
+        Me.GaugeControl1.Size = New System.Drawing.Size(115, 59)
         Me.GaugeControl1.TabIndex = 18
         '
         'dgTongPhieuThu
@@ -614,9 +625,9 @@ Partial Class LapPhieuThuTien
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label9.ForeColor = System.Drawing.Color.Blue
-        Me.Label9.Location = New System.Drawing.Point(38, 8)
+        Me.Label9.Location = New System.Drawing.Point(44, 10)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(91, 17)
+        Me.Label9.Size = New System.Drawing.Size(108, 21)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "THÔNG TIN"
         '
@@ -630,7 +641,7 @@ Partial Class LapPhieuThuTien
         Me.Button1.Location = New System.Drawing.Point(2, 2)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(37, 22)
+        Me.Button1.Size = New System.Drawing.Size(43, 27)
         Me.Button1.TabIndex = 16
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -647,10 +658,10 @@ Partial Class LapPhieuThuTien
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.dgvPhieuThuTien)
-        Me.Panel2.Location = New System.Drawing.Point(12, 363)
+        Me.Panel2.Location = New System.Drawing.Point(14, 447)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1010, 256)
+        Me.Panel2.Size = New System.Drawing.Size(1178, 315)
         Me.Panel2.TabIndex = 17
         '
         'Label10
@@ -658,9 +669,9 @@ Partial Class LapPhieuThuTien
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label10.ForeColor = System.Drawing.Color.Blue
-        Me.Label10.Location = New System.Drawing.Point(47, 8)
+        Me.Label10.Location = New System.Drawing.Point(55, 10)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(218, 17)
+        Me.Label10.Size = New System.Drawing.Size(260, 21)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "DANH SÁCH PHIẾU THU TIỀN"
         '
@@ -671,7 +682,7 @@ Partial Class LapPhieuThuTien
         Me.Panel4.Location = New System.Drawing.Point(2, 2)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(39, 30)
+        Me.Panel4.Size = New System.Drawing.Size(45, 37)
         Me.Panel4.TabIndex = 1
         '
         'dgvPhieuThuTien
@@ -679,10 +690,11 @@ Partial Class LapPhieuThuTien
         Me.dgvPhieuThuTien.AllowUserToAddRows = False
         Me.dgvPhieuThuTien.AllowUserToDeleteRows = False
         Me.dgvPhieuThuTien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPhieuThuTien.Location = New System.Drawing.Point(0, 33)
+        Me.dgvPhieuThuTien.Location = New System.Drawing.Point(0, 41)
+        Me.dgvPhieuThuTien.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dgvPhieuThuTien.Name = "dgvPhieuThuTien"
         Me.dgvPhieuThuTien.ReadOnly = True
-        Me.dgvPhieuThuTien.Size = New System.Drawing.Size(1010, 224)
+        Me.dgvPhieuThuTien.Size = New System.Drawing.Size(1178, 276)
         Me.dgvPhieuThuTien.TabIndex = 0
         '
         'Timer1
@@ -695,10 +707,10 @@ Partial Class LapPhieuThuTien
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(454, 56)
+        Me.Button2.Location = New System.Drawing.Point(530, 69)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(575, 8)
+        Me.Button2.Size = New System.Drawing.Size(671, 10)
         Me.Button2.TabIndex = 42
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -706,12 +718,12 @@ Partial Class LapPhieuThuTien
         '
         Me.fpnlNote.Controls.Add(Me.lblThongbao)
         Me.fpnlNote.Controls.Add(Me.label)
-        Me.fpnlNote.Location = New System.Drawing.Point(469, 56)
+        Me.fpnlNote.Location = New System.Drawing.Point(547, 69)
         Me.fpnlNote.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.fpnlNote.Name = "fpnlNote"
         Me.fpnlNote.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Top
         Me.fpnlNote.OwnerControl = Me.Button2
-        Me.fpnlNote.Size = New System.Drawing.Size(549, 72)
+        Me.fpnlNote.Size = New System.Drawing.Size(640, 89)
         Me.fpnlNote.TabIndex = 41
         '
         'lblThongbao
@@ -719,9 +731,9 @@ Partial Class LapPhieuThuTien
         Me.lblThongbao.AutoSize = True
         Me.lblThongbao.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Bold)
         Me.lblThongbao.ForeColor = System.Drawing.Color.Red
-        Me.lblThongbao.Location = New System.Drawing.Point(132, 26)
+        Me.lblThongbao.Location = New System.Drawing.Point(154, 32)
         Me.lblThongbao.Name = "lblThongbao"
-        Me.lblThongbao.Size = New System.Drawing.Size(0, 13)
+        Me.lblThongbao.Size = New System.Drawing.Size(0, 17)
         Me.lblThongbao.TabIndex = 1
         '
         'label
@@ -729,17 +741,21 @@ Partial Class LapPhieuThuTien
         Me.label.AutoSize = True
         Me.label.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.label.ForeColor = System.Drawing.Color.Red
-        Me.label.Location = New System.Drawing.Point(20, 26)
+        Me.label.Location = New System.Drawing.Point(23, 32)
         Me.label.Name = "label"
-        Me.label.Size = New System.Drawing.Size(104, 17)
+        Me.label.Size = New System.Drawing.Size(125, 21)
         Me.label.TabIndex = 0
         Me.label.Text = "THÔNG BÁO: "
         '
+        'SplashScreenManager1
+        '
+        SplashScreenManager1.ClosingDelay = 100
+        '
         'LapPhieuThuTien
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1030, 665)
+        Me.ClientSize = New System.Drawing.Size(1202, 818)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.fpnlNote)
         Me.Controls.Add(Me.Panel2)
@@ -748,6 +764,7 @@ Partial Class LapPhieuThuTien
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.Name = "LapPhieuThuTien"
         Me.Ribbon = Me.RibbonControl

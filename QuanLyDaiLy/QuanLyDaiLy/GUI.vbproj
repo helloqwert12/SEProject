@@ -143,6 +143,12 @@
     <Compile Include="LapPhieuXuatHang.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LoadingSplashScreen.Designer.vb">
+      <DependentUpon>LoadingSplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingSplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="LoaiDaiLy.Designer.vb">
       <DependentUpon>LoaiDaiLy.vb</DependentUpon>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LapPhieuXuatHang.resx">
       <DependentUpon>LapPhieuXuatHang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingSplashScreen.resx">
+      <DependentUpon>LoadingSplashScreen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoaiDaiLy.resx">
       <DependentUpon>LoaiDaiLy.vb</DependentUpon>
@@ -314,6 +323,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Quanlybanhang.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\menu.png" />
     <None Include="Resources\Apps-Pdf-icon.png" />
     <None Include="Resources\excel-icon1.png" />
     <None Include="Resources\excel-icon.png" />

@@ -82,7 +82,7 @@ Public Class TiepNhanDaiLy
         txbDiaChi.Clear()
     End Sub
     'Kiem tra xem trong Quan nay da du so luong dai ly toi da hay chua
-    Private Sub cbQuan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbQuan.SelectedIndexChanged
+    Private Sub cbQuan_SelectedIndexChanged(sender As Object, e As EventArgs)
         'Dim data As DataTable = KetNoiDAL.LayDuLieu("QUAN", "MaQuan", "TenQuan = " + "'" + cbQuan.SelectedItem + "'")
         Dim maquan As String = KetNoiDAL.ChuyenTenThanhMa("QUAN", "TenQuan", cbQuan.SelectedItem, "MaQuan") 'data.Rows(0)(0)
         If Not dailyBUS.ThoaManDaiLyToiDa(maquan) Then
@@ -113,7 +113,7 @@ Public Class TiepNhanDaiLy
         Timer1.Start()
     End Sub
 
-    Private Sub btnXacNhan_Click(sender As Object, e As EventArgs) Handles btnXacNhan.Click
+    Private Sub btnXacNhan_Click(sender As Object, e As EventArgs)
         If Not KiemTraQD Then
             HienThiThongBao("Vi phạm quy định về số đại lý tối đa trong quận. Vui lòng kiểm tra lại")
         End If
@@ -217,7 +217,7 @@ Public Class TiepNhanDaiLy
             End If
         End If
     End Sub
-    Private Sub dgvTiepNhanDaiLy_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTiepNhanDaiLy.RowEnter
+    Private Sub dgvTiepNhanDaiLy_RowEnter(sender As Object, e As DataGridViewCellEventArgs)
         'Trang thai hien thi
         trangthai = STATUS.HIENTHI
         'Bat read-only cho textbox

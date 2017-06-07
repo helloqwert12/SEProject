@@ -20,6 +20,7 @@ Partial Class Menu
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.QuanLyDaiLy.LoadingSplashScreen), True, True)
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.blLuuTru = New DevExpress.XtraBars.BarLinkContainerItem()
@@ -38,23 +39,28 @@ Partial Class Menu
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.btnBaoCaoDoanhSo = New DevExpress.XtraBars.BarButtonItem()
         Me.btnBaoCaoCongNo = New DevExpress.XtraBars.BarButtonItem()
-        Me.btnMenu = New DevExpress.XtraEditors.SimpleButton()
         Me.rmMenu = New DevExpress.XtraBars.Ribbon.RadialMenu(Me.components)
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.MenuToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ThoátToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btnMenu = New DevExpress.XtraEditors.SimpleButton()
+        Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
+        Me.btnThongTin = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnThoat = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rmMenu, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PanelControl1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'SplashScreenManager1
+        '
+        SplashScreenManager1.ClosingDelay = 100
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 868)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 1050)
         Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(1590, 31)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(1855, 36)
         '
         'RibbonControl
         '
@@ -64,7 +70,7 @@ Partial Class Menu
         Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RibbonControl.MaxItemId = 1
         Me.RibbonControl.Name = "RibbonControl"
-        Me.RibbonControl.Size = New System.Drawing.Size(1590, 49)
+        Me.RibbonControl.Size = New System.Drawing.Size(1855, 61)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'blLuuTru
@@ -182,16 +188,6 @@ Partial Class Menu
         Me.btnBaoCaoCongNo.ImageUri.Uri = "StrikeoutDouble"
         Me.btnBaoCaoCongNo.Name = "btnBaoCaoCongNo"
         '
-        'btnMenu
-        '
-        Me.btnMenu.Image = Global.QuanLyDaiLy.My.Resources.Resources.Button_Add_icon
-        Me.btnMenu.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-        Me.btnMenu.Location = New System.Drawing.Point(716, 381)
-        Me.btnMenu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(169, 109)
-        Me.btnMenu.TabIndex = 2
-        '
         'rmMenu
         '
         Me.rmMenu.InnerRadius = 0
@@ -203,35 +199,54 @@ Partial Class Menu
         Me.rmMenu.Name = "rmMenu"
         Me.rmMenu.Ribbon = Me.RibbonControl
         '
-        'MenuStrip1
+        'btnMenu
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuToolStripMenuItem, Me.ThoátToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 49)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1590, 24)
-        Me.MenuStrip1.TabIndex = 9
-        Me.MenuStrip1.Text = "MenuStrip1"
+        Me.btnMenu.Image = Global.QuanLyDaiLy.My.Resources.Resources.menu
+        Me.btnMenu.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.btnMenu.Location = New System.Drawing.Point(0, 40)
+        Me.btnMenu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnMenu.Name = "btnMenu"
+        Me.btnMenu.Size = New System.Drawing.Size(234, 158)
+        Me.btnMenu.TabIndex = 2
         '
-        'MenuToolStripMenuItem
+        'PanelControl1
         '
-        Me.MenuToolStripMenuItem.Name = "MenuToolStripMenuItem"
-        Me.MenuToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
-        Me.MenuToolStripMenuItem.Text = "Menu"
+        Me.PanelControl1.Controls.Add(Me.btnThongTin)
+        Me.PanelControl1.Controls.Add(Me.btnThoat)
+        Me.PanelControl1.Controls.Add(Me.btnMenu)
+        Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 61)
+        Me.PanelControl1.Name = "PanelControl1"
+        Me.PanelControl1.Size = New System.Drawing.Size(234, 989)
+        Me.PanelControl1.TabIndex = 16
         '
-        'ThoátToolStripMenuItem
+        'btnThongTin
         '
-        Me.ThoátToolStripMenuItem.Name = "ThoátToolStripMenuItem"
-        Me.ThoátToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
-        Me.ThoátToolStripMenuItem.Text = "Thoát"
+        Me.btnThongTin.Image = Global.QuanLyDaiLy.My.Resources.Resources.infoIcon
+        Me.btnThongTin.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.btnThongTin.Location = New System.Drawing.Point(0, 461)
+        Me.btnThongTin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnThongTin.Name = "btnThongTin"
+        Me.btnThongTin.Size = New System.Drawing.Size(234, 158)
+        Me.btnThongTin.TabIndex = 2
+        '
+        'btnThoat
+        '
+        Me.btnThoat.Image = Global.QuanLyDaiLy.My.Resources.Resources.closeIcon
+        Me.btnThoat.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.btnThoat.Location = New System.Drawing.Point(0, 242)
+        Me.btnThoat.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnThoat.Name = "btnThoat"
+        Me.btnThoat.Size = New System.Drawing.Size(234, 158)
+        Me.btnThoat.TabIndex = 2
         '
         'Menu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1590, 899)
-        Me.Controls.Add(Me.btnMenu)
+        Me.ClientSize = New System.Drawing.Size(1855, 1086)
+        Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonStatusBar)
-        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.RibbonControl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.IsMdiContainer = True
@@ -244,8 +259,8 @@ Partial Class Menu
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.rmMenu, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PanelControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -259,7 +274,6 @@ Partial Class Menu
     Friend WithEvents blTraCuu As DevExpress.XtraBars.BarLinkContainerItem
     Friend WithEvents blTinhToan As DevExpress.XtraBars.BarLinkContainerItem
     Friend WithEvents blBaoBieu As DevExpress.XtraBars.BarLinkContainerItem
-    Friend WithEvents btnMenu As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents rmMenu As DevExpress.XtraBars.Ribbon.RadialMenu
     Friend WithEvents btnLoaiDaiLy As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnDonViTinh As DevExpress.XtraBars.BarButtonItem
@@ -270,7 +284,8 @@ Partial Class Menu
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnBaoCaoDoanhSo As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnBaoCaoCongNo As DevExpress.XtraBars.BarButtonItem
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents MenuToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ThoátToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents btnMenu As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
+    Friend WithEvents btnThongTin As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnThoat As DevExpress.XtraEditors.SimpleButton
 End Class

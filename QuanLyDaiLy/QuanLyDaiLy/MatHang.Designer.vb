@@ -20,6 +20,7 @@ Partial Class MatHang
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.QuanLyDaiLy.LoadingSplashScreen), True, True)
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.BarButtonItem2 = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem3 = New DevExpress.XtraBars.BarButtonItem()
@@ -83,10 +84,11 @@ Partial Class MatHang
         Me.RibbonControl.ExpandCollapseItem.Id = 0
         Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.BarButtonItem2, Me.BarButtonItem3, Me.BarButtonItem1, Me.BarButtonItem4, Me.BarButtonItem5, Me.btnThemMatHang, Me.btnXoaMatHang, Me.btnCapNhatMatHang, Me.btnThoat})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl.MaxItemId = 15
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage2})
-        Me.RibbonControl.Size = New System.Drawing.Size(1011, 143)
+        Me.RibbonControl.Size = New System.Drawing.Size(1179, 168)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'BarButtonItem2
@@ -181,10 +183,11 @@ Partial Class MatHang
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 368)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 455)
+        Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(1011, 31)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(1179, 36)
         '
         'Panel3
         '
@@ -193,19 +196,19 @@ Partial Class MatHang
         Me.Panel3.Controls.Add(Me.GaugeControl1)
         Me.Panel3.Controls.Add(Me.Label9)
         Me.Panel3.Controls.Add(Me.Button1)
-        Me.Panel3.Location = New System.Drawing.Point(702, 148)
+        Me.Panel3.Location = New System.Drawing.Point(819, 182)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(297, 208)
+        Me.Panel3.Size = New System.Drawing.Size(346, 256)
         Me.Panel3.TabIndex = 35
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label12.Location = New System.Drawing.Point(3, 51)
+        Me.Label12.Location = New System.Drawing.Point(3, 63)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(174, 17)
+        Me.Label12.Size = New System.Drawing.Size(208, 21)
         Me.Label12.TabIndex = 19
         Me.Label12.Text = "Tổng số mặt hàng hiện có:"
         '
@@ -215,10 +218,10 @@ Partial Class MatHang
         Me.GaugeControl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.GaugeControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl1.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgTongMatHang})
-        Me.GaugeControl1.Location = New System.Drawing.Point(183, 34)
+        Me.GaugeControl1.Location = New System.Drawing.Point(213, 42)
         Me.GaugeControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl1.Name = "GaugeControl1"
-        Me.GaugeControl1.Size = New System.Drawing.Size(99, 48)
+        Me.GaugeControl1.Size = New System.Drawing.Size(115, 59)
         Me.GaugeControl1.TabIndex = 18
         '
         'dgTongMatHang
@@ -243,9 +246,9 @@ Partial Class MatHang
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label9.ForeColor = System.Drawing.Color.Blue
-        Me.Label9.Location = New System.Drawing.Point(38, 8)
+        Me.Label9.Location = New System.Drawing.Point(44, 10)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(91, 17)
+        Me.Label9.Size = New System.Drawing.Size(108, 21)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "THÔNG TIN"
         '
@@ -259,7 +262,7 @@ Partial Class MatHang
         Me.Button1.Location = New System.Drawing.Point(2, 2)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(37, 22)
+        Me.Button1.Size = New System.Drawing.Size(43, 27)
         Me.Button1.TabIndex = 16
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -268,10 +271,10 @@ Partial Class MatHang
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.dgvDanhSachMatHang)
-        Me.Panel2.Location = New System.Drawing.Point(346, 148)
+        Me.Panel2.Location = New System.Drawing.Point(404, 182)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(350, 211)
+        Me.Panel2.Size = New System.Drawing.Size(408, 260)
         Me.Panel2.TabIndex = 36
         '
         'Label10
@@ -279,9 +282,9 @@ Partial Class MatHang
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label10.ForeColor = System.Drawing.Color.Blue
-        Me.Label10.Location = New System.Drawing.Point(47, 8)
+        Me.Label10.Location = New System.Drawing.Point(55, 10)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(175, 17)
+        Me.Label10.Size = New System.Drawing.Size(211, 21)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "DANH SÁCH MẶT HÀNG"
         '
@@ -292,7 +295,7 @@ Partial Class MatHang
         Me.Panel4.Location = New System.Drawing.Point(2, 2)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(39, 30)
+        Me.Panel4.Size = New System.Drawing.Size(45, 37)
         Me.Panel4.TabIndex = 1
         '
         'dgvDanhSachMatHang
@@ -300,22 +303,23 @@ Partial Class MatHang
         Me.dgvDanhSachMatHang.AllowUserToAddRows = False
         Me.dgvDanhSachMatHang.AllowUserToDeleteRows = False
         Me.dgvDanhSachMatHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDanhSachMatHang.Location = New System.Drawing.Point(0, 33)
+        Me.dgvDanhSachMatHang.Location = New System.Drawing.Point(0, 41)
+        Me.dgvDanhSachMatHang.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dgvDanhSachMatHang.Name = "dgvDanhSachMatHang"
         Me.dgvDanhSachMatHang.ReadOnly = True
-        Me.dgvDanhSachMatHang.Size = New System.Drawing.Size(347, 176)
+        Me.dgvDanhSachMatHang.Size = New System.Drawing.Size(405, 217)
         Me.dgvDanhSachMatHang.TabIndex = 0
         '
         'fpnlNote
         '
         Me.fpnlNote.Controls.Add(Me.lblThongbao)
         Me.fpnlNote.Controls.Add(Me.label)
-        Me.fpnlNote.Location = New System.Drawing.Point(469, 54)
+        Me.fpnlNote.Location = New System.Drawing.Point(547, 66)
         Me.fpnlNote.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.fpnlNote.Name = "fpnlNote"
         Me.fpnlNote.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Top
         Me.fpnlNote.OwnerControl = Me.Button2
-        Me.fpnlNote.Size = New System.Drawing.Size(530, 72)
+        Me.fpnlNote.Size = New System.Drawing.Size(618, 89)
         Me.fpnlNote.TabIndex = 37
         '
         'lblThongbao
@@ -323,9 +327,9 @@ Partial Class MatHang
         Me.lblThongbao.AutoSize = True
         Me.lblThongbao.Font = New System.Drawing.Font("Tahoma", 8.0!, System.Drawing.FontStyle.Bold)
         Me.lblThongbao.ForeColor = System.Drawing.Color.Red
-        Me.lblThongbao.Location = New System.Drawing.Point(132, 26)
+        Me.lblThongbao.Location = New System.Drawing.Point(154, 32)
         Me.lblThongbao.Name = "lblThongbao"
-        Me.lblThongbao.Size = New System.Drawing.Size(0, 13)
+        Me.lblThongbao.Size = New System.Drawing.Size(0, 17)
         Me.lblThongbao.TabIndex = 1
         '
         'label
@@ -333,9 +337,9 @@ Partial Class MatHang
         Me.label.AutoSize = True
         Me.label.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.label.ForeColor = System.Drawing.Color.Red
-        Me.label.Location = New System.Drawing.Point(20, 26)
+        Me.label.Location = New System.Drawing.Point(23, 32)
         Me.label.Name = "label"
-        Me.label.Size = New System.Drawing.Size(104, 17)
+        Me.label.Size = New System.Drawing.Size(125, 21)
         Me.label.TabIndex = 0
         Me.label.Text = "THÔNG BÁO: "
         '
@@ -345,10 +349,10 @@ Partial Class MatHang
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(455, 54)
+        Me.Button2.Location = New System.Drawing.Point(531, 66)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(556, 15)
+        Me.Button2.Size = New System.Drawing.Size(649, 18)
         Me.Button2.TabIndex = 40
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -383,22 +387,23 @@ Partial Class MatHang
         Me.Panel6.Controls.Add(Me.Label6)
         Me.Panel6.Controls.Add(Me.Label2)
         Me.Panel6.Controls.Add(Me.Label5)
-        Me.Panel6.Location = New System.Drawing.Point(12, 148)
+        Me.Panel6.Location = New System.Drawing.Point(14, 182)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(328, 211)
+        Me.Panel6.Size = New System.Drawing.Size(383, 260)
         Me.Panel6.TabIndex = 43
         '
         'txbSoLuongTon
         '
         Me.txbSoLuongTon.Enabled = False
-        Me.txbSoLuongTon.Location = New System.Drawing.Point(95, 132)
+        Me.txbSoLuongTon.Location = New System.Drawing.Point(111, 162)
+        Me.txbSoLuongTon.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbSoLuongTon.MenuManager = Me.RibbonControl
         Me.txbSoLuongTon.Name = "txbSoLuongTon"
         Me.txbSoLuongTon.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple
         Me.txbSoLuongTon.Properties.Mask.EditMask = "d"
         Me.txbSoLuongTon.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric
-        Me.txbSoLuongTon.Size = New System.Drawing.Size(224, 20)
+        Me.txbSoLuongTon.Size = New System.Drawing.Size(261, 22)
         Me.txbSoLuongTon.TabIndex = 40
         '
         'btnXacNhan
@@ -406,10 +411,10 @@ Partial Class MatHang
         Me.btnXacNhan.Enabled = False
         Me.btnXacNhan.Image = Global.QuanLyDaiLy.My.Resources.Resources.Ok_icon
         Me.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnXacNhan.Location = New System.Drawing.Point(227, 172)
+        Me.btnXacNhan.Location = New System.Drawing.Point(265, 212)
         Me.btnXacNhan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnXacNhan.Name = "btnXacNhan"
-        Me.btnXacNhan.Size = New System.Drawing.Size(92, 37)
+        Me.btnXacNhan.Size = New System.Drawing.Size(107, 46)
         Me.btnXacNhan.TabIndex = 37
         Me.btnXacNhan.Text = "Xác nhận"
         Me.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -419,10 +424,11 @@ Partial Class MatHang
         '
         Me.txbMaMatHang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txbMaMatHang.Enabled = False
-        Me.txbMaMatHang.Location = New System.Drawing.Point(95, 53)
+        Me.txbMaMatHang.Location = New System.Drawing.Point(111, 65)
+        Me.txbMaMatHang.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbMaMatHang.Name = "txbMaMatHang"
         Me.txbMaMatHang.ReadOnly = True
-        Me.txbMaMatHang.Size = New System.Drawing.Size(224, 21)
+        Me.txbMaMatHang.Size = New System.Drawing.Size(261, 23)
         Me.txbMaMatHang.TabIndex = 36
         '
         'Label1
@@ -430,9 +436,9 @@ Partial Class MatHang
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.Blue
-        Me.Label1.Location = New System.Drawing.Point(50, 13)
+        Me.Label1.Location = New System.Drawing.Point(58, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(172, 17)
+        Me.Label1.Size = New System.Drawing.Size(206, 21)
         Me.Label1.TabIndex = 33
         Me.Label1.Text = "THÔNG TIN MẶT HÀNG"
         '
@@ -443,50 +449,55 @@ Partial Class MatHang
         Me.Panel7.Location = New System.Drawing.Point(3, 2)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(40, 39)
+        Me.Panel7.Size = New System.Drawing.Size(47, 48)
         Me.Panel7.TabIndex = 32
         '
         'txbTenMatHang
         '
         Me.txbTenMatHang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txbTenMatHang.Enabled = False
-        Me.txbTenMatHang.Location = New System.Drawing.Point(95, 92)
+        Me.txbTenMatHang.Location = New System.Drawing.Point(111, 113)
+        Me.txbTenMatHang.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbTenMatHang.Name = "txbTenMatHang"
-        Me.txbTenMatHang.Size = New System.Drawing.Size(224, 21)
+        Me.txbTenMatHang.Size = New System.Drawing.Size(261, 23)
         Me.txbTenMatHang.TabIndex = 28
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(13, 135)
+        Me.Label6.Location = New System.Drawing.Point(15, 166)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(53, 13)
+        Me.Label6.Size = New System.Drawing.Size(68, 17)
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "Số lượng:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 96)
+        Me.Label2.Location = New System.Drawing.Point(15, 118)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 13)
+        Me.Label2.Size = New System.Drawing.Size(99, 17)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Tên mặt hàng:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(13, 57)
+        Me.Label5.Location = New System.Drawing.Point(15, 70)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(73, 13)
+        Me.Label5.Size = New System.Drawing.Size(93, 17)
         Me.Label5.TabIndex = 10
         Me.Label5.Text = "Mã mặt hàng:"
         '
+        'SplashScreenManager1
+        '
+        SplashScreenManager1.ClosingDelay = 100
+        '
         'MatHang
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1011, 399)
+        Me.ClientSize = New System.Drawing.Size(1179, 491)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.fpnlNote)
@@ -495,6 +506,7 @@ Partial Class MatHang
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.Name = "MatHang"
         Me.Ribbon = Me.RibbonControl

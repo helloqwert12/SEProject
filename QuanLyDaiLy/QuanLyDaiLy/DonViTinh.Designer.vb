@@ -20,6 +20,7 @@ Partial Class DonViTinh
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim SplashScreenManager1 As DevExpress.XtraSplashScreen.SplashScreenManager = New DevExpress.XtraSplashScreen.SplashScreenManager(Me, GetType(Global.QuanLyDaiLy.LoadingSplashScreen), True, True)
         Me.RibbonControl = New DevExpress.XtraBars.Ribbon.RibbonControl()
         Me.btnThemDonViTinh = New DevExpress.XtraBars.BarButtonItem()
         Me.btnXoaDonViTinh = New DevExpress.XtraBars.BarButtonItem()
@@ -66,15 +67,20 @@ Partial Class DonViTinh
         Me.fpnlNote.SuspendLayout()
         Me.SuspendLayout()
         '
+        'SplashScreenManager1
+        '
+        SplashScreenManager1.ClosingDelay = 100
+        '
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
         Me.RibbonControl.Items.AddRange(New DevExpress.XtraBars.BarItem() {Me.RibbonControl.ExpandCollapseItem, Me.btnThemDonViTinh, Me.btnXoaDonViTinh, Me.btnCapNhatDonViTinh, Me.btnThoat})
         Me.RibbonControl.Location = New System.Drawing.Point(0, 0)
+        Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonControl.MaxItemId = 6
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl.Size = New System.Drawing.Size(847, 143)
+        Me.RibbonControl.Size = New System.Drawing.Size(988, 168)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'btnThemDonViTinh
@@ -139,10 +145,11 @@ Partial Class DonViTinh
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 368)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 455)
+        Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(847, 31)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(988, 36)
         '
         'Panel1
         '
@@ -153,10 +160,10 @@ Partial Class DonViTinh
         Me.Panel1.Controls.Add(Me.txbTenDonViTinh)
         Me.Panel1.Controls.Add(Me.Label4)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Location = New System.Drawing.Point(12, 148)
+        Me.Panel1.Location = New System.Drawing.Point(0, 168)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(263, 211)
+        Me.Panel1.Size = New System.Drawing.Size(307, 287)
         Me.Panel1.TabIndex = 7
         '
         'btnXacNhan
@@ -164,10 +171,10 @@ Partial Class DonViTinh
         Me.btnXacNhan.Enabled = False
         Me.btnXacNhan.Image = Global.QuanLyDaiLy.My.Resources.Resources.Ok_icon
         Me.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnXacNhan.Location = New System.Drawing.Point(161, 172)
+        Me.btnXacNhan.Location = New System.Drawing.Point(188, 212)
         Me.btnXacNhan.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnXacNhan.Name = "btnXacNhan"
-        Me.btnXacNhan.Size = New System.Drawing.Size(92, 37)
+        Me.btnXacNhan.Size = New System.Drawing.Size(107, 46)
         Me.btnXacNhan.TabIndex = 37
         Me.btnXacNhan.Text = "Xác nhận"
         Me.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -177,10 +184,11 @@ Partial Class DonViTinh
         '
         Me.txbMaDonViTinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txbMaDonViTinh.Enabled = False
-        Me.txbMaDonViTinh.Location = New System.Drawing.Point(95, 53)
+        Me.txbMaDonViTinh.Location = New System.Drawing.Point(111, 65)
+        Me.txbMaDonViTinh.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbMaDonViTinh.Name = "txbMaDonViTinh"
         Me.txbMaDonViTinh.ReadOnly = True
-        Me.txbMaDonViTinh.Size = New System.Drawing.Size(158, 21)
+        Me.txbMaDonViTinh.Size = New System.Drawing.Size(184, 23)
         Me.txbMaDonViTinh.TabIndex = 36
         '
         'Label11
@@ -188,9 +196,9 @@ Partial Class DonViTinh
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label11.ForeColor = System.Drawing.Color.Blue
-        Me.Label11.Location = New System.Drawing.Point(50, 13)
+        Me.Label11.Location = New System.Drawing.Point(58, 16)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(192, 17)
+        Me.Label11.Size = New System.Drawing.Size(226, 21)
         Me.Label11.TabIndex = 33
         Me.Label11.Text = "THÔNG TIN ĐƠN VỊ TÍNH"
         '
@@ -201,33 +209,34 @@ Partial Class DonViTinh
         Me.Panel5.Location = New System.Drawing.Point(3, 2)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(40, 39)
+        Me.Panel5.Size = New System.Drawing.Size(47, 48)
         Me.Panel5.TabIndex = 32
         '
         'txbTenDonViTinh
         '
         Me.txbTenDonViTinh.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txbTenDonViTinh.Enabled = False
-        Me.txbTenDonViTinh.Location = New System.Drawing.Point(95, 106)
+        Me.txbTenDonViTinh.Location = New System.Drawing.Point(111, 130)
+        Me.txbTenDonViTinh.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txbTenDonViTinh.Name = "txbTenDonViTinh"
-        Me.txbTenDonViTinh.Size = New System.Drawing.Size(158, 21)
+        Me.txbTenDonViTinh.Size = New System.Drawing.Size(184, 23)
         Me.txbTenDonViTinh.TabIndex = 28
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(13, 110)
+        Me.Label4.Location = New System.Drawing.Point(15, 135)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(82, 13)
+        Me.Label4.Size = New System.Drawing.Size(105, 17)
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Tên đơn vị tính:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 57)
+        Me.Label3.Location = New System.Drawing.Point(15, 70)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 13)
+        Me.Label3.Size = New System.Drawing.Size(99, 17)
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Mã đơn vị tính:"
         '
@@ -236,10 +245,10 @@ Partial Class DonViTinh
         Me.Panel2.Controls.Add(Me.Label10)
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Controls.Add(Me.dgvDonViTinh)
-        Me.Panel2.Location = New System.Drawing.Point(281, 148)
+        Me.Panel2.Location = New System.Drawing.Point(307, 168)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(279, 211)
+        Me.Panel2.Size = New System.Drawing.Size(376, 287)
         Me.Panel2.TabIndex = 41
         '
         'Label10
@@ -247,9 +256,9 @@ Partial Class DonViTinh
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label10.ForeColor = System.Drawing.Color.Blue
-        Me.Label10.Location = New System.Drawing.Point(47, 8)
+        Me.Label10.Location = New System.Drawing.Point(55, 10)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(195, 17)
+        Me.Label10.Size = New System.Drawing.Size(231, 21)
         Me.Label10.TabIndex = 18
         Me.Label10.Text = "DANH SÁCH ĐƠN VỊ TÍNH"
         '
@@ -260,7 +269,7 @@ Partial Class DonViTinh
         Me.Panel4.Location = New System.Drawing.Point(2, 2)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(39, 30)
+        Me.Panel4.Size = New System.Drawing.Size(45, 37)
         Me.Panel4.TabIndex = 1
         '
         'dgvDonViTinh
@@ -268,10 +277,12 @@ Partial Class DonViTinh
         Me.dgvDonViTinh.AllowUserToAddRows = False
         Me.dgvDonViTinh.AllowUserToDeleteRows = False
         Me.dgvDonViTinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvDonViTinh.Location = New System.Drawing.Point(0, 33)
+        Me.dgvDonViTinh.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.dgvDonViTinh.Location = New System.Drawing.Point(0, 45)
+        Me.dgvDonViTinh.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dgvDonViTinh.Name = "dgvDonViTinh"
         Me.dgvDonViTinh.ReadOnly = True
-        Me.dgvDonViTinh.Size = New System.Drawing.Size(277, 176)
+        Me.dgvDonViTinh.Size = New System.Drawing.Size(376, 242)
         Me.dgvDonViTinh.TabIndex = 0
         '
         'Panel3
@@ -281,19 +292,19 @@ Partial Class DonViTinh
         Me.Panel3.Controls.Add(Me.GaugeControl1)
         Me.Panel3.Controls.Add(Me.Label9)
         Me.Panel3.Controls.Add(Me.Button1)
-        Me.Panel3.Location = New System.Drawing.Point(566, 148)
+        Me.Panel3.Location = New System.Drawing.Point(686, 168)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(259, 211)
+        Me.Panel3.Size = New System.Drawing.Size(302, 287)
         Me.Panel3.TabIndex = 44
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label12.Location = New System.Drawing.Point(3, 58)
+        Me.Label12.Location = New System.Drawing.Point(3, 71)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(146, 17)
+        Me.Label12.Size = New System.Drawing.Size(175, 21)
         Me.Label12.TabIndex = 19
         Me.Label12.Text = "Số đơn vị tính hiện có:"
         '
@@ -303,10 +314,10 @@ Partial Class DonViTinh
         Me.GaugeControl1.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(236, Byte), Integer), CType(CType(239, Byte), Integer))
         Me.GaugeControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder
         Me.GaugeControl1.Gauges.AddRange(New DevExpress.XtraGauges.Base.IGauge() {Me.dgSoDonViTinh})
-        Me.GaugeControl1.Location = New System.Drawing.Point(144, 43)
+        Me.GaugeControl1.Location = New System.Drawing.Point(168, 53)
         Me.GaugeControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GaugeControl1.Name = "GaugeControl1"
-        Me.GaugeControl1.Size = New System.Drawing.Size(99, 48)
+        Me.GaugeControl1.Size = New System.Drawing.Size(115, 59)
         Me.GaugeControl1.TabIndex = 18
         '
         'dgSoDonViTinh
@@ -331,9 +342,9 @@ Partial Class DonViTinh
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.Label9.ForeColor = System.Drawing.Color.Blue
-        Me.Label9.Location = New System.Drawing.Point(38, 8)
+        Me.Label9.Location = New System.Drawing.Point(44, 10)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(91, 17)
+        Me.Label9.Size = New System.Drawing.Size(108, 21)
         Me.Label9.TabIndex = 17
         Me.Label9.Text = "THÔNG TIN"
         '
@@ -347,20 +358,18 @@ Partial Class DonViTinh
         Me.Button1.Location = New System.Drawing.Point(2, 2)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(37, 22)
+        Me.Button1.Size = New System.Drawing.Size(43, 27)
         Me.Button1.TabIndex = 16
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button3
         '
-        Me.Button3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(452, 52)
+        Me.Button3.Location = New System.Drawing.Point(527, 64)
         Me.Button3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(392, 10)
+        Me.Button3.Size = New System.Drawing.Size(457, 12)
         Me.Button3.TabIndex = 48
         Me.Button3.UseVisualStyleBackColor = True
         '
@@ -368,12 +377,12 @@ Partial Class DonViTinh
         '
         Me.fpnlNote.Controls.Add(Me.lblThongbao)
         Me.fpnlNote.Controls.Add(Me.label)
-        Me.fpnlNote.Location = New System.Drawing.Point(465, 52)
+        Me.fpnlNote.Location = New System.Drawing.Point(542, 64)
         Me.fpnlNote.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.fpnlNote.Name = "fpnlNote"
         Me.fpnlNote.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Top
         Me.fpnlNote.OwnerControl = Me.Button3
-        Me.fpnlNote.Size = New System.Drawing.Size(360, 72)
+        Me.fpnlNote.Size = New System.Drawing.Size(420, 89)
         Me.fpnlNote.TabIndex = 51
         '
         'lblThongbao
@@ -381,9 +390,9 @@ Partial Class DonViTinh
         Me.lblThongbao.AutoSize = True
         Me.lblThongbao.Font = New System.Drawing.Font("Tahoma", 8.0!)
         Me.lblThongbao.ForeColor = System.Drawing.Color.Red
-        Me.lblThongbao.Location = New System.Drawing.Point(147, 28)
+        Me.lblThongbao.Location = New System.Drawing.Point(171, 34)
         Me.lblThongbao.Name = "lblThongbao"
-        Me.lblThongbao.Size = New System.Drawing.Size(0, 13)
+        Me.lblThongbao.Size = New System.Drawing.Size(0, 17)
         Me.lblThongbao.TabIndex = 1
         '
         'label
@@ -391,9 +400,9 @@ Partial Class DonViTinh
         Me.label.AutoSize = True
         Me.label.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
         Me.label.ForeColor = System.Drawing.Color.Red
-        Me.label.Location = New System.Drawing.Point(20, 26)
+        Me.label.Location = New System.Drawing.Point(23, 32)
         Me.label.Name = "label"
-        Me.label.Size = New System.Drawing.Size(104, 17)
+        Me.label.Size = New System.Drawing.Size(125, 21)
         Me.label.TabIndex = 0
         Me.label.Text = "THÔNG BÁO: "
         '
@@ -403,9 +412,9 @@ Partial Class DonViTinh
         '
         'DonViTinh
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(847, 399)
+        Me.ClientSize = New System.Drawing.Size(988, 491)
         Me.Controls.Add(Me.fpnlNote)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel3)
@@ -414,6 +423,7 @@ Partial Class DonViTinh
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.Name = "DonViTinh"
         Me.Ribbon = Me.RibbonControl
