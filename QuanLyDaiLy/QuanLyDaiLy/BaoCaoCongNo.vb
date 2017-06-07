@@ -46,8 +46,9 @@ Public Class BaoCaoCongNo
         If txbNam.Text > Date.Now.Year Then
             MessageBox.Show("Năm lập báo cáo lớn hơn năm hiện tại. Vui lòng kiểm tra lại", "THÔNG BÁO")
         Else
-            'Dim data As DataTable = baocaodoanhsoDAL.LayDuLieu("MaDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe", "Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + cbThang = txbNam.Text)
-            Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO, DAILY", True, "BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy and Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + cbThang = txbNam.Text, "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "NoDau", "PhatSinh", "NoCuoi")
+            Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAOCONGNO, DAILY", True,
+                                                        "BAOCAOCONGNO.MaDaiLy = DAILY.MaDaiLy and Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + txbNam.Text,
+                                                        "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "NoDau", "PhatSinh", "NoCuoi")
             If data.Rows.Count = 0 Then
                 MessageBox.Show("Không có dữ liệu thõa thời gian trên", "THÔNG BÁO")
             Else
@@ -55,20 +56,6 @@ Public Class BaoCaoCongNo
             End If
         End If
     End Sub
-
-    'Private Sub dgvBaoCaoCongNo_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBaoCaoCongNo.RowEnter
-    '    'Binding du lieu len textbox
-    '    txbMaDaiLy.DataBindings.Clear()
-    '    txbMaDaiLy.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "MaDaiLy")
-    '    txbThoiGian.DataBindings.Clear()
-    '    txbThoiGian.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "ThoiGian")
-    '    txbNoDau.DataBindings.Clear()
-    '    txbNoDau.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "NoDau")
-    '    txbPhatSinh.DataBindings.Clear()
-    '    txbPhatSinh.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "PhatSinh")
-    '    txbNoCuoi.DataBindings.Clear()
-    '    txbNoCuoi.DataBindings.Add("Text", dgvBaoCaoCongNo.DataSource, "NoCuoi")
-    'End Sub
 
     Private Sub btnExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExcel.ItemClick
         Try
