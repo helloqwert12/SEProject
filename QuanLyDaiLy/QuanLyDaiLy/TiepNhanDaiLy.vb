@@ -217,7 +217,7 @@ Public Class TiepNhanDaiLy
             End If
         End If
     End Sub
-    Private Sub dgvTiepNhanDaiLy_RowEnter(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub dgvTiepNhanDaiLy_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTiepNhanDaiLy.RowEnter
         'Trang thai hien thi
         trangthai = STATUS.HIENTHI
         'Bat read-only cho textbox

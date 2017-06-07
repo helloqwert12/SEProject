@@ -44,6 +44,7 @@ Partial Class Menu
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
         Me.btnThongTin = New DevExpress.XtraEditors.SimpleButton()
         Me.btnThoat = New DevExpress.XtraEditors.SimpleButton()
+        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.rmMenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PanelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -211,6 +212,7 @@ Partial Class Menu
         '
         'PanelControl1
         '
+        Me.PanelControl1.Controls.Add(Me.SimpleButton1)
         Me.PanelControl1.Controls.Add(Me.btnThongTin)
         Me.PanelControl1.Controls.Add(Me.btnThoat)
         Me.PanelControl1.Controls.Add(Me.btnMenu)
@@ -222,7 +224,7 @@ Partial Class Menu
         '
         'btnThongTin
         '
-        Me.btnThongTin.Image = Global.QuanLyDaiLy.My.Resources.Resources.infoIcon
+        Me.btnThongTin.Image = Global.QuanLyDaiLy.My.Resources.Resources._1496871599_11_Writing_Board
         Me.btnThongTin.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
         Me.btnThongTin.Location = New System.Drawing.Point(0, 461)
         Me.btnThongTin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
@@ -239,6 +241,16 @@ Partial Class Menu
         Me.btnThoat.Name = "btnThoat"
         Me.btnThoat.Size = New System.Drawing.Size(234, 158)
         Me.btnThoat.TabIndex = 2
+        '
+        'SimpleButton1
+        '
+        Me.SimpleButton1.Image = Global.QuanLyDaiLy.My.Resources.Resources.infoIcon
+        Me.SimpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.SimpleButton1.Location = New System.Drawing.Point(0, 674)
+        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SimpleButton1.Name = "SimpleButton1"
+        Me.SimpleButton1.Size = New System.Drawing.Size(234, 158)
+        Me.SimpleButton1.TabIndex = 2
         '
         'Menu
         '
@@ -288,4 +300,5 @@ Partial Class Menu
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents btnThongTin As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnThoat As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
 End Class

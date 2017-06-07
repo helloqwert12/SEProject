@@ -323,6 +323,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Quanlybanhang.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\1496871599_11_Writing_Board.png" />
     <None Include="Resources\menu.png" />
     <None Include="Resources\Apps-Pdf-icon.png" />
     <None Include="Resources\excel-icon1.png" />

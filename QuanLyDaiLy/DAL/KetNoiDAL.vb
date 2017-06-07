@@ -11,10 +11,11 @@ Namespace QuanLyDaiLyDAL
 #Region "Cac ham ket noi"
         'Khoi tao ket noi
         Public Shared Sub TaoKetNoi()
-            connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
+            Dim startPath As String = Application.StartupPath + "\QuanLyDaiLy.mdf"
+            'connet = New SqlConnection("Data Source=(localdb)\MINHQUAN-s;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
             'connet = New SqlClient.SqlConnection("Data Source = GEFORCELIBRA \ SQLEXPRESS;Initial Catalog=QuanLyDaiLy;Integrated Security=True")
             'connet = New SqlConnection("Data Source = (local);Initial Catalog=QuanLyDaiLy;Integrated Security=True")
-
+            connet = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + startPath + ";Integrated Security=True;Connect Timeout=30")
         End Sub
         'Mo ket noi den CSDL
         Public Shared Function MoKetNoi() As Boolean
