@@ -1,6 +1,7 @@
 ﻿Imports DTO.QuanLyDaiLyDTO
 Namespace QuanLyDaiLyDAL
     Public Class ThamSoDAL
+        'Lay du lieu
         Public Function LayDuLieu() As DataTable
             Return KetNoiDAL.LayDuLieu("THAMSO")
         End Function

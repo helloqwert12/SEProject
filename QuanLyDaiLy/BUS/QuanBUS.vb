@@ -2,7 +2,7 @@
 Imports DAL.QuanLyDaiLyDAL
 Namespace QuanLyDaiLyBUS
     Public Class QuanBUS
-        'Kiem tra rong
+        'Kiểm tra rỗng
         Public Function IsEmpty(ByVal Quan As QuanDTO) As Boolean
             If (Quan.MaQuan = String.Empty Or
                 Quan.TenQuan = String.Empty) Then

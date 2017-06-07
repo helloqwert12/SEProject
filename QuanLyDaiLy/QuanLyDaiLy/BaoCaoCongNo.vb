@@ -23,12 +23,12 @@ Public Class BaoCaoCongNo
         'Dim dTable As DataTable = KetNoiDAL.LayDuLieu("BAOCAOCONGNO join DAILY on BAOCAOCONGNO.MaDaiLy = DAILY.MaDaiLy", "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "NoDau", "PhatSinh", "NoCuoi")
         Me.dgvBaoCaoCongNo.DataSource = data
         With Me.dgvBaoCaoCongNo
-            .Columns(0).HeaderText = "Mã đại lý"
-            .Columns(1).HeaderText = "Tên đại lý"
-            .Columns(2).HeaderText = "Thời gian"
-            .Columns(3).HeaderText = "Nợ đầu"
-            .Columns(4).HeaderText = "Phát sinh"
-            .Columns(5).HeaderText = "Nợ cuối"
+            .Columns(0).HeaderText = "Ma dai ly"
+            .Columns(1).HeaderText = "Ten dai ly"
+            .Columns(2).HeaderText = "Thoi gian"
+            .Columns(3).HeaderText = "No dau"
+            .Columns(4).HeaderText = "Phat sinh"
+            .Columns(5).HeaderText = "No cuoi"
         End With
         'KetNoiDAL.NgatKetNoi()
     End Sub
@@ -67,7 +67,7 @@ Public Class BaoCaoCongNo
 
     Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
         Try
-            Export.ExportPDF(dgvBaoCaoCongNo, "BÁO CÁO CÔNG NỢ THÁNG   " + cbThang.Text + "/" + txbNam.Text)
+            Export.ExportPDF(dgvBaoCaoCongNo, "BÁO CÁO CÔNG NO THÁNG   " + cbThang.Text + "/" + txbNam.Text)
         Catch ex As Exception
 
         End Try

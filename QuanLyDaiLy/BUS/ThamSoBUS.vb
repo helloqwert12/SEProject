@@ -2,7 +2,7 @@
 Imports DAL.QuanLyDaiLyDAL
 Namespace QuanLyDaiLyBUS
     Public Class ThamSoBUS
-        'Thay doi so dai ly toi ta cua quan khong duoc nho hon so dai ly nhieu nhat cua mot trong cac quan hien tai
+        'Thay đổi số đại lý tối đa trong quận không được nhỏ hơn số đại lý nhiều nhất của một trong các quận hiện tại
         Public Function KiemTraSoDaiLyToiDa() As Integer
             Dim max As Integer = 0
             Dim count As Integer = 0
@@ -21,7 +21,7 @@ Namespace QuanLyDaiLyBUS
             Next
             Return max
         End Function
-
+        'Kiểm tra xem số lượng đại lý tối đa trong quận có nhỏ hơn 1 không
         Public Function IsValid_SoLuongDLToiDa(SoLuongDLToiDa As Integer) As Boolean
             If SoLuongDLToiDa < 1 Then
                 Return False
@@ -29,14 +29,6 @@ Namespace QuanLyDaiLyBUS
                 Return True
             End If
         End Function
-        '' Kiem tra QD4: Ap dung quy dinh so tien thu duoc vuot qua so tien dai ly dang no
-        'Public Function KiemTraQuyDinh(ThamSo As ThamSoDTO) As Boolean
-        '    If ThamSo.ApDung = 1 Then
-        '        Return True
-        '    Else
-        '        Return False
-        '    End If
-        'End Function
     End Class
 End Namespace
 

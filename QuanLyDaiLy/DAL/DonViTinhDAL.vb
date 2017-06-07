@@ -1,6 +1,7 @@
 ﻿Imports DTO.QuanLyDaiLyDTO
 Namespace QuanLyDaiLyDAL
     Public Class DonViTinhDAL
+        'Lay du lieu tu bang
         Public Function LayDuLieu() As DataTable
             Return KetNoiDAL.LayDuLieu("DONVITINH")
         End Function

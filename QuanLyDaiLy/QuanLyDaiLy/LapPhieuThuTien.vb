@@ -262,7 +262,7 @@ Public Class LapPhieuThuTien
 
         btnXacNhan.Enabled = True
         tempSoTienThu = txbSoTienThu.Text
-        'Tat read-only de chinh sua
+        'Bat enabled de chinh sua
         cbDaiLy.Enabled = True
         txbSoTienThu.Enabled = True
     End Sub

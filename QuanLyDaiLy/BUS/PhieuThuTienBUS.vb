@@ -2,7 +2,7 @@
 Imports DAL.QuanLyDaiLyDAL
 Namespace QuanLyDaiLyBUS
     Public Class PhieuThuTienBUS
-        'Kiem tra rong
+        'Kiểm tra rỗng
         Public Function IsEmpty(ByVal PhieuThuTien As PhieuThuTienDTO) As Boolean
             If (PhieuThuTien.MaPhieuThu.ToString() = String.Empty Or
                 PhieuThuTien.MaDaiLy = String.Empty Or
@@ -13,23 +13,24 @@ Namespace QuanLyDaiLyBUS
                 Return False
             End If
         End Function
-        'Lay so luong phieuthu da co cua daily
+        'Lấy số lượng phiếu thu đã có của đại lý
         Public Function SoPhieuThuCuaDaiLy(ByVal MaDaiLy As String) As Integer
             Dim data As DataTable
             data = KetNoiDAL.LayDuLieu("PHIEUTHUTIEN", "MaPhieuThu", "MaDaiLy= " + "'" + MaDaiLy + "'")
             Return data.Rows.Count
         End Function
-        'Lay so tien no cua daily
+        'Lấy số tiền nợ của đại lý
         Public Function SoTienNoCuaDaiLy(ByVal MaDaiLy As String) As Integer
             Dim data As DataTable
             data = KetNoiDAL.LayDuLieu("PHIEUTHUTIEN", "MaPhieuThu", "MaDaiLy= " + "'" + MaDaiLy + "'")
             Return data.Rows.Count
         End Function
-        'Kiem tra QD4: Ap dung so tien thu vuot qua so tien no
+        'Lấy giá trị của quy định
         Public Function LayGiaTriQuyDinh() As Integer
             Dim data As Integer = KetNoiDAL.LayDuLieu("THAMSO", "ApDung", "").Rows(0)(0)
             Return data
         End Function
+        'Kiem tra QD4: Xử lí số tiền thu có vượt quá số tiền nợ hay không
         Public Function XuLiQuyDinh(ByVal PhieuThuTien As PhieuThuTienDTO, ByVal NoDaiLy As Long) As Boolean
             If LayGiaTriQuyDinh() = 0 Then
                 Dim temp As Long = NoDaiLy

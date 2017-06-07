@@ -5,7 +5,7 @@ Imports Geocoding.Google
 Imports System.Collections.Generic
 Namespace QuanLyDaiLyBUS
     Public Class DaiLyBUS
-        'Kiem tra rong
+        'Kiểm tra rỗng
         Public Function IsEmpty(ByVal DaiLy As DaiLyDTO) As Boolean
             If (DaiLy.MaDaiLy = String.Empty Or
                 DaiLy.MaLoaiDaiLy = String.Empty Or
@@ -34,14 +34,14 @@ Namespace QuanLyDaiLyBUS
             End If
         End Function
 
-        'Lay so luong dai ly da dang ky cua quan
+        'lấy số lượng đại lý đại lý đã đăng kí của quận
         Public Function SoDaiLyCuaQuan(ByVal MaQuan As String) As Integer
             Dim data As DataTable
             data = KetNoiDAL.LayDuLieu("DAILY", "MaDaiLy", "MaQuan= " + "'" + MaQuan + "'")
             Return data.Rows.Count
         End Function
 
-        'Kiem tra QD1: So luong dai ly da dk khong vuot qua so dai ly toi da trong quan
+        'Kiem tra QD1: Số lượng đại lý đã đăng kí không vượt quá số đại lý tối đa trong quận
         Public Function ThoaManDaiLyToiDa(ByVal MaQuan As String) As Boolean
             Dim slgDailyDk = SoDaiLyCuaQuan(MaQuan)
             Dim data As DataTable = KetNoiDAL.LayDuLieu("THAMSO")
@@ -52,7 +52,7 @@ Namespace QuanLyDaiLyBUS
                 Return False
             End If
         End Function
-        'Kiem tra dinh dang Email
+        'Kiểm tra định dạng email
         Public Function CheckEmailValidExample(ByVal Daily As DaiLyDTO, ByVal str As String) As Boolean
             If (FormatChecking.CheckValid.IsValidEmail(str)) Then
                 Return True
@@ -60,7 +60,7 @@ Namespace QuanLyDaiLyBUS
                 Return False
             End If
         End Function
-        'Auto complete Dia chi
+        'Auto complete Địa chỉ
         Public Function GeoCodingExample(ByVal Daily As DaiLyDTO, ByVal str As String) As String
             Dim geocoder As IGeocoder
 
@@ -71,7 +71,7 @@ Namespace QuanLyDaiLyBUS
             Return addresses.First().FormattedAddress 'Formatted: 1600 Pennsylvania Ave SE, Washington, DC 20003, USA
             'MessageBox.Show("Coordinates: " + addresses.First().Coordinates.Latitude + ", " + addresses.First().Coordinates.Longitude) 'Coordinates: 38.8791981, -76.9818437
         End Function
-        'Kiem tra dinh dang Dien thoai
+        'Kiểm tra định dạng Điện thoại
         Public Function CheckPhoneNumberValidExample(ByVal Daily As DaiLyDTO, ByVal str As String) As Boolean
             If (FormatChecking.CheckValid.IsValidPhoneNumber(str, FormatChecking.CountryCode.Vietnam)) Then
                 Return True

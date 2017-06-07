@@ -2,7 +2,7 @@
 Imports DAL.QuanLyDaiLyDAL
 Namespace QuanLyDaiLyBUS
     Public Class DonViTinhBUS
-        'Kiem tra rong
+        'Kiểm tra rỗng
         Public Function IsEmpty(ByVal DonViTinh As DonViTinhDTO) As Boolean
             If (DonViTinh.MaDonViTinh = String.Empty Or
                 DonViTinh.TenDonViTinh = String.Empty) Then

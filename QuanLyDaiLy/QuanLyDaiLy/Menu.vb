@@ -1,11 +1,6 @@
 ﻿Public Class Menu
     Public Sub New()
         InitializeComponent()
-        'If (IsMdiChild = True) Then
-        '    'MenuToolStripMenuItem.Enabled = False
-        'Else
-        '    'MenuToolStripMenuItem.Enabled = True
-        'End If
     End Sub
     Private Sub btnMenu_Click(sender As Object, e As EventArgs) Handles btnMenu.Click
         Me.IsMdiContainer = True
@@ -99,16 +94,6 @@
         Dim mdiChild As BaoCaoCongNo = New BaoCaoCongNo()
         mdiChild.MdiParent = Me
         mdiChild.Show()
-    End Sub
-
-
-
-    Private Sub ThoátToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        Dim rslt As DialogResult = MessageBox.Show("Xác nhận thoát chương trình Quản lí đại lý?", "XÁC NHẬN", MessageBoxButtons.YesNo)
-        If rslt = DialogResult.Yes Then
-            Me.Dispose()
-            Application.Exit()
-        End If
     End Sub
 
     Private Sub btnThoat_Click(sender As Object, e As EventArgs) Handles btnThoat.Click

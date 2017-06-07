@@ -220,7 +220,8 @@ Public Class TiepNhanDaiLy
     Private Sub dgvTiepNhanDaiLy_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvTiepNhanDaiLy.RowEnter
         'Trang thai hien thi
         trangthai = STATUS.HIENTHI
-        'Bat read-only cho textbox
+
+        'Tat enabled cho textbox
         txbTenDaiLy.Enabled = False
         txbDienThoai.Enabled = False
         txbEmail.Enabled = False
@@ -264,7 +265,7 @@ Public Class TiepNhanDaiLy
         trangthai = STATUS.SUA
 
         btnXacNhan.Enabled = True
-        'Tat read-only de chinh sua
+        'Bat enabled de chinh sua
         txbTenDaiLy.Enabled = True
         txbDienThoai.Enabled = True
         txbEmail.Enabled = True

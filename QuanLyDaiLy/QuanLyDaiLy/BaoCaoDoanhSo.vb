@@ -22,12 +22,12 @@ Public Class BaoCaoDoanhSo
     Private Sub LoadDataOnGridView(ByVal data As DataTable)
         Me.dgvBaoCaoDoanhSo.DataSource = data
         With Me.dgvBaoCaoDoanhSo
-            .Columns(0).HeaderText = "Mã đại lý"
-            .Columns(1).HeaderText = "Tên đại lý"
-            .Columns(2).HeaderText = "Thời gian"
-            .Columns(3).HeaderText = "Số phiếu xuất"
-            .Columns(4).HeaderText = "Tổng trị giá"
-            .Columns(5).HeaderText = "Tỷ lệ"
+            .Columns(0).HeaderText = "Ma dai ly"
+            .Columns(1).HeaderText = "Ten dai ly"
+            .Columns(2).HeaderText = "Thoi gian"
+            .Columns(3).HeaderText = "So phieu xuat"
+            .Columns(4).HeaderText = "Tong tri gia"
+            .Columns(5).HeaderText = "Ty le"
         End With
         'KetNoiDAL.NgatKetNoi()
     End Sub
@@ -67,10 +67,9 @@ Public Class BaoCaoDoanhSo
 
     Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
         Try
-            Export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SỐ THÁNG   " + cbThang.Text + "/" + txbNam.Text)
+            Export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SO THÁNG   " + cbThang.Text + "/" + txbNam.Text)
         Catch ex As Exception
 
         End Try
-
     End Sub
 End Class

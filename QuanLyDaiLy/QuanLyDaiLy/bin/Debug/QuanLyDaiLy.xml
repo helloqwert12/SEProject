@@ -22,6 +22,11 @@ QuanLyDaiLy
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:QuanLyDaiLy.My.Resources.Resources._1496871599_11_Writing_Board">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:QuanLyDaiLy.My.Resources.Resources.Actions_view_calendar_list_icon">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
