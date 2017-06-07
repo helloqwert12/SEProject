@@ -516,7 +516,7 @@ Partial Class LapPhieuThuTien
         '
         Me.lblDaiLy.AutoSize = True
         Me.lblDaiLy.Font = New System.Drawing.Font("Tahoma", 10.0!)
-        Me.lblDaiLy.Location = New System.Drawing.Point(115, 79)
+        Me.lblDaiLy.Location = New System.Drawing.Point(119, 84)
         Me.lblDaiLy.Name = "lblDaiLy"
         Me.lblDaiLy.Size = New System.Drawing.Size(0, 17)
         Me.lblDaiLy.TabIndex = 19
@@ -545,7 +545,7 @@ Partial Class LapPhieuThuTien
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Italic)
-        Me.Label12.Location = New System.Drawing.Point(4, 42)
+        Me.Label12.Location = New System.Drawing.Point(3, 43)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(125, 17)
         Me.Label12.TabIndex = 19

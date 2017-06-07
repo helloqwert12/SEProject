@@ -19,7 +19,7 @@ Public Class BaoCaoDoanhSo
         'LoadDataOnGridView()
     End Sub
     'Dinh nghia thu tuc load du lieu tu bang theo tung lop vao Gridview
-    Private Sub LoadDataOnGridView(ByVal data As DataTable) 'ByVal data As DataTable)
+    Private Sub LoadDataOnGridView(ByVal data As DataTable)
         'Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO join DAILY on BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy join PHIEUXUAT on DAILY.MaDaiLy = PHIEUXUAT.MaDaily", "TenDaiLy", "BAOCAODOANHSO.MaDaiLy", "ThoiGian", "SoPhieuXuat", "PHIEUXUAT.TongTriGia", "TyLe")
         Me.dgvBaoCaoDoanhSo.DataSource = data
         With Me.dgvBaoCaoDoanhSo
@@ -60,12 +60,11 @@ Public Class BaoCaoDoanhSo
         'End If
 
 
-
         If txbNam.Text > Date.Now.Year Then
             MessageBox.Show("Năm lập báo cáo lớn hơn năm hiện tại. Vui lòng kiểm tra lại", "THÔNG BÁO")
         Else
             'Dim data As DataTable = baocaodoanhsoDAL.LayDuLieu("MaDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe", "Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + cbThang = txbNam.Text)
-            Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO, DAILY", True, "BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy" + " and " + "Month(ThoiGian) = " + cbThang.SelectedItem + " and " + "Year(ThoiGian) = " + cbThang = txbNam.Text, "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe")
+            Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO, DAILY, PHIEUXUAT", True, "BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy and DAILY.MaDaiLy = PHIEUXUAT.MaDaiLy and Month(NgayLapPhieu) = " + cbThang.SelectedItem + " and Year(NgayLapPhieu) = " + cbThang = txbNam.Text, "DAILY.MaDaiLy", "TenDaiLy", "NgayLapPhieu", "SoPhieuXuat", "TongTriGia", "TyLe")
             If data.Rows.Count = 0 Then
                 MessageBox.Show("Không có dữ liệu thõa thời gian trên", "THÔNG BÁO")
             Else
@@ -96,10 +95,19 @@ Public Class BaoCaoDoanhSo
     'End Sub
 
     Private Sub btnExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExcel.ItemClick
-        Export.ExportExcel(dgvBaoCaoDoanhSo)
+        Try
+            Export.ExportExcel(dgvBaoCaoDoanhSo)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
-        Export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SỐ THÁNG   " + cbThang.Text + "/" + txbNam.Text)
+        Try
+            Export.ExportPDF(dgvBaoCaoDoanhSo, "BÁO CÁO DOANH SỐ THÁNG   " + cbThang.Text + "/" + txbNam.Text)
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 End Class

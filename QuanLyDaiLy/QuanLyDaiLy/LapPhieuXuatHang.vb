@@ -143,7 +143,8 @@ Public Class LapPhieuXuatHang
                 If (txbTongTriGia.Text = 0) Then
                     phieuxuatDTO.TongTriGia = txbDonGia.Text * txbSoLuongXuat.Text
                 Else
-                    phieuxuatDTO.TongTriGia += (txbDonGia.Text * txbSoLuongXuat.Text)
+                    txbTongTriGia.Text += (txbDonGia.Text * txbSoLuongXuat.Text)
+                    phieuxuatDTO.TongTriGia = txbTongTriGia.Text
                     tempTongTriGia2 = phieuxuatDTO.TongTriGia
                 End If
 
@@ -177,14 +178,14 @@ Public Class LapPhieuXuatHang
                             Dim success1 As Boolean = phieuxuatDAL.ThemDuLieu(phieuxuatDTO)
                             Dim success2 As Boolean = chitietphieuxuatDAL.ThemDuLieu(chitietphieuxuatDTO)
                             If success1 And success2 Then
-                                ''Ket noi toi DTO cua BaoCaoDoanhSo
-                                'baocaodoanhsoDTO.MaDaiLy = phieuxuatDTO.MaDaiLy
-                                'baocaodoanhsoDTO.MaBaoCaoDoanhSo = KetNoiDAL.TaoKhoaChinh("BAOCAODOANHSO", "MaBaoCaoDoanhSo", "")
-                                'baocaodoanhsoDTO.Thang = KetNoiDAL.LayDuLieu("PHIEUXUAT", "Month(NgayLapPhieu)", "MaDaiLy = '" + phieuxuatDTO.MaDaiLy + "'").Rows(0)(0)
-                                'baocaodoanhsoDTO.TongTriGia = phieuxuatDTO.TongTriGia
-                                'baocaodoanhsoDTO.SoPhieuXuat = phieuxuatDAL.LayDuLieu("MaPhieuXuat", "MaDaiLy = '" + phieuxuatDTO.MaDaiLy + "'").Rows.Count
-                                'baocaodoanhsoDTO.TyLe = baocaodoanhsoDTO.TongTriGia / baocaodoanhsoDTO.SoPhieuXuat
-                                'baocaodoanhsoDAL.ThemDuLieu(baocaodoanhsoDTO)
+                                'Ket noi toi DTO cua BaoCaoDoanhSo
+                                baocaodoanhsoDTO.MaDaiLy = phieuxuatDTO.MaDaiLy
+                                baocaodoanhsoDTO.MaBaoCaoDoanhSo = KetNoiDAL.TaoKhoaChinh("BAOCAODOANHSO", "MaBaoCaoDoanhSo", "DS")
+                                baocaodoanhsoDTO.ThoiGian = txbNgayLapPhieu.Text
+                                baocaodoanhsoDTO.SoPhieuXuat = phieuxuatDAL.LayDuLieu("MaPhieuXuat", "MaDaiLy = '" + phieuxuatDTO.MaDaiLy + "'").Rows.Count
+                                baocaodoanhsoDTO.TongTriGia = phieuxuatDTO.TongTriGia
+                                baocaodoanhsoDTO.TyLe = baocaodoanhsoDTO.TongTriGia / baocaodoanhsoDTO.SoPhieuXuat
+                                baocaodoanhsoDAL.ThemDuLieu(baocaodoanhsoDTO)
 
                                 HienThiThongBao("Thêm phiếu xuất thành công")
                                 LoadDataOnGridView()
@@ -344,6 +345,10 @@ Public Class LapPhieuXuatHang
             KetNoiDAL.CapNhatDuLieu("DAILY", "MaDaiLy", madaily, "NoDaiLy = NoDaiLy -" + thanhtien)
 
             If chitietphieuxuatDAL.XoaDuLieu("MaCTPhieuXuat", mactphieuxuat.ToString()) And phieuxuatDAL.XoaDuLieu("MaPhieuXuat", maphieuxuat.ToString()) Then
+
+                Dim mabaocaodoanhso As DataTable = baocaodoanhsoDAL.LayDuLieu("MaBaoCaoDoanhSo", "MaDaiLy = '" + madaily + "' and ThoiGian = '" + txbNgayLapPhieu.Text + "'")
+                baocaodoanhsoDAL.XoaDuLieu("MaBaoCaoDoanhSo", mabaocaodoanhso.Rows(0)(0))
+
                 HienThiThongBao("Xóa phiếu xuất thành công")
                 LoadDataOnGridView()
             Else

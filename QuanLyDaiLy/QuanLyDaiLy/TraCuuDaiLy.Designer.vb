@@ -57,9 +57,6 @@ Partial Class TraCuuDaiLy
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.dgvTiepNhanDaiLy = New System.Windows.Forms.DataGridView()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
         Me.btnThemDaiLy = New DevExpress.XtraBars.BarButtonItem()
         Me.BarButtonItem1 = New DevExpress.XtraBars.BarButtonItem()
         Me.RibbonPageGroup2 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
@@ -72,7 +69,6 @@ Partial Class TraCuuDaiLy
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.dgvTiepNhanDaiLy, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel3.SuspendLayout()
         CType(Me.fpnlNote, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.fpnlNote.SuspendLayout()
         Me.SuspendLayout()
@@ -86,7 +82,7 @@ Partial Class TraCuuDaiLy
         Me.RibbonControl.MaxItemId = 9
         Me.RibbonControl.Name = "RibbonControl"
         Me.RibbonControl.Pages.AddRange(New DevExpress.XtraBars.Ribbon.RibbonPage() {Me.RibbonPage1})
-        Me.RibbonControl.Size = New System.Drawing.Size(1091, 143)
+        Me.RibbonControl.Size = New System.Drawing.Size(1015, 143)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'btnTraCuu
@@ -153,7 +149,7 @@ Partial Class TraCuuDaiLy
         Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(1091, 31)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(1015, 31)
         '
         'Panel1
         '
@@ -181,7 +177,7 @@ Partial Class TraCuuDaiLy
         Me.Panel1.Location = New System.Drawing.Point(10, 152)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(663, 199)
+        Me.Panel1.Size = New System.Drawing.Size(997, 199)
         Me.Panel1.TabIndex = 4
         '
         'Label11
@@ -371,7 +367,7 @@ Partial Class TraCuuDaiLy
         Me.Panel2.Location = New System.Drawing.Point(10, 355)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(663, 195)
+        Me.Panel2.Size = New System.Drawing.Size(999, 195)
         Me.Panel2.TabIndex = 17
         '
         'Label14
@@ -403,39 +399,8 @@ Partial Class TraCuuDaiLy
         Me.dgvTiepNhanDaiLy.Location = New System.Drawing.Point(0, 33)
         Me.dgvTiepNhanDaiLy.Name = "dgvTiepNhanDaiLy"
         Me.dgvTiepNhanDaiLy.ReadOnly = True
-        Me.dgvTiepNhanDaiLy.Size = New System.Drawing.Size(663, 159)
+        Me.dgvTiepNhanDaiLy.Size = New System.Drawing.Size(990, 159)
         Me.dgvTiepNhanDaiLy.TabIndex = 0
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.Label10)
-        Me.Panel3.Controls.Add(Me.Panel6)
-        Me.Panel3.Location = New System.Drawing.Point(678, 152)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(403, 399)
-        Me.Panel3.TabIndex = 18
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Tahoma", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.Label10.ForeColor = System.Drawing.Color.Blue
-        Me.Label10.Location = New System.Drawing.Point(47, 8)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(163, 17)
-        Me.Label10.TabIndex = 18
-        Me.Label10.Text = "BIỂU ĐỒ PHÁT TRIỂN"
-        '
-        'Panel6
-        '
-        Me.Panel6.BackgroundImage = Global.QuanLyDaiLy.My.Resources.Resources.chart_icon
-        Me.Panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Panel6.Location = New System.Drawing.Point(2, 2)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(39, 30)
-        Me.Panel6.TabIndex = 1
         '
         'btnThemDaiLy
         '
@@ -463,12 +428,12 @@ Partial Class TraCuuDaiLy
         '
         Me.fpnlNote.Controls.Add(Me.lblThongbao)
         Me.fpnlNote.Controls.Add(Me.label)
-        Me.fpnlNote.Location = New System.Drawing.Point(522, 50)
+        Me.fpnlNote.Location = New System.Drawing.Point(518, 50)
         Me.fpnlNote.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.fpnlNote.Name = "fpnlNote"
         Me.fpnlNote.OptionsButtonPanel.ButtonPanelLocation = DevExpress.Utils.FlyoutPanelButtonPanelLocation.Top
         Me.fpnlNote.OwnerControl = Me.Button2
-        Me.fpnlNote.Size = New System.Drawing.Size(549, 72)
+        Me.fpnlNote.Size = New System.Drawing.Size(485, 72)
         Me.fpnlNote.TabIndex = 32
         '
         'lblThongbao
@@ -501,7 +466,7 @@ Partial Class TraCuuDaiLy
         Me.Button2.Location = New System.Drawing.Point(508, 50)
         Me.Button2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(575, 8)
+        Me.Button2.Size = New System.Drawing.Size(505, 10)
         Me.Button2.TabIndex = 31
         Me.Button2.UseVisualStyleBackColor = True
         '
@@ -514,10 +479,9 @@ Partial Class TraCuuDaiLy
         Me.AllowFormGlass = DevExpress.Utils.DefaultBoolean.[True]
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1091, 592)
+        Me.ClientSize = New System.Drawing.Size(1015, 592)
         Me.Controls.Add(Me.fpnlNote)
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.RibbonStatusBar)
@@ -537,8 +501,6 @@ Partial Class TraCuuDaiLy
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.dgvTiepNhanDaiLy, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         CType(Me.fpnlNote, System.ComponentModel.ISupportInitialize).EndInit()
         Me.fpnlNote.ResumeLayout(False)
         Me.fpnlNote.PerformLayout()
@@ -577,9 +539,6 @@ Partial Class TraCuuDaiLy
     Friend WithEvents Label14 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents dgvTiepNhanDaiLy As DataGridView
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Panel6 As Panel
     Friend WithEvents btnThemDaiLy As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents BarButtonItem1 As DevExpress.XtraBars.BarButtonItem
     Friend WithEvents btnTraCuu As DevExpress.XtraBars.BarButtonItem

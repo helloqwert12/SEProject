@@ -16,13 +16,12 @@ Public Class BaoCaoCongNo
 
         cbThang.SelectedIndex = 0
         txbNam.Text = Date.Today.Year
-        LoadDataOnGridView()
 
     End Sub
     'Dinh nghia thu tuc load du lieu tu bang theo tung lop vao Gridview
-    Private Sub LoadDataOnGridView()
-        Dim dTable As DataTable = KetNoiDAL.LayDuLieu("BAOCAOCONGNO join DAILY on BAOCAOCONGNO.MaDaiLy = DAILY.MaDaiLy", "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "NoDau", "PhatSinh", "NoCuoi")
-        Me.dgvBaoCaoCongNo.DataSource = dTable
+    Private Sub LoadDataOnGridView(ByVal data As DataTable)
+        'Dim dTable As DataTable = KetNoiDAL.LayDuLieu("BAOCAOCONGNO join DAILY on BAOCAOCONGNO.MaDaiLy = DAILY.MaDaiLy", "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "NoDau", "PhatSinh", "NoCuoi")
+        Me.dgvBaoCaoCongNo.DataSource = data
         With Me.dgvBaoCaoCongNo
             .Columns(0).HeaderText = "Mã đại lý"
             .Columns(1).HeaderText = "Tên đại lý"
@@ -43,6 +42,18 @@ Public Class BaoCaoCongNo
     Private Sub btnThucHien_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThucHien.ItemClick
         btnPDF.Enabled = True
         btnExcel.Enabled = True
+
+        If txbNam.Text > Date.Now.Year Then
+            MessageBox.Show("Năm lập báo cáo lớn hơn năm hiện tại. Vui lòng kiểm tra lại", "THÔNG BÁO")
+        Else
+            'Dim data As DataTable = baocaodoanhsoDAL.LayDuLieu("MaDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe", "Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + cbThang = txbNam.Text)
+            Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO, DAILY", True, "BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy and Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + cbThang = txbNam.Text, "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "NoDau", "PhatSinh", "NoCuoi")
+            If data.Rows.Count = 0 Then
+                MessageBox.Show("Không có dữ liệu thõa thời gian trên", "THÔNG BÁO")
+            Else
+                LoadDataOnGridView(data)
+            End If
+        End If
     End Sub
 
     'Private Sub dgvBaoCaoCongNo_RowEnter(sender As Object, e As DataGridViewCellEventArgs) Handles dgvBaoCaoCongNo.RowEnter
@@ -60,12 +71,18 @@ Public Class BaoCaoCongNo
     'End Sub
 
     Private Sub btnExcel_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnExcel.ItemClick
-        Dim _export As Export = New Export()
-        _export.ExportExcel(dgvBaoCaoCongNo)
+        Try
+            Export.ExportExcel(dgvBaoCaoCongNo)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnPDF_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnPDF.ItemClick
-        Dim _export As Export = New Export()
-        Export.ExportPDF(dgvBaoCaoCongNo, "BÁO CÁO CÔNG NỢ THÁNG   " + cbThang.Text + "/" + txbNam.Text)
+        Try
+            Export.ExportPDF(dgvBaoCaoCongNo, "BÁO CÁO CÔNG NỢ THÁNG   " + cbThang.Text + "/" + txbNam.Text)
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
