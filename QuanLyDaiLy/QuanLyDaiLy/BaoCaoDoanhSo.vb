@@ -16,11 +16,11 @@ Public Class BaoCaoDoanhSo
 
         cbThang.SelectedIndex = 0
         txbNam.Text = Date.Today.Year
-        LoadDataOnGridView()
+        'LoadDataOnGridView()
     End Sub
     'Dinh nghia thu tuc load du lieu tu bang theo tung lop vao Gridview
-    Private Sub LoadDataOnGridView() 'ByVal data As DataTable)
-        Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO join DAILY on BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy join PHIEUXUAT on DAILY.MaDaiLy = PHIEUXUAT.MaDaily", "TenDaiLy", "BAOCAODOANHSO.MaDaiLy", "ThoiGian", "SoPhieuXuat", "PHIEUXUAT.TongTriGia", "TyLe")
+    Private Sub LoadDataOnGridView(ByVal data As DataTable) 'ByVal data As DataTable)
+        'Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO join DAILY on BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy join PHIEUXUAT on DAILY.MaDaiLy = PHIEUXUAT.MaDaily", "TenDaiLy", "BAOCAODOANHSO.MaDaiLy", "ThoiGian", "SoPhieuXuat", "PHIEUXUAT.TongTriGia", "TyLe")
         Me.dgvBaoCaoDoanhSo.DataSource = data
         With Me.dgvBaoCaoDoanhSo
             .Columns(0).HeaderText = "Mã đại lý"
@@ -61,17 +61,17 @@ Public Class BaoCaoDoanhSo
 
 
 
-        'If txbNam.Text > Date.Now.Year Then
-        '    MessageBox.Show("Năm lập báo cáo lớn hơn năm hiện tại. Vui lòng kiểm tra lại", "THÔNG BÁO")
-        'Else
-        '    'Dim data As DataTable = baocaodoanhsoDAL.LayDuLieu("MaDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe", "Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + cbThang = txbNam.Text)
-        '    Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO, DAILY", "BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy" + " and " + "Month(ThoiGian) = " + cbThang.SelectedItem + " and " + "Year(ThoiGian) = " + cbThang = txbNam.Text, "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe")
-        '    If data.Rows.Count = 0 Then
-        '        MessageBox.Show("Không có dữ liệu thõa thời gian trên", "THÔNG BÁO")
-        '    Else
-        '        LoadDataOnGridView(data)
-        '    End If
-        'End If
+        If txbNam.Text > Date.Now.Year Then
+            MessageBox.Show("Năm lập báo cáo lớn hơn năm hiện tại. Vui lòng kiểm tra lại", "THÔNG BÁO")
+        Else
+            'Dim data As DataTable = baocaodoanhsoDAL.LayDuLieu("MaDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe", "Month(ThoiGian) = " + cbThang.SelectedItem + " and Year(ThoiGian) = " + cbThang = txbNam.Text)
+            Dim data As DataTable = KetNoiDAL.LayDuLieu("BAOCAODOANHSO, DAILY", True, "BAOCAODOANHSO.MaDaiLy = DAILY.MaDaiLy" + " and " + "Month(ThoiGian) = " + cbThang.SelectedItem + " and " + "Year(ThoiGian) = " + cbThang = txbNam.Text, "DAILY.MaDaiLy", "TenDaiLy", "ThoiGian", "SoPhieuXuat", "TongTriGia", "TyLe")
+            If data.Rows.Count = 0 Then
+                MessageBox.Show("Không có dữ liệu thõa thời gian trên", "THÔNG BÁO")
+            Else
+                LoadDataOnGridView(data)
+            End If
+        End If
     End Sub
 
     Private Sub btnThoat_ItemClick(sender As Object, e As DevExpress.XtraBars.ItemClickEventArgs) Handles btnThoat.ItemClick
