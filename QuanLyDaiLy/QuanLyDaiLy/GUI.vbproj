@@ -218,6 +218,12 @@
     <Compile Include="TraCuuDaiLy.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Tutorial.Designer.vb">
+      <DependentUpon>Tutorial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Tutorial.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BaoCaoCongNo.resx">
@@ -265,6 +271,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TraCuuDaiLy.resx">
       <DependentUpon>TraCuuDaiLy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tutorial.resx">
+      <DependentUpon>Tutorial.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

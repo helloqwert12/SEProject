@@ -10,6 +10,7 @@
     Dim frmPhiexuat As LapPhieuXuatHang
     Dim frmBCDoanhso As BaoCaoDoanhSo
     Dim frmBCCongno As BaoCaoCongNo
+    Dim frmTutorial As Tutorial
 
     Public Sub New()
         InitializeComponent()
@@ -146,5 +147,16 @@
         If rslt = DialogResult.Yes Then
             Application.Exit()
         End If
+    End Sub
+
+    Private Sub btnThongTin_Click(sender As Object, e As EventArgs) Handles btnThongTin.Click
+        If frmTutorial Is Nothing Then
+            frmTutorial = New Tutorial()
+            frmTutorial.MdiParent = Me
+            frmTutorial.Show()
+        Else
+            frmTutorial.WindowState = FormWindowState.Maximized
+        End If
+
     End Sub
 End Class
