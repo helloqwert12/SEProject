@@ -69,7 +69,7 @@ Public Class MatHang
 
     'Hien thi thong bao tu flyout
     Private Sub HienThiThongBao(ByVal thongbao As String)
-        label.Text = thongbao
+        lblThongbao.Text = thongbao
         fpnlNote.ShowPopup()
         Timer1.Enabled = True
         Timer1.Start()

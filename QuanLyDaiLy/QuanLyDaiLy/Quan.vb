@@ -120,7 +120,7 @@ Public Class Quan
                 HienThiThongBao("Xóa quận thành công")
                 LoadDataOnGridView()
             Else
-                HienThiThongBao("Không thể xóa quận, vui lòng kiểm tra lại")
+                HienThiThongBao("Không thể xóa vì quận này đã có đại lý, vui lòng kiểm tra lại")
             End If
         End If
     End Sub

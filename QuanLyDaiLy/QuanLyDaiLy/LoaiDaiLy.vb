@@ -67,7 +67,7 @@ Public Class LoaiDaiLy
 
     'Hien thi thong bao tu flyout
     Private Sub HienThiThongBao(ByVal thongbao As String)
-        Label.Text = thongbao
+        lblThongbao.Text = thongbao
         fpnlNote.ShowPopup()
         Timer1.Enabled = True
         Timer1.Start()
@@ -128,7 +128,7 @@ Public Class LoaiDaiLy
                 HienThiThongBao("Xóa loại đại lý thành công")
                 LoadDataOnGridView()
             Else
-                HienThiThongBao("Không thể xóa loại đại lý, vui lòng kiểm tra lại")
+                HienThiThongBao("Không thể xóa vì loại đại lý này đã có đại lý, vui lòng kiểm tra lại")
             End If
         End If
     End Sub
