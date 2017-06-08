@@ -62,6 +62,10 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Dashboard.v15.1.Core, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -333,6 +337,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Quanlybanhang.mdf</DependentUpon>
     </Content>
+    <Content Include="Tanitakawkaw-Simple-Cute-Home.ico" />
     <None Include="Resources\1496871599_11_Writing_Board.png" />
     <None Include="Resources\menu.png" />
     <None Include="Resources\Apps-Pdf-icon.png" />

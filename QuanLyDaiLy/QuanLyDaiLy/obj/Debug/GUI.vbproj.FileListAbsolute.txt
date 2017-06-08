@@ -1418,3 +1418,4 @@ C:\Users\admin\Downloads\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\GUI.v
 C:\Users\admin\Downloads\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.exe.licenses
 C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.LoadingSplashScreen.resources
 E:\Courses\4th-Semester\Software-Engineering\Project\Git\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.Tutorial.resources
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.Tutorial.resources

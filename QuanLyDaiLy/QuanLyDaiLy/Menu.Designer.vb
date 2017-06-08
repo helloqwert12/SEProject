@@ -42,7 +42,7 @@ Partial Class Menu
         Me.rmMenu = New DevExpress.XtraBars.Ribbon.RadialMenu(Me.components)
         Me.btnMenu = New DevExpress.XtraEditors.SimpleButton()
         Me.PanelControl1 = New DevExpress.XtraEditors.PanelControl()
-        Me.SimpleButton1 = New DevExpress.XtraEditors.SimpleButton()
+        Me.btnAbout = New DevExpress.XtraEditors.SimpleButton()
         Me.btnThongTin = New DevExpress.XtraEditors.SimpleButton()
         Me.btnThoat = New DevExpress.XtraEditors.SimpleButton()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,11 +57,11 @@ Partial Class Menu
         '
         'RibbonStatusBar
         '
-        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 1050)
+        Me.RibbonStatusBar.Location = New System.Drawing.Point(0, 706)
         Me.RibbonStatusBar.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RibbonStatusBar.Name = "RibbonStatusBar"
         Me.RibbonStatusBar.Ribbon = Me.RibbonControl
-        Me.RibbonStatusBar.Size = New System.Drawing.Size(1855, 36)
+        Me.RibbonStatusBar.Size = New System.Drawing.Size(1373, 31)
         '
         'RibbonControl
         '
@@ -71,7 +71,7 @@ Partial Class Menu
         Me.RibbonControl.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.RibbonControl.MaxItemId = 1
         Me.RibbonControl.Name = "RibbonControl"
-        Me.RibbonControl.Size = New System.Drawing.Size(1855, 61)
+        Me.RibbonControl.Size = New System.Drawing.Size(1373, 49)
         Me.RibbonControl.StatusBar = Me.RibbonStatusBar
         '
         'blLuuTru
@@ -204,59 +204,60 @@ Partial Class Menu
         '
         Me.btnMenu.Image = Global.QuanLyDaiLy.My.Resources.Resources.menu
         Me.btnMenu.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-        Me.btnMenu.Location = New System.Drawing.Point(0, 40)
+        Me.btnMenu.Location = New System.Drawing.Point(0, 32)
         Me.btnMenu.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnMenu.Name = "btnMenu"
-        Me.btnMenu.Size = New System.Drawing.Size(234, 158)
+        Me.btnMenu.Size = New System.Drawing.Size(201, 128)
         Me.btnMenu.TabIndex = 2
         '
         'PanelControl1
         '
-        Me.PanelControl1.Controls.Add(Me.SimpleButton1)
+        Me.PanelControl1.Controls.Add(Me.btnAbout)
         Me.PanelControl1.Controls.Add(Me.btnThongTin)
         Me.PanelControl1.Controls.Add(Me.btnThoat)
         Me.PanelControl1.Controls.Add(Me.btnMenu)
         Me.PanelControl1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.PanelControl1.Location = New System.Drawing.Point(0, 61)
+        Me.PanelControl1.Location = New System.Drawing.Point(0, 49)
+        Me.PanelControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PanelControl1.Name = "PanelControl1"
-        Me.PanelControl1.Size = New System.Drawing.Size(234, 989)
+        Me.PanelControl1.Size = New System.Drawing.Size(201, 657)
         Me.PanelControl1.TabIndex = 16
         '
-        'SimpleButton1
+        'btnAbout
         '
-        Me.SimpleButton1.Image = Global.QuanLyDaiLy.My.Resources.Resources.infoIcon
-        Me.SimpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-        Me.SimpleButton1.Location = New System.Drawing.Point(0, 674)
-        Me.SimpleButton1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.SimpleButton1.Name = "SimpleButton1"
-        Me.SimpleButton1.Size = New System.Drawing.Size(234, 158)
-        Me.SimpleButton1.TabIndex = 2
+        Me.btnAbout.Image = Global.QuanLyDaiLy.My.Resources.Resources.infoIcon
+        Me.btnAbout.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
+        Me.btnAbout.Location = New System.Drawing.Point(0, 548)
+        Me.btnAbout.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.btnAbout.Name = "btnAbout"
+        Me.btnAbout.Size = New System.Drawing.Size(201, 128)
+        Me.btnAbout.TabIndex = 2
         '
         'btnThongTin
         '
         Me.btnThongTin.Image = Global.QuanLyDaiLy.My.Resources.Resources._1496871599_11_Writing_Board
         Me.btnThongTin.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-        Me.btnThongTin.Location = New System.Drawing.Point(0, 461)
+        Me.btnThongTin.Location = New System.Drawing.Point(0, 375)
         Me.btnThongTin.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnThongTin.Name = "btnThongTin"
-        Me.btnThongTin.Size = New System.Drawing.Size(234, 158)
+        Me.btnThongTin.Size = New System.Drawing.Size(201, 128)
         Me.btnThongTin.TabIndex = 2
         '
         'btnThoat
         '
         Me.btnThoat.Image = Global.QuanLyDaiLy.My.Resources.Resources.closeIcon
         Me.btnThoat.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter
-        Me.btnThoat.Location = New System.Drawing.Point(0, 242)
+        Me.btnThoat.Location = New System.Drawing.Point(0, 197)
         Me.btnThoat.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnThoat.Name = "btnThoat"
-        Me.btnThoat.Size = New System.Drawing.Size(234, 158)
+        Me.btnThoat.Size = New System.Drawing.Size(201, 128)
         Me.btnThoat.TabIndex = 2
         '
         'Menu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1855, 1086)
+        Me.ClientSize = New System.Drawing.Size(1373, 737)
         Me.Controls.Add(Me.PanelControl1)
         Me.Controls.Add(Me.RibbonStatusBar)
         Me.Controls.Add(Me.RibbonControl)
@@ -300,5 +301,5 @@ Partial Class Menu
     Friend WithEvents PanelControl1 As DevExpress.XtraEditors.PanelControl
     Friend WithEvents btnThongTin As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents btnThoat As DevExpress.XtraEditors.SimpleButton
-    Friend WithEvents SimpleButton1 As DevExpress.XtraEditors.SimpleButton
+    Friend WithEvents btnAbout As DevExpress.XtraEditors.SimpleButton
 End Class

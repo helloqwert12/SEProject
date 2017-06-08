@@ -143,7 +143,7 @@
     End Sub
 
     Private Sub btnThoat_Click(sender As Object, e As EventArgs) Handles btnThoat.Click
-        Dim rslt As DialogResult = MessageBox.Show("XÁC NHẬN THÁC", "XÁC NHẬN", MessageBoxButtons.YesNo)
+        Dim rslt As DialogResult = MessageBox.Show("XÁC NHẬN THOÁT", "XÁC NHẬN", MessageBoxButtons.YesNo)
         If rslt = DialogResult.Yes Then
             Application.Exit()
         End If
@@ -158,5 +158,9 @@
             frmTutorial.WindowState = FormWindowState.Maximized
         End If
 
+    End Sub
+
+    Private Sub btnAbout_Click(sender As Object, e As EventArgs) Handles btnAbout.Click
+        MessageBox.Show("Powered by DevExpress Copyright © 2017 Trần Minh Quân - Võ Anh Kiệt.", "ABOUT")
     End Sub
 End Class
