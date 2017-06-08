@@ -161,7 +161,7 @@ Partial Class TiepNhanDaiLy
         '
         'btnThoat
         '
-        Me.btnThoat.Caption = "Thoát"
+        Me.btnThoat.Caption = "Thoát trang"
         Me.btnThoat.Glyph = Global.QuanLyDaiLy.My.Resources.Resources.closeIcon
         Me.btnThoat.Id = 8
         Me.btnThoat.Name = "btnThoat"
@@ -177,25 +177,21 @@ Partial Class TiepNhanDaiLy
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnThemDaiLy)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "RibbonPageGroup1"
         '
         'RibbonPageGroup3
         '
         Me.RibbonPageGroup3.ItemLinks.Add(Me.btnXoaDaiLy)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "RibbonPageGroup3"
         '
         'RibbonPageGroup4
         '
         Me.RibbonPageGroup4.ItemLinks.Add(Me.btnCapNhatDaiLy)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
-        Me.RibbonPageGroup4.Text = "RibbonPageGroup4"
         '
         'RibbonPageGroup5
         '
         Me.RibbonPageGroup5.ItemLinks.Add(Me.btnThoat)
         Me.RibbonPageGroup5.Name = "RibbonPageGroup5"
-        Me.RibbonPageGroup5.Text = "RibbonPageGroup5"
         '
         'BarButtonItem3
         '
@@ -271,11 +267,11 @@ Partial Class TiepNhanDaiLy
         Me.dgvTiepNhanDaiLy.AllowUserToDeleteRows = False
         Me.dgvTiepNhanDaiLy.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTiepNhanDaiLy.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.dgvTiepNhanDaiLy.Location = New System.Drawing.Point(0, -6)
+        Me.dgvTiepNhanDaiLy.Location = New System.Drawing.Point(0, 45)
         Me.dgvTiepNhanDaiLy.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.dgvTiepNhanDaiLy.Name = "dgvTiepNhanDaiLy"
         Me.dgvTiepNhanDaiLy.ReadOnly = True
-        Me.dgvTiepNhanDaiLy.Size = New System.Drawing.Size(1202, 285)
+        Me.dgvTiepNhanDaiLy.Size = New System.Drawing.Size(1202, 234)
         Me.dgvTiepNhanDaiLy.TabIndex = 0
         '
         'Panel7

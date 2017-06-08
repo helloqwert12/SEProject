@@ -67,6 +67,10 @@ Partial Class Quan
         Me.fpnlNote.SuspendLayout()
         Me.SuspendLayout()
         '
+        'SplashScreenManager1
+        '
+        SplashScreenManager1.ClosingDelay = 100
+        '
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
@@ -104,7 +108,7 @@ Partial Class Quan
         '
         'btnThoat
         '
-        Me.btnThoat.Caption = "Thoát"
+        Me.btnThoat.Caption = "Thoát trang"
         Me.btnThoat.Id = 4
         Me.btnThoat.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.closeIcon
         Me.btnThoat.Name = "btnThoat"
@@ -119,25 +123,21 @@ Partial Class Quan
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnThemQuan)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "RibbonPageGroup1"
         '
         'RibbonPageGroup2
         '
         Me.RibbonPageGroup2.ItemLinks.Add(Me.btnXoaQuan)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
-        Me.RibbonPageGroup2.Text = "RibbonPageGroup2"
         '
         'RibbonPageGroup3
         '
         Me.RibbonPageGroup3.ItemLinks.Add(Me.btnCapNhatQuan)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "RibbonPageGroup3"
         '
         'RibbonPageGroup4
         '
         Me.RibbonPageGroup4.ItemLinks.Add(Me.btnThoat)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
-        Me.RibbonPageGroup4.Text = "RibbonPageGroup4"
         '
         'RibbonStatusBar
         '
@@ -406,10 +406,6 @@ Partial Class Quan
         'Timer1
         '
         Me.Timer1.Interval = 5000
-        '
-        'SplashScreenManager1
-        '
-        SplashScreenManager1.ClosingDelay = 100
         '
         'Quan
         '

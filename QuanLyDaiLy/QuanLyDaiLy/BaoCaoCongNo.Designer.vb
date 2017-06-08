@@ -86,7 +86,7 @@ Partial Class BaoCaoCongNo
         '
         'btnThoat
         '
-        Me.btnThoat.Caption = "Thoát"
+        Me.btnThoat.Caption = "Thoát báo cáo"
         Me.btnThoat.Id = 4
         Me.btnThoat.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.closeIcon
         Me.btnThoat.Name = "btnThoat"
@@ -101,25 +101,21 @@ Partial Class BaoCaoCongNo
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnThucHien)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "RibbonPageGroup1"
         '
         'RibbonPageGroup2
         '
         Me.RibbonPageGroup2.ItemLinks.Add(Me.btnExcel)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
-        Me.RibbonPageGroup2.Text = "RibbonPageGroup2"
         '
         'RibbonPageGroup3
         '
         Me.RibbonPageGroup3.ItemLinks.Add(Me.btnPDF)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "RibbonPageGroup3"
         '
         'RibbonPageGroup4
         '
         Me.RibbonPageGroup4.ItemLinks.Add(Me.btnThoat)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
-        Me.RibbonPageGroup4.Text = "RibbonPageGroup4"
         '
         'RibbonStatusBar
         '

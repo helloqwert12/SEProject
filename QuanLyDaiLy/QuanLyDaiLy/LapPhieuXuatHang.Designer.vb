@@ -99,6 +99,10 @@ Partial Class LapPhieuXuatHang
         CType(Me.DigitalBackgroundLayerComponent2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'SplashScreenManager1
+        '
+        SplashScreenManager1.ClosingDelay = 100
+        '
         'RibbonControl
         '
         Me.RibbonControl.ExpandCollapseItem.Id = 0
@@ -136,7 +140,7 @@ Partial Class LapPhieuXuatHang
         '
         'btnThoat
         '
-        Me.btnThoat.Caption = "Thoát"
+        Me.btnThoat.Caption = "Thoát trang"
         Me.btnThoat.Id = 4
         Me.btnThoat.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.closeIcon
         Me.btnThoat.Name = "btnThoat"
@@ -151,19 +155,16 @@ Partial Class LapPhieuXuatHang
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnThemPhieuXuat)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "RibbonPageGroup1"
         '
         'RibbonPageGroup2
         '
         Me.RibbonPageGroup2.ItemLinks.Add(Me.btnXoaPhieuXuat)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
-        Me.RibbonPageGroup2.Text = "RibbonPageGroup2"
         '
         'RibbonPageGroup4
         '
         Me.RibbonPageGroup4.ItemLinks.Add(Me.btnThoat)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
-        Me.RibbonPageGroup4.Text = "RibbonPageGroup4"
         '
         'RibbonStatusBar
         '
@@ -721,10 +722,6 @@ Partial Class LapPhieuXuatHang
         Me.DigitalBackgroundLayerComponent2.ShapeType = DevExpress.XtraGauges.Core.Model.DigitalBackgroundShapeSetType.Style8
         Me.DigitalBackgroundLayerComponent2.TopLeft = New DevExpress.XtraGauges.Core.Base.PointF2D(20.0!, 0!)
         Me.DigitalBackgroundLayerComponent2.ZOrder = 1000
-        '
-        'SplashScreenManager1
-        '
-        SplashScreenManager1.ClosingDelay = 100
         '
         'LapPhieuXuatHang
         '

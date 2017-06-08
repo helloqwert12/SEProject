@@ -32,16 +32,16 @@ Partial Class BaoCaoDoanhSo
         Me.RibbonPageGroup4 = New DevExpress.XtraBars.Ribbon.RibbonPageGroup()
         Me.RibbonStatusBar = New DevExpress.XtraBars.Ribbon.RibbonStatusBar()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.txbNam = New DevExpress.XtraEditors.TextEdit()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbThang = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgvBaoCaoDoanhSo = New System.Windows.Forms.DataGridView()
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.txbNam.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         CType(Me.dgvBaoCaoDoanhSo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -86,7 +86,7 @@ Partial Class BaoCaoDoanhSo
         '
         'btnThoat
         '
-        Me.btnThoat.Caption = "Thoát"
+        Me.btnThoat.Caption = "Thoát báo cáo"
         Me.btnThoat.Id = 4
         Me.btnThoat.LargeGlyph = Global.QuanLyDaiLy.My.Resources.Resources.closeIcon
         Me.btnThoat.Name = "btnThoat"
@@ -101,25 +101,21 @@ Partial Class BaoCaoDoanhSo
         '
         Me.RibbonPageGroup1.ItemLinks.Add(Me.btnThucHien)
         Me.RibbonPageGroup1.Name = "RibbonPageGroup1"
-        Me.RibbonPageGroup1.Text = "RibbonPageGroup1"
         '
         'RibbonPageGroup2
         '
         Me.RibbonPageGroup2.ItemLinks.Add(Me.btnExcel)
         Me.RibbonPageGroup2.Name = "RibbonPageGroup2"
-        Me.RibbonPageGroup2.Text = "RibbonPageGroup2"
         '
         'RibbonPageGroup3
         '
         Me.RibbonPageGroup3.ItemLinks.Add(Me.btnPDF)
         Me.RibbonPageGroup3.Name = "RibbonPageGroup3"
-        Me.RibbonPageGroup3.Text = "RibbonPageGroup3"
         '
         'RibbonPageGroup4
         '
         Me.RibbonPageGroup4.ItemLinks.Add(Me.btnThoat)
         Me.RibbonPageGroup4.Name = "RibbonPageGroup4"
-        Me.RibbonPageGroup4.Text = "RibbonPageGroup4"
         '
         'RibbonStatusBar
         '
@@ -140,15 +136,6 @@ Partial Class BaoCaoDoanhSo
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(792, 63)
         Me.Panel1.TabIndex = 29
-        '
-        'Panel2
-        '
-        Me.Panel2.Controls.Add(Me.dgvBaoCaoDoanhSo)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 231)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(792, 267)
-        Me.Panel2.TabIndex = 30
         '
         'txbNam
         '
@@ -196,6 +183,15 @@ Partial Class BaoCaoDoanhSo
         Me.Label1.TabIndex = 27
         Me.Label1.Text = "Tháng:"
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.dgvBaoCaoDoanhSo)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(0, 231)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(792, 267)
+        Me.Panel2.TabIndex = 30
+        '
         'dgvBaoCaoDoanhSo
         '
         Me.dgvBaoCaoDoanhSo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -227,8 +223,8 @@ Partial Class BaoCaoDoanhSo
         CType(Me.RibbonControl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         CType(Me.txbNam.Properties, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         CType(Me.dgvBaoCaoDoanhSo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
