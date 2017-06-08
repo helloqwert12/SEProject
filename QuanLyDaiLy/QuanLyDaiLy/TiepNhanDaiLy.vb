@@ -11,7 +11,7 @@ Public Class TiepNhanDaiLy
     End Enum
 
     Dim trangthai As STATUS
-    Private KiemTraQD As Boolean
+    Private KiemTraQD As Boolean = True
     Private CoLoi As Boolean = False
     Dim dailyDTO As DaiLyDTO
     Dim dailyBUS As DaiLyBUS
@@ -82,9 +82,12 @@ Public Class TiepNhanDaiLy
         txbDiaChi.Clear()
     End Sub
     'Kiem tra xem trong Quan nay da du so luong dai ly toi da hay chua
-    Private Sub cbQuan_SelectedIndexChanged(sender As Object, e As EventArgs)
-        'Dim data As DataTable = KetNoiDAL.LayDuLieu("QUAN", "MaQuan", "TenQuan = " + "'" + cbQuan.SelectedItem + "'")
-        Dim maquan As String = KetNoiDAL.ChuyenTenThanhMa("QUAN", "TenQuan", cbQuan.SelectedItem, "MaQuan") 'data.Rows(0)(0)
+    Private Sub cbQuan_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbQuan.SelectedIndexChanged
+        dgSoDaiLyToiDa.Text = KetNoiDAL.LayDuLieu("THAMSO").Rows(0)(0)
+        lblQuan.Text = cbQuan.SelectedItem
+        dgSoDaiLyCuaQuan.Text = dailyBUS.SoDaiLyCuaQuan(KetNoiDAL.ChuyenTenThanhMa("QUAN", "TenQuan", cbQuan.SelectedItem, "MaQuan"))
+
+        Dim maquan As String = KetNoiDAL.ChuyenTenThanhMa("QUAN", "TenQuan", cbQuan.SelectedItem, "MaQuan")
         If Not dailyBUS.ThoaManDaiLyToiDa(maquan) Then
             HienThiThongBao("Quận đã đủ số lượng đại lý tối đa")
             KiemTraQD = False
@@ -113,7 +116,7 @@ Public Class TiepNhanDaiLy
         Timer1.Start()
     End Sub
 
-    Private Sub btnXacNhan_Click(sender As Object, e As EventArgs)
+    Private Sub btnXacNhan_Click(sender As Object, e As EventArgs) Handles btnXacNhan.Click
         If Not KiemTraQD Then
             HienThiThongBao("Vi phạm quy định về số đại lý tối đa trong quận. Vui lòng kiểm tra lại")
         End If
@@ -125,7 +128,13 @@ Public Class TiepNhanDaiLy
                 dailyDTO.DiaChi = txbDiaChi.Text
             Catch ex As Exception
                 CoLoi = True
-                MessageBox.Show("Địa chỉ không hợp lệ. Vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
+                Dim rslt As DialogResult = MessageBox.Show("Có vẻ như bạn không có kết nối internet, dữ liệu của bạn sẽ không được kiểm tra. Xác nhận?", "XÁC NHẬN", MessageBoxButtons.YesNo)
+                If rslt = DialogResult.Yes Then
+                    dailyDTO.DiaChi = txbDiaChi.Text
+                    CoLoi = False
+                Else
+                    CoLoi = True
+                End If
             End Try
         End If
 
@@ -133,7 +142,6 @@ Public Class TiepNhanDaiLy
         If (txbEmail.Text <> String.Empty) Then
             If Not (dailyBUS.CheckEmailValidExample(dailyDTO, txbEmail.Text) And txbEmail.Text <> String.Empty) Then
                 CoLoi = True
-                'HienThiThongBao("Email không hợp lệ. Vui lòng kiểm tra lại")
                 MessageBox.Show("Email không hợp lệ. Vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
             End If
         End If
@@ -143,7 +151,6 @@ Public Class TiepNhanDaiLy
             If Not dailyBUS.CheckPhoneNumberValidExample(dailyDTO, txbDienThoai.Text) Then
                 CoLoi = True
                 MessageBox.Show("Số điện thoại không hợp lệ. Vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
-                'HienThiThongBao("Số điện thoại không hợp lệ. Vui lòng kiểm tra lại")
             End If
         End If
 
@@ -168,7 +175,6 @@ Public Class TiepNhanDaiLy
 
                 'Kiem tra thong tin da duoc nhap day du
                 If dailyBUS.IsEmpty(dailyDTO) Then
-                    'MessageBox.Show("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại", "XÁC NHẬN", MessageBoxButtons.OK)
                     HienThiThongBao("Chưa nhập đầy đủ thông tin, vui lòng kiểm tra lại")
                 Else
                     If trangthai = STATUS.THEM Then

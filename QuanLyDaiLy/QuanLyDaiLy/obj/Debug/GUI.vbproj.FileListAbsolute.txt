@@ -1416,3 +1416,4 @@ C:\Users\admin\Downloads\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanL
 C:\Users\admin\Downloads\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.TraCuuDaiLy.resources
 C:\Users\admin\Downloads\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\GUI.vbproj.GenerateResource.Cache
 C:\Users\admin\Downloads\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.exe.licenses
+C:\Users\admin\Desktop\SEProject\trunk\QuanLyDaiLy\QuanLyDaiLy\obj\Debug\QuanLyDaiLy.LoadingSplashScreen.resources
